@@ -1,12 +1,12 @@
 
-#TechShop
+# TechShop
 TechShop es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptos, accesorios para la computadora, así como también audio y gaming.
 
 Nuestro público abarca un rango etario de entre 20 a 35 años de edad; un público joven con ánimos de crecimiento a los cuales les ofrecemos los productos más innovadores con una calidad única y al mejor precio.
 
 Nuestro principal objetivo es brindarle a nuestros clientes las mejores herramientas disponibles en el mercado para que puedan crecer y desarrollarse de la mejor manera en sus distintos ámbitos, tanto profesionales como también de ocio y diversión.
 
-#Páginas Web de referencia:
+# Páginas Web de referencia:
 
 - **coolbox.pe** - **URL:** https://www.coolbox.pe/
 
