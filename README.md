@@ -1,5 +1,6 @@
 
 # TechShop
+
 TechShop es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptos, accesorios para la computadora, así como también audio y gaming.
 
 Nuestro público abarca un rango etario de entre 20 a 35 años de edad; un público joven con ánimos de crecimiento a los cuales les ofrecemos los productos más innovadores con una calidad única y al mejor precio.
@@ -30,3 +31,16 @@ La utilizamos de referencia por su amplio y variado catálogo de productos tecno
 
 Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos como referencia, es el formulario de registro y de login. Nos pareció que contenía toda la información necesaria para la elaboración de un usuario y que lo presentaba de una manera simple y ágil de completar.
 
+# Integrantes:
+
+- **Diego Arbeláez**
+
+- **Angie Bolanos**
+
+- **Matias Pasquini**
+
+- **Ana Uchuya**
+
+¡Hola! Soy Diseñadora Gráfica de profesión y me especializo en el Diseño UI/UX. Tengo más de 5 años de experiencia diseñando para entornos digitales. He diseñado desde e-commerce, sitios institucionales, portal de noticias, aplicaciones hasta gestor de contenidos.
+Me interesa mucho seguir aprendiendo sobre el mundo digital y el diseño de experiencias centrado en el usuario. Por ello, siempre estoy leyendo blogs, escuchando podcasts, viendo videos en YouTube y llevando cursos en Crehana y Doméstika. 
+Me considero una persona que le encanta aprender, vivir nuevas experiencias, conocer otras personas y aprender de ellas.
