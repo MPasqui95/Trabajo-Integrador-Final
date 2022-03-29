@@ -41,6 +41,9 @@ Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos c
 
 - **Matias Pasquini**
 
+      ¡Hola! Soy estudiante de programación web full stack, me encuentro dando mis primeros pasos en este mundo lleno de códigos y lenguajes variados. También soy productor musical y multiintrumentista, descubrí mi gusto por este mundo de la programación gracias a la música de alguna forma; a medida que me adentraba en el mundo de la producción y los softwares de grabación me fui interesando más en cómo funcionaban esos programas y en que shortcuts me ayudarían para tal o cual cosa.
+      Soy una persona muy constante, responsable y estudiosa. Me encanta perfeccionarme en lo que ya se y aprender cosas nuevas cada día; me tomo cada cosa que estudio muy personal hasta el punto de que no puedo dormir tranquilo sabiendo que tengo algo que no entendí o una tarea sin resolver.
+
 - **Ana Uchuya**
 
       ¡Hola! Soy Diseñadora Gráfica de profesión y me especializo en el Diseño UI/UX. Tengo más de 5 años de experiencia diseñando para entornos digitales. He diseñado desde e-commerce, sitios institucionales, portal de noticias, aplicaciones hasta gestor de contenidos.
