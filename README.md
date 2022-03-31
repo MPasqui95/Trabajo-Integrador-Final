@@ -1,4 +1,4 @@
-# TechShop
+# ElectroPoodle
 
 TechShop es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptos, accesorios para la computadora, así como también audio y gaming.
 
