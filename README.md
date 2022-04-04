@@ -37,7 +37,11 @@ Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos c
       ¡Hola! Soy Ingenierio Mecatrónico y me desempeño como lider de proyectos en una multinacional desde hace 18 años. He desarrollado algunas aplicaciones en el entorno de Microsoft Power Platform para mi empresa donde digitalizamos y simplificamos tareas de registro de datos y visualizacion en Dashboars con Power BI. Me encanta el mundo de la programación, en el pasado programé mucho PLC's en lenguaje ladder, en Matlab y C++.
       Mi hobbie es estudiar, jugar ajedrez, realizar diseños en 3D para implementar mis proyectos personales y compartir tiempo en familia.
 
-- **Angie Bolanos**
+- **Angie Bolaños**
+
+      ¡Hola! Soy bioigeniera y me desempeño actualmente como ejecutiva comercial. Durante mi vida universitaria que terminó hace apenas 1 año, tuve un acercamiento con ciertos lenguajes de programación como C, Python y programé en Matlab, durante los últimos años me alejé demasiado de la programación. Sin embargo, siempre fue algo que me gustó mucho así que después de un tiempo quiero aprender desde cero (porque no recuerdo mucho) y encontrar tal vez un nuevo camino.
+      
+      Siempre voy lento pero seguro, soy paciente y constante. Me gusta la cerveza, mucho... Conversar con gente que no conozco y escuchar historias. El café es de mis bebidas favoritas. 
 
 - **Matias Pasquini**
 
