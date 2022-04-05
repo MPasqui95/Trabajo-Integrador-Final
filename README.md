@@ -56,10 +56,10 @@ Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos c
 
 # Wireframes
 
-- **Version Web**
+- **Version Desktop**
 
 https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=412%3A1256&scaling=scale-down-width&page-id=412%3A1231
 
-- **Version Móvil**
+- **Version Mobile**
 
 https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=1%3A3&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=1%3A3
