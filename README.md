@@ -1,6 +1,6 @@
-# ElectroPood
+# ElectroDoggy
 
-ElectroPood es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptos, accesorios para la computadora, así como también audio y gaming.
+ElectroDoggy es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptos, accesorios para la computadora, así como también audio y gaming.
 
 Nuestro público abarca un rango etario de entre 20 a 35 años de edad; un público joven con ánimos de crecimiento a los cuales les ofrecemos los productos más innovadores con una calidad única y al mejor precio.
 
@@ -40,8 +40,8 @@ Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos c
 - **Angie Bolaños**
 
       ¡Hola! Soy bioigeniera y me desempeño actualmente como ejecutiva comercial. Durante mi vida universitaria que terminó hace apenas 1 año, tuve un acercamiento con ciertos lenguajes de programación como C, Python y programé en Matlab, durante los últimos años me alejé demasiado de la programación. Sin embargo, siempre fue algo que me gustó mucho así que después de un tiempo quiero aprender desde cero (porque no recuerdo mucho) y encontrar tal vez un nuevo camino.
-      
-      Siempre voy lento pero seguro, soy paciente y constante. Me gusta la cerveza, mucho... Conversar con gente que no conozco y escuchar historias. El café es de mis bebidas favoritas. 
+
+      Siempre voy lento pero seguro, soy paciente y constante. Me gusta la cerveza, mucho... Conversar con gente que no conozco y escuchar historias. El café es de mis bebidas favoritas.
 
 - **Matias Pasquini**
 
@@ -53,3 +53,13 @@ Lo que nos resultó más llamativo de esta página, y es por lo que la pusimos c
       ¡Hola! Soy Diseñadora Gráfica de profesión y me especializo en el Diseño UI/UX. Tengo más de 5 años de experiencia diseñando para entornos digitales. He diseñado desde e-commerce, sitios institucionales, portal de noticias, aplicaciones hasta gestor de contenidos.
       Me interesa mucho seguir aprendiendo sobre el mundo digital y el diseño de experiencias centrado en el usuario. Por ello, siempre estoy leyendo blogs, escuchando podcasts, viendo videos en YouTube y llevando cursos en Crehana y Doméstika.
       Me considero una persona que le encanta aprender, vivir nuevas experiencias, conocer otras personas y aprender de ellas.
+
+# Wireframes
+
+- **Version Web**
+
+      https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=412%3A1256&scaling=scale-down-width&page-id=412%3A1231
+
+- **Version Móvil**
+
+      https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=1%3A3&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=1%3A3
