@@ -63,3 +63,7 @@ https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=412%3A12
 - **Version Mobile**
 
 https://www.figma.com/proto/pxa9BWW0OrdpNCT53oArWI/ElectroDoggy?node-id=1%3A3&scaling=scale-down-width&page-id=0%3A1&starting-point-node-id=1%3A3
+
+# Tablero de Trabajo en Trello
+
+- https://trello.com/invite/b/V6YVQF3d/2bd7791abbbe9b2a59d18ad8d1dc5d1a/grupo-7-electrodoggy

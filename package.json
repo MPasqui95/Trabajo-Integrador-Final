@@ -1,0 +1,27 @@
+{
+  "name": "grupo_7_techshop",
+  "version": "1.0.0",
+  "description": "ElectroDoggy es una e-commerce de venta de productos tecnológicos de diversas índoles. Abarcamos todo lo que refiere al área de celulares, tablets, laptops, accesorios para la computadora, así como también audio y gaming.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MPasqui95/grupo_7_TechShop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MPasqui95/grupo_7_TechShop/issues"
+  },
+  "homepage": "https://github.com/MPasqui95/grupo_7_TechShop#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
