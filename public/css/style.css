@@ -1,0 +1,231 @@
+/* Generales */
+
+*{
+    box-sizing: border-box;
+}
+
+p {
+    font-family: lato;
+    font-size: 14px;
+    color: #3D494F;
+    font-weight: 400;
+}
+
+h3{
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+h4{
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+h5{
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+h6{
+    font-size: 12px;
+    font-family: lato;
+    font-weight: 400;
+}
+
+/* Home */
+
+/* Slider */
+
+.home-slider{
+    background-color: #C3D2D8;
+    height: 400px;
+}
+
+/* Títulos de Secciones */
+
+div.home-titulo{
+    background-color: #3D494F;
+    border-radius: 6px;
+    display: flex;
+    max-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 16px;
+    margin: 30px 0px 20px 0px;
+}
+
+div.home-titulo button{
+    background-color: #3D494F;
+    border-style: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.home-titulo i{
+    padding: 0;
+    color: white;
+    font-size: 20px;
+}
+
+/* Destacados */
+
+.home-destacados-img{
+    display: flex;
+    padding: 0;
+    overflow-x: scroll;
+    cursor: pointer;
+    margin: 0;
+}
+
+.home-destacados-img::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+
+}
+
+.home-destacados-img ul{
+    display: flex;
+    padding: 0;
+}
+
+.home-destacados-img li{
+    list-style: none;
+    margin-right: 10px;
+}
+
+.home-destacados{
+    margin: 0 16px ;
+}
+
+/* Vitrinas */
+
+.home-todo-vitrinas{
+    margin: 0 16px ;
+}
+
+.home-vitrinas{
+    display: flex;
+    padding: 20px 0;
+    overflow: scroll;
+}
+
+.home-vitrinas::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+
+}
+
+.home-descuento-vitrinas{
+    position: absolute;
+    background-color: #3D494F;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    left: 4px;
+    top: 4px;
+    width: 46px;
+    height: 24px;
+    align-items: center;
+}
+
+.home-descuento-vitrinas h5{
+    text-align: center;
+    margin-top: 2px;
+}
+
+.home-producto-vitrinas{
+    width: 170px;
+    border: solid 1px #E4EEF1;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.home-imagenes-vitrinas{
+    padding: 0;
+    height: 168px;
+
+}
+
+.home-textos-vitrinas{
+    color: #3D494F;
+    text-align: center;
+}
+
+.home-textos-vitrinas h5{
+    margin: 12px 0 6px 0;
+}
+
+.home-textos-vitrinas p{
+    margin: 0;
+}
+
+.home-textos-vitrinas h6{
+    margin: 0;
+}
+
+.home-textos-vitrinas h6{
+    margin: 6px 0 18px 0;
+}
+
+/* Breakpoints */
+
+    /* Tablets */
+
+@media(min-width:769px){
+    .home-destacados{
+        margin: 0 40px ;
+    }
+
+    .home-todo-vitrinas{
+        margin: 0 40px ;
+    }
+
+    .home-producto-vitrinas{
+        width: 223px;
+
+    }
+
+    .home-imagenes-vitrinas{
+        height: 221px;
+    }
+}
+
+    /* Desktop */
+
+@media(min-width:1279px){
+    .home-destacados{
+        margin: 0 120px ;
+    }
+    .home-todo-vitrinas{
+        margin: 0 120px ;
+    }
+
+    .home-vitrinas{
+        align-items: center;
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+
+    .home-producto-vitrinas{
+        margin-right: 0;
+ 
+    }
+
+    .home-destacados-img{
+        justify-content: space-between;
+        overflow-x: none;
+    }
+
+    .home-destacados-img li{
+        margin-right: 20px;
+    }
+
+}
