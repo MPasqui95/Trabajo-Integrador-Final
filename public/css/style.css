@@ -1,0 +1,138 @@
+*{
+    font-family: 'Poppins';
+    font: 'Poppins';
+    
+}
+.imagen-producto, .miniatura-producto{
+    display:block;
+    width: 100%;
+}
+
+.slider-miniaturas{
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    
+}
+
+.miniatura-producto{
+    padding:  0.5rem ;
+}
+
+.marca{
+
+    font-size: 16px;
+    font-style: normal;
+    color:#3D494F ;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+}
+.modelo{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold ;
+    color:#3D494F ;
+    margin-top: 0.25rem;
+    }
+.precio-antes{
+    font-family: 'Lato';
+    font-size: 12px;
+    text-decoration: line-through ;
+    font-weight: bold ;
+    color:#3D494F ;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+
+    
+}
+.precio{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold ;
+    color:#3D494F ;
+    margin-top: 0.25rem;
+    
+}
+
+.colores{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold ;
+    color:#3D494F ;
+    margin-bottom: 0.625rem;
+
+}
+
+.selector-colores{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #7C9099;
+    margin-inline: 0.3rem;
+}
+.contenedor-colores{
+    display: flex;
+
+}
+
+.añadir-a-carrito{
+    background-color: #3D494F;
+    color: #FFFFFF;
+    padding-block: 0.25rem;
+    display: block;
+    width: 90%;
+    border-radius: 6px;
+    margin: 1rem;
+
+}
+
+.iconos-promesa{
+    display: flex;
+    justify-content: center ; 
+
+}
+.promesa-de-compra{
+    display:flex;
+    font-size: 14px;
+    justify-content: center;
+
+}
+
+.iconos-promesa{
+    border-radius: 50%;
+    width:3.125rem;
+    height:3.125rem ;
+    background-color: #E4EEF1;    
+    margin:auto;
+    align-items:center;
+}
+
+.promesa-de-valor{
+    margin: 0.2rem;
+    text-align: center;
+
+}
+
+i.fas{
+    font-size: 1.5rem;
+    color: #3D494F;
+} 
+
+.especificaciones {
+    display: flex;
+ 
+    justify-content: space-between;
+
+}
+
+.especificaciones li a{
+
+    font-size: 16px;
+    color:#3D494F ;
+    
+}
+
+.especificaciones li{
+    list-style: none;
+
+}
