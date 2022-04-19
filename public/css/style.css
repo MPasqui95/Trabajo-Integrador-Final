@@ -4,6 +4,7 @@ h2{
     font-size: 24px;
     font-family: Poppins;
     font-weight: 600;
+    line-height: 1;
     color: #3D494F;
 }
 
@@ -30,7 +31,7 @@ h2{
    }
 
 .dp-product-description{
-    margin: 0 8px;
+    margin: 0 16px;
 }
 
 .dp-marca{
@@ -55,14 +56,15 @@ h2{
     font-weight: 600 ;
     color:#3D494F ;
     margin-top: 0.25rem;
-    
+    margin-bottom: 0rem;
 }
 
 .dp-colores{
     
-    color:#7C9099;    ;
+    color:#3D494F;    
     margin-bottom: 0.625rem;
     font-weight: 600;
+    margin-top: 1.25rem;
 
 }
 
@@ -233,7 +235,8 @@ i.fas{
 
 *{
     box-sizing: border-box;
-
+    margin: 0px;
+    padding: 0px;
 }
 
 p {
@@ -463,3 +466,289 @@ div.home-titulo i{
     }
 
 }
+
+/*--------------------------------- Carrito Compras-------------------------------- */
+
+
+main{
+    padding: 0px 15px;
+}
+
+
+.miCarrito{
+    width: 202px;
+    height: 24px;
+    left: 16px;
+    top: 160px;
+    margin: auto 0px;
+}
+
+.carrito-linea,
+.carrito-lineaProd{
+    opacity: 0.5;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.carrito-imgProd{
+    width: 25%;
+    float: left;
+}
+
+.carrito-imgCantPrecio{
+    display: flex;
+}
+
+.carrito-tacho{
+    float: right;
+    opacity: 0.5;
+    padding-right: 10px;
+}
+
+.carrito-marca{
+    padding-top: 25px;
+    padding-bottom: 2px;
+}
+
+.carrito-nombre{
+    padding-bottom: 20px;
+    padding-left: 2px;
+}
+
+.carrito-montosProd{
+    float: right;
+    padding-right: 10px;
+} 
+
+
+/* Para que no se vean las flechas del input number */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+/* ------------------------------------------------ */
+
+
+.carrito-agregandoProd{
+    text-align: center;
+    font-size: 13.5px;
+    border: solid #3D494F 1px;
+    border-radius: 4px;
+    width: 16px;
+}
+
+.carrito-precioCant{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.carrito-menos,
+.carrito-mas{
+    border-radius: 4px;
+    width: 16px;
+    background-color: #E4EEF1;
+    color:#3D494F;
+    border-style: none;
+}
+
+.carrito-cantidad{
+    margin-left: 8px;
+    float: left;
+}   
+
+.carrito-sinDescuento{
+    text-decoration: line-through;
+}
+
+.carrito-conDescuento{
+    align-items: center;
+}
+
+.carrito-resumenTexto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carrito-resumenTexto{
+    margin: 10px auto;
+}
+
+.carrito-total{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carrito-botonesFin{
+    text-align: center;
+    font-family: Poppins;
+}
+
+.carrito-finalizarCompra{
+    display: block;
+    border:#3D494F 2px solid;
+    background-color: #3D494F;
+    color: white;
+    border-radius: 6px;
+    width: 90%;
+    height: 54px;
+    font-size: 16px;
+    margin-left: auto;    
+    margin-right: auto;
+}
+
+.carrito-seguirComprando{
+    border: none;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 80%;
+    height: 24px;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.carrito-tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    margin: 25px 0px;
+}
+
+.carrito-tarjetasIconos{
+    margin: 10px 5px;
+}
+
+
+#carrito-visa{
+    margin: 0px 5px;
+}
+
+
+/* Breakpoints Carrito */
+
+    /* Tablets */
+
+    @media(min-width:769px){
+        .carrito-tacho{
+            font-size: 20px;
+        }
+        .carrito-cantidad{
+            margin-left: 4%;
+        }
+
+        .carrito-mas,
+        .carrito-menos{
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .carrito-agregandoProd{
+            height: 2rem;
+            width: 3rem;
+        }
+
+    }
+
+
+    /* Desktop */
+    
+    @media(min-width:1279px){
+        main{
+            max-width: 1279px;
+            margin: 0 auto;
+        }
+
+        .carrito-producto{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .carrito-marca,
+        .carrito-nombre{
+            padding-right: 50px;
+        }
+
+        .carrito-tacho{
+            justify-content: start;
+            order: 1;
+            padding: 0px;
+            font-size: 24px;
+        }
+
+        .carrito-cantidad{
+            margin-right: 30px;
+            margin-left: 0px;
+        }
+
+        .carrito-montosProd{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .carrito-sinDescuento{
+            margin-right: 20px;
+        }
+
+        .carritoPrueba{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row ;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .carrito-botonesFin{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: right;
+            align-items: center;
+        }
+
+        .carritoAyuda{
+            width: 30%;
+            margin-left: 15px;
+            padding: 20px auto;
+        }
+
+        .carrito-seguirComprando{
+            text-align: center;
+            padding-right: 65px;
+            margin-top: 15px;
+        }
+
+        .carrito-lineaProd{
+            display: none;
+        }
+
+        .carrito-totalesCompra{
+            align-items: left;
+            width: 80%;
+            margin-left: 30px;
+        }
+
+        .carrito-precioCant{
+            margin-left: 20px;
+            justify-content: center;
+        }
+
+        .carrito-nombre{
+            padding-left: 0px;
+        }
+
+        .carrito-textoProd{
+            width: 30%;
+        }
+
+    }
