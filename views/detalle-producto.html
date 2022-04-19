@@ -18,61 +18,85 @@
     <header></header>
     <main>
         <div>Rutas de producto//Breadcum</div>
-        <section>Imágenes de producto
-            <img class = "imagen-producto" src="/images/imagen-producto.png" alt="">
-            <div class="slider-miniaturas">
-                <img class ="miniatura-producto" src="/images/miniatura.png" alt="">
-                <img class ="miniatura-producto" src="/images/miniatura.png" alt="">
-                <img class ="miniatura-producto" src="/images/miniatura.png" alt="">
-            </div>
-        </section>
-        <section class="product-descripption">
+        <div class="dp-informacion-producto">
+
+            <section class="dp-contenedorImagenes">
+                <div class="dp-imagenPrincipal">
+                    <img class = "dp-imagen-producto" src="images/productos/producto1.jpg" alt="">
+                </div>
+                <div class="dp-slider-miniaturas">
+                    <div class="dp-container-miniatura">
+                        <img class ="dp-miniatura-producto" src="images/productos/producto2.jpg" alt="">
+                    </div>
+                    <div class="dp-container-miniatura">
+                        <img class ="dp-miniatura-producto" src="images/productos/producto3.jpg" alt="">
+                    </div>
+                    <div class="dp-container-miniatura">
+                        <img class ="dp-miniatura-producto" src="images/productos/producto4.jpg" alt="">
+                    </div>
+                    <!-- <img class ="dp-miniatura-producto" src="images/productos/producto3.jpg" alt="">
+                    <img class ="dp-miniatura-producto" src="images/productos/producto4.jpg" alt=""> -->
+                </div>
+            </section>
+            <section class="dp-product-description">
+                    
+                    <h4 class="dp-marca">Samsung</h4>
+                    <h2 class="dp-modelo">Galaxy Note 20 Ultra</h2>
+                    <p class="dp-precio-antes">$ 6,000.00</p>
+                    <h2 class="dp-precio">$ 4,298.00 </h2>
+                    <h5 class="dp-colores">Colores disponibles:</h5>
+                    <div class="dp-contenedor-colores">
+                        <div class="dp-selector-colores"></div>
+                        <div class="dp-selector-colores"></div>
+                        <div class="dp-selector-colores"></div>
+                    </div>
+    
+                    <div class="dp-selectorCantidades">
+                        <button class="dp-selectorCantidades-resta">-</button>
+                        <input type="number" class="dp-selectorCantidades-numero" value="1" step="1">
+                        <button class="dp-selectorCantidades-suma">+</button>
+                    </div>
                 
-                <h4 class="marca">Samsung</h4>
-                <h2 class="modelo">Galaxy Note 20 Ultra</h2>
-                <p class="precio-antes">$ 6,000.00</p>
-                <h2 class="precio">$ 4,298.00 </h2>
-                <h5 class="colores">Colores disponibles:</h5>
-                <div class="contenedor-colores">
-                    <div class="selector-colores"></div>
-                    <div class="selector-colores"></div>
-                    <div class="selector-colores"></div>
-                </div>
-                
-            <button class="añadir-a-carrito">Añadir al carrito</button>
-            <div class ="promesa-de-compra">
-                <div class="promesa-de-valor">
-                    <div class="iconos-promesa">
-                        <i class="fas fa-clock"></i>
+    
+                    
+                <button class="dp-añadir-a-carrito">Añadir al carrito</button>
+                <div class ="dp-promesa-de-compra">
+                    <div class="dp-promesa-de-valor">
+                        <div class="dp-iconos-promesa">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p> Entrega en 2 días </p>
                     </div>
-                    <p> Entrega en 2 días </p>
-                </div>
-
-                <div class="promesa-de-valor">
-                    <div class="iconos-promesa">
-                        <i class="fas fa-shipping-fast"></i>
+    
+                    <div class="dp-promesa-de-valor">
+                        <div class="dp-iconos-promesa">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <p> Envío gratis </p>
+    
                     </div>
-                    <p> Envío gratis </p>
-
-                </div>
-
-                <div class="promesa-de-valor">
-                    <div class="iconos-promesa">
-                        <i class="fas fa-shield-alt"></i>
-
+    
+                    <div class="dp-promesa-de-valor">
+                        <div class="dp-iconos-promesa">
+                            <i class="fas fa-shield-alt"></i>
+    
+                        </div>
+                        <p> Compra segura </p>
+    
                     </div>
-                    <p> Compra segura </p>
-
+    
                 </div>
-
-            </div>
-
-        </section>
-        <section class="descripcion-detalles">
-            <ul class="especificaciones">
+    
+            </section>
+        </div>
+        <section class="dp-descripcion-detalles">
+            <ul class="dp-especificaciones">
                 <li><a href="#">Descripción</a></li>
                 <li><a href="#">Especificaciones</a></li>
             </ul>
+            <p class="dp-especificacionTexto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam. 
+            </p>
         </section>
     </main>
     <footer></footer>

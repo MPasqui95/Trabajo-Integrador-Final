@@ -1,115 +1,161 @@
-*{
-    font-family: 'Poppins';
-    font: 'Poppins';
-    
+/* ----------------ANGIE-------------------------------------- */
+
+h2{
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: #3D494F;
 }
-.imagen-producto, .miniatura-producto{
+
+.dp-imagen-producto, .dp-imagen-producto{
     display:block;
     width: 100%;
 }
 
-.slider-miniaturas{
+.dp-slider-miniaturas{
     display: flex;
     justify-content: center;
     overflow-x: scroll;
     
 }
 
-.miniatura-producto{
-    padding:  0.5rem ;
+.dp-container-miniatura{
+    height: 5.625rem;
+    width: 6.75rem;
+    margin: 5px;
+}
+.dp-miniatura-producto{
+    display:block;
+    width: 100%;
+   }
+
+.dp-product-description{
+    margin: 0 8px;
 }
 
-.marca{
-
-    font-size: 16px;
-    font-style: normal;
+.dp-marca{
     color:#3D494F ;
     margin-top: 1.25rem;
     margin-bottom: 0;
 }
-.modelo{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: bold ;
-    color:#3D494F ;
+.dp-modelo{
     margin-top: 0.25rem;
     }
-.precio-antes{
-    font-family: 'Lato';
-    font-size: 12px;
+.dp-precio-antes{
+    
     text-decoration: line-through ;
-    font-weight: bold ;
     color:#3D494F ;
     margin-top: 1.25rem;
     margin-bottom: 0;
 
     
 }
-.precio{
-    font-size: 24px;
+.dp-precio{
     font-style: normal;
-    font-weight: bold ;
+    font-weight: 600 ;
     color:#3D494F ;
     margin-top: 0.25rem;
     
 }
 
-.colores{
-    font-size: 14px;
-    font-style: normal;
-    font-weight: bold ;
-    color:#3D494F ;
+.dp-colores{
+    
+    color:#7C9099;    ;
     margin-bottom: 0.625rem;
+    font-weight: 600;
 
 }
 
-.selector-colores{
+.dp-selector-colores{
     border-radius: 50%;
+    border:solid 1px #3D494F;
     width: 2.5rem;
     height: 2.5rem;
     background-color: #7C9099;
-    margin-inline: 0.3rem;
+    margin-right: 1rem;
 }
-.contenedor-colores{
+.dp-contenedor-colores{
     display: flex;
+    margin-left: none;
 
 }
 
-.añadir-a-carrito{
+.dp-selectorCantidades{
+    display: flex;
+    margin: 30px 0px;
+    width: 10rem;
+
+}
+
+.dp-selectorCantidades-numero{
+    border:solid 1px #3D494F;
+    border-radius:4px;
+    height:2.5rem ;
+    width: 3.125rem;
+    margin-right: 0.625rem;
+    text-align: center;
+
+}
+
+.dp-selectorCantidades-suma, .dp-selectorCantidades-resta{
+    border-radius:4px;
+    height:2.5rem ;
+    width: 2.5rem;
+    background-color: #E4EEF1;
+    font-size: 28px;
+    text-align: center;
+    color: #3D494F;
+    border-style: none;
+    margin-left: 0px;
+    margin-right: 0.625rem;
+
+
+}
+
+.dp-añadir-a-carrito{
     background-color: #3D494F;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 600;
     color: #FFFFFF;
     padding-block: 0.25rem;
     display: block;
-    width: 90%;
+    width: 100%;
+    height: 3rem;
     border-radius: 6px;
-    margin: 1rem;
 
 }
 
-.iconos-promesa{
+.dp-iconos-promesa{
     display: flex;
     justify-content: center ; 
 
 }
-.promesa-de-compra{
-    display:flex;
+.dp-promesa-de-compra{
+    margin: 30px 0;
+    padding: 1.5rem 0;
+    border-top: solid 1px #E4EEF1;
+    border-bottom: solid 1px #E4EEF1;
+    font-family: lato;
+    display: flex;
     font-size: 14px;
-    justify-content: center;
+    justify-content: space-evenly;
 
 }
 
-.iconos-promesa{
+.dp-iconos-promesa{
     border-radius: 50%;
     width:3.125rem;
     height:3.125rem ;
     background-color: #E4EEF1;    
     margin:auto;
     align-items:center;
+   
 }
 
-.promesa-de-valor{
-    margin: 0.2rem;
+.dp-promesa-de-valor{
     text-align: center;
+
 
 }
 
@@ -118,21 +164,302 @@ i.fas{
     color: #3D494F;
 } 
 
-.especificaciones {
-    display: flex;
- 
-    justify-content: space-between;
+.dp-descripcion-detalles{
+    margin: 1rem;
+
+
 
 }
 
-.especificaciones li a{
+.dp-especificaciones {
+    display: flex;
+    justify-content: left;
+    padding: 0;
+}
+
+.dp-especificaciones li a{
 
     font-size: 16px;
     color:#3D494F ;
+    font-family: poppins;
+    margin-right:1.313rem ;
+
     
 }
 
-.especificaciones li{
+.dp-especificaciones li{
     list-style: none;
+
+}
+
+.dp-especificacionTexto{
+    line-height: 24px;
+}
+
+/* TABLETS */
+@media(min-width:769px){
+    .dp-imagenPrincipal{
+        width: 80%;
+    }
+
+    .dp-informacion-producto{
+        display: flex;
+    }
+    .dp-product-description{
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+    }
+    .dp-contenedorImagenes{
+        width: 65%;
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    .dp-slider-miniaturas{
+        flex-direction:column;
+        justify-content: flex-start;
+        width: 20%;
+    }
+    
+    
+}
+
+
+/* ----------------ANGIE FIN -------------------------------------- */
+
+/* Generales */
+
+*{
+    box-sizing: border-box;
+
+}
+
+p {
+    font-family: lato;
+    font-size: 14px;
+    color: #3D494F;
+    font-weight: 400;
+}
+
+h3{
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+h4{
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+h5{
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+h6{
+    font-size: 12px;
+    font-family: lato;
+    font-weight: 400;
+}
+
+/* Home */
+
+/* Slider */
+
+.home-slider{
+    background-color: #C3D2D8;
+    height: 400px;
+}
+
+/* Títulos de Secciones */
+
+div.home-titulo{
+    background-color: #3D494F;
+    border-radius: 6px;
+    display: flex;
+    max-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 16px;
+    margin: 30px 0px 20px 0px;
+}
+
+div.home-titulo button{
+    background-color: #3D494F;
+    border-style: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.home-titulo i{
+    padding: 0;
+    color: white;
+    font-size: 20px;
+}
+
+/* Destacados */
+
+.home-destacados-img{
+    display: flex;
+    padding: 0;
+    overflow-x: scroll;
+    cursor: pointer;
+    margin: 0;
+}
+
+.home-destacados-img::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+
+}
+
+.home-destacados-img ul{
+    display: flex;
+    padding: 0;
+}
+
+.home-destacados-img li{
+    list-style: none;
+    margin-right: 10px;
+}
+
+.home-destacados{
+    margin: 0 16px ;
+}
+
+/* Vitrinas */
+
+.home-todo-vitrinas{
+    margin: 0 16px ;
+}
+
+.home-vitrinas{
+    display: flex;
+    padding: 20px 0;
+    overflow: scroll;
+}
+
+.home-vitrinas::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+
+}
+
+.home-descuento-vitrinas{
+    position: absolute;
+    background-color: #3D494F;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    left: 4px;
+    top: 4px;
+    width: 46px;
+    height: 24px;
+    align-items: center;
+}
+
+.home-descuento-vitrinas h5{
+    text-align: center;
+    margin-top: 2px;
+}
+
+.home-producto-vitrinas{
+    width: 170px;
+    border: solid 1px #E4EEF1;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.home-imagenes-vitrinas{
+    padding: 0;
+    height: 168px;
+
+}
+
+.home-textos-vitrinas{
+    color: #3D494F;
+    text-align: center;
+}
+
+.home-textos-vitrinas h5{
+    margin: 12px 0 6px 0;
+}
+
+.home-textos-vitrinas p{
+    margin: 0;
+}
+
+.home-textos-vitrinas h6{
+    margin: 0;
+}
+
+.home-textos-vitrinas h6{
+    margin: 6px 0 18px 0;
+}
+
+
+
+/* Breakpoints */
+
+    /* Tablets */
+
+@media(min-width:769px){
+    .home-destacados{
+        margin: 0 40px ;
+    }
+
+    .home-todo-vitrinas{
+        margin: 0 40px ;
+    }
+
+    .home-producto-vitrinas{
+        width: 223px;
+
+    }
+
+    .home-imagenes-vitrinas{
+        height: 221px;
+    }
+}
+
+    /* Desktop */
+
+@media(min-width:1279px){
+    .home-destacados{
+        margin: 0 120px ;
+    }
+    .home-todo-vitrinas{
+        margin: 0 120px ;
+    }
+
+    .home-vitrinas{
+        align-items: center;
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+
+    .home-producto-vitrinas{
+        margin-right: 0;
+ 
+    }
+
+    .home-destacados-img{
+        justify-content: space-between;
+        overflow-x: none;
+    }
+
+    .home-destacados-img li{
+        margin-right: 20px;
+    }
 
 }
