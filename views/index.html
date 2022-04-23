@@ -5,9 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- ===== ICONS ====== -->
+    <script
+      src="https://kit.fontawesome.com/fe4cf9d18e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ===== FONTS ======= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+
     <title>ElectroDoggy</title>
   </head>
   <body>
-    <header class="header">Test</header>
+    <!-- ===== HEADER MOVILE ====== -->
+    <header class="header">
+      <div class="contenedor-barra-ppal">
+        <i class="fas fa-bars" id="boton-menu"></i>
+
+        <p>ElectroDoggy</p>
+
+        <a href="./login.html">
+          <i class="fas fa-user" id="boton-usuario"></i>
+        </a>
+
+        <a href="">
+          <i class="fas fa-shopping-cart" id="boton-carrito-compras"></i>
+        </a>
+      </div>
+
+      <div class="contenedor-barra-busqueda">
+        <input
+          type="text"
+          placeholder="Buscar productos"
+          class="input-buscar-productos"
+        />
+        <i class="fas fa-search" id="boton-buscar"></i>
+      </div>
+
+      <!-- ====== HEADER DESKTOP ======= -->
+
+      <div class="encabezado-desktop">
+        <p>ElectroDoggy</p>
+        <input
+          type="text"
+          placeholder="Buscar productos"
+          class="input-buscar-productos"
+        />
+        <button class="boton-buscar">
+          <i class="fas fa-search" id="icono-buscar"></i>
+        </button>
+
+        <a href="./login.html">
+          <i class="fas fa-user" id="boton-usuario"></i>
+        </a>
+
+        <a href="">
+          <i class="fas fa-shopping-cart" id="boton-carrito-compras"></i>
+        </a>
+      </div>
+
+      <div class="barra-navegacion-desktop">
+        <ul>
+          <div class="contenedor-links">
+            <ul>
+              <li>
+                <a href="#Celulares"
+                  ><i class="fas fa-dot-circle"></i> Celulares</a
+                >
+                <a href="#Laptops"><i class="fas fa-dot-circle"></i> Laptops</a>
+                <a href="#Tablets"><i class="fas fa-dot-circle"></i> Tablets</a>
+                <a href="#Gamer"><i class="fas fa-dot-circle"></i> Gamer</a>
+                <a href="#Audio"><i class="fas fa-dot-circle"></i> Audio</a>
+                <a href="#Accesorios"
+                  ><i class="fas fa-dot-circle"></i> Accesorios</a
+                >
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ===== FIN HEADER ====== -->
+
+    <!-- ====== PAGINA INICIO ======= -->
+    <div class="contenedor-pagina-inicio">
+      <p>Pagina Inicio</p>
+    </div>
+
+    <!-- ===== FIN PAGINA INICIO ====== -->
+
+    <!-- ======= INICIO FOOTER ====== -->
+    <footer>
+      <p id="texto-negrita">Servicio al cliente</p>
+      <p id="texto-pequeno">Preguntas frecuentes</p>
+      <p id="texto-pequeno">Términos y condiciones</p>
+      <p id="texto-pequeno">Politicas de privacidad</p>
+      <hr />
+      <p id="texto-negrita">Conócenos</p>
+      <p id="texto-pequeno">Sobre nosotros</p>
+      <p id="texto-pequeno">Nuestras tiendas</p>
+      <hr />
+      <p id="texto-negrita">Síguenos en:</p>
+      <i class="fab fa-facebook" id="iconos-footer"></i>
+      <i class="fab fa-twitter" id="iconos-footer"></i>
+      <i class="fab fa-instagram" id="iconos-footer"></i>
+      <div class="copy-right">
+        <i class="fas fa-copyright" id="copy-right"></i>
+        <p>2022 ElectroDoggy. Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <!-- ===== FIN HEADER ====== -->
   </body>
 </html>

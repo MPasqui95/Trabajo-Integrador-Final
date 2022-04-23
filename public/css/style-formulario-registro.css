@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.formulario-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15%;
+  width: 70%;
+  background-color: rgba(228, 238, 241, 0.5);
+  border-radius: 10px;
+}
+
+.label-registro {
+  margin-top: 2vw;
+  color: #3d494f;
+  font-size: 4vw;
+}
+
+input::placeholder {
+  color: #3d494f;
+  padding-top: 3vw;
+  padding-bottom: 0;
+  font-size: 2.2vw;
+}
+
+.input-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(61, 73, 79, 0.5);
+  border-radius: 6px;
+  width: 50vw;
+  height: 7vw;
+  font-size: 3vw;
+  padding-left: 2vw;
+  background-color: rgba(228, 238, 241, 0.3);
+  color: #3d494f;
+}
+
+input[type="date"]::before {
+  content: attr(placeholder);
+  font-size: 2vw;
+  color: #3d494f;
+}
+
+.label-terminos {
+  text-align: center;
+  margin: 20px;
+}
+
+.boton-registrarme {
+  color: white;
+  background-color: #3d494f;
+  width: 40vw;
+  height: 9vw;
+  margin-bottom: 20px;
+  font-size: 3.5vw;
+  border-radius: 6px;
+}
+
+.login-resetear-contraseña {
+  margin-bottom: 20px;
+}
+
+.registro-ya-registrado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.registro-ya-registrado p {
+  margin-right: 5px;
+}
+/* ============== FORMULARIO LOGIN ================ */
+
+.login-recuerdame {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-recuerdame p {
+  margin-right: 5px;
+}
+
+/* ================ FORMULARIO REGISTRO DESKTOP ================ */
+@media (min-width: 769px) {
+  .label-registro {
+    font-size: 3vw;
+  }
+
+  input::placeholder {
+    font-size: 1.5vw;
+  }
+
+  .formulario-registro {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .input-text {
+    height: 4vw;
+    width: 70%;
+    font-size: 1.5vw;
+  }
+
+  input[type="date"]::before {
+    content: attr(placeholder);
+    font-size: 1.5vw;
+  }
+
+  .boton-registrarme {
+    width: 20vw;
+    height: 4.5vw;
+    font-size: 2vw;
+    border-radius: 6px;
+  }
+}

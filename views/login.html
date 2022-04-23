@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/style-formulario-registro.css" />
 
-    <title>Registro</title>
+    <title>Login</title>
   </head>
   <body>
     <!-- ===== HEADER MOVILE ====== -->
@@ -93,17 +93,9 @@
         </ul>
       </div>
     </header>
+
     <form action="POST" name="formulario-registro" class="formulario-registro">
-      <label class="label-registro">Registro</label>
-
-      <input type="nombre" placeholder="Nombres" class="input-text" />
-
-      <input
-        type="text"
-        placeholder="Apellidos"
-        name="apellido"
-        class="input-text"
-      />
+      <label class="label-registro">Iniciar sesión</label>
 
       <input
         type="mail"
@@ -119,39 +111,23 @@
         class="input-text"
       />
 
-      <input
-        type="password"
-        placeholder="Confirmar contraseña"
-        name="password"
-        class="input-text"
-      />
-
-      <input
-        type="text"
-        placeholder="Dirección"
-        name="direccion"
-        class="input-text"
-      />
-
-      <input
-        type="date"
-        placeholder="Fecha de nacimiento - "
-        name="fecha-nacimiento"
-        class="input-text"
-      />
-
       <label for="terminos" class="label-terminos">
         <input type="checkbox" name="terminos" id="terminos" class="terminos" />
-        *He leido y acepto las condiciones de tratamientos de mis datos
-        personales</label
+        Recuerdame</label
       >
 
-      <button type="submit" class="boton-registrarme">Registrarme</button>
+      <button type="submit" class="boton-registrarme">Iniciar sesión</button>
+
+      <a href="#resetearContraseña" class="login-resetear-contraseña"
+        >Olvidaste tu contraseña</a
+      >
     </form>
 
-    <div class="registro-ya-registrado">
-      <p>¿Ya estas registrado?</p>
-      <a href="./login.html"> Inicia sesión aquí</a>
+    <div class="login-recuerdame">
+      <label
+        >¿No tienes cuenta?
+        <a href="./registro.html">Registrate</a>
+      </label>
     </div>
 
     <!-- ======= INICIO FOOTER ====== -->
