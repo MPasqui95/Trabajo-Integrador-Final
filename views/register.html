@@ -20,12 +20,12 @@
     />
 
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/style-lg-login-form.css" />
+    <link rel="stylesheet" href="/css/style-rg-register-form.css" />
 
-    <title>Login</title>
+    <title>Registro</title>
   </head>
   <body>
-    <!-- ===== HEADER MOVILE ====== -->
+    <!-- ===== START OF HEADER  ====== -->
 
     <header class="header">
       <div class="header-main-bar-container">
@@ -101,47 +101,76 @@
 
     <!-- ===== END OF HEADER ====== -->
 
-    <div class="lg-lg-login-form-container">
-      <h3 class="lg-login-label">Iniciar sesión</h3>
-      <form action="POST" name="lg-login-form" class="lg-login-form">
+    <div class="rg-rg-register-form-container">
+      <h3 class="rg-register-label">Registro</h3>
+      <form action="POST" name="rg-register-form" class="rg-register-form">
+        <input type="text" placeholder="Nombres" class="rg-form-input-text" />
+
         <input
-          type="mail"
+          type="text"
+          placeholder="Apellidos"
+          name="apellido"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="email"
           placeholder="Correo electrónico"
           name="mail"
-          class="lg-login-input-text"
+          class="rg-form-input-text"
         />
 
         <input
           type="password"
           placeholder="Contraseña"
           name="password"
-          class="lg-login-input-text"
+          class="rg-form-input-text"
         />
 
-        <label for="terminos" class="login-boundarie-label">
+        <input
+          type="password"
+          placeholder="Confirmar contraseña"
+          name="password"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="text"
+          placeholder="Dirección"
+          name="direccion"
+          class="rg-form-input-text"
+        />
+        <label class="label-input-date"
+          >Fecha de Nacimiento
+          <input
+            type="date"
+            name="fecha-nacimiento"
+            class="rg-form-input-text"
+          />
+        </label>
+
+        <label for="terminos" class="rg-boundaries-label">
           <input
             type="checkbox"
             name="terminos"
             id="terminos"
-            class="lg-rg-boundaries"
+            class="rg-boundaries"
           />
-          Recuerdame</label
+          *He leido y acepto las condiciones de tratamientos de mis datos
+          personales</label
         >
 
-        <button type="submit" class="lg-login-button">Iniciar sesión</button>
-
-        <a href="#resetearContraseña" class="lg-password-reset"
-          >Olvidaste tu contraseña</a
-        >
+        <button type="submit" class="rg-register-form-button">
+          Registrarme
+        </button>
       </form>
     </div>
 
-    <div class="lg-remember-login">
-      <label
-        >¿No tienes cuenta?
-        <a href="./register.html">Registrate</a>
-      </label>
+    <div class="rg-already-registered">
+      <p>¿Ya estas registrado?</p>
+      <a href="./login.html"> Inicia sesión aquí</a>
     </div>
+
     <!-- ======= START OF FOOTER  ====== -->
 
     <footer>

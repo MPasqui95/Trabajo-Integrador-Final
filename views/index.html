@@ -5,86 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ===== ICONS ====== -->
+    <!-- Vinculación CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Script íconos -->
     <script
+      src="https://kit.fontawesome.com/1f09d8586f.js"
+      crossorigin="anonymous"
       src="https://kit.fontawesome.com/fe4cf9d18e.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- ===== FONTS ======= -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="/css/style.css" />
-
     <title>ElectroDoggy</title>
   </head>
   <body>
-    <!-- ===== HEADER MOVILE ====== -->
+    <!-- ===== START OF HEADER  ====== -->
+
     <header class="header">
-      <div class="contenedor-barra-ppal">
-        <i class="fas fa-bars" id="boton-menu"></i>
-
-        <p>ElectroDoggy</p>
-
+      <div class="header-main-bar-container">
+        <i class="fas fa-bars" id="header-menu-button"></i>
+        <p class="header-electrodoggy-header-text">ElectroDoggy</p>
         <a href="./login.html">
-          <i class="fas fa-user" id="boton-usuario"></i>
+          <i class="fas fa-user" id="header-user-button"></i>
         </a>
-
         <a href="">
-          <i class="fas fa-shopping-cart" id="boton-carrito-compras"></i>
+          <i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i>
         </a>
       </div>
 
-      <div class="contenedor-barra-busqueda">
+      <div class="header-find-bar-container">
         <input
           type="text"
           placeholder="Buscar productos"
-          class="input-buscar-productos"
+          class="header-find-products-input"
         />
-        <i class="fas fa-search" id="boton-buscar"></i>
+        <i class="fas fa-search" id="header-movile-find-button"></i>
       </div>
 
-      <!-- ====== HEADER DESKTOP ======= -->
+      <!-- ====== DESKTOP HEADER ======= -->
 
-      <div class="encabezado-desktop">
+      <div class="desktop-header">
         <p>ElectroDoggy</p>
         <input
           type="text"
           placeholder="Buscar productos"
-          class="input-buscar-productos"
+          class="header-find-products-input"
         />
-        <button class="boton-buscar">
-          <i class="fas fa-search" id="icono-buscar"></i>
+        <button class="find-button">
+          <i class="fas fa-search" id="header-find-icon"></i>
         </button>
 
-        <a href="./login.html">
-          <i class="fas fa-user" id="boton-usuario"></i>
-        </a>
+        <div class="desktop-header-user-button">
+          <a href="./login.html">
+            <i class="fas fa-user" id="header-user-button"></i>
+          </a>
+          <p>Iniciar Sesión</p>
+        </div>
 
-        <a href="">
-          <i class="fas fa-shopping-cart" id="boton-carrito-compras"></i>
-        </a>
+        <div class="desktop-header-shopping-cart-button">
+          <a href="">
+            <i
+              class="fas fa-shopping-cart"
+              id="header-shopping-cart-button"
+            ></i>
+          </a>
+          <p>Mi Carrito</p>
+        </div>
       </div>
 
-      <div class="barra-navegacion-desktop">
+      <div class="header-nav-bar-navigation">
         <ul>
-          <div class="contenedor-links">
+          <div class="header-link-container">
             <ul>
               <li>
-                <a href="#Celulares"
-                  ><i class="fas fa-dot-circle"></i> Celulares</a
-                >
-                <a href="#Laptops"><i class="fas fa-dot-circle"></i> Laptops</a>
-                <a href="#Tablets"><i class="fas fa-dot-circle"></i> Tablets</a>
-                <a href="#Gamer"><i class="fas fa-dot-circle"></i> Gamer</a>
-                <a href="#Audio"><i class="fas fa-dot-circle"></i> Audio</a>
+                <a href="#Celulares"><i class="fas fa-mobile"></i> Celulares</a>
+                <a href="#Laptops"><i class="fas fa-laptop"></i> Laptops</a>
+                <a href="#Tablets"><i class="fas fa-tablet-alt"></i> Tablets</a>
+                <a href="#Gamer"><i class="fas fa-gamepad"></i> Gamer</a>
+                <a href="#Audio"><i class="fas fa-headphones"></i> Audio</a>
                 <a href="#Accesorios"
-                  ><i class="fas fa-dot-circle"></i> Accesorios</a
+                  ><i class="fas fa-keyboard"></i> Accesorios</a
                 >
               </li>
             </ul>
@@ -93,36 +101,296 @@
       </div>
     </header>
 
-    <!-- ===== FIN HEADER ====== -->
+    <!-- ===== END OF HEADER ====== -->
 
-    <!-- ====== PAGINA INICIO ======= -->
-    <div class="contenedor-pagina-inicio">
-      <p>Pagina Inicio</p>
-    </div>
+    <main class="home-main">
+      <div class="home-slider">
+        <div class="home-slider-img" id="slider">
+          <div class="home-slider-section">
+            <img
+              src="images/slider/slider-mobile-1.jpg"
+              alt=""
+              class="home-banner-img"
+            />
+          </div>
+          <div class="home-slider-section">
+            <img
+              src="images/slider/slider-mobile-1.jpg"
+              alt=""
+              class="home-banner-img"
+            />
+          </div>
+          <div class="home-slider-section">
+            <img
+              src="images/slider/slider-mobile-1.jpg"
+              alt=""
+              class="home-banner-img"
+            />
+          </div>
+        </div>
 
-    <!-- ===== FIN PAGINA INICIO ====== -->
+        <div class="home-flechas-slider home-flechas-slider-derecha">
+          <i class="fas fa-chevron-right"></i>
+        </div>
 
-    <!-- ======= INICIO FOOTER ====== -->
+        <div class="home-flechas-slider home-flechas-slider-izquierda">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+
+        <div class="home-bullets">
+          <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
+        </div>
+      </div>
+
+      <section class="home-destacados">
+        <div class="home-titulo">
+          <h4>Lo mejor del mundo Gamer</h4>
+          <button><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="home-destacados-img">
+          <ul>
+            <li><img src="images/destacados/destacado1.jpg" /></li>
+            <li><img src="images/destacados/destacado1.jpg" /></li>
+            <li><img src="images/destacados/destacado1.jpg" /></li>
+            <li><img src="images/destacados/destacado1.jpg" /></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="home-todo-vitrinas">
+        <div class="home-titulo">
+          <h4>Los mejores descuentos</h4>
+          <button><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="home-vitrinas">
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto1.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto2.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto3.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto4.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto5.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+
+          <div class="home-flechas-vitrinas home-flechas-vitrinas-derecha">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="home-flechas-vitrinas home-flechas-vitrinas-izquierda">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+        </div>
+
+        <div class="home-bullets">
+          <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
+        </div>
+      </section>
+
+      <section class="home-todo-vitrinas">
+        <div class="home-titulo">
+          <h4>Los más vendidos</h4>
+          <button><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="home-vitrinas">
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto5.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto4.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto3.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto2.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+          <article class="home-producto-vitrinas">
+            <div class="home-descuento-vitrinas">
+              <h5>-28%</h5>
+            </div>
+            <img
+              src="images/productos/producto1.jpg"
+              class="home-imagenes-vitrinas"
+            />
+            <div class="home-textos-vitrinas">
+              <h5>Samsung</h5>
+              <p>Galaxy Note 20 Ultra</p>
+              <h6>S/6,000.00</h6>
+              <h3>S/4,298.00</h3>
+            </div>
+          </article>
+
+          <div class="home-flechas-vitrinas home-flechas-vitrinas-derecha">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="home-flechas-vitrinas home-flechas-vitrinas-izquierda">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+        </div>
+
+        <div class="home-bullets">
+          <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
+          <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======= START OF FOOTER  ====== -->
+
     <footer>
-      <p id="texto-negrita">Servicio al cliente</p>
-      <p id="texto-pequeno">Preguntas frecuentes</p>
-      <p id="texto-pequeno">Términos y condiciones</p>
-      <p id="texto-pequeno">Politicas de privacidad</p>
+      <h3 class="footer-electrodoggy-text">ElectroDoggy</h3>
+
+      <div class="footer-container">
+        <h3>Servicio al cliente</h3>
+        <h5>Preguntas frecuentes</h5>
+        <h5>Términos y condiciones</h5>
+        <h5>Politicas de privacidad</h5>
+      </div>
+
       <hr />
-      <p id="texto-negrita">Conócenos</p>
-      <p id="texto-pequeno">Sobre nosotros</p>
-      <p id="texto-pequeno">Nuestras tiendas</p>
+
+      <div class="footer-container">
+        <h3>Conócenos</h3>
+        <h5>Sobre nosotros</h5>
+        <h5>Nuestras tiendas</h5>
+      </div>
+
       <hr />
-      <p id="texto-negrita">Síguenos en:</p>
-      <i class="fab fa-facebook" id="iconos-footer"></i>
-      <i class="fab fa-twitter" id="iconos-footer"></i>
-      <i class="fab fa-instagram" id="iconos-footer"></i>
-      <div class="copy-right">
-        <i class="fas fa-copyright" id="copy-right"></i>
-        <p>2022 ElectroDoggy. Todos los derechos reservados</p>
+
+      <div class="footer-container-icons">
+        <h3>Síguenos en:</h3>
+        <i class="fab fa-facebook" id="footer-icons-footer"></i>
+        <i class="fab fa-twitter" id="footer-icons-footer"></i>
+        <i class="fab fa-instagram" id="footer-icons-footer"></i>
+      </div>
+
+      <div class="footer-copy-right">
+        <i class="fas fa-copyright" id="footer-copy-right-icon"></i>
+        <p class="footer-copy-right-text">
+          2022 ElectroDoggy. Todos los derechos reservados
+        </p>
       </div>
     </footer>
 
-    <!-- ===== FIN HEADER ====== -->
+    <!-- ===== END OF FOOTER  ====== -->
   </body>
 </html>
