@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MPasqui95/grupo_7_TechShop#readme",
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.17.3"
   },
   "devDependencies": {

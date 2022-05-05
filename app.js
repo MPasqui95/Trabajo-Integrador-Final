@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const router = require ("./src/routers/main");
+const routerProd = require ("./src/routers/products");
+const routerUser = require ("./src/routers/user")
+
+// instalado y configurado ejs
+app.set("view engine", "ejs")
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
@@ -9,18 +15,14 @@ app.use(express.static("views"));
 
 app.listen(3030, () => console.log("Server Run"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/index.html"));
-});
+app.use("/", router);
 
-app.get("/listado-productos", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/listado-productos.html"));
-});
+app.get("/listado-productos", routerProd);
 
-app.get("/detalle-producto", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"));
-});
+app.get("/detalle-producto", routerProd);
 
-app.get("/carrito-compras", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/carrito-compras.html"));
-});
+app.get("/carrito-compras", routerProd);
+
+app.get("/login", routerUser);
+
+app.get("/register", routerUser);

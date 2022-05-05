@@ -221,12 +221,21 @@ input[type="date"]::before {
   color: #3d494f;
 }
 
+
 .rg-boundaries-label {
-  text-align: center;
+  display: flex;
+  text-align: left;
   padding: 0.5rem;
-  width: 70%;
+  width: 60%;
   margin-bottom: 20px;
+  font-size: 12px;
 }
+
+
+.rg-boundaries-label span{
+  text-decoration: underline;
+}
+
 
 .rg-register-form-button {
   color: white;
@@ -249,6 +258,7 @@ input[type="date"]::before {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .rg-already-registered p {
@@ -295,7 +305,10 @@ input[type="date"]::before {
 
 .login-boundarie-label {
   padding-bottom: 15px;
+  width: 70%;
 }
+
+
 
 .lg-login-input-text {
   margin-top: 20px;
@@ -336,7 +349,7 @@ input[type="date"]::before {
 
 .lg-remember-login label {
   margin-right: 5px;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 /* ====================  ANGIE ======================= */
@@ -1144,6 +1157,15 @@ input[type="number"]::-webkit-inner-spin-button {
   .rg-register-form-button:hover {
     background-color: #7c9099;
     cursor: pointer;
+  }
+
+  .rg-boundaries-txt{
+    width: 80%;
+    display: inline-block;
+  }
+  .rg-boundaries-label #terminos{
+    width: 2rem;
+    position: relative;
   }
 
   .rg-form-input-text,
