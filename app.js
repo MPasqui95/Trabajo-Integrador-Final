@@ -1,20 +1,39 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const publicPath = path.resolve(__dirname, "./public");
 
+//Ruta Index
+const router = require("./routes/main");
+
+//Ruta Productos
+const routerProd = require("./routes/products");
+
+//Ruta Login y Register
+const routerUser = require("./routes/user");
+
+// instalado y configurado ejs
+app.set("view engine", "ejs");
+
+const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
+
 app.use(express.static("views"));
+
 app.listen(3030, () => console.log("Server Run"));
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/index.html"));
-});
-app.get("/listado-productos", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/listado-productos.html"));
-});
-app.get("/detalle-producto", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"));
-});
-app.get("/carrito-compras", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/carrito-compras.html"));
-});
+
+//Ruteo
+app.use("/", router);
+
+app.get("/listado-productos", routerProd);
+
+app.get("/detalle-producto", routerProd);
+
+app.get("/carrito-compras", routerProd);
+
+app.get("/crear-productos", routerProd);
+
+app.get("/editar-productos", routerProd);
+
+app.get("/login", routerUser);
+
+app.get("/register", routerUser);
