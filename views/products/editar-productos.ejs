@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Editar Producto</title>
+  </head>
+  <body>
+    <div class="rg-rg-register-form-container">
+      <h3 class="rg-register-label">Editar Productos</h3>
+      <form action="POST" name="rg-register-form" class="rg-register-form">
+        <input
+          type="text"
+          placeholder="Marca"
+          class="rg-form-input-text"
+          name="marca"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Nombre del producto"
+          name="nombreProducto"
+          class="rg-form-input-text"
+          required
+        />
+
+        <input
+          type="number"
+          placeholder="Precio Oferta"
+          name="precioOferta"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="number"
+          placeholder="Precio Regular"
+          name="precioRegular"
+          class="rg-form-input-text"
+          required
+        />
+
+        <input
+          type="number"
+          placeholder="Descuento"
+          name="descuento"
+          class="rg-form-input-text"
+        />
+
+        <h3>Colores</h3>
+        <div>
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="rojo"
+              id="rojo"
+            />Rojo</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="Azul"
+              id="Azul"
+            />Azul</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="blanco"
+              id="blanco"
+            />Blanco</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="negro"
+              id="negro"
+            />Negro</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="rosa"
+              id="rosa"
+            />Rosa</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="verde"
+              id="verde"
+            />Verde</label
+          >
+          <label for="colores">
+            <input
+              type="checkbox"
+              name="colores"
+              value="gris"
+              id="gris"
+            />Gris</label
+          >
+        </div>
+
+        <input
+          type="file"
+          name="images"
+          accept="jpg, png, jpeg"
+          class="rg-form-input-text"
+          multiple
+          required
+        />
+
+        <label for="especificaciones"> Especificaciones:</label>
+        <textarea name="especificaciones" id="especificaciones">
+            Contenido</textarea
+        >
+
+        <label for="descripcion"> Descripción:</label>
+        <textarea name="descripcion" id="descripcion">Contenido</textarea>
+
+        <input
+          type="number"
+          placeholder="Stock"
+          name="stock"
+          class="rg-form-input-text"
+          required
+        />
+        <h3>Categorias</h3>
+        <div>
+          <label for="colores">
+            <input
+              type="radio"
+              name="categorias"
+              value="celulares"
+              id="celulares"
+            />Celulares</label
+          >
+          <label for="categorias">
+            <input
+              type="radio"
+              name="categorias"
+              value="laptops"
+              id="laptops"
+            />Laptops</label
+          >
+          <label for="categorias">
+            <input
+              type="radio"
+              name="categorias"
+              value="tablets"
+              id="tablets"
+            />Tablets</label
+          >
+          <label for="categorias">
+            <input
+              type="radio"
+              name="categorias"
+              value="gamer"
+              id="gamer"
+            />Gamer</label
+          >
+          <label for="categorias">
+            <input
+              type="radio"
+              name="categorias"
+              value="audio"
+              id="audio"
+            />Audio</label
+          >
+          <label for="categorias">
+            <input
+              type="radio"
+              name="categorias"
+              value="accesorios"
+              id="accesorios"
+            />Accesorios</label
+          >
+        </div>
+        <br />
+        <br />
+        <button type="submit" class="rg-register-form-button">Guardar</button>
+        <button type="reset" class="rg-register-form-button">Borrar</button>
+      </form>
+    </div>
+  </body>
+</html>
