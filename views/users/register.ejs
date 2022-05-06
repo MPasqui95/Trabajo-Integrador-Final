@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== ICONS ====== -->
+    <script
+      src="https://kit.fontawesome.com/fe4cf9d18e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ===== FONTS ======= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style-rg-register-form.css" />
+
+    <title>Registro</title>
+  </head>
+  <body>
+    <!-- ===== START OF HEADER  ====== -->
+
+    <header class="header">
+      <div class="header-main-bar-container">
+        <i class="fas fa-bars" id="header-menu-button"></i>
+        <p class="header-electrodoggy-header-text">ElectroDoggy</p>
+        <a href="./login">
+          <i class="fas fa-user" id="header-user-button"></i>
+        </a>
+        <a href="">
+          <i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i>
+        </a>
+      </div>
+
+      <div class="header-find-bar-container">
+        <input
+          type="text"
+          placeholder="Buscar productos"
+          class="header-find-products-input"
+        />
+        <i class="fas fa-search" id="header-movile-find-button"></i>
+      </div>
+
+      <!-- ====== DESKTOP HEADER ======= -->
+
+      <div class="desktop-header">
+        <a href="/" style="text-decoration: none"><p>ElectroDoggy</p> </a>
+        <input
+          type="text"
+          placeholder="Buscar productos"
+          class="header-find-products-input"
+        />
+        <button class="find-button">
+          <i class="fas fa-search" id="header-find-icon"></i>
+        </button>
+
+        <div class="desktop-header-user-button">
+          <a href="./login">
+            <i class="fas fa-user" id="header-user-button"></i>
+          </a>
+          <p>Iniciar Sesión</p>
+        </div>
+
+        <div class="desktop-header-shopping-cart-button">
+          <a href="./carrito-compras">
+            <i
+              class="fas fa-shopping-cart"
+              id="header-shopping-cart-button"
+            ></i>
+          </a>
+          <p>Mi Carrito</p>
+        </div>
+      </div>
+
+      <div class="header-nav-bar-navigation">
+        <ul>
+          <div class="header-link-container">
+            <ul>
+              <li>
+                <a href="#Celulares"><i class="fas fa-mobile"></i> Celulares</a>
+                <a href="#Laptops"><i class="fas fa-laptop"></i> Laptops</a>
+                <a href="#Tablets"><i class="fas fa-tablet-alt"></i> Tablets</a>
+                <a href="#Gamer"><i class="fas fa-gamepad"></i> Gamer</a>
+                <a href="#Audio"><i class="fas fa-headphones"></i> Audio</a>
+                <a href="#Accesorios"
+                  ><i class="fas fa-keyboard"></i> Accesorios</a
+                >
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ===== END OF HEADER ====== -->
+
+    <div class="rg-rg-register-form-container">
+      <h3 class="rg-register-label">Registro</h3>
+      <form action="POST" name="rg-register-form" class="rg-register-form">
+        <input
+          type="text"
+          placeholder="Nombres"
+          class="rg-form-input-text"
+          name="nombres"
+        />
+
+        <input
+          type="text"
+          placeholder="Apellidos"
+          name="apellido"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          name="mail"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="password"
+          placeholder="Contraseña"
+          name="password"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="password"
+          placeholder="Confirmar contraseña"
+          name="password"
+          class="rg-form-input-text"
+        />
+
+        <input
+          type="text"
+          placeholder="Dirección"
+          name="direccion"
+          class="rg-form-input-text"
+        />
+        <label class="label-input-date"
+          >Fecha de Nacimiento
+          <input
+            type="date"
+            name="fecha-nacimiento"
+            class="rg-form-input-text"
+          />
+        </label>
+
+        <label for="terminos" class="rg-boundaries-label">
+          <input
+            type="checkbox"
+            name="terminos"
+            id="terminos"
+            class="rg-boundaries"
+            required
+          />
+          <div class="rg-boundaries-txt">
+            *He leido y acepto las condiciones de
+            <span>tratamientos de mis datos personales</span>
+          </div></label
+        >
+
+        <button type="submit" class="rg-register-form-button">
+          Registrarme
+        </button>
+      </form>
+    </div>
+
+    <div class="rg-already-registered">
+      <p>¿Ya estas registrado?</p>
+      <a href="./login"> Inicia sesión aquí</a>
+    </div>
+
+    <!-- ======= START OF FOOTER  ====== -->
+
+    <footer>
+      <h3 class="footer-electrodoggy-text">ElectroDoggy</h3>
+
+      <div class="footer-container">
+        <h3>Servicio al cliente</h3>
+        <h5>Preguntas frecuentes</h5>
+        <h5>Términos y condiciones</h5>
+        <h5>Politicas de privacidad</h5>
+      </div>
+
+      <hr />
+
+      <div class="footer-container">
+        <h3>Conócenos</h3>
+        <h5>Sobre nosotros</h5>
+        <h5>Nuestras tiendas</h5>
+      </div>
+
+      <hr />
+
+      <div class="footer-container-icons">
+        <h3>Síguenos en:</h3>
+        <i class="fab fa-facebook" id="footer-icons-footer"></i>
+        <i class="fab fa-twitter" id="footer-icons-footer"></i>
+        <i class="fab fa-instagram" id="footer-icons-footer"></i>
+      </div>
+
+      <div class="footer-copy-right">
+        <i class="fas fa-copyright" id="footer-copy-right-icon"></i>
+        <p class="footer-copy-right-text">
+          2022 ElectroDoggy. Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== END OF FOOTER  ====== -->
+  </body>
+</html>
