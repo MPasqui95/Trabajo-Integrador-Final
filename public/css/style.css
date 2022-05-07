@@ -221,7 +221,6 @@ input[type="date"]::before {
   color: #3d494f;
 }
 
-
 .rg-boundaries-label {
   display: flex;
   text-align: left;
@@ -231,11 +230,9 @@ input[type="date"]::before {
   font-size: 12px;
 }
 
-
-.rg-boundaries-label span{
+.rg-boundaries-label span {
   text-decoration: underline;
 }
-
 
 .rg-register-form-button {
   color: white;
@@ -307,8 +304,6 @@ input[type="date"]::before {
   padding-bottom: 15px;
   width: 70%;
 }
-
-
 
 .lg-login-input-text {
   margin-top: 20px;
@@ -1159,11 +1154,11 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
   }
 
-  .rg-boundaries-txt{
+  .rg-boundaries-txt {
     width: 80%;
     display: inline-block;
   }
-  .rg-boundaries-label #terminos{
+  .rg-boundaries-label #terminos {
     width: 2rem;
     position: relative;
   }

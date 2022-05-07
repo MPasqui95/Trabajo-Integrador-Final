@@ -11,15 +11,16 @@
     <!-- ===== END OF HEADER ====== -->
 
     <!-- ===== PRODUCT DETAIL ======= -->
-
+    <!-- <h1>prueba</h1> -->
     <main class="dp-main">
-      <div>Inicio > Celulares > Galaxy Note 20 Ultra</div>
+      <div><%= detail.route %></div>
+      <br />
       <div class="dp-informacion-producto">
         <section class="dp-contenedorImagenes">
           <div class="dp-imagenPrincipal">
             <img
               class="dp-imagen-producto"
-              src="images/productos/producto1.jpg"
+              src="../images/productos/<%= detail.img %>"
               alt=""
             />
           </div>
@@ -27,33 +28,31 @@
             <div class="dp-container-miniatura">
               <img
                 class="dp-miniatura-producto"
-                src="images/productos/producto2.jpg"
+                src="/images/productos/producto2.jpg"
                 alt=""
               />
             </div>
             <div class="dp-container-miniatura">
               <img
                 class="dp-miniatura-producto"
-                src="images/productos/producto3.jpg"
+                src="/images/productos/producto3.jpg"
                 alt=""
               />
             </div>
             <div class="dp-container-miniatura">
               <img
                 class="dp-miniatura-producto"
-                src="images/productos/producto4.jpg"
+                src="/images/productos/producto4.jpg"
                 alt=""
               />
             </div>
-            <!-- <img class ="dp-miniatura-producto" src="images/productos/producto3.jpg" alt="">
-                    <img class ="dp-miniatura-producto" src="images/productos/producto4.jpg" alt=""> -->
           </div>
         </section>
         <section class="dp-product-description">
-          <h4 class="dp-marca">Samsung</h4>
-          <h2 class="dp-modelo">Galaxy Note 20 Ultra</h2>
-          <p class="dp-precio-antes">$ 6,000.00</p>
-          <h2 class="dp-precio">$ 4,298.00</h2>
+          <h4 class="dp-marca"><%= detail.brand %></h4>
+          <h2 class="dp-modelo"><%= detail.productName %></h2>
+          <p class="dp-precio-antes"><%= detail.regularPrice %></p>
+          <h2 class="dp-precio"><%= detail.offerPrice %></h2>
           <h5 class="dp-colores">Colores disponibles:</h5>
           <div class="dp-contenedor-colores">
             <div class="dp-selector-colores"></div>
