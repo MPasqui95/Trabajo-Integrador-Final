@@ -1506,3 +1506,121 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
 }
+
+/* ================ CREAR PRODUCTO =====================*/
+
+.cp-chekboxColores{
+  
+  border: 1px solid #040740;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  height: 7rem;
+  width: 90%;
+}
+
+.cp-tituloSeccion{
+  color: #040740;
+  font-weight: 600;
+  margin: 20px;
+  text-align: left;
+  width: 90%;
+  padding-left: 5px;
+  font-size: 16px;
+  
+}
+.subirArchivo{
+  margin-top: 0px;
+
+
+
+}
+
+.cp-textAreaInput{
+  border: 1px solid #040740;
+  border-radius: 6px;
+  width: 90%;
+  height: 54px;
+  padding: 6px;
+
+}
+
+.cp-subirImagen{
+  display: block;
+  width: 100%;
+}
+
+.cp-contenedorSelectorCategoria{
+  width: 90%;
+}
+
+.cp-selectorCategoria{
+  width: 100%;
+}
+
+/* TABLET Y DESKTOP CREAR  */
+
+@media (min-width: 769px){
+
+  .cp-chekboxColores, .cp-tituloSeccion, .cp-textAreaInput, .cp-contenedorSelectorCategoria{
+      width: 70%;
+  }
+  
+  
+}
+
+
+/* ===============EDITAR PRODUCTO ======== */
+.cp-editarImagen{
+  width: 90%;
+}
+
+.cp-editarImagen .subirArchivo {
+  width: 100%
+}
+
+.cp-editarImagen .cp-tituloSeccion {
+margin: 0;
+}
+
+.cp-detallesProducto{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+
+
+/* ===============EDITAR PRODUCTO END ======== */
+@media (min-width: 769px){
+
+  .cp-editar-form-contenedor{
+    margin: auto;
+    width: 100%;
+  }
+  
+  .cp-editar-form-contenedor .rg-register-label{
+    margin: auto;
+  }
+  .cp-editarProducto{
+    flex-direction: row;
+  }
+  
+  .cp-editarProducto .cp-detallesProducto, .cp-editarProducto .cp-editarImagen{
+    align-self: start;
+    width: 50%;
+    padding: 1rem;
+  }
+
+  .cp-editarProducto .cp-detallesProducto{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+}

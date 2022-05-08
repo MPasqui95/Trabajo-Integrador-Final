@@ -4,191 +4,222 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Editar Producto</title>
+
+    <!-- Vinculación CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Script íconos -->
+    <script
+      src="https://kit.fontawesome.com/1f09d8586f.js"
+      crossorigin="anonymous"
+      src="https://kit.fontawesome.com/fe4cf9d18e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Editar Productos</title>
   </head>
   <body>
-    <div class="rg-rg-register-form-container">
-      <h3 class="rg-register-label">Editar Productos</h3>
-      <form action="POST" name="rg-register-form" class="rg-register-form">
+
+
+    <!-- ===== START OF HEADER  ====== -->
+
+    <header class="header">
+      <div class="header-main-bar-container">
+        <i class="fas fa-bars" id="header-menu-button"></i>
+        <p class="header-electrodoggy-header-text">ElectroDoggy</p>
+        <a href="./login">
+          <i class="fas fa-user" id="header-user-button"></i>
+        </a>
+        <a href="">
+          <i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i>
+        </a>
+      </div>
+
+
+
+      <!-- ====== DESKTOP HEADER ======= -->
+
+      <div class="desktop-header">
+        <a href="/" style="text-decoration: none"><p>ElectroDoggy</p> </a>
         <input
           type="text"
-          placeholder="Marca"
-          class="rg-form-input-text"
-          name="marca"
-          required
+          placeholder="Buscar productos"
+          class="header-find-products-input"
         />
+        <button class="find-button">
+          <i class="fas fa-search" id="header-find-icon"></i>
+        </button>
 
-        <input
-          type="text"
-          placeholder="Nombre del producto"
-          name="nombreProducto"
-          class="rg-form-input-text"
-          required
-        />
-
-        <input
-          type="number"
-          placeholder="Precio Oferta"
-          name="precioOferta"
-          class="rg-form-input-text"
-        />
-
-        <input
-          type="number"
-          placeholder="Precio Regular"
-          name="precioRegular"
-          class="rg-form-input-text"
-          required
-        />
-
-        <input
-          type="number"
-          placeholder="Descuento"
-          name="descuento"
-          class="rg-form-input-text"
-        />
-
-        <h3>Colores</h3>
-        <div>
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="rojo"
-              id="rojo"
-            />Rojo</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="Azul"
-              id="Azul"
-            />Azul</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="blanco"
-              id="blanco"
-            />Blanco</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="negro"
-              id="negro"
-            />Negro</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="rosa"
-              id="rosa"
-            />Rosa</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="verde"
-              id="verde"
-            />Verde</label
-          >
-          <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="gris"
-              id="gris"
-            />Gris</label
-          >
+        <div class="desktop-header-user-button">
+          <a href="./login">
+            <i class="fas fa-user" id="header-user-button"></i>
+          </a>
+          <p>Iniciar Sesión</p>
         </div>
 
-        <input
-          type="file"
-          name="images"
-          accept="jpg, png, jpeg"
-          class="rg-form-input-text"
-          multiple
-          required
-        />
-
-        <label for="especificaciones"> Especificaciones:</label>
-        <textarea name="especificaciones" id="especificaciones">
-            Contenido</textarea
-        >
-
-        <label for="descripcion"> Descripción:</label>
-        <textarea name="descripcion" id="descripcion">Contenido</textarea>
-
-        <input
-          type="number"
-          placeholder="Stock"
-          name="stock"
-          class="rg-form-input-text"
-          required
-        />
-        <h3>Categorias</h3>
-        <div>
-          <label for="colores">
-            <input
-              type="radio"
-              name="categorias"
-              value="celulares"
-              id="celulares"
-            />Celulares</label
-          >
-          <label for="categorias">
-            <input
-              type="radio"
-              name="categorias"
-              value="laptops"
-              id="laptops"
-            />Laptops</label
-          >
-          <label for="categorias">
-            <input
-              type="radio"
-              name="categorias"
-              value="tablets"
-              id="tablets"
-            />Tablets</label
-          >
-          <label for="categorias">
-            <input
-              type="radio"
-              name="categorias"
-              value="gamer"
-              id="gamer"
-            />Gamer</label
-          >
-          <label for="categorias">
-            <input
-              type="radio"
-              name="categorias"
-              value="audio"
-              id="audio"
-            />Audio</label
-          >
-          <label for="categorias">
-            <input
-              type="radio"
-              name="categorias"
-              value="accesorios"
-              id="accesorios"
-            />Accesorios</label
-          >
+        <div class="desktop-header-shopping-cart-button">
+          <a href="./carrito-compras">
+            <i
+              class="fas fa-shopping-cart"
+              id="header-shopping-cart-button"
+            ></i>
+          </a>
+          <p>Mi Carrito</p>
         </div>
-        <br />
-        <br />
-        <button type="submit" class="rg-register-form-button">Guardar</button>
-        <button type="reset" class="rg-register-form-button">Borrar</button>
+      </div>
+
+      <div class="header-nav-bar-navigation">
+        <ul>
+          <div class="header-link-container">
+            <ul>
+              <li>
+                <a href="#Celulares"><i class="fas fa-mobile"></i> Celulares</a>
+                <a href="#Laptops"><i class="fas fa-laptop"></i> Laptops</a>
+                <a href="#Tablets"><i class="fas fa-tablet-alt"></i> Tablets</a>
+                <a href="#Gamer"><i class="fas fa-gamepad"></i> Gamer</a>
+                <a href="#Audio"><i class="fas fa-headphones"></i> Audio</a>
+                <a href="#Accesorios"
+                  ><i class="fas fa-keyboard"></i> Accesorios</a
+                >
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </header>
+
+    <!-- END OF HEADER -->
+
+
+
+    <div class="rg-rg-register-form-container cp-editar-form-contenedor">
+      <h3 class="rg-register-label">Editar producto</h3>
+      <form action="POST" name="rg-register-form" class="rg-register-form cp-editarProducto">
+        <div class="cp-editarImagen">
+
+          <label for="imagenProducto" class="cp-tituloSeccion "> Imagen del producto</label>
+          <img  class="cp-subirImagen" src="/images/productos/producto1.jpg" alt="">
+          <input
+            id="imagenProducto"
+            type="file"
+            name="images"
+            accept="jpg, png, jpeg"
+            class="rg-form-input-text subirArchivo" 
+            placeholder="Reemplazar imagen "
+            multiple
+            required
+            
+          />
+        </div>
+
+        <div class="cp-detallesProducto">
+        
+          <input type="text" placeholder="Samsung" class="rg-form-input-text" name="marca" required value="samsung" />
+        
+          <input type="text" placeholder="Galaxy Note 20 Ultra" name="nombreProducto" class="rg-form-input-text" required
+            value="Galaxy Note 20 Ultra" />
+        
+          <input type="number" placeholder="4,298.00" name="precioOferta" class="rg-form-input-text" value="4,298.00" />
+        
+          <input type="number" placeholder="6,000.00" name="precioRegular" class="rg-form-input-text" value="6,000.00"
+            required />
+        
+          <input type="number" placeholder="18%" name="descuento" value="18" class="rg-form-input-text" />
+        
+          <h3 class="cp-tituloSeccion">Colores</h3>
+          <div class="cp-chekboxColores">
+            <label for="colores">
+              <input type="checkbox" name="colores" value="rojo" id="rojo" checked /> Rojo</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="Azul" id="Azul" checked /> Azul</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="blanco" id="blanco" checked /> Blanco</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="negro" id="negro" /> Negro</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="rosa" id="rosa" /> Rosa</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="verde" id="verde" /> Verde</label>
+            <label for="colores">
+              <input type="checkbox" name="colores" value="gris" id="gris" /> Gris</label>
+          </div>
+        
+        
+          <label for="especificaciones" class="cp-tituloSeccion"> Especificaciones:</label>
+          <textarea name="especificaciones" id="especificaciones"
+            class="cp-textAreaInput"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam</textarea>
+        
+          <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
+          <textarea name="descripcion" id="descripcion"
+            class="cp-textAreaInput">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam</textarea>
+        
+          <input type="number" placeholder="4" name="stock" class="rg-form-input-text" required value="4" />
+          <h3 class="cp-tituloSeccion">Categorias</h3>
+          <div class="cp-contenedorSelectorCategoria">
+            <select name="categoria" id="" required class="cp-selectorCategoria">
+              <option value="">Selecciona una categoria</option>
+              <option value="celulares" selected>Celulares</option>
+              <option value="laptops">Laptops</option>
+              <option value="tablets">Tablets</option>
+              <option value="gamer">Gamer</option>
+              <option value="audio">Audio</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <button type="submit" class="rg-register-form-button">Editar</button>
+          <button type="reset" class="rg-register-form-button">Borrar</button>
+        
+        </div>
       </form>
     </div>
+
+        <!-- ======= START OF FOOTER  ====== -->
+
+        <footer>
+          <h3 class="footer-electrodoggy-text">ElectroDoggy</h3>
+    
+          <div class="footer-container">
+            <h3>Servicio al cliente</h3>
+            <h5>Preguntas frecuentes</h5>
+            <h5>Términos y condiciones</h5>
+            <h5>Politicas de privacidad</h5>
+          </div>
+    
+          <hr />
+    
+          <div class="footer-container">
+            <h3>Conócenos</h3>
+            <h5>Sobre nosotros</h5>
+            <h5>Nuestras tiendas</h5>
+          </div>
+    
+          <hr />
+    
+          <div class="footer-container-icons">
+            <h3>Síguenos en:</h3>
+            <i class="fab fa-facebook" id="footer-icons-footer"></i>
+            <i class="fab fa-twitter" id="footer-icons-footer"></i>
+            <i class="fab fa-instagram" id="footer-icons-footer"></i>
+          </div>
+    
+          <div class="footer-copy-right">
+            <i class="fas fa-copyright" id="footer-copy-right-icon"></i>
+            <p class="footer-copy-right-text">
+              2022 ElectroDoggy. Todos los derechos reservados
+            </p>
+          </div>
+        </footer>
+    
+        <!-- ===== END OF FOOTER  ====== -->
   </body>
 </html>
