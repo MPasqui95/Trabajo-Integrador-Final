@@ -48,82 +48,65 @@
           class="rg-form-input-text"
         />
 
-        <h3>Colores</h3>
-        <div>
+        <h3 class="cp-tituloSeccion">Colores</h3>
+        <div class="cp-chekboxColores">
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="rojo"
-              id="rojo"
-            />Rojo</label
+            <input type="checkbox" name="colores" value="rojo" id="rojo" />
+            Rojo</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="Azul"
-              id="Azul"
-            />Azul</label
+            <input type="checkbox" name="colores" value="Azul" id="Azul" />
+            Azul</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="blanco"
-              id="blanco"
-            />Blanco</label
+            <input type="checkbox" name="colores" value="blanco" id="blanco" />
+            Blanco</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="negro"
-              id="negro"
-            />Negro</label
+            <input type="checkbox" name="colores" value="negro" id="negro" />
+            Negro</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="rosa"
-              id="rosa"
-            />Rosa</label
+            <input type="checkbox" name="colores" value="rosa" id="rosa" />
+            Rosa</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="verde"
-              id="verde"
-            />Verde</label
+            <input type="checkbox" name="colores" value="verde" id="verde" />
+            Verde</label
           >
           <label for="colores">
-            <input
-              type="checkbox"
-              name="colores"
-              value="gris"
-              id="gris"
-            />Gris</label
+            <input type="checkbox" name="colores" value="gris" id="gris" />
+            Gris</label
           >
         </div>
-
+        <label for="imagenProducto" class="cp-tituloSeccion">
+          Imagen del producto</label
+        >
         <input
+          id="imagenProducto"
           type="file"
           name="images"
           accept="jpg, png, jpeg"
-          class="rg-form-input-text"
+          class="rg-form-input-text subirArchivo"
           multiple
           required
         />
 
-        <label for="especificaciones"> Especificaciones:</label>
-        <textarea name="especificaciones" id="especificaciones">
-            Contenido</textarea
+        <label for="especificaciones" class="cp-tituloSeccion">
+          Especificaciones:</label
+        >
+        <textarea
+          name="especificaciones"
+          id="especificaciones"
+          class="cp-textAreaInput"
+        >
+ Especificaciones</textarea
         >
 
-        <label for="descripcion"> Descripción:</label>
-        <textarea name="descripcion" id="descripcion">Contenido</textarea>
+        <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
+        <textarea name="descripcion" id="descripcion" class="cp-textAreaInput">
+ Descripción del producto</textarea
+        >
 
         <input
           type="number"
@@ -132,9 +115,9 @@
           class="rg-form-input-text"
           required
         />
-        <h3>Categorias</h3>
-        <div>
-          <select name="categoria" id="" required>
+        <h3 class="cp-tituloSeccion">Categorias</h3>
+        <div class="cp-contenedorSelectorCategoria">
+          <select name="categoria" id="" required class="cp-selectorCategoria">
             <option value="">Selecciona una categoria</option>
             <option value="celulares">Celulares</option>
             <option value="laptops">Laptops</option>
@@ -147,11 +130,49 @@
         <br />
         <br />
         <button type="submit" class="rg-register-form-button">Guardar</button>
-        <button type="reset" class="rg-register-form-button">Borrar</button>
+        <button type="reset" class="rg-register-form-button">Cancelar</button>
       </form>
     </div>
 
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
+    <!-- ======= START OF FOOTER  ====== -->
+
+    <footer>
+      <h3 class="footer-electrodoggy-text">ElectroDoggy</h3>
+
+      <div class="footer-container">
+        <h3>Servicio al cliente</h3>
+        <h5>Preguntas frecuentes</h5>
+        <h5>Términos y condiciones</h5>
+        <h5>Politicas de privacidad</h5>
+      </div>
+
+      <hr />
+
+      <div class="footer-container">
+        <h3>Conócenos</h3>
+        <h5>Sobre nosotros</h5>
+        <h5>Nuestras tiendas</h5>
+      </div>
+
+      <hr />
+
+      <div class="footer-container-icons">
+        <h3>Síguenos en:</h3>
+        <i class="fab fa-facebook" id="footer-icons-footer"></i>
+        <i class="fab fa-twitter" id="footer-icons-footer"></i>
+        <i class="fab fa-instagram" id="footer-icons-footer"></i>
+      </div>
+
+      <div class="footer-copy-right">
+        <i class="fas fa-copyright" id="footer-copy-right-icon"></i>
+        <p class="footer-copy-right-text">
+          2022 ElectroDoggy. Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== END OF FOOTER  ====== -->
   </body>
 </html>
