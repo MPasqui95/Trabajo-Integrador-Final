@@ -111,7 +111,7 @@ footer {
   color: white;
   min-height: auto;
   margin-top: 60px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .footer-electrodoggy-text {
@@ -733,14 +733,25 @@ div.home-titulo i {
   height: 0;
 }
 
-.home-destacados-img ul {
+.home-destacados-img.home-destacados-img ul {
   display: flex;
   padding: 0;
+  width:100%;
+  justify-content: center;
 }
 
 .home-destacados-img li {
   list-style: none;
   margin-right: 10px;
+  width: 100%;
+}
+
+.home-image-destacados{
+  width: 100%;
+}
+
+.home-destacados-img ul li:last-child {
+  margin-right: 0;
 }
 
 .home-destacados {
