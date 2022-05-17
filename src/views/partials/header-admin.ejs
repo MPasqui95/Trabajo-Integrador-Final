@@ -1,9 +1,8 @@
 <header class="header">
   <div class="header-main-bar-container">
     <i class="fas fa-bars" id="header-menu-button"></i>
-    <div><img src="images/logo.png" ></div>
-    <!--<p class="header-electrodoggy-header-text">ElectroDoggy</p>-->
-
+    <!-- <p class="header-electrodoggy-header-text">ElectroDoggy</p> -->
+    <div><img src="images/logo.png" /></div>
     <a href="./login">
       <i class="fas fa-user" id="header-user-button"></i>
     </a>
@@ -12,12 +11,22 @@
     </a>
   </div>
 
+  <div class="header-find-bar-container">
+    <input
+      type="text"
+      placeholder="Buscar productos"
+      class="header-find-products-input"
+    />
+    <i class="fas fa-search" id="header-movile-find-button"></i>
+  </div>
+
   <!-- ====== DESKTOP HEADER ======= -->
 
   <div class="desktop-header">
-    <div><img src="images/logo.png" ></div>
+    <div>
+      <a href="/"><img src="/images/logo.png" /></a>
+    </div>
     <!--<a href="/" style="text-decoration: none"><p>ElectroDoggy</p> </a>-->
-
     <input
       type="text"
       placeholder="Buscar productos"
@@ -35,11 +44,15 @@
     </div>
 
     <div class="desktop-header-shopping-cart-button">
-      <a href="./carrito-compras">
-        <i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i>
-      </a>
+      <a href="./carrito-compras"><i class="fas fa-shopping-cart" id="header-shopping-cart-button"></i></a>
       <p>Mi Carrito</p>
     </div>
+
+    <div class="desktop-header-shopping-cart-button">
+      <a href="./crear-productos"><i class="fas fa-plus" id="header-shopping-cart-button"></i></a>
+      <p>Crear Producto</p>
+    </div>
+
   </div>
 
   <div class="header-nav-bar-navigation">

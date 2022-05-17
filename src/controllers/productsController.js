@@ -1,33 +1,102 @@
 const express = require("express");
+const req = require("express/lib/request");
+const fs = require('fs');
+const path = require ('path');
+
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
   // ====== RENDER FOR SHOPPING CART   ======
-  carrito: (req, res) => {
+  shoppingCart: (req, res) => {
     res.render("products/carrito-compras");
   },
 
   // ====== RENDER FOR SIMPLE PRODUCT DETAIL   ======
   detalle: (req, res) => {
-    res.render("products/detalle-producto");
+
+    let id= req.params.productId;
+    
+    let product = products.find((product) => product.id == id);
+    res.render('products/product-detail', {product})
+
   },
 
   // ====== RENDER FOR LIST PAGE   ======
-  listado: (req, res) => {
-    res.render("products/listado-productos");
+  list: (req, res) => {
+        res.render("products/listado-productos", {products});
   },
 
   // ====== RENDER FOR PRODUCT CREATE PAGE   ======
-  crear: (req, res) => {
+  create: (req, res) => {
     res.render("products/crear-productos");
   },
 
+  // ======= CREATE - METHOD TO STORE ======
+  store: (req, res) => {
+    
+    let image
+
+    if(req.files[0] != undefined) {
+      image = req.files[0].filename
+    } else {
+      image = 'default-image.jpg'
+    }
+
+    let newProduct = {
+      id: products[products.length - 1].id + 1,
+      ...req.body,
+      image: image
+    };
+
+    products.push(newProduct)
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+    res.redirect('/')
+
+  },
+
   // ====== RENDER FOR EDIT PAGE   ======
-  editar: (req, res) => {
-    res.render("products/editar-productos");
+  edit: (req, res) => {
+    let id = req.params.id;
+    let productToEdit = products.find((product) => product.id == id);
+    res.render("products/editar-productos", { productToEdit });
+  },
+
+
+  //====== UPDATE PRODUCT ======================
+  update: (req, res) => {
+    let id = req.params.id;
+    // console.log(id);
+    let productToEdit = products.find(product => product.id == id);
+    // console.log(productToEdit);
+    let image = req.files[0].filename;
+
+    // if(req.files[0].filename != undefined) {
+    // image = req.files[0].filename
+    // } else {
+    //   image = 'default-image.jpg'
+    // }
+
+    productToEdit = {
+      id: productToEdit.id,
+      ...req.body,
+      image: image
+    }
+
+    let newProducts = products.map(product => {
+      if(product.id == productToEdit.id) {
+        return product = {...productToEdit}
+      }
+      return product
+    })
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+    res.redirect('/')
   },
 
   // ====== RENDER FOR PRODUCT DETAIL   ======
-  detalles: (req, res) => {
+  detail: (req, res) => {
     let detailOfProducts = arrayProductDetail.find(
       (detail) => detail.id == req.params.productId
     );
@@ -37,80 +106,5 @@ const productsController = {
     });
   },
 };
-
-// ==== PRODUCTS DETAILS ARRAY =========
-
-const arrayProductDetail = [
-  {
-    // ======= PRODUCT 01 ======
-    id: 1,
-    route: "Inicio > Laptops > Lenovo",
-    brand: "Lenovo",
-    productName: "Portatil Thinkpad",
-    offerPrice: "US$ 1499",
-    regularPrice: "US$ 2000",
-    colores: "Colores disponibles",
-    img: "producto1.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam.",
-    specification: "Especificaciones",
-  },
-
-  // ======= PRODUCT 02 ======
-  {
-    id: 2,
-    route: "Inicio > Laptops > Asus",
-    brand: "Asus",
-    productName: "Portatil Rog Matrix",
-    offerPrice: "US$ 1399",
-    regularPrice: "US$ 1800",
-    img: "producto2.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam.",
-    specification: "Especificaciones",
-  },
-
-  {
-    // ======= PRODUCT 03 ======
-    id: 3,
-    route: "Inicio > Gamers > Nintendo",
-    brand: "Nintendo",
-    productName: "Nintendo Switch",
-    offerPrice: "US$ 699",
-    regularPrice: "US$ 999",
-    img: "producto3.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam.",
-    specification: "Especificaciones",
-  },
-
-  // ======= PRODUCT 04 ======
-  {
-    id: 4,
-    route: "Inicio > Audio > Sony",
-    brand: "Sony",
-    productName: "Audifonos Sony WF-1000XM4",
-    offerPrice: "US$ 299",
-    regularPrice: "US$ 400",
-    img: "producto4.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam.",
-    specification: "Especificaciones",
-  },
-
-  // ======= PRODUCT 05 ======
-  {
-    id: 5,
-    route: "Inicio > Celulares > Xiaomi",
-    brand: "Xiaomi",
-    productName: "Celular Redmi Note 11",
-    offerPrice: "US$ 399",
-    regularPrice: "US$ 500",
-    img: "producto5.jpg",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam.",
-    specification: "Especificaciones",
-  },
-];
 
 module.exports = productsController;

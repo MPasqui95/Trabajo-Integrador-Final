@@ -6,24 +6,19 @@
   <body>
     <!-- ===== HEADER  ================= -->
 
-    <%- include('../partials/headerAdmin.ejs') %>
+    <%- include('../partials/header.ejs') %>
 
     <!-- ===== PRODUCTS EDIT  ================= -->
 
     <div class="rg-rg-register-form-container cp-editar-form-contenedor">
       <h3 class="rg-register-label">Editar producto</h3>
-      <form
-        action="POST"
-        name="rg-register-form"
-        class="rg-register-form cp-editarProducto"
-      >
+    <div class="rg-register-form cp-editarProducto">
+      <form action="/editar-productos/<%= productToEdit.id %>?_method=PUT"  method="POST" name="rg-register-form" class="rg-register-form cp-editarProducto" enctype="multipart/form-data">
         <div class="cp-editarImagen">
-          <label for="imagenProducto" class="cp-tituloSeccion">
-            Imagen del producto</label
-          >
+          <label for="imagenProducto" class="cp-tituloSeccion">Imagen del producto</label>
           <img
             class="cp-subirImagen"
-            src="/images/productos/producto1.jpg"
+            src="/images/productos/<%= productToEdit.image %>"
             alt=""
           />
           <input
@@ -32,53 +27,48 @@
             name="images"
             accept="jpg, png, jpeg"
             class="rg-form-input-text subirArchivo"
-            placeholder="Reemplazar imagen "
+            value='<%= productToEdit.image %>'
             multiple
             required
           />
         </div>
-
         <div class="cp-detallesProducto">
+          <h3 class="cp-tituloSeccion">Marca</h3>
           <input
             type="text"
-            placeholder="Samsung"
+            value="<%= productToEdit.brand %>"
             class="rg-form-input-text"
-            name="marca"
+            name="brand"
             required
-            value="samsung"
           />
-
+          <h3 class="cp-tituloSeccion">Nombre</h3>
           <input
             type="text"
-            placeholder="Galaxy Note 20 Ultra"
-            name="nombreProducto"
+            value="<%= productToEdit.name %>"
+            name="name"
             class="rg-form-input-text"
             required
-            value="Galaxy Note 20 Ultra"
           />
-
+          <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
           <input
             type="number"
-            placeholder="4,298.00"
-            name="precioOferta"
+            value="<%= productToEdit.offerPrice %>"
+            name="offerPrice"
             class="rg-form-input-text"
-            value="4,298.00"
           />
-
+          <h3 class="cp-tituloSeccion">Precio Regular</h3>
           <input
             type="number"
-            placeholder="6,000.00"
-            name="precioRegular"
+            value="<%= productToEdit.regularPrice %>"
+            name="regularPrice"
             class="rg-form-input-text"
-            value="6,000.00"
             required
           />
-
+          <h3 class="cp-tituloSeccion">Descuento</h3>
           <input
             type="number"
-            placeholder="18%"
-            name="descuento"
-            value="18"
+            value="discount"
+            name="discount"
             class="rg-form-input-text"
           />
 
@@ -132,15 +122,14 @@
             >
           </div>
 
-          <label for="especificaciones" class="cp-tituloSeccion">
+          <label for="especificaciones" class="cp-tituloSeccion" value="specifications" >
             Especificaciones:</label
           >
           <textarea
-            name="especificaciones"
+            name="specifications"
             id="especificaciones"
             class="cp-textAreaInput"
-          >
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam</textarea
+          ><%= productToEdit.specifications %></textarea
           >
 
           <label for="descripcion" class="cp-tituloSeccion">
@@ -150,18 +139,17 @@
             name="descripcion"
             id="descripcion"
             class="cp-textAreaInput"
+          ><%= productToEdit.specifications %></textarea
           >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi sit viverra consequat at. Sagittis fringilla mattis non at auctor curabitur vitae tempor tincidunt. Sapien integer non semper a facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed diam</textarea
-          >
-
+          <h3 class="cp-tituloSeccion">Stock</h3>
           <input
             type="number"
-            placeholder="4"
+            value="<%= productToEdit.stock %>"
             name="stock"
             class="rg-form-input-text"
             required
-            value="4"
           />
+
           <h3 class="cp-tituloSeccion">Categorias</h3>
           <div class="cp-contenedorSelectorCategoria">
             <select
@@ -183,8 +171,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus facilisi s
           <br />
           <button type="submit" class="rg-register-form-button">Editar</button>
           <button type="reset" class="rg-register-form-button">Borrar</button>
+          <a href="/" class="rg-register-form-button">Cancelar</a>
         </div>
-      </form>
+  </form>
+  <!-- <form action="/">
+    <button type="submit" class="rg-register-form-button">Cancelar</button>
+  </form> -->
+</div>
+           
     </div>
 
     <!-- ======= FOOTER  ====== -->

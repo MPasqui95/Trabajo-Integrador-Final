@@ -1,0 +1,143 @@
+[
+ {
+  "id": 1,
+  "brand": "Lenovo Nuevo",
+  "name": "Thinkpad NUEVO",
+  "offerPrice": "3999",
+  "regularPrice": "4298",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "Especificacion producto 1",
+  "descripcion": "Especificacion producto 1",
+  "stock": "2",
+  "categoria": "celulares",
+  "image": "product1652749055259.jpg"
+ },
+ {
+  "id": 2,
+  "brand": "Asus",
+  "name": "ROG Ultar",
+  "offerPrice": 3999,
+  "regularPrice": 4400,
+  "discount": 500,
+  "color": "azul",
+  "image": "producto2.jpg",
+  "specifications": "Especificacion producto 2",
+  "description": "Descripcion 2",
+  "stock": 4,
+  "category": "Laptop"
+ },
+ {
+  "id": 3,
+  "brand": "Apple",
+  "name": "Iphone 13 Max",
+  "offerPrice": "800",
+  "regularPrice": "1000",
+  "discount": "200",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "Iphone 13 Max",
+  "descripcion": "Iphone 13 Max",
+  "stock": "10",
+  "categoria": "celulares",
+  "image": "product1652668393676.png"
+ },
+ {
+  "id": 4,
+  "brand": "Audifonos Nuevos con PUT",
+  "name": "Sony",
+  "offerPrice": "1600",
+  "regularPrice": "2000",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "",
+  "descripcion": "",
+  "stock": "20",
+  "categoria": "celulares",
+  "image": "product1652665668790.jpg"
+ },
+ {
+  "id": 5,
+  "brand": "Apple",
+  "name": "Iphone 13 Max",
+  "offerPrice": "1600",
+  "regularPrice": "1200",
+  "discount": "400",
+  "colores": [
+   "Azul",
+   "blanco",
+   "negro",
+   "rosa"
+  ],
+  "especifications": "Iphone 13 Max",
+  "description": "Iphone 13 Max",
+  "stock": "20",
+  "category": "celulares",
+  "image": "product1652665869640.png"
+ },
+ {
+  "id": 6,
+  "brand": "MSI",
+  "name": "Laptop MSI Legendary",
+  "offerPrice": "3000",
+  "regularPrice": "3300",
+  "discount": "300",
+  "colores": [
+   "rojo",
+   "Azul",
+   "negro"
+  ],
+  "especifications": "MSI Laptop",
+  "description": "MSI Laptop",
+  "stock": "2",
+  "category": "laptops",
+  "image": "product1652668901583.jpg"
+ },
+ {
+  "id": 7,
+  "brand": "Nuevo Producto",
+  "name": "Iphone",
+  "offerPrice": "1000",
+  "regularPrice": "1200",
+  "discount": "20",
+  "colores": [
+   "rojo",
+   "Azul",
+   "negro",
+   "rosa"
+  ],
+  "especifications": "Iphone",
+  "description": "Prueba Iphone",
+  "stock": "30",
+  "category": "tablets",
+  "image": "product1652749169120.jpg"
+ },
+ {
+  "id": 8,
+  "brand": "Otro Producto",
+  "name": "Otro Producto",
+  "offerPrice": "12000",
+  "regularPrice": "12222",
+  "discount": "10",
+  "colores": [
+   "rojo",
+   "blanco"
+  ],
+  "especifications": "Test",
+  "description": "Test",
+  "stock": "30",
+  "category": "celulares",
+  "image": "product1652749243888.jpg"
+ }
+]

@@ -9,19 +9,19 @@
 
     <div class="rg-rg-register-form-container">
       <h3 class="rg-register-label">Crear Productos</h3>
-      <form action="POST" name="rg-register-form" class="rg-register-form">
+      <form action="/crear-productos"  method="POST" class="rg-register-form" enctype="multipart/form-data" >
         <input
           type="text"
           placeholder="Marca"
           class="rg-form-input-text"
-          name="marca"
+          name="brand"
           required
         />
 
         <input
           type="text"
           placeholder="Nombre del producto"
-          name="nombreProducto"
+          name="name"
           class="rg-form-input-text"
           required
         />
@@ -29,14 +29,14 @@
         <input
           type="number"
           placeholder="Precio Oferta"
-          name="precioOferta"
+          name="offerPrice"
           class="rg-form-input-text"
         />
 
         <input
           type="number"
           placeholder="Precio Regular"
-          name="precioRegular"
+          name="regularPrice"
           class="rg-form-input-text"
           required
         />
@@ -44,7 +44,7 @@
         <input
           type="number"
           placeholder="Descuento"
-          name="descuento"
+          name="discount"
           class="rg-form-input-text"
         />
 
@@ -85,7 +85,7 @@
         <input
           id="imagenProducto"
           type="file"
-          name="images"
+          name="image"
           accept="jpg, png, jpeg"
           class="rg-form-input-text subirArchivo"
           multiple
@@ -96,7 +96,7 @@
           Especificaciones:</label
         >
         <textarea
-          name="especificaciones"
+          name="especifications"
           id="especificaciones"
           class="cp-textAreaInput"
         >
@@ -104,7 +104,7 @@
         >
 
         <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
-        <textarea name="descripcion" id="descripcion" class="cp-textAreaInput">
+        <textarea name="description" id="descripcion" class="cp-textAreaInput">
  Descripción del producto</textarea
         >
 
@@ -117,7 +117,7 @@
         />
         <h3 class="cp-tituloSeccion">Categorias</h3>
         <div class="cp-contenedorSelectorCategoria">
-          <select name="categoria" id="" required class="cp-selectorCategoria">
+          <select name="category" id="" required class="cp-selectorCategoria">
             <option value="">Selecciona una categoria</option>
             <option value="celulares">Celulares</option>
             <option value="laptops">Laptops</option>
@@ -130,48 +130,13 @@
         <br />
         <br />
         <button type="submit" class="rg-register-form-button">Guardar</button>
-        <button type="reset" class="rg-register-form-button">Cancelar</button>
+        <a href="/" class="rg-register-form-button">Cancelar</a>
       </form>
     </div>
 
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
     <!-- ======= START OF FOOTER  ====== -->
-
-    <footer>
-      <h3 class="footer-electrodoggy-text">ElectroDoggy</h3>
-
-      <div class="footer-container">
-        <h3>Servicio al cliente</h3>
-        <h5>Preguntas frecuentes</h5>
-        <h5>Términos y condiciones</h5>
-        <h5>Politicas de privacidad</h5>
-      </div>
-
-      <hr />
-
-      <div class="footer-container">
-        <h3>Conócenos</h3>
-        <h5>Sobre nosotros</h5>
-        <h5>Nuestras tiendas</h5>
-      </div>
-
-      <hr />
-
-      <div class="footer-container-icons">
-        <h3>Síguenos en:</h3>
-        <i class="fab fa-facebook" id="footer-icons-footer"></i>
-        <i class="fab fa-twitter" id="footer-icons-footer"></i>
-        <i class="fab fa-instagram" id="footer-icons-footer"></i>
-      </div>
-
-      <div class="footer-copy-right">
-        <i class="fas fa-copyright" id="footer-copy-right-icon"></i>
-        <p class="footer-copy-right-text">
-          2022 ElectroDoggy. Todos los derechos reservados
-        </p>
-      </div>
-    </footer>
 
     <!-- ===== END OF FOOTER  ====== -->
   </body>

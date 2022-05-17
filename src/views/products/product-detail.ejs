@@ -12,22 +12,23 @@
 
     <!-- ===== PRODUCT DETAIL ======= -->
     <main class="dp-main">
-      <div><%= detail.route %></div>
+      <div></div>
       <br />
       <div class="dp-informacion-producto">
         <section class="dp-contenedorImagenes">
           <div class="dp-imagenPrincipal">
             <img
               class="dp-imagen-producto"
-              src="../images/productos/<%= detail.img %>"
+              src="../images/productos/<%= product.image %>"
               alt=""
             />
           </div>
+          
           <div class="dp-slider-miniaturas">
             <div class="dp-container-miniatura">
               <img
                 class="dp-miniatura-producto"
-                src="/images/productos/producto2.jpg"
+                src="/images/productos/<%= product.image %>"
                 alt=""
               />
             </div>
@@ -46,12 +47,14 @@
               />
             </div>
           </div>
+
         </section>
         <section class="dp-product-description">
-          <h4 class="dp-marca"><%= detail.brand %></h4>
-          <h2 class="dp-modelo"><%= detail.productName %></h2>
-          <p class="dp-precio-antes"><%= detail.regularPrice %></p>
-          <h2 class="dp-precio"><%= detail.offerPrice %></h2>
+
+          <h4 class="dp-marca"><%= product.brand %></h4>
+          <h2 class="dp-modelo"><%= product.name %></h2>
+          <p class="dp-precio-antes"><%= product.regularPrice %></p>
+          <h2 class="dp-precio"><%= product.offerPrice %></h2>
           <h5 class="dp-colores">Colores disponibles:</h5>
           <div class="dp-contenedor-colores">
             <div class="dp-selector-colores"></div>
@@ -95,18 +98,14 @@
           </div>
         </section>
       </div>
+
+
       <section class="dp-descripcion-detalles">
         <ul class="dp-especificaciones">
           <li><a href="#">Descripción</a></li>
           <li><a href="#">Especificaciones</a></li>
         </ul>
-        <p class="dp-especificacionTexto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus
-          facilisi sit viverra consequat at. Sagittis fringilla mattis non at
-          auctor curabitur vitae tempor tincidunt. Sapien integer non semper a
-          facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed
-          diam.
-        </p>
+        <p class="dp-especificacionTexto"><%= product.description %></p>
       </section>
     </main>
 

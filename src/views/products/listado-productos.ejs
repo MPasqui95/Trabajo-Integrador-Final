@@ -6,7 +6,52 @@
     <!-- ===== HEADER  ================= -->
     <%- include('../partials/header.ejs') %>
 
-    <h1>Trabajando para usted</h1>
+
+    <section class="home-todo-vitrinas">
+     
+      <div class="home-titulo">
+        <h4>Listado de Productos</h4>
+        <button><i class="fas fa-chevron-right"></i></button>
+      </div>
+      
+      <div class="home-vitrinas">
+        <% products.forEach(function(product){ %> 
+        <article class="home-producto-vitrinas">
+          <a href="/editar-productos/<%= product.id %>">
+          <div class="home-descuento-vitrinas">
+            <h5>-28%</h5>
+          </div>
+          <img
+            src="/images/productos/<%= product.image %>"
+            class="home-imagenes-vitrinas"
+          />
+          <div class="home-textos-vitrinas">
+            <h5><%= product.brand %></h5>
+            <p><%= product.name %></p>
+            <h6>S/<%= product.regularPrice %></h6>
+            <h3>S/<%= product.offerPrice %></h3>
+          </div>
+        
+        </article>
+      </a>
+        <% }) %>
+
+
+        <div class="home-flechas-vitrinas home-flechas-vitrinas-derecha">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="home-flechas-vitrinas home-flechas-vitrinas-izquierda">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+      </div>
+      
+
+      <div class="home-bullets">
+        <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
+        <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
+        <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
+      </div>
+    </section>
 
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>

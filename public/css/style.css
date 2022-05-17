@@ -259,7 +259,10 @@ input[type="date"]::before {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
 }
+
 
 .rg-register-form-button:hover {
   background-color: #343cca;
