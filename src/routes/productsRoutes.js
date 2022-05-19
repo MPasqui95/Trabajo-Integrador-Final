@@ -2,6 +2,9 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const path = require ('path');
+// ==== EXPRESS VALIDATOR =====
+// const { body } = require ('express-validator');
+
 
 const productsController = require("../controllers/productsController");
 
@@ -17,6 +20,11 @@ const storage = multer.diskStorage({
 });
 
 const uploadFile = multer({storage});
+
+//=================== VALIDATIONS ==================================
+// const validateCreateProduct = [
+//     body('brand').notEmpty().withMessage('Debes completar este campo')
+// ]
 
 //================= ROUTES ================================
 
@@ -37,7 +45,9 @@ router.post('/crear-productos', uploadFile.any('image'), productsController.stor
 router.get('/editar-productos/:id', productsController.edit);
 router.put('/editar-productos/:id', uploadFile.any('image'), productsController.update);
 
-// PRODUCTS ARRAYS
-// router.get("/detalle-producto/:productId?", productsController.detail);
+//====== PRODUCT DELETE =============================
+router.delete('/editar-productos/:id', productsController.delete)
+
+;
 
 module.exports = router;

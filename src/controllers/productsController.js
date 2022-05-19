@@ -1,5 +1,4 @@
 const express = require("express");
-const req = require("express/lib/request");
 const fs = require('fs');
 const path = require ('path');
 
@@ -35,6 +34,7 @@ const productsController = {
   // ======= CREATE - METHOD TO STORE ======
   store: (req, res) => {
     
+
     let image
 
     if(req.files[0] != undefined) {
@@ -70,13 +70,13 @@ const productsController = {
     // console.log(id);
     let productToEdit = products.find(product => product.id == id);
     // console.log(productToEdit);
-    let image = req.files[0].filename;
+    let image 
 
-    // if(req.files[0].filename != undefined) {
-    // image = req.files[0].filename
-    // } else {
-    //   image = 'default-image.jpg'
-    // }
+    if(req.files[0] != undefined) {
+      image = req.files[0].filename
+    } else {
+      image = 'default-image.jpg'
+    }
 
     productToEdit = {
       id: productToEdit.id,
@@ -93,6 +93,20 @@ const productsController = {
 
     fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
     res.redirect('/')
+  },
+
+  delete: (req, res) => {
+
+    
+    let id = req.params.id;
+    
+    let productToDelete = products.filter(product => product.id != id);
+
+    console.log(productToDelete);
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, ' '));
+    res.redirect('/')
+
   },
 
   // ====== RENDER FOR PRODUCT DETAIL   ======

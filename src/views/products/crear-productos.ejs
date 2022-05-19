@@ -10,12 +10,13 @@
     <div class="rg-rg-register-form-container">
       <h3 class="rg-register-label">Crear Productos</h3>
       <form action="/crear-productos"  method="POST" class="rg-register-form" enctype="multipart/form-data" >
+        
         <input
           type="text"
           placeholder="Marca"
           class="rg-form-input-text"
           name="brand"
-          required
+          
         />
 
         <input
@@ -23,7 +24,7 @@
           placeholder="Nombre del producto"
           name="name"
           class="rg-form-input-text"
-          required
+          
         />
 
         <input
@@ -38,7 +39,7 @@
           placeholder="Precio Regular"
           name="regularPrice"
           class="rg-form-input-text"
-          required
+          
         />
 
         <input
@@ -78,10 +79,12 @@
             <input type="checkbox" name="colores" value="gris" id="gris" />
             Gris</label
           >
+
         </div>
+
         <label for="imagenProducto" class="cp-tituloSeccion">
-          Imagen del producto</label
-        >
+        Imagen del producto</label>
+        
         <input
           id="imagenProducto"
           type="file"
@@ -89,35 +92,32 @@
           accept="jpg, png, jpeg"
           class="rg-form-input-text subirArchivo"
           multiple
-          required
         />
 
-        <label for="especificaciones" class="cp-tituloSeccion">
-          Especificaciones:</label
-        >
+        <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
         <textarea
           name="especifications"
           id="especificaciones"
           class="cp-textAreaInput"
         >
- Especificaciones</textarea
-        >
+
+        </textarea>
 
         <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
         <textarea name="description" id="descripcion" class="cp-textAreaInput">
- Descripción del producto</textarea
-        >
+        </textarea>
 
         <input
           type="number"
           placeholder="Stock"
           name="stock"
           class="rg-form-input-text"
-          required
+          
         />
+
         <h3 class="cp-tituloSeccion">Categorias</h3>
         <div class="cp-contenedorSelectorCategoria">
-          <select name="category" id="" required class="cp-selectorCategoria">
+          <select name="category" id=""  class="cp-selectorCategoria">
             <option value="">Selecciona una categoria</option>
             <option value="celulares">Celulares</option>
             <option value="laptops">Laptops</option>
@@ -129,6 +129,7 @@
         </div>
         <br />
         <br />
+
         <button type="submit" class="rg-register-form-button">Guardar</button>
         <a href="/" class="rg-register-form-button">Cancelar</a>
       </form>

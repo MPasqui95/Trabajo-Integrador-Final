@@ -10,7 +10,8 @@
     <!-- ===== REGISTER FORM ====== -->
     <div class="rg-rg-register-form-container">
       <h3 class="rg-register-label">Registro</h3>
-      <form action="POST" name="rg-register-form" class="rg-register-form">
+      <form action="/register"  method="POST" class="rg-register-form" enctype="multipart/form-data">
+
         <input
           type="text"
           placeholder="Nombres"
@@ -23,61 +24,61 @@
           placeholder="Apellidos"
           name="apellido"
           class="rg-form-input-text"
-        />
+        >
 
         <input
           type="email"
           placeholder="Correo electrónico"
-          name="mail"
+          name="email"
           class="rg-form-input-text"
-        />
+        >
 
         <input
           type="password"
           placeholder="Contraseña"
           name="password"
           class="rg-form-input-text"
-        />
+        >
 
         <input
           type="password"
           placeholder="Confirmar contraseña"
-          name="password"
+          name="confirm_password"
           class="rg-form-input-text"
-        />
+        >
 
         <input
           type="text"
           placeholder="Dirección"
           name="direccion"
           class="rg-form-input-text"
-        />
+        >
+
         <label class="label-input-date"
           >Fecha de Nacimiento
           <input
             type="date"
             name="fecha-nacimiento"
             class="rg-form-input-text"
-          />
+          >
         </label>
+
+        <label class="label-input-date">Imagen</label>
+        <input type="file" name="user-image" class="rg-form-input-text">
 
         <label for="terminos" class="rg-boundaries-label">
           <input
             type="checkbox"
-            name="terminos"
             id="terminos"
             class="rg-boundaries"
-            required
-          />
+          >
           <div class="rg-boundaries-txt">
             *He leido y acepto las condiciones de
             <span>tratamientos de mis datos personales</span>
-          </div></label
-        >
+          </div>
+        </label>
 
-        <button type="submit" class="rg-register-form-button">
-          Registrarme
-        </button>
+        <button type="submit" class="rg-register-form-button">Registro</button>
       </form>
     </div>
 
@@ -89,4 +90,5 @@
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
   </body>
+
 </html>

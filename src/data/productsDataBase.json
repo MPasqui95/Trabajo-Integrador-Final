@@ -1,57 +1,7 @@
 [
  {
-  "id": 1,
-  "brand": "Lenovo Nuevo",
-  "name": "Thinkpad NUEVO",
-  "offerPrice": "3999",
-  "regularPrice": "4298",
-  "discount": "",
-  "colores": [
-   "rojo",
-   "Azul",
-   "blanco"
-  ],
-  "specifications": "Especificacion producto 1",
-  "descripcion": "Especificacion producto 1",
-  "stock": "2",
-  "categoria": "celulares",
-  "image": "product1652749055259.jpg"
- },
- {
-  "id": 2,
-  "brand": "Asus",
-  "name": "ROG Ultar",
-  "offerPrice": 3999,
-  "regularPrice": 4400,
-  "discount": 500,
-  "color": "azul",
-  "image": "producto2.jpg",
-  "specifications": "Especificacion producto 2",
-  "description": "Descripcion 2",
-  "stock": 4,
-  "category": "Laptop"
- },
- {
-  "id": 3,
-  "brand": "Apple",
-  "name": "Iphone 13 Max",
-  "offerPrice": "800",
-  "regularPrice": "1000",
-  "discount": "200",
-  "colores": [
-   "rojo",
-   "Azul",
-   "blanco"
-  ],
-  "specifications": "Iphone 13 Max",
-  "descripcion": "Iphone 13 Max",
-  "stock": "10",
-  "categoria": "celulares",
-  "image": "product1652668393676.png"
- },
- {
   "id": 4,
-  "brand": "Audifonos Nuevos con PUT",
+  "brand": "Audifonos Nuevos con PUT 12",
   "name": "Sony",
   "offerPrice": "1600",
   "regularPrice": "2000",
@@ -65,7 +15,7 @@
   "descripcion": "",
   "stock": "20",
   "categoria": "celulares",
-  "image": "product1652665668790.jpg"
+  "image": "product1652843142349.jpg"
  },
  {
   "id": 5,
@@ -106,22 +56,21 @@
  },
  {
   "id": 7,
-  "brand": "Nuevo Producto",
+  "brand": "Nuevo Producto Modificado",
   "name": "Iphone",
   "offerPrice": "1000",
   "regularPrice": "1200",
-  "discount": "20",
+  "discount": "",
   "colores": [
    "rojo",
    "Azul",
-   "negro",
-   "rosa"
+   "blanco"
   ],
-  "especifications": "Iphone",
-  "description": "Prueba Iphone",
+  "specifications": "",
+  "descripcion": "",
   "stock": "30",
-  "category": "tablets",
-  "image": "product1652749169120.jpg"
+  "categoria": "celulares",
+  "image": "product1652843075543.png"
  },
  {
   "id": 8,
@@ -129,15 +78,149 @@
   "name": "Otro Producto",
   "offerPrice": "12000",
   "regularPrice": "12222",
-  "discount": "10",
+  "discount": "",
   "colores": [
    "rojo",
+   "Azul",
    "blanco"
   ],
-  "especifications": "Test",
-  "description": "Test",
+  "specifications": "",
+  "descripcion": "",
   "stock": "30",
+  "categoria": "celulares",
+  "image": "product1652843086222.jpg"
+ },
+ {
+  "id": 9,
+  "brand": "Nuevo producto",
+  "name": "Nuevo producto",
+  "offerPrice": "12222",
+  "regularPrice": "1222",
+  "discount": "12121",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "especifications": "Nuevo producto",
+  "description": "Nuevo producto",
+  "stock": "12",
+  "category": "laptops",
+  "image": "product1652842394494.jpg"
+ },
+ {
+  "id": 10,
+  "brand": "Producto 222",
+  "name": "Producto 222",
+  "offerPrice": "2222",
+  "regularPrice": "2222",
+  "discount": "22",
+  "colores": [
+   "Azul",
+   "rosa"
+  ],
+  "especifications": "22",
+  "description": "22",
+  "stock": "22",
+  "category": "laptops",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 11,
+  "brand": "Producto 4444",
+  "name": "Producto 4444",
+  "offerPrice": "4444",
+  "regularPrice": "4444",
+  "discount": "44",
+  "colores": [
+   "Azul",
+   "negro"
+  ],
+  "especifications": "4444",
+  "description": "4444",
+  "stock": "44",
+  "category": "gamer",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 12,
+  "brand": "Producto 4444",
+  "name": "Producto 4444",
+  "offerPrice": "444",
+  "regularPrice": "444",
+  "discount": "444",
+  "colores": [
+   "Azul",
+   "blanco"
+  ],
+  "especifications": " Especificaciones",
+  "description": " Descripción del producto",
+  "stock": "44",
+  "category": "accesorios",
+  "image": "product1652842635083.jpg"
+ },
+ {
+  "id": 13,
+  "brand": "Producto 555",
+  "name": "Producto 555",
+  "offerPrice": "555",
+  "regularPrice": "555",
+  "discount": "555",
+  "colores": [
+   "rojo",
+   "Azul"
+  ],
+  "especifications": " Especificaciones",
+  "description": " Descripción del producto",
+  "stock": "555",
+  "category": "tablets",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 14,
+  "brand": "prueba",
+  "name": "prueba",
+  "offerPrice": "1111",
+  "regularPrice": "1111",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul"
+  ],
+  "especifications": " Especificaciones",
+  "description": " Descripción del producto",
+  "stock": "1110",
   "category": "celulares",
-  "image": "product1652749243888.jpg"
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 15,
+  "brand": "Producto 1200",
+  "name": "Producto 1200",
+  "offerPrice": "11111",
+  "regularPrice": "11111",
+  "discount": "11111",
+  "colores": [
+   "rojo",
+   "rosa"
+  ],
+  "especifications": "Producto 1200",
+  "description": "Producto 1200",
+  "stock": "111",
+  "category": "laptops",
+  "image": "product1652919168745.jpg"
+ },
+ {
+  "id": 16,
+  "brand": "HOla",
+  "name": "",
+  "offerPrice": "",
+  "regularPrice": "",
+  "discount": "",
+  "especifications": "\r\n        ",
+  "description": "        ",
+  "stock": "",
+  "category": "",
+  "image": "default-image.jpg"
  }
 ]

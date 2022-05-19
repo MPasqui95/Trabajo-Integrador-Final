@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
 
 
@@ -36,5 +37,6 @@ app.use("/", routerProd);
 app.use("/", routerUser);
 
 //=== INFORMATION CAPTURE =====
-app.use(express.urlencoded({extended: false}));
-app.use(express.json)
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+app.use(cookieParser());
