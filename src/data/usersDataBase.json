@@ -30,5 +30,16 @@
   "direccion": "Direccion 1",
   "fecha-nacimiento": "2022-05-19",
   "image": "user1652922009272.png"
+ },
+ {
+  "id": 4,
+  "nombres": "",
+  "apellido": "",
+  "email": "",
+  "password": "",
+  "confirm_password": "",
+  "direccion": "",
+  "fecha-nacimiento": "",
+  "image": "default-image.jpg"
  }
 ]

@@ -9,14 +9,17 @@
 
     <div class="rg-rg-register-form-container">
       <h3 class="rg-register-label">Crear Productos</h3>
-      <form action="/crear-productos"  method="POST" class="rg-register-form" enctype="multipart/form-data" >
-        
+      <form
+        action="/product/crear-productos"
+        method="POST"
+        class="rg-register-form"
+        enctype="multipart/form-data"
+      >
         <input
           type="text"
           placeholder="Marca"
           class="rg-form-input-text"
           name="brand"
-          
         />
 
         <input
@@ -24,7 +27,6 @@
           placeholder="Nombre del producto"
           name="name"
           class="rg-form-input-text"
-          
         />
 
         <input
@@ -39,7 +41,6 @@
           placeholder="Precio Regular"
           name="regularPrice"
           class="rg-form-input-text"
-          
         />
 
         <input
@@ -79,12 +80,12 @@
             <input type="checkbox" name="colores" value="gris" id="gris" />
             Gris</label
           >
-
         </div>
 
         <label for="imagenProducto" class="cp-tituloSeccion">
-        Imagen del producto</label>
-        
+          Imagen del producto</label
+        >
+
         <input
           id="imagenProducto"
           type="file"
@@ -94,13 +95,14 @@
           multiple
         />
 
-        <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
+        <label for="especificaciones" class="cp-tituloSeccion"
+          >Especificaciones:</label
+        >
         <textarea
           name="especifications"
           id="especificaciones"
           class="cp-textAreaInput"
         >
-
         </textarea>
 
         <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
@@ -112,12 +114,11 @@
           placeholder="Stock"
           name="stock"
           class="rg-form-input-text"
-          
         />
 
         <h3 class="cp-tituloSeccion">Categorias</h3>
         <div class="cp-contenedorSelectorCategoria">
-          <select name="category" id=""  class="cp-selectorCategoria">
+          <select name="category" id="" class="cp-selectorCategoria">
             <option value="">Selecciona una categoria</option>
             <option value="celulares">Celulares</option>
             <option value="laptops">Laptops</option>

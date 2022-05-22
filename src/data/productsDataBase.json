@@ -1,23 +1,5 @@
 [
  {
-  "id": 4,
-  "brand": "Audifonos Nuevos con PUT 12",
-  "name": "Sony",
-  "offerPrice": "1600",
-  "regularPrice": "2000",
-  "discount": "",
-  "colores": [
-   "rojo",
-   "Azul",
-   "blanco"
-  ],
-  "specifications": "",
-  "descripcion": "",
-  "stock": "20",
-  "categoria": "celulares",
-  "image": "product1652843142349.jpg"
- },
- {
   "id": 5,
   "brand": "Apple",
   "name": "Iphone 13 Max",
@@ -88,7 +70,7 @@
   "descripcion": "",
   "stock": "30",
   "categoria": "celulares",
-  "image": "product1652843086222.jpg"
+  "image": "default-image.jpg"
  },
  {
   "id": 9,
@@ -218,6 +200,19 @@
   "regularPrice": "",
   "discount": "",
   "especifications": "\r\n        ",
+  "description": "        ",
+  "stock": "",
+  "category": "",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 17,
+  "brand": "",
+  "name": "",
+  "offerPrice": "",
+  "regularPrice": "",
+  "discount": "",
+  "especifications": "        ",
   "description": "        ",
   "stock": "",
   "category": "",
