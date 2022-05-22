@@ -183,27 +183,27 @@
             </div>
             <br />
             <br />
-            <button type="submit" class="rg-register-form-button">
+            <button type="submit" class="rg-register-form-button ">
               Editar
             </button>
 
-            <a href="/" class="rg-register-form-button">Cancelar</a>
+            <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
           </div>
+        </form>
+        <form
+          action="/product/editar-productos/<%= productToEdit.id %>?_method=DELETE"
+          method="POST"
+          class="rg-register-form cp-editarProducto cp-delete-form"
+          enctype="multipart/form-data"
+        >
+          <button type="submit" class="rg-register-form-button cp-delete-button">Borrar</button>
         </form>
       </div>
 
       <!-- ==== DELETE BUTTON ==== -->
     </div>
 
-    <form
-      action="/product/editar-productos/<%= productToEdit.id %>?_method=DELETE"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-      <button type="submit" class="rg-register-form-button">Borrar</button>
-    </form>
-
-    <!-- ======= FOOTER  ====== -->
+   <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
   </body>
 </html>

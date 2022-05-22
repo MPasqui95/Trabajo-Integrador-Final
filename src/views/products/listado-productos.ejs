@@ -14,16 +14,16 @@
         <button><i class="fas fa-chevron-right"></i></button>
       </div>
       
-      <div class="home-vitrinas">
+      <div class="home-vitrinas lp-productos">
         <% products.forEach(function(product){ %> 
-        <article class="home-producto-vitrinas">
+        <article class="home-producto-vitrinas lp-card-producto">
           <a href="/product/editar-productos/<%= product.id %>">
           <div class="home-descuento-vitrinas">
             <h5>-28%</h5>
           </div>
           <img
             src="/images/productos/<%= product.image %>"
-            class="home-imagenes-vitrinas"
+            class="home-imagenes-vitrinas lp-imagen-producto"
           />
           <div class="home-textos-vitrinas">
             <h5><%= product.brand %></h5>
