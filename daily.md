@@ -1,4 +1,4 @@
-# Daily
+# Daily - SPRINT 2
 
 Para el desarrollo del sprint 3, se realizaron 2 reuniones
 
@@ -64,3 +64,5 @@ Mati
 ● Qué hizo ayer: Termine de organizar la estructura de carpetas del archivo
 ● Si se encontró con algún impedimento: Poder vincular la carpeta src de la manera adecuada para mantener la funcionalidad de todo el proyecto
 ● Qué va a hacer hoy: Modificar el logo para que enlace con home, agregar favicon y terminar los ultimos detalles para la entrega
+
+

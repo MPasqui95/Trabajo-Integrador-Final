@@ -108,23 +108,6 @@
   "image": "default-image.jpg"
  },
  {
-  "id": 11,
-  "brand": "Producto 4444",
-  "name": "Producto 4444",
-  "offerPrice": "4444",
-  "regularPrice": "4444",
-  "discount": "44",
-  "colores": [
-   "Azul",
-   "negro"
-  ],
-  "especifications": "4444",
-  "description": "4444",
-  "stock": "44",
-  "category": "gamer",
-  "image": "default-image.jpg"
- },
- {
   "id": 12,
   "brand": "Producto 4444",
   "name": "Producto 4444",
@@ -140,40 +123,6 @@
   "stock": "44",
   "category": "accesorios",
   "image": "product1652842635083.jpg"
- },
- {
-  "id": 13,
-  "brand": "Producto 555",
-  "name": "Producto 555",
-  "offerPrice": "555",
-  "regularPrice": "555",
-  "discount": "555",
-  "colores": [
-   "rojo",
-   "Azul"
-  ],
-  "especifications": " Especificaciones",
-  "description": " Descripción del producto",
-  "stock": "555",
-  "category": "tablets",
-  "image": "default-image.jpg"
- },
- {
-  "id": 14,
-  "brand": "prueba",
-  "name": "prueba",
-  "offerPrice": "1111",
-  "regularPrice": "1111",
-  "discount": "",
-  "colores": [
-   "rojo",
-   "Azul"
-  ],
-  "especifications": " Especificaciones",
-  "description": " Descripción del producto",
-  "stock": "1110",
-  "category": "celulares",
-  "image": "default-image.jpg"
  },
  {
   "id": 15,
@@ -194,28 +143,20 @@
  },
  {
   "id": 16,
-  "brand": "HOla",
-  "name": "",
-  "offerPrice": "",
-  "regularPrice": "",
+  "brand": ".",
+  "name": ".",
+  "offerPrice": "2",
+  "regularPrice": "1",
   "discount": "",
-  "especifications": "\r\n        ",
-  "description": "        ",
-  "stock": "",
-  "category": "",
-  "image": "default-image.jpg"
- },
- {
-  "id": 17,
-  "brand": "",
-  "name": "",
-  "offerPrice": "",
-  "regularPrice": "",
-  "discount": "",
-  "especifications": "        ",
-  "description": "        ",
-  "stock": "",
-  "category": "",
-  "image": "default-image.jpg"
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "",
+  "descripcion": "",
+  "stock": "1",
+  "categoria": "celulares",
+  "image": "product1653525728796.jpg"
  }
 ]
