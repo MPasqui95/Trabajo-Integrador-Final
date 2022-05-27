@@ -33,8 +33,8 @@ app.listen(3030, () => console.log("Server Run in Port 3030"));
 
 //Ruteo
 app.use("/", router);
-app.use("/", routerProd);
-app.use("/", routerUser);
+app.use("/product", routerProd);
+app.use("/user", routerUser);
 
 //=== INFORMATION CAPTURE =====
 app.use(express.urlencoded({extended: false}))

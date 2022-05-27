@@ -1564,6 +1564,8 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 1px solid #040740;
 }
 
+
+
 /* TABLET Y DESKTOP CREAR  */
 
 @media (min-width: 769px) {
@@ -1595,6 +1597,29 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
 }
 
+.cp-detallesProducto .rg-cancelar-button{
+  padding: 0.8rem;
+}
+/* =====LISTADO PRODUCTOS====== */
+
+.lp-productos{
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: unset;
+}
+
+.lp-card-producto{  
+  /* width: 45%; */
+  max-width: 170px;
+  margin-bottom: 10px;
+
+}
+
+.lp-imagen-producto{
+  display: block;
+  width: 100%;
+}
+
 /* ===============EDITAR PRODUCTO END ======== */
 @media (min-width: 769px) {
   .cp-editar-form-contenedor {
@@ -1613,7 +1638,7 @@ input[type="number"]::-webkit-inner-spin-button {
   .cp-editarProducto .cp-editarImagen {
     align-self: start;
     width: 50%;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
   }
 
   .cp-editarProducto .cp-detallesProducto {
@@ -1621,4 +1646,23 @@ input[type="number"]::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
   }
+
+  .cp-delete-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    
+  }
+
+  .cp-delete-button{
+    margin-right: 8.4%;
+    width: 33%;
+  }
+
+.lp-card-producto{
+  max-width: 230px;
+  margin: 5px;
+}
+
+
 }

@@ -10,8 +10,12 @@
     <!-- ===== REGISTER FORM ====== -->
     <div class="rg-rg-register-form-container">
       <h3 class="rg-register-label">Registro</h3>
-      <form action="/register"  method="POST" class="rg-register-form" enctype="multipart/form-data">
-
+      <form
+        action="/user/register"
+        method="POST"
+        class="rg-register-form"
+        enctype="multipart/form-data"
+      >
         <input
           type="text"
           placeholder="Nombres"
@@ -24,35 +28,35 @@
           placeholder="Apellidos"
           name="apellido"
           class="rg-form-input-text"
-        >
+        />
 
         <input
           type="email"
           placeholder="Correo electrónico"
           name="email"
           class="rg-form-input-text"
-        >
+        />
 
         <input
           type="password"
           placeholder="Contraseña"
           name="password"
           class="rg-form-input-text"
-        >
+        />
 
         <input
           type="password"
           placeholder="Confirmar contraseña"
           name="confirm_password"
           class="rg-form-input-text"
-        >
+        />
 
         <input
           type="text"
           placeholder="Dirección"
           name="direccion"
           class="rg-form-input-text"
-        >
+        />
 
         <label class="label-input-date"
           >Fecha de Nacimiento
@@ -60,18 +64,14 @@
             type="date"
             name="fecha-nacimiento"
             class="rg-form-input-text"
-          >
+          />
         </label>
 
         <label class="label-input-date">Imagen</label>
-        <input type="file" name="user-image" class="rg-form-input-text">
+        <input type="file" name="user-image" class="rg-form-input-text" />
 
         <label for="terminos" class="rg-boundaries-label">
-          <input
-            type="checkbox"
-            id="terminos"
-            class="rg-boundaries"
-          >
+          <input type="checkbox" id="terminos" class="rg-boundaries" />
           <div class="rg-boundaries-txt">
             *He leido y acepto las condiciones de
             <span>tratamientos de mis datos personales</span>
@@ -90,5 +90,4 @@
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
   </body>
-
 </html>

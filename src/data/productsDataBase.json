@@ -1,0 +1,211 @@
+[
+ {
+  "id": 5,
+  "brand": "Apple",
+  "name": "Iphone 13 Max",
+  "offerPrice": "1600",
+  "regularPrice": "1200",
+  "discount": "400",
+  "colores": [
+   "Azul",
+   "blanco",
+   "negro",
+   "rosa"
+  ],
+  "especifications": "Iphone 13 Max",
+  "description": "Iphone 13 Max",
+  "stock": "20",
+  "category": "celulares",
+  "image": "product1652665869640.png"
+ },
+ {
+  "id": 6,
+  "brand": "MSI",
+  "name": "Laptop MSI Legendary",
+  "offerPrice": "3000",
+  "regularPrice": "3300",
+  "discount": "300",
+  "colores": [
+   "rojo",
+   "Azul",
+   "negro"
+  ],
+  "especifications": "MSI Laptop",
+  "description": "MSI Laptop",
+  "stock": "2",
+  "category": "laptops",
+  "image": "product1652668901583.jpg"
+ },
+ {
+  "id": 7,
+  "brand": "Nuevo Producto PRUEBA",
+  "name": "PRUEBA",
+  "offerPrice": "1000",
+  "regularPrice": "1200",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "",
+  "descripcion": "",
+  "stock": "30",
+  "categoria": "celulares",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 8,
+  "brand": "Otro Producto",
+  "name": "Otro Producto",
+  "offerPrice": "12000",
+  "regularPrice": "12222",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "",
+  "descripcion": "",
+  "stock": "30",
+  "categoria": "celulares",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 9,
+  "brand": "Nuevo producto",
+  "name": "Nuevo producto",
+  "offerPrice": "12222",
+  "regularPrice": "1222",
+  "discount": "12121",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "especifications": "Nuevo producto",
+  "description": "Nuevo producto",
+  "stock": "12",
+  "category": "laptops",
+  "image": "product1652842394494.jpg"
+ },
+ {
+  "id": 10,
+  "brand": "Producto 222",
+  "name": "Producto 222",
+  "offerPrice": "2222",
+  "regularPrice": "2222",
+  "discount": "22",
+  "colores": [
+   "Azul",
+   "rosa"
+  ],
+  "especifications": "22",
+  "description": "22",
+  "stock": "22",
+  "category": "laptops",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 12,
+  "brand": "Producto 4444",
+  "name": "Producto 4444",
+  "offerPrice": "444",
+  "regularPrice": "444",
+  "discount": "444",
+  "colores": [
+   "Azul",
+   "blanco"
+  ],
+  "especifications": " Especificaciones",
+  "description": " Descripción del producto",
+  "stock": "44",
+  "category": "accesorios",
+  "image": "product1652842635083.jpg"
+ },
+ {
+  "id": 15,
+  "brand": "Producto 1200",
+  "name": "Producto 1200",
+  "offerPrice": "11111",
+  "regularPrice": "11111",
+  "discount": "11111",
+  "colores": [
+   "rojo",
+   "rosa"
+  ],
+  "especifications": "Producto 1200",
+  "description": "Producto 1200",
+  "stock": "111",
+  "category": "laptops",
+  "image": "product1652919168745.jpg"
+ },
+ {
+  "id": 16,
+  "brand": ".",
+  "name": ".",
+  "offerPrice": "2",
+  "regularPrice": "1",
+  "discount": "",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "",
+  "descripcion": "",
+  "stock": "1",
+  "categoria": "celulares",
+  "image": "product1653525728796.jpg"
+ },
+ {
+  "id": 17,
+  "brand": "Prueba1",
+  "name": "Prueba",
+  "offerPrice": "123",
+  "regularPrice": "123",
+  "discount": "0",
+  "colores": "rojo",
+  "especifications": "asdasdasdasd      ",
+  "description": "asdasdasdasd",
+  "stock": "3",
+  "category": "celulares",
+  "image": "product1653610498265.jpg"
+ },
+ {
+  "id": 18,
+  "brand": "1234",
+  "name": "123",
+  "offerPrice": "445",
+  "regularPrice": "2222",
+  "discount": "1234",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "123456        ",
+  "descripcion": "123456        ",
+  "stock": "12",
+  "categoria": "celulares",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 19,
+  "brand": "Nuevo producto hoy",
+  "name": "Nuevo producto hoy",
+  "offerPrice": "111111111",
+  "regularPrice": "11111",
+  "discount": "350",
+  "colores": [
+   "rojo",
+   "Azul"
+  ],
+  "especifications": "        111111",
+  "description": "        111111",
+  "stock": "23",
+  "category": "tablets",
+  "image": "product1653613121245.JPG"
+ }
+]

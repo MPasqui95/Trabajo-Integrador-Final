@@ -13,9 +13,17 @@
     <div class="rg-rg-register-form-container cp-editar-form-contenedor">
       <h3 class="rg-register-label">Editar producto</h3>
       <div class="rg-register-form cp-editarProducto">
-        <form action="/editar-productos/<%= productToEdit.id %>?_method=PUT"  method="POST" name="rg-register-form" class="rg-register-form cp-editarProducto" enctype="multipart/form-data">
+        <form
+          action="/product/editar-productos/<%= productToEdit.id %>?_method=PUT"
+          method="POST"
+          name="rg-register-form"
+          class="rg-register-form cp-editarProducto"
+          enctype="multipart/form-data"
+        >
           <div class="cp-editarImagen">
-            <label for="imagenProducto" class="cp-tituloSeccion">Imagen del producto</label>
+            <label for="imagenProducto" class="cp-tituloSeccion"
+              >Imagen del producto</label
+            >
             <img
               class="cp-subirImagen"
               src="/images/productos/<%= productToEdit.image %>"
@@ -27,9 +35,8 @@
               name="images"
               accept="jpg, png, jpeg"
               class="rg-form-input-text subirArchivo"
-              value='<%= productToEdit.image %>'
+              value="<%= productToEdit.image %>"
               multiple
-          
             />
           </div>
           <div class="cp-detallesProducto">
@@ -39,7 +46,6 @@
               value="<%= productToEdit.brand %>"
               class="rg-form-input-text"
               name="brand"
-              
             />
             <h3 class="cp-tituloSeccion">Nombre</h3>
             <input
@@ -47,7 +53,6 @@
               value="<%= productToEdit.name %>"
               name="name"
               class="rg-form-input-text"
-              
             />
             <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
             <input
@@ -62,12 +67,11 @@
               value="<%= productToEdit.regularPrice %>"
               name="regularPrice"
               class="rg-form-input-text"
-              
             />
             <h3 class="cp-tituloSeccion">Descuento</h3>
             <input
               type="number"
-              value="discount"
+              value="<%= productToEdit.discount %>"
               name="discount"
               class="rg-form-input-text"
             />
@@ -105,7 +109,12 @@
                 Blanco</label
               >
               <label for="colores">
-                <input type="checkbox" name="colores" value="negro" id="negro" />
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="negro"
+                  id="negro"
+                />
                 Negro</label
               >
               <label for="colores">
@@ -113,7 +122,12 @@
                 Rosa</label
               >
               <label for="colores">
-                <input type="checkbox" name="colores" value="verde" id="verde" />
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="verde"
+                  id="verde"
+                />
                 Verde</label
               >
               <label for="colores">
@@ -122,14 +136,19 @@
               >
             </div>
 
-            <label for="especificaciones" class="cp-tituloSeccion" value="specifications" >
+            <label
+              for="especificaciones"
+              class="cp-tituloSeccion"
+              value="specifications"
+            >
               Especificaciones:</label
             >
             <textarea
               name="specifications"
               id="especificaciones"
               class="cp-textAreaInput"
-            ><%= productToEdit.specifications %></textarea
+            >
+<%= productToEdit.especifications %></textarea
             >
 
             <label for="descripcion" class="cp-tituloSeccion">
@@ -139,7 +158,8 @@
               name="descripcion"
               id="descripcion"
               class="cp-textAreaInput"
-            ><%= productToEdit.specifications %></textarea
+            >
+<%= productToEdit.especifications %></textarea
             >
             <h3 class="cp-tituloSeccion">Stock</h3>
             <input
@@ -151,11 +171,7 @@
 
             <h3 class="cp-tituloSeccion">Categorias</h3>
             <div class="cp-contenedorSelectorCategoria">
-              <select
-                name="categoria"
-                id=""
-                class="cp-selectorCategoria"
-              >
+              <select name="categoria" id="" class="cp-selectorCategoria">
                 <option value="">Selecciona una categoria</option>
                 <option value="celulares" selected>Celulares</option>
                 <option value="laptops">Laptops</option>
@@ -167,28 +183,27 @@
             </div>
             <br />
             <br />
-            <button type="submit" class="rg-register-form-button">Editar</button>
-            
-            
+            <button type="submit" class="rg-register-form-button ">
+              Editar
+            </button>
 
-  
-            <a href="/" class="rg-register-form-button">Cancelar</a>
+            <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
           </div>
-    </form>
+        </form>
+        <form
+          action="/product/editar-productos/<%= productToEdit.id %>?_method=DELETE"
+          method="POST"
+          class="rg-register-form cp-editarProducto cp-delete-form"
+          enctype="multipart/form-data"
+        >
+          <button type="submit" class="rg-register-form-button cp-delete-button">Borrar</button>
+        </form>
       </div>
-           
-            <!-- ==== DELETE BUTTON ==== -->
-        
-           
+
+      <!-- ==== DELETE BUTTON ==== -->
     </div>
 
-    <form action="/editar-productos/<%= productToEdit.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" >
-
-      <button type="submit" class="rg-register-form-button">Borrar</button>
-
-    </form>
-
-    <!-- ======= FOOTER  ====== -->
+   <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
   </body>
 </html>
