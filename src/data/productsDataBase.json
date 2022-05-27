@@ -38,8 +38,8 @@
  },
  {
   "id": 7,
-  "brand": "Nuevo Producto Modificado",
-  "name": "Iphone",
+  "brand": "Nuevo Producto PRUEBA",
+  "name": "PRUEBA",
   "offerPrice": "1000",
   "regularPrice": "1200",
   "discount": "",
@@ -52,7 +52,7 @@
   "descripcion": "",
   "stock": "30",
   "categoria": "celulares",
-  "image": "product1652843075543.png"
+  "image": "default-image.jpg"
  },
  {
   "id": 8,
@@ -158,5 +158,37 @@
   "stock": "1",
   "categoria": "celulares",
   "image": "product1653525728796.jpg"
+ },
+ {
+  "id": 17,
+  "brand": "Prueba1",
+  "name": "Prueba",
+  "offerPrice": "123",
+  "regularPrice": "123",
+  "discount": "0",
+  "colores": "rojo",
+  "especifications": "asdasdasdasd      ",
+  "description": "asdasdasdasd",
+  "stock": "3",
+  "category": "celulares",
+  "image": "product1653610498265.jpg"
+ },
+ {
+  "id": 18,
+  "brand": "1234",
+  "name": "123",
+  "offerPrice": "445",
+  "regularPrice": "2222",
+  "discount": "1234",
+  "colores": [
+   "rojo",
+   "Azul",
+   "blanco"
+  ],
+  "specifications": "123456        ",
+  "descripcion": "123456        ",
+  "stock": "12",
+  "categoria": "celulares",
+  "image": "default-image.jpg"
  }
 ]

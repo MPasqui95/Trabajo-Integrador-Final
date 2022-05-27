@@ -71,7 +71,7 @@
             <h3 class="cp-tituloSeccion">Descuento</h3>
             <input
               type="number"
-              value="discount"
+              value="<%= productToEdit.discount %>"
               name="discount"
               class="rg-form-input-text"
             />
@@ -148,7 +148,7 @@
               id="especificaciones"
               class="cp-textAreaInput"
             >
-<%= productToEdit.specifications %></textarea
+<%= productToEdit.especifications %></textarea
             >
 
             <label for="descripcion" class="cp-tituloSeccion">
@@ -159,7 +159,7 @@
               id="descripcion"
               class="cp-textAreaInput"
             >
-<%= productToEdit.specifications %></textarea
+<%= productToEdit.especifications %></textarea
             >
             <h3 class="cp-tituloSeccion">Stock</h3>
             <input
