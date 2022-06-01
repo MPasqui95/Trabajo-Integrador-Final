@@ -10,12 +10,13 @@
     <!-- ===== LOGIN FORM ====== -->
     <div class="lg-lg-login-form-container">
       <h3 class="lg-login-label">Iniciar sesión</h3>
-      <form method="POST" name="lg-login-form" class="lg-login-form">
+      <form action="/user/login" method="POST" name="lg-login-form" class="lg-login-form" enctype="multipart/form-data">
         <input
           type="mail"
           placeholder="Correo electrónico"
           name="mail"
           class="lg-login-input-text"
+          value="<%= locals.errors && errors.msg ? errors.oldData : null %>"
         />
 
         <input
@@ -25,10 +26,16 @@
           class="lg-login-input-text"
         />
 
+        <% if (locals.errors && errors.msg) { %>
+          <div style="color: red">
+            <%= errors.msg %>
+          </div>
+        <% } %>
+
         <label for="terminos" class="login-boundarie-label">
           <input
             type="checkbox"
-            name="terminos"
+            name="rememberUser"
             id="terminos"
             class="lg-rg-boundaries"
           />

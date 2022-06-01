@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ======== HEAD =================== -->
+<%- include('../partials/head.ejs') %>
+
+  <body>
+<!-- ===== START OF HEADER  ====== -->
+<%- include('../partials/header.ejs') %>
+<!-- ===== END OF HEADER ====== -->
+
+<body>
+    <h2>Hola</h2><br>
+    <h2><%= user.nombres %> <%= user.apellido %> </h2> <br>
+    <img src="/images/users/<%= user.image %>" width="200px"><br>
+    <h2><%= user.email %> </h2>
+
+<!-- ======= START OF FOOTER  ====== -->
+
+<%- include('../partials/footer.ejs') %>
+
+<!-- ===== END OF FOOTER  ====== -->
+</body>
+</html>

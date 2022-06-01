@@ -1,21 +1,20 @@
 [
  {
   "id": 5,
-  "brand": "Apple",
+  "brand": "Apple PROBANDO",
   "name": "Iphone 13 Max",
   "offerPrice": "1600",
   "regularPrice": "1200",
   "discount": "400",
   "colores": [
+   "rojo",
    "Azul",
-   "blanco",
-   "negro",
-   "rosa"
+   "blanco"
   ],
-  "especifications": "Iphone 13 Max",
-  "description": "Iphone 13 Max",
+  "specifications": "Iphone 13 Max",
+  "descripcion": "Iphone 13 Max",
   "stock": "20",
-  "category": "celulares",
+  "categoria": "celulares",
   "image": "product1652665869640.png"
  },
  {

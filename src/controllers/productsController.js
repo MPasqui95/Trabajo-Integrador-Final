@@ -75,7 +75,7 @@ const productsController = {
     if(req.files[0] != undefined) {
       image = req.files[0].filename
     } else {
-      image = 'default-image.jpg'
+      image = productToEdit.image;
     }
 
     productToEdit = {

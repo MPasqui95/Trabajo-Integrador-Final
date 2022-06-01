@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/MPasqui95/grupo_7_TechShop#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
     "ejs": "^3.1.7",
     "express": "^4.17.3",
+    "express-session": "^1.17.3",
     "express-validator": "^6.14.0",
     "http-errors": "^2.0.0",
     "method-override": "^3.0.0",

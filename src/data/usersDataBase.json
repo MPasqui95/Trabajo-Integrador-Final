@@ -1,8 +1,8 @@
 [
  {
   "id": 1,
-  "nombres": "Diego",
-  "apellido": "Arbelaez",
+  "nombres": "Carmelo",
+  "apellido": "Diaz",
   "email": "lsimla0@telegraph.co.uk",
   "password": "AwjSKdZVT",
   "confirm_password": "iDwVzOtOt9B",
@@ -11,17 +11,6 @@
  },
  {
   "id": 2,
-  "nombres": "Matias",
-  "apellido": "Bolaños",
-  "email": "a@b.com",
-  "password": "123",
-  "confirm_password": "123",
-  "direccion": "CL 57 EE # 22 B - 102",
-  "fecha-nacimiento": "2022-05-11",
-  "image": "default-image.jpg"
- },
- {
-  "id": 3,
   "nombres": "Ana",
   "apellido": "Loiza",
   "email": "a@b.com",
@@ -32,7 +21,7 @@
   "image": "user1652922009272.png"
  },
  {
-  "id": 4,
+  "id": 3,
   "nombres": "",
   "apellido": "",
   "email": "",
@@ -43,14 +32,25 @@
   "image": "default-image.jpg"
  },
  {
+  "id": 4,
+  "nombres": "Diego",
+  "apellido": "Arbelaez",
+  "email": "arbelaez.dm@hotmail.com",
+  "password": "$2a$10$moZTo.sqUhvkuGgxpc7GWOWoq4Hyer96LmWdE1dorNPSWChRUkY9m",
+  "confirm_password": "$2a$10$/XjlAfPDRJJ4jNR2npcCCeSibshN5xHOj.C8s2Cok/YvS9fZrfvc2",
+  "direccion": "CL 57 EE # 22 B - 102",
+  "fecha-nacimiento": "2022-05-26",
+  "image": "user1653622106277.jpg"
+ },
+ {
   "id": 5,
   "nombres": "Matias",
   "apellido": "Bolaños",
-  "email": "arbelaez.dm@hotmail.com",
-  "password": "123",
-  "confirm_password": "123",
+  "email": "m@b.com",
+  "password": "$2a$10$lQVanwKFace3ddOR2JqAIufVXq2Xu5QWMBTyGi1sxPEMoia84igii",
+  "confirm_password": "$2a$10$.4MQIGpf4EtrB99d5Js0u.AbSt.xPlLd/wJxJToj21YvfF/C9bvmy",
   "direccion": "CL 57 EE # 22 B - 102",
-  "fecha-nacimiento": "2022-05-26",
-  "image": "user1653613245452.JPG"
+  "fecha-nacimiento": "2022-05-01",
+  "image": "user1654083722798.png"
  }
 ]
