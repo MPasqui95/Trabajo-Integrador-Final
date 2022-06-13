@@ -7,6 +7,9 @@ const { body } = require('express-validator');
 
 const userController = require ("../controllers/userController");
 const userLoggedMiddleware = require("../middleware/userLoggedMiddleware");
+const isLoggedMiddleware =  require("../middleware/isLoggedMiddleware");
+const authMiddleware =  require("../middleware/authMiddleware");
+
 
 // =========== MULTER =============
 const storage = multer.diskStorage({
@@ -24,7 +27,7 @@ const uploadFile = multer({storage});
 
 
 // ==== CREATE USERS WITH EXPRESS VALIDATOR ========
-routerUser.get('/register', userController.register);
+routerUser.get('/register', isLoggedMiddleware , userController.register);
 
 let validations = [
     body('nombres').notEmpty().withMessage('Debes ingresar el nombre'),
@@ -37,10 +40,14 @@ let validations = [
 routerUser.post('/register', validations, uploadFile.any('user-image'), userController.store);
 
 // ===== LOGIN =============
-routerUser.get("/login", userController.login);
+routerUser.get("/login", isLoggedMiddleware , userController.login);
 routerUser.post("/login", uploadFile.any('user-image'), userController.loginProcess);
 
 // ====== PROFILE ======= 
-routerUser.get('/profile', userLoggedMiddleware, userController.profile);
+routerUser.get('/profile', authMiddleware, userLoggedMiddleware, userController.profile); // se agrego otro Middleware si no esta logueado lo redirige al login
+
+// ====== LOGOUT ======= 
+routerUser.get('/logout/', userController.logout);
+
 
 module.exports = routerUser;

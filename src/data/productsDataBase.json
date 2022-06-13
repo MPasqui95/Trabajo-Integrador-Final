@@ -206,5 +206,18 @@
   "stock": "23",
   "category": "tablets",
   "image": "product1653613121245.JPG"
+ },
+ {
+  "id": 20,
+  "brand": "",
+  "name": "",
+  "offerPrice": "",
+  "regularPrice": "",
+  "discount": "",
+  "especifications": "        ",
+  "description": "        ",
+  "stock": "",
+  "category": "",
+  "image": "default-image.jpg"
  }
 ]

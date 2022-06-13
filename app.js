@@ -34,8 +34,9 @@ app.use(session({
     resave: false,
 	saveUninitialized: false,
 }));
-app.use(cookies());
 
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use(express.static("views"));
 
 app.listen(3030, () => console.log("Server Run in Port 3030"));
@@ -48,4 +49,3 @@ app.use("/user", routerUser);
 //=== INFORMATION CAPTURE =====
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(userLoggedMiddleware);

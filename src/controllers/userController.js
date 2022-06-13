@@ -46,12 +46,12 @@ const userController = {
 
   loginProcess: (req, res) => {
     let errors = validationResult(req);
+
     // return res.send(errores);
     let userEmail = req.body.mail;
-
+    
     //find user
     let userToLogin = users.find((oneUser) => oneUser.email === userEmail);
-
     //if the user exist compare the password
     if (userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(
@@ -61,16 +61,17 @@ const userController = {
 
       //if the password is correct, delete and save the user in session
       if (isOkThePassword) {
-        delete userToLogin.password;
+        // delete userToLogin.password;   Se comenta por que se cree hay un error con las COOKIes 
         req.session.userLogged = userToLogin;
+        res.redirect("/user/profile");
 
-        //if the user select the remember check, them set the cookie
+        // //if the user select the remember check, them set the cookie
         if (req.body.rememberUser != undefined) {
           res.cookie("userEmail", userToLogin.email, { maxAge: 120000 });
         }
 
         //if the user don´t select the remember check, redirect
-        return res.redirect("/");
+      
       }
 
       //if the password is incorrect
@@ -82,16 +83,31 @@ const userController = {
       });
     }
 
-    //if the user don´t exist
-    //pending to code
+  //if the user don´t exist
+    return res.render("users/login", {
+      errors: {
+        email: "No  se encuentra un usuario con ese correo o contraseña",
+      },
+    });
+  
   },
 
   // ============================================================
   // ==================== PROFILE ===========================
 
   profile: (req, res) => {
-    
+    console.log(req.session)
     res.render('users/profile', { user: req.session.userLogged });
+
+  },
+
+  // ============================================================
+  // ==================== LOGOUT ===========================
+
+  logout: (req, res) => {
+    req.session.destroy();
+    console.log(req.session)
+    return res.redirect('/')
 
   },
 };

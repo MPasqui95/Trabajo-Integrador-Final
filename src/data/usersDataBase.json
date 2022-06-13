@@ -7,7 +7,8 @@
   "password": "AwjSKdZVT",
   "confirm_password": "iDwVzOtOt9B",
   "direccion": "55 Artisan Hill",
-  "fecha-nacimiento": "8/6/2021"
+  "fecha-nacimiento": "8/6/2021",
+  "image": "user1652922009272.png"
  },
  {
   "id": 2,
@@ -52,5 +53,48 @@
   "direccion": "CL 57 EE # 22 B - 102",
   "fecha-nacimiento": "2022-05-01",
   "image": "user1654083722798.png"
+ },
+ {
+  "id": 7,
+  "nombres": "sas",
+  "apellido": "sas",
+  "email": "prueba@prueba.com",
+  "confirm_password": "$2a$10$bLRHiBAlbnIUbIpQ/DVHu.hUZijq/dW2UwtV9pox61HNCoEstGECu",
+  "direccion": "sas",
+  "fecha-nacimiento": "2022-06-06",
+  "image": "user1655069086399.jpg"
+ },
+ {
+  "id": 8,
+  "nombres": "SAS",
+  "apellido": "SAS",
+  "email": "aja@aja.com",
+  "password": "$2a$10$rIoZYWf.WkBo65Fmz4a73.M6LA7hQ1mY7jRmzc9ETQosRszIZeUv.",
+  "confirm_password": "$2a$10$dhNe9dhoozqTaAAVLYu33OzsSnjIPd9pMGqy2vbB7hM5yEog4n49m",
+  "direccion": "s",
+  "fecha-nacimiento": "2022-06-06",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 9,
+  "nombres": "angie",
+  "apellido": "angie",
+  "email": "prueba@prueba.com",
+  "password": "$2a$10$ngxUbUbLkgoULz.SgkHpauTUKncsICKbHyc27ypO3bHT0Ophxa86e",
+  "confirm_password": "$2a$10$Xa.LcGTm9xIRpTeqREWdmeBhjY/xVppkhKP88kAU0GavB0vVy7ykq",
+  "direccion": "s",
+  "fecha-nacimiento": "2022-06-02",
+  "image": "user1655084520793.jpg"
+ },
+ {
+  "id": 10,
+  "nombres": "Angie bolaños",
+  "apellido": "",
+  "email": "a@a.com",
+  "password": "$2a$10$tdWBowB7C6zx2RkqwZeKh.EjL191vTr9BiROwURXQBmN4I8lllaf.",
+  "confirm_password": "$2a$10$p.bJ8l5KarKmNGUvlirLlu0KR7.F4lNhhWgnbczyrA3Ea/kNaXzRq",
+  "direccion": "s",
+  "fecha-nacimiento": "2022-06-12",
+  "image": "user1655084631532.jpg"
  }
 ]

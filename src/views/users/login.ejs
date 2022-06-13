@@ -17,6 +17,7 @@
           name="mail"
           class="lg-login-input-text"
           value="<%= locals.errors && errors.msg ? errors.oldData : null %>"
+          required
         />
 
         <input
@@ -24,11 +25,19 @@
           placeholder="Contraseña"
           name="password"
           class="lg-login-input-text"
+          required
         />
 
         <% if (locals.errors && errors.msg) { %>
           <div style="color: red">
             <%= errors.msg %>
+          </div>
+        <% } %>
+
+        
+        <% if (locals.errors && errors.email) { %>
+          <div style="color: red">
+            <%= errors.email %>
           </div>
         <% } %>
 

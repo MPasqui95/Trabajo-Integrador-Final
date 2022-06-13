@@ -35,13 +35,29 @@
     <button class="find-button">
       <i class="fas fa-search" id="header-find-icon"></i>
     </button>
-
-    <div class="desktop-header-user-button">
-      <a href="/user/login">
-        <i class="fas fa-user" id="header-user-button"></i>
-      </a>
-      <p>Iniciar Sesión</p>
+    <% if(locals.isLogged) {%> 
+    <div class="desktop-header-use-profile-container desktop-header-shopping-cart-button ">
+      <div class="desktop-header-use-img-container">
+        <img class="desktop-header-use-img" src="/images/users/<%= locals.userLogged.image%>" alt="">
+      </div>
+      <p><%= locals.userLogged.nombres %> </p>
     </div>
+
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/user/logout"
+        ><i class="fas fa-clipboard-list" id="header-shopping-cart-button"></i
+      ></a>
+      <p>Salir</p>
+    </div>
+    <% }else if(!locals.isLogged) {%> 
+      <div class="desktop-header-user-button">
+        <a href="/user/login">
+          <i class="fas fa-user" id="header-user-button"></i>
+        </a>
+        <p>Iniciar Sesión</p>
+      </div>
+
+      <% } %> 
 
     <div class="desktop-header-shopping-cart-button">
       <a href="/product/carrito-compras"
@@ -63,6 +79,7 @@
       ></a>
       <p>Listado Productos</p>
     </div>
+
   </div>
 
   <div class="header-nav-bar-navigation">

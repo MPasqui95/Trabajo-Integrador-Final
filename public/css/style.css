@@ -61,6 +61,18 @@ header {
   color: #040740;
 }
 
+
+.desktop-header-use-img{
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.desktop-header-use-img-container{
+  max-width:32px;
+
+}
+
 .desktop-header-user-button #header-user-button:hover {
   color: #ff4f00;
 }
