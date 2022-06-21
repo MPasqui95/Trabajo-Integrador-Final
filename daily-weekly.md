@@ -71,5 +71,27 @@ Se realizar reunion para revisar los siguientes temas:
 
 - Formulario de creacion de producto con los metodos HTTP
 - Formulario de edicion de producto con los metodos HTTP
-- Vista de listado de productos 
+- Vista de listado de productos
 - Entregables Sprint 4 y 5
+
+## Sábado 18 de Junio
+
+Ana
+● Qué hizo ayer: Creacion de las validaciones en las rutas
+● Si se encontró con algún impedimento: Algunos problemas de sintaxis pero fueron solucionados
+● Qué va a hacer hoy: Instalacion e implementacion de session
+
+Mati
+● Qué hizo ayer: Distintas redirecciones segun si es un perfil logueado o no
+● Si se encontró con algún impedimento: Problemas al situar la imagen de perfil en el header
+● Qué va a hacer hoy: Completar los archivos de retro y weekly
+
+Angie
+● Qué hizo ayer: Implementacion de cookies y funcion recordar usuario
+● Si se encontró con algún impedimento: Errores inusuales debido al navegador al momento de tildar el recuerdame
+● Qué va a hacer hoy: Corregir errores para la entrega
+
+Diego
+● Qué hizo ayer: Encriptacion de contraseñas y funcionamiento de los campos del login; ademas de brindar asistencia a mis compañeros ajustando sus tareas.
+● Si se encontró con algún impedimento: Ninguno en particular
+● Qué va a hacer hoy: Finalizacion del formulario Login
