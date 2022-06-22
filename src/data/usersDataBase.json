@@ -96,5 +96,27 @@
   "direccion": "s",
   "fecha-nacimiento": "2022-06-12",
   "image": "user1655084631532.jpg"
+ },
+ {
+  "id": 11,
+  "nombres": "Hola",
+  "apellido": "Chau",
+  "email": "123@123.com",
+  "password": "$2a$10$O3T2gC2CRUW1gjRUG0ID3O.vgxLr29q1qorD/4Fz.bJPNte5nfH4W",
+  "confirm_password": "$2a$10$SvcjjaQQt7.Dw1WXVuRhdeuv3GRF5bcW..1EOFC.qSZ1s6.3.VR0S",
+  "direccion": "calle falsa 123",
+  "fecha-nacimiento": "2022-06-14",
+  "image": "user1655857400279.jpg"
+ },
+ {
+  "id": 12,
+  "nombres": "Chau",
+  "apellido": "Hola",
+  "email": "321@321.com",
+  "password": "$2a$10$TEvJIhiIlKuiuTvt31oWnOPK0KENxcOOG6cBq/JCLWSU3R8ZC30Pm",
+  "confirm_password": "$2a$10$/HY.pUAi2IixF5XgGn38uOTinSm9XW/vXDPw4i2plBIszCGZ6w2Me",
+  "direccion": "",
+  "fecha-nacimiento": "2022-06-23",
+  "image": "default-image.jpg"
  }
 ]
