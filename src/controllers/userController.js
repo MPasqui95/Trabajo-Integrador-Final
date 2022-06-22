@@ -61,13 +61,14 @@ const userController = {
 
       //if the password is correct, delete and save the user in session
       if (isOkThePassword) {
-        // delete userToLogin.password;   Se comenta por que se cree hay un error con las COOKIes 
+        delete userToLogin.password;  // Se comenta por que se cree hay un error con las COOKIes 
         req.session.userLogged = userToLogin;
-        res.redirect("/user/profile");
 
         // //if the user select the remember check, them set the cookie
         if (req.body.rememberUser != undefined) {
+          
           res.cookie("userEmail", userToLogin.email, { maxAge: 120000 });
+          return res.redirect("/user/profile");
         }
 
         //if the user don´t select the remember check, redirect
@@ -93,10 +94,10 @@ const userController = {
   },
 
   // ============================================================
-  // ==================== PROFILE ===========================
+  // ==================== PROFILE ===============================
 
   profile: (req, res) => {
-    console.log(req.session)
+    // console.log(req.session)
     res.render('users/profile', { user: req.session.userLogged });
 
   },
@@ -105,8 +106,8 @@ const userController = {
   // ==================== LOGOUT ===========================
 
   logout: (req, res) => {
+    res.clearCookie("userEmail")
     req.session.destroy();
-    console.log(req.session)
     return res.redirect('/')
 
   },

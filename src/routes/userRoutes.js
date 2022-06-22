@@ -47,7 +47,7 @@ routerUser.post("/login", uploadFile.any('user-image'), userController.loginProc
 routerUser.get('/profile', authMiddleware, userLoggedMiddleware, userController.profile); // se agrego otro Middleware si no esta logueado lo redirige al login
 
 // ====== LOGOUT ======= 
-routerUser.get('/logout/', userController.logout);
+routerUser.get('/logout', userController.logout);
 
 
 module.exports = routerUser;

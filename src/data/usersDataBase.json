@@ -37,7 +37,6 @@
   "nombres": "Diego",
   "apellido": "Arbelaez",
   "email": "arbelaez.dm@hotmail.com",
-  "password": "$2a$10$moZTo.sqUhvkuGgxpc7GWOWoq4Hyer96LmWdE1dorNPSWChRUkY9m",
   "confirm_password": "$2a$10$/XjlAfPDRJJ4jNR2npcCCeSibshN5xHOj.C8s2Cok/YvS9fZrfvc2",
   "direccion": "CL 57 EE # 22 B - 102",
   "fecha-nacimiento": "2022-05-26",
@@ -117,6 +116,17 @@
   "confirm_password": "$2a$10$/HY.pUAi2IixF5XgGn38uOTinSm9XW/vXDPw4i2plBIszCGZ6w2Me",
   "direccion": "",
   "fecha-nacimiento": "2022-06-23",
+  "image": "default-image.jpg"
+ },
+ {
+  "id": 13,
+  "nombres": "hoy",
+  "apellido": "hoy",
+  "email": "a@c.com",
+  "password": "$2a$10$Y/J7rb1ySckS/xhP3LQElOAR/gzuuP1/IsmOX2Tqk3..PxxPDapaW",
+  "confirm_password": "$2a$10$gkzP1FwAGbQrgBH/gwHZGOTGTpfd7NblLBw3Mjy1yU47GAiTiXfbG",
+  "direccion": "",
+  "fecha-nacimiento": "2022-06-16",
   "image": "default-image.jpg"
  }
 ]

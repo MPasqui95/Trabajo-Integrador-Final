@@ -25,6 +25,7 @@ app.set ("views", "./src/views")
 
 //====== MIDDLEAWARES 
 const publicPath = path.resolve(__dirname, "./public");
+app.use(cookies());
 app.use(express.static(publicPath));
 app.use(express.json());
 app.use(logger("dev"));
@@ -35,7 +36,7 @@ app.use(session({
 	saveUninitialized: false,
 }));
 
-app.use(cookies());
+
 app.use(userLoggedMiddleware);
 app.use(express.static("views"));
 
