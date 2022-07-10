@@ -13,7 +13,7 @@
     <!-- ===== PRODUCT DETAIL ======= -->
 
     <main class="dp-main">
-      <div>Inicio > Celulares > Galaxy Note 20 Ultra</div>
+      <div>Inicio > Celulares > <%= product.name %></div>
       <div class="dp-informacion-producto">
         <section class="dp-contenedorImagenes">
           <div class="dp-imagenPrincipal">
@@ -50,10 +50,9 @@
           </div>
         </section>
         <section class="dp-product-description">
-          <h4 class="dp-marca">Samsung</h4>
-          <h2 class="dp-modelo">Galaxy Note 20 Ultra</h2>
-          <p class="dp-precio-antes">$ 6,000.00</p>
-          <h2 class="dp-precio">$ 4,298.00</h2>
+          <h2 class="dp-modelo"><%= product.name %></h2>
+          <p class="dp-precio-antes"><%= product.offerPrice %></p>
+          <h2 class="dp-precio"><%= product.regularPrice %></h2>
           <h5 class="dp-colores">Colores disponibles:</h5>
           <div class="dp-contenedor-colores">
             <div class="dp-selector-colores"></div>
@@ -99,7 +98,7 @@
       </div>
       <section class="dp-descripcion-detalles">
         <ul class="dp-especificaciones">
-          <li><a href="#">Descripción</a></li>
+          <li><a href="#"><%= product.specification %></a></li>
           <li><a href="#">Especificaciones</a></li>
         </ul>
         <p class="dp-especificacionTexto">

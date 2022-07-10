@@ -32,7 +32,7 @@ const uploadFile = multer({storage});
 router.get("/carrito-compras", productsController.shoppingCart);
 
 //================== PRODUCT DETAIL ======================
-// router.get("/detalle-producto", productsController.detalle);
+router.get("/detalle-producto/:id", productsController.detalle);
 
 //============== PRODUCTS LIST =============================
 router.get("/listado-productos", productsController.list);

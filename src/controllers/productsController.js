@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require('fs');
 const path = require ('path');
 
+let db = require("../database/models")
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -14,16 +16,30 @@ const productsController = {
   // ====== RENDER FOR SIMPLE PRODUCT DETAIL   ======
   detalle: (req, res) => {
 
-    let id= req.params.productId;
-    
-    let product = products.find((product) => product.id == id);
-    res.render('products/product-detail', {product})
+
+    // se agrega la consulta por primary key con sequalize a la base de datos
+    db.Productos.findByPk(req.params.id)
+    .then(function(product){
+      res.render("products/detalle-producto",{product})
+    })    
+
+    // let id= req.params.productId;
+    // let product = products.find((product) => product.id == id);
+    // res.render('products/detalle-producto', {product})
 
   },
 
   // ====== RENDER FOR LIST PAGE   ======
   list: (req, res) => {
-        res.render("products/listado-productos", {products});
+
+    // se agrega la consulta para todos los productos
+    // con sequalize a la base de datos
+
+    db.Productos.findAll()
+    .then(function(products){
+      res.render("products/listado-productos",{products:products})
+    })
+        // res.render("products/listado-productos", {products});
   },
 
   // ====== RENDER FOR PRODUCT CREATE PAGE   ======
