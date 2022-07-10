@@ -39,6 +39,9 @@ const productsController = {
     .then(function(products){
       res.render("products/listado-productos",{products:products})
     })
+    .catch ((err) => {
+      console.log (err)
+    })
         // res.render("products/listado-productos", {products});
   },
 

@@ -34,17 +34,21 @@ module.exports =(sequelize, dataTypes) =>{
             type: dataTypes.INTEGER(3)
             },
              
-            categoríasBrands_id:{
+            categoriesBrands_id:{
             type: dataTypes.INTEGER(2)
             },
              
-            categoríasProductos_id:{
+            categoriesProductos_id:{
+                type: dataTypes.INTEGER(2)
+            },
+
+            categoriesColors_id:{
                 type: dataTypes.INTEGER(2)
             },
              
-            productsImage_id:{
-            type: dataTypes.INTEGER(5)
-            },
+            // productsImage_id:{
+            // type: dataTypes.INTEGER(5)
+            // },
              
 
         } 
