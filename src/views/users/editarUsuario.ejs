@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <!-- ===== HEADER  ================= -->
+
+    <%- include('../partials/header.ejs') %>
+
+    <!-- ===== PRODUCTS EDIT  ================= -->
+
+    <div class="rg-rg-register-form-container cp-editar-form-contenedor">
+      <h3 class="rg-register-label">Editar Usuario</h3>
+      <div class="rg-register-form cp-editarProducto">
+        <form
+          action="/user/editar-usuario/<%= usuario.id %>?_method=PUT"
+          method="POST"
+          name="rg-register-form"
+          class="rg-register-form cp-editarProducto"
+          enctype="multipart/form-data"
+        >
+
+          <div class="cp-detallesProducto">
+
+            <h3 class="cp-tituloSeccion">Nombre</h3>
+            <input
+              type="text"
+              value="<%= usuario.firstName %>"
+              name="name"
+              class="rg-form-input-text"
+            />
+
+
+
+            <h3 class="cp-tituloSeccion">Apellido</h3>
+            <input
+              type="text"
+              value="<%= usuario.lastName %>"
+              name="lastName"
+              class="rg-form-input-text"
+            />
+
+
+            <h3 class="cp-tituloSeccion">Email</h3>
+            <input
+              type="email"
+              value="<%= usuario.email %>"
+              name="email"
+              class="rg-form-input-text"
+            />
+
+
+            <h3 class="cp-tituloSeccion">Password</h3>
+            <input
+              type="password"
+              value="<%= usuario.password %>"
+              name="password"
+              class="rg-form-input-text"
+            />
+
+
+            <h3 class="cp-tituloSeccion">Direccion</h3>
+            <input
+              type="text"
+              value="<%= usuario.direction %>"
+              name="direction"
+              class="rg-form-input-text"
+            />
+
+
+            <h3 class="cp-tituloSeccion">Fecha de Nacimiento</h3>
+            <input
+              type="date"
+              value="<%= usuario.dateBirth %>"
+              name="dateBirth"
+              class="rg-form-input-text"
+            />
+
+
+
+
+
+            <label for="categoria">Categoria</label>
+
+          <select name="categoria" class="rg-form-input-text">
+
+            <% for( let i = 0; i < categoriaUsuario.length; i++ ) { %>
+              <% if (categoriaUsuario[i].id == usuario.categoriesUsers_id) { %>
+               <option value="<%= categoriaUsuario[i].id %> " selected>
+                <%= categoriaUsuario[i].nombre %> 
+              <% } else { %>
+                <option value="<%= categoriaUsuario[i].id %>">
+                  <%= categoriaUsuario[i].nombre %> 
+            </option>
+            
+            <% } %>
+
+            <% } %>
+
+           </select>
+
+           <div class="cp-editarImagen">
+            <label class="cp-tituloSeccion"
+              >Imagen Usuario</label
+            >
+            <img
+              class="cp-subirImagen"
+              src="/images/users/<%= usuario.userImage %>"
+              alt=""
+            />
+            
+            <input
+              id="imagenProducto"
+              type="file"
+              name="images"
+              accept="jpg, png, jpeg"
+              class="rg-form-input-text subirArchivo"
+              value="<%= usuario.userImage %>"
+              multiple
+            />
+          </div>
+
+                        <br />
+            <br />
+            <button type="submit" class="rg-register-form-button ">
+              Editar
+            </button>
+
+            <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
+          </div>
+        </form>
+
+        <form
+          action="/user/borrar/<%= usuario.id %>"
+          method="POST"
+          class="rg-register-form cp-editarProducto cp-delete-form"
+          enctype="multipart/form-data"
+        >
+          <button type="submit" class="rg-register-form-button cp-delete-button">Borrar</button>
+        </form>
+      </div>
+
+      <!-- ==== DELETE BUTTON ==== -->
+    </div>
+
+   <!-- ======= FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

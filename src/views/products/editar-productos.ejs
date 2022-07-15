@@ -14,64 +14,81 @@
       <h3 class="rg-register-label">Editar producto</h3>
       <div class="rg-register-form cp-editarProducto">
         <form
-          action="/product/editar-productos/<%= productToEdit.id %>?_method=PUT"
+          action="/product/editar-productos/<%= producto.id %>?_method=PUT"
           method="POST"
           name="rg-register-form"
           class="rg-register-form cp-editarProducto"
           enctype="multipart/form-data"
         >
-          <div class="cp-editarImagen">
+
+        
+
+          <div class="cp-detallesProducto">
+            <h3 class="cp-tituloSeccion">Marca</h3>
+            <label for="brand"></label>
+          <select name="brand" class="rg-form-input-text">
+
+            <% for( let i = 0; i < categories.length; i++ ) { %>
+              <% if (categories[i].id == producto.categoriesBrands_id) { %>
+               <option value="<%= categories[i].id %> " selected>
+                <%= categories[i].name %> 
+              <% } else { %>
+                <option value="<%= categories[i].id %>">
+                  <%= categories[i].name %> 
+            </option>
+            
+            <% } %>
+
+            <% } %>
+
+           </select>
+
+           <div class="cp-editarImagen">
             <label for="imagenProducto" class="cp-tituloSeccion"
               >Imagen del producto</label
             >
             <img
               class="cp-subirImagen"
-              src="/images/productos/<%= productToEdit.image %>"
+              src="/images/productos/<%= producto.image %>"
               alt=""
             />
+            
             <input
               id="imagenProducto"
               type="file"
               name="images"
               accept="jpg, png, jpeg"
               class="rg-form-input-text subirArchivo"
-              value="<%= productToEdit.image %>"
+              value="<%= producto.image %>"
               multiple
             />
           </div>
-          <div class="cp-detallesProducto">
-            <h3 class="cp-tituloSeccion">Marca</h3>
-            <input
-              type="text"
-              value="<%= productToEdit.brand %>"
-              class="rg-form-input-text"
-              name="brand"
-            />
+
             <h3 class="cp-tituloSeccion">Nombre</h3>
             <input
               type="text"
-              value="<%= productToEdit.name %>"
+              value="<%= producto.name %>"
               name="name"
               class="rg-form-input-text"
             />
             <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
             <input
               type="number"
-              value="<%= productToEdit.offerPrice %>"
+              value="<%= producto.offerPrice %>"
               name="offerPrice"
               class="rg-form-input-text"
             />
             <h3 class="cp-tituloSeccion">Precio Regular</h3>
             <input
               type="number"
-              value="<%= productToEdit.regularPrice %>"
+              value="<%= producto.regularPrice %>"
               name="regularPrice"
               class="rg-form-input-text"
             />
             <h3 class="cp-tituloSeccion">Descuento</h3>
             <input
               type="number"
-              value="<%= productToEdit.discount %>"
+              value="<%= producto.discount %>"
               name="discount"
               class="rg-form-input-text"
             />
@@ -79,61 +96,21 @@
             <h3 class="cp-tituloSeccion">Colores</h3>
             <div class="cp-chekboxColores">
               <label for="colores">
-                <input
-                  type="checkbox"
-                  name="colores"
-                  value="rojo"
-                  id="rojo"
-                  checked
-                />
-                Rojo</label
-              >
-              <label for="colores">
-                <input
-                  type="checkbox"
-                  name="colores"
-                  value="Azul"
-                  id="Azul"
-                  checked
-                />
-                Azul</label
-              >
-              <label for="colores">
-                <input
-                  type="checkbox"
-                  name="colores"
-                  value="blanco"
-                  id="blanco"
-                  checked
-                />
-                Blanco</label
-              >
-              <label for="colores">
-                <input
-                  type="checkbox"
-                  name="colores"
-                  value="negro"
-                  id="negro"
-                />
-                Negro</label
-              >
-              <label for="colores">
-                <input type="checkbox" name="colores" value="rosa" id="rosa" />
-                Rosa</label
-              >
-              <label for="colores">
-                <input
-                  type="checkbox"
-                  name="colores"
-                  value="verde"
-                  id="verde"
-                />
-                Verde</label
-              >
-              <label for="colores">
-                <input type="checkbox" name="colores" value="gris" id="gris" />
-                Gris</label
-              >
+                <select name="colores">
+                 <% for( let i = 0; i < colors.length; i++ ) { %>
+
+                  <% if (colors[i].id == producto.categoriesColors_id) { %>
+                    <option value="<%= colors[i].id %>" selected>
+                      <%= colors[i].name %> 
+                  </option>
+                  <% } else { %>
+
+                   <option value="<%= colors[i].id %> ">
+                       <%= colors[i].name %> 
+                   </option>
+                   <% } %>
+                   <% } %>
+                </select> 
             </div>
 
             <label
@@ -148,7 +125,7 @@
               id="especificaciones"
               class="cp-textAreaInput"
             >
-<%= productToEdit.especifications %></textarea
+              <%= producto.specifications %></textarea
             >
 
             <label for="descripcion" class="cp-tituloSeccion">
@@ -159,26 +136,33 @@
               id="descripcion"
               class="cp-textAreaInput"
             >
-<%= productToEdit.especifications %></textarea
+              <%= producto.specification %></textarea
             >
             <h3 class="cp-tituloSeccion">Stock</h3>
             <input
               type="number"
-              value="<%= productToEdit.stock %>"
+              value="<%= producto.stock %>"
               name="stock"
               class="rg-form-input-text"
             />
 
             <h3 class="cp-tituloSeccion">Categorias</h3>
             <div class="cp-contenedorSelectorCategoria">
-              <select name="categoria" id="" class="cp-selectorCategoria">
-                <option value="">Selecciona una categoria</option>
-                <option value="celulares" selected>Celulares</option>
-                <option value="laptops">Laptops</option>
-                <option value="tablets">Tablets</option>
-                <option value="gamer">Gamer</option>
-                <option value="audio">Audio</option>
-                <option value="accesorios">Accesorios</option>
+              <select name="category" id="" class="cp-selectorCategoria">
+                <% for( let i = 0; i < categoryProduct.length; i++ ) { %>
+                  <% if (categoryProduct[i].id == producto.categoriesProductos_id) { %>
+
+                    <option value="<%= categoryProduct[i].id %>" selected>
+                      <%= categoryProduct[i].name %> 
+                  </option>
+
+                  <% } else { %>
+                  <option value="<%= categoryProduct[i].id %> ">
+                      <%= categoryProduct[i].name %> 
+                  </option>
+                  <% } %>
+                  <% } %>
+
               </select>
             </div>
             <br />
@@ -190,8 +174,9 @@
             <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
           </div>
         </form>
+
         <form
-          action="/product/editar-productos/<%= productToEdit.id %>?_method=DELETE"
+          action="/product/editar-productos/<%= producto.id %>?_method=DELETE"
           method="POST"
           class="rg-register-form cp-editarProducto cp-delete-form"
           enctype="multipart/form-data"

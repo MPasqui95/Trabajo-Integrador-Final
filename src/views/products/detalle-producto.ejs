@@ -16,37 +16,8 @@
       <div>Inicio > Celulares > <%= product.name %></div>
       <div class="dp-informacion-producto">
         <section class="dp-contenedorImagenes">
-          <div class="dp-imagenPrincipal">
-            <img
-              class="dp-imagen-producto"
-              src="images/productos/producto1.jpg"
-              alt=""
-            />
-          </div>
-          <div class="dp-slider-miniaturas">
-            <div class="dp-container-miniatura">
-              <img
-                class="dp-miniatura-producto"
-                src="images/productos/producto2.jpg"
-                alt=""
-              />
-            </div>
-            <div class="dp-container-miniatura">
-              <img
-                class="dp-miniatura-producto"
-                src="images/productos/producto3.jpg"
-                alt=""
-              />
-            </div>
-            <div class="dp-container-miniatura">
-              <img
-                class="dp-miniatura-producto"
-                src="images/productos/producto4.jpg"
-                alt=""
-              />
-            </div>
-            <!-- <img class ="dp-miniatura-producto" src="images/productos/producto3.jpg" alt="">
-                    <img class ="dp-miniatura-producto" src="images/productos/producto4.jpg" alt=""> -->
+             <div class="dp-imagenPrincipal">
+             <img class="dp-imagen-producto" src="/images/productos/<%= product.image %>"/>
           </div>
         </section>
         <section class="dp-product-description">
@@ -98,15 +69,10 @@
       </div>
       <section class="dp-descripcion-detalles">
         <ul class="dp-especificaciones">
-          <li><a href="#"><%= product.specification %></a></li>
-          <li><a href="#">Especificaciones</a></li>
+            <li><a href="#">Especificaciones</a></li>
         </ul>
         <p class="dp-especificacionTexto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At ut tellus
-          facilisi sit viverra consequat at. Sagittis fringilla mattis non at
-          auctor curabitur vitae tempor tincidunt. Sapien integer non semper a
-          facilisis cursus ac pulvinar dolor. Non, suspendisse in risus sed
-          diam.
+          <%= product.specification %> 
         </p>
       </section>
     </main>

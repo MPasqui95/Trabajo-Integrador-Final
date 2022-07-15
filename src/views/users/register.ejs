@@ -17,69 +17,169 @@
         enctype="multipart/form-data"
       >
 
-        
+
+        <label class="label-input-date">Tipo de Usuario</label>
+        <select name="tipoUsuario" class="rg-form-input-text">
+
+          <% for( let i = 0; i < categoriaUsuario.length; i++ ) { %>
+            <option 
+              value="<%= categoriaUsuario[i].id %>">
+              <%= categoriaUsuario[i].nombre %> 
+            </option>
+          <% } %>
+
+        </select>
+
+        <!-- ========================================== -->
+
+        <label class="label-input-date">Nombres</label>
         <input
           type="text"
-          placeholder="Nombres"
           class="rg-form-input-text"
-          name="nombres"
+          name="name"
+          value="<%= locals.oldData ? oldData.name : null %>" 
         />
+          <% if (locals.errors && errors.name) { %>
+            <div class="register-errors">
+              <%= errors.name.msg %> 
+            </div>
+          <% } %>
     
+        <!-- ========================================== -->
 
+
+
+        <label class="label-input-date">Apellidos</label>
         <input
           type="text"
-          placeholder="Apellidos"
-          name="apellido"
+          name="lastName"
           class="rg-form-input-text"
+          value="<%= locals.oldData ? oldData.lastName : null %>"
         />
 
+        <% if (locals.errors && errors.lastName) { %>
+          <div class="register-errors">
+            <%= errors.lastName.msg %> 
+          </div>
+        <% } %>
+
+
+        <!-- ========================================== -->
+
+
+        <label class="label-input-date">Correo Electronico</label>
         <input
           type="email"
-          placeholder="Correo electrónico"
           name="email"
           class="rg-form-input-text"
+          value="<%= locals.oldData ? oldData.email : null %>"
         />
 
+        <% if (locals.errors && errors.email) { %>
+          <div class="register-errors">
+            <%= errors.email.msg %> 
+          </div>
+        <% } %>
+
+
+        <!-- ========================================== -->
+
+
+
+        <label class="label-input-date">Contraseña</label>
         <input
           type="password"
-          placeholder="Contraseña"
           name="password"
           class="rg-form-input-text"
+          name="name"
         />
 
+        <% if (locals.errors && errors.password) { %>
+          <div class="register-errors">
+            <%= errors.password.msg %>
+          </div>
+          <% } %>
+
+        <!-- ========================================== -->
+
+
+
+
+        <label class="label-input-date">Confirmar Contraseña</label>
         <input
           type="password"
-          placeholder="Confirmar contraseña"
           name="confirm_password"
           class="rg-form-input-text"
         />
 
+        <% if (locals.errors && errors.confirm_password) { %>
+          <div class="register-errors">
+            <%= errors.confirm_password.msg %> 
+          </div>
+        <% } %>
+
+          <div class="register-errors">
+            <%= errorPassword %>
+          </div>
+
+          
+        <!-- ========================================== -->
+
+        
+
+          <label class="label-input-date">Dirección</label>
         <input
           type="text"
-          placeholder="Dirección"
-          name="direccion"
+          name="direction"
           class="rg-form-input-text"
+          value="<%= locals.oldData ? oldData.direction : null %>"
         />
+
+
+        <!-- ========================================== -->
+
 
         <label class="label-input-date"
           >Fecha de Nacimiento
           <input
             type="date"
-            name="fecha-nacimiento"
+            name="dateBirth"
             class="rg-form-input-text"
+            value="<%= locals.oldData ? oldData.dateBirth : null %>"
           />
         </label>
+
+        <% if (locals.errors && errors.dateBirth) { %>
+          <div class="register-errors">
+            <%= errors.dateBirth.msg %> 
+          </div>
+        <% } %>
+
+        <!-- ========================================== -->
+
+        
+
 
         <label class="label-input-date">Imagen</label>
         <input type="file" name="user-image" class="rg-form-input-text" />
 
         <label for="terminos" class="rg-boundaries-label">
-          <input type="checkbox" id="terminos" class="rg-boundaries" />
+          <input type="checkbox" id="terminos" class="rg-boundaries" name="boundariesCheck" 
+
+          <%= locals.errors && errors.boundariesCheck ? null : "checked" %> 
+          />
+
           <div class="rg-boundaries-txt">
             *He leido y acepto las condiciones de
             <span>tratamientos de mis datos personales</span>
           </div>
         </label>
+
+      <% if (locals.errors && errors.boundariesCheck) { %>
+        <div class="register-errors">
+          <%= errors.boundariesCheck.msg %>
+        </div>
+        <% } %>
 
         <button type="submit" class="rg-register-form-button">Registro</button>
       </form>

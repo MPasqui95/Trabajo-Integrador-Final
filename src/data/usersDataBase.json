@@ -37,96 +37,10 @@
   "nombres": "Diego",
   "apellido": "Arbelaez",
   "email": "arbelaez.dm@hotmail.com",
-  "confirm_password": "$2a$10$/XjlAfPDRJJ4jNR2npcCCeSibshN5xHOj.C8s2Cok/YvS9fZrfvc2",
-  "direccion": "CL 57 EE # 22 B - 102",
-  "fecha-nacimiento": "2022-05-26",
-  "image": "user1653622106277.jpg"
- },
- {
-  "id": 5,
-  "nombres": "Matias",
-  "apellido": "Bolaños",
-  "email": "m@b.com",
-  "password": "$2a$10$lQVanwKFace3ddOR2JqAIufVXq2Xu5QWMBTyGi1sxPEMoia84igii",
-  "confirm_password": "$2a$10$.4MQIGpf4EtrB99d5Js0u.AbSt.xPlLd/wJxJToj21YvfF/C9bvmy",
-  "direccion": "CL 57 EE # 22 B - 102",
-  "fecha-nacimiento": "2022-05-01",
-  "image": "user1654083722798.png"
- },
- {
-  "id": 7,
-  "nombres": "sas",
-  "apellido": "sas",
-  "email": "prueba@prueba.com",
-  "confirm_password": "$2a$10$bLRHiBAlbnIUbIpQ/DVHu.hUZijq/dW2UwtV9pox61HNCoEstGECu",
-  "direccion": "sas",
-  "fecha-nacimiento": "2022-06-06",
-  "image": "user1655069086399.jpg"
- },
- {
-  "id": 8,
-  "nombres": "SAS",
-  "apellido": "SAS",
-  "email": "aja@aja.com",
-  "password": "$2a$10$rIoZYWf.WkBo65Fmz4a73.M6LA7hQ1mY7jRmzc9ETQosRszIZeUv.",
-  "confirm_password": "$2a$10$dhNe9dhoozqTaAAVLYu33OzsSnjIPd9pMGqy2vbB7hM5yEog4n49m",
-  "direccion": "s",
-  "fecha-nacimiento": "2022-06-06",
-  "image": "default-image.jpg"
- },
- {
-  "id": 9,
-  "nombres": "angie",
-  "apellido": "angie",
-  "email": "prueba@prueba.com",
-  "password": "$2a$10$ngxUbUbLkgoULz.SgkHpauTUKncsICKbHyc27ypO3bHT0Ophxa86e",
-  "confirm_password": "$2a$10$Xa.LcGTm9xIRpTeqREWdmeBhjY/xVppkhKP88kAU0GavB0vVy7ykq",
-  "direccion": "s",
-  "fecha-nacimiento": "2022-06-02",
-  "image": "user1655084520793.jpg"
- },
- {
-  "id": 10,
-  "nombres": "Angie bolaños",
-  "apellido": "",
-  "email": "a@a.com",
-  "password": "$2a$10$tdWBowB7C6zx2RkqwZeKh.EjL191vTr9BiROwURXQBmN4I8lllaf.",
-  "confirm_password": "$2a$10$p.bJ8l5KarKmNGUvlirLlu0KR7.F4lNhhWgnbczyrA3Ea/kNaXzRq",
-  "direccion": "s",
-  "fecha-nacimiento": "2022-06-12",
-  "image": "user1655084631532.jpg"
- },
- {
-  "id": 11,
-  "nombres": "Hola",
-  "apellido": "Chau",
-  "email": "123@123.com",
-  "password": "$2a$10$O3T2gC2CRUW1gjRUG0ID3O.vgxLr29q1qorD/4Fz.bJPNte5nfH4W",
-  "confirm_password": "$2a$10$SvcjjaQQt7.Dw1WXVuRhdeuv3GRF5bcW..1EOFC.qSZ1s6.3.VR0S",
-  "direccion": "calle falsa 123",
-  "fecha-nacimiento": "2022-06-14",
-  "image": "user1655857400279.jpg"
- },
- {
-  "id": 12,
-  "nombres": "Chau",
-  "apellido": "Hola",
-  "email": "321@321.com",
-  "password": "$2a$10$TEvJIhiIlKuiuTvt31oWnOPK0KENxcOOG6cBq/JCLWSU3R8ZC30Pm",
-  "confirm_password": "$2a$10$/HY.pUAi2IixF5XgGn38uOTinSm9XW/vXDPw4i2plBIszCGZ6w2Me",
-  "direccion": "",
-  "fecha-nacimiento": "2022-06-23",
-  "image": "default-image.jpg"
- },
- {
-  "id": 13,
-  "nombres": "hoy",
-  "apellido": "hoy",
-  "email": "a@c.com",
-  "password": "$2a$10$Y/J7rb1ySckS/xhP3LQElOAR/gzuuP1/IsmOX2Tqk3..PxxPDapaW",
-  "confirm_password": "$2a$10$gkzP1FwAGbQrgBH/gwHZGOTGTpfd7NblLBw3Mjy1yU47GAiTiXfbG",
-  "direccion": "",
-  "fecha-nacimiento": "2022-06-16",
-  "image": "default-image.jpg"
+  "password": "$2a$10$8AB9/N0XZSG6YI3N0xKmzueJ6vRfzqLjSUqPv1lX8bJ7pA.Zx1aPK",
+  "confirm_password": "$2a$10$gOv9ztYfZBTvASrkYaKZXeyBYPWP3eemeHS.7/oqS0UlmogvQ6tlS",
+  "direccion": "Casa",
+  "fecha-nacimiento": "2022-04-28",
+  "image": "user1657628208418.png"
  }
 ]

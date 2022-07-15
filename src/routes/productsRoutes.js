@@ -5,7 +5,6 @@ const path = require ('path');
 // ==== EXPRESS VALIDATOR =====
 // const { body } = require ('express-validator');
 
-
 const productsController = require("../controllers/productsController");
 
 // =========== MULTER =============
@@ -31,23 +30,24 @@ const uploadFile = multer({storage});
 //================ SHOPPING CART ==========================
 router.get("/carrito-compras", productsController.shoppingCart);
 
-//================== PRODUCT DETAIL ======================
-router.get("/detalle-producto/:id", productsController.detalle);
+//================== PRODUCT DETAIL ====================== OK
+router.get("/detalle/:id", productsController.detail);
 
-//============== PRODUCTS LIST =============================
+//============== PRODUCTS LIST ============================= OK
 router.get("/listado-productos", productsController.list);
 
-//============= PRODUCT CREATE ==============================
+//============= PRODUCT CREATE ============================== OK
 router.get('/crear-productos', productsController.create);
 router.post('/crear-productos', uploadFile.any('image'), productsController.store)
 
-//==================== PRODUCT EDIT =========================
+//==================== PRODUCT EDIT ========================= OK
 router.get('/editar-productos/:id', productsController.edit);
 router.put('/editar-productos/:id', uploadFile.any('image'), productsController.update);
 
 //====== PRODUCT DELETE =============================
-router.delete('/editar-productos/:id', productsController.delete)
+router.delete('/editar-productos/:id', productsController.delete);
 
-;
+//================ PRODUCT FIN  ====================
+router.post('/find', uploadFile.any('image'), productsController.find);
 
 module.exports = router;

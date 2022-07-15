@@ -2,31 +2,31 @@ const express = require("express");
 const fs = require('fs');
 const path = require ('path');
 
-let db = require("../database/models")
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let db = require("../database/models");
+
+const Op = db.Sequelize.Op;
+
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
+
   // ====== RENDER FOR SHOPPING CART   ======
   shoppingCart: (req, res) => {
     res.render("products/carrito-compras");
   },
 
   // ====== RENDER FOR SIMPLE PRODUCT DETAIL   ======
-  detalle: (req, res) => {
-
-
+  detail: (req, res) => {
     // se agrega la consulta por primary key con sequalize a la base de datos
     db.Productos.findByPk(req.params.id)
     .then(function(product){
       res.render("products/detalle-producto",{product})
-    })    
-
-    // let id= req.params.productId;
-    // let product = products.find((product) => product.id == id);
-    // res.render('products/detalle-producto', {product})
-
+    })
+    .catch ((error) => {
+      console.log (error)
+    })
   },
 
   // ====== RENDER FOR LIST PAGE   ======
@@ -39,21 +39,32 @@ const productsController = {
     .then(function(products){
       res.render("products/listado-productos",{products:products})
     })
-    .catch ((err) => {
-      console.log (err)
+    .catch ((error) => {
+      console.log (error)
     })
-        // res.render("products/listado-productos", {products});
   },
 
   // ====== RENDER FOR PRODUCT CREATE PAGE   ======
   create: (req, res) => {
-    res.render("products/crear-productos");
+    
+    let pedidoColores = db.CategorieColors.findAll();
+
+    let pedidoCategorias = db.CategoryBrands.findAll();
+
+    let pedidoCategoriasProductos = db.CategorieProduct.findAll()
+
+    Promise.all([pedidoColores, pedidoCategorias, pedidoCategoriasProductos])
+      .then(function([colors, categories, categoryProduct]){
+        return res.render("products/crear-productos", {colors, categories, categoryProduct});
+      })
+      .catch(function(e) {
+        console.log(e);
+      })
   },
 
   // ======= CREATE - METHOD TO STORE ======
   store: (req, res) => {
     
-
     let image
 
     if(req.files[0] != undefined) {
@@ -62,14 +73,18 @@ const productsController = {
       image = 'default-image.jpg'
     }
 
-    let newProduct = {
-      id: products[products.length - 1].id + 1,
-      ...req.body,
-      image: image
-    };
-
-    products.push(newProduct)
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    db.Productos.create({
+      name: req.body.name,
+      regularPrice: req.body.regularPrice,
+      offerPrice: req.body.offerPrice,
+      discount: req.body.discount,
+      image: req.files[0].filename,
+      specification: req.body.specifications,
+      stock: req.body.stock,
+      categoriesBrands_id: req.body.brand,
+      categoriesProductos_id: req.body.category,
+      categoriesColors_id: req.body.colores
+    });
 
     res.redirect('/')
 
@@ -77,18 +92,25 @@ const productsController = {
 
   // ====== RENDER FOR EDIT PAGE   ======
   edit: (req, res) => {
-    let id = req.params.id;
-    let productToEdit = products.find((product) => product.id == id);
-    res.render("products/editar-productos", { productToEdit });
+
+    let pedidoProducto = db.Productos.findByPk(req.params.id);
+
+    let pedidoColores = db.CategorieColors.findAll();
+
+    let pedidoCategorias = db.CategoryBrands.findAll();
+
+    let pedidoCategoriasProductos = db.CategorieProduct.findAll();
+
+    Promise.all([pedidoProducto, pedidoColores, pedidoCategorias, pedidoCategoriasProductos])
+      .then(function([producto, colors, categories, categoryProduct]){
+        return res.render("products/editar-productos", {producto, colors, categories, categoryProduct});
+      })
   },
 
 
   //====== UPDATE PRODUCT ======================
   update: (req, res) => {
-    let id = req.params.id;
-    // console.log(id);
-    let productToEdit = products.find(product => product.id == id);
-    // console.log(productToEdit);
+
     let image 
 
     if(req.files[0] != undefined) {
@@ -97,47 +119,63 @@ const productsController = {
       image = productToEdit.image;
     }
 
-    productToEdit = {
-      id: productToEdit.id,
-      ...req.body,
-      image: image
-    }
-
-    let newProducts = products.map(product => {
-      if(product.id == productToEdit.id) {
-        return product = {...productToEdit}
+    db.Productos.update({
+      name: req.body.name,
+      regularPrice: req.body.regularPrice,
+      offerPrice: req.body.offerPrice,
+      discount: req.body.discount,
+      image: req.files[0].filename,
+      specification: req.body.specifications,
+      stock: req.body.stock,
+      categoriesBrands_id: req.body.brand,
+      categoriesProductos_id: req.body.category,
+      categoriesColors_id: req.body.colores
+    }, {
+      where: {
+        id: req.params.id
       }
-      return product
-    })
+    });
 
-    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
     res.redirect('/')
   },
 
   delete: (req, res) => {
-
     
-    let id = req.params.id;
-    
-    let productToDelete = products.filter(product => product.id != id);
+    db.Productos.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
 
-    console.log(productToDelete);
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, ' '));
     res.redirect('/')
 
   },
 
-  // ====== RENDER FOR PRODUCT DETAIL   ======
-  detail: (req, res) => {
-    let detailOfProducts = arrayProductDetail.find(
-      (detail) => detail.id == req.params.productId
-    );
-    console.log(detailOfProducts);
-    res.render("products/product-detail", {
-      detail: detailOfProducts,
-    });
-  },
+  find: (req, res) => {
+    db.Productos.findAll({
+      where: {
+        name: { [Op.like]:  req.body.findProduct + "%" },
+      },
+    })
+    .then(function(products) {
+
+      if(products == undefined){
+
+        res.send('el producto no existe')
+
+      } else {
+
+        res.render("products/busqueda-productos", { products: products });
+
+      }
+
+    })
+    .catch((e) => {
+
+      res.send(e)
+
+    })
+  }
 };
 
 module.exports = productsController;

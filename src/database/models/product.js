@@ -1,5 +1,7 @@
 module.exports =(sequelize, dataTypes) =>{
+
         let alias = "Productos";
+
         let cols= {
             id:{
             type: dataTypes.INTEGER(10),
@@ -23,8 +25,8 @@ module.exports =(sequelize, dataTypes) =>{
             },
              
             image:{
-                type: dataTypes.BLOB('medium'),
-                allowNull: true 
+                type: dataTypes.STRING(200)
+                // allowNull: true 
             }, 
             specification :{
             type: dataTypes.STRING(100)
@@ -44,7 +46,7 @@ module.exports =(sequelize, dataTypes) =>{
 
             categoriesColors_id:{
                 type: dataTypes.INTEGER(2)
-            },
+            }
              
             // productsImage_id:{
             // type: dataTypes.INTEGER(5)
@@ -52,12 +54,31 @@ module.exports =(sequelize, dataTypes) =>{
              
 
         } 
+
         let config ={
             tableName: "products",
             timestamps: false
         }
 
-    const Producto = sequelize.define(alias,cols,config);
+    const Producto = sequelize.define(alias, cols, config);
+
+    //Relations
+    Producto.associate = function(models) {
+        Producto.belongsTo(models.CategoryBrands, {
+            as: 'categorias',
+            foreignKey: 'categoriesBrands_id'
+        });
+
+        Producto.belongsTo(models.CategorieColors, {
+            as: 'colores',
+            foreignKey: 'categoriesColors_id'
+        });
+
+        Producto.belongsTo(models.CategorieProduct, {
+            as: 'productos',
+            foreignKey: 'categoriesProductos_id'
+        })
+    }
 
     return Producto
 }

@@ -3,18 +3,35 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
+let db = require("../database/models");
+
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const userController = {
+  //================ USER REGISTER ========================
+
   register: (req, res) => {
-    return res.render("users/register");
+
+    let errorMatchPassword = " ";
+
+    db.CategoriaUsuarios.findAll()
+      .then(function (categoriaUsuario) {
+        return res.render("users/register", {
+          categoriaUsuario: categoriaUsuario,
+          errors: {
+            boundariesCheck: "Test boundaries",
+          },
+          errorPassword: errorMatchPassword,
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+        return res.send(e);
+      });
   },
 
-  // ===  STORE USER ===============
-  store: (req, res) => {
-    let errors = validationResult(req);
-
+  //===================== USER STORE ========================
+  storeUser: (req, res) => {
     let image;
 
     if (req.files[0] != undefined) {
@@ -23,93 +40,242 @@ const userController = {
       image = "default-image.jpg";
     }
 
-    let newUser = {
-      id: users[users.length - 1].id + 1,
-      ...req.body,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      confirm_password: bcryptjs.hashSync(req.body.confirm_password, 10),
-      image: image,
-    };
+    db.CategoriaUsuarios.findAll()
+      .then(function (categoriaUsuario) {
+        const resultValidation = validationResult(req);
 
-    users.push(newUser);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+        //form validations
+
+        // if there are errors in register form
+        if (!resultValidation.isEmpty()) {
+
+          let errorMatchPassword = " ";
+
+          return res.render("users/register", {
+            categoriaUsuario: categoriaUsuario,
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            errorPassword: errorMatchPassword,
+          });
+        }
+
+        //password comparision
+        if (req.body.password === req.body.confirm_password) {
+          //if password match in text field - password encrypt
+          let password = bcryptjs.hashSync(req.body.password, 10);
+
+          //save data in DB
+          db.Usuarios.create({
+            firstName: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            //encrypted password
+            password: password,
+            direction: req.body.direction,
+            dateBirth: req.body.dateBirth,
+            userImage: req.files[0].filename,
+            categoriesUsers_id: req.body.tipoUsuario,
+          });
+          res.redirect("./login");
+        } else {
+
+          let errorMatchPassword = "Las contraseñas no coincide!";
+
+          return res.render("users/register", {
+            categoriaUsuario: categoriaUsuario,
+            errorPassword: errorMatchPassword,
+            oldData: req.body,
+          });
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+        return res.send(e);
+      });
+  },
+
+  //===== USERS LIST ========
+
+  listUsers: (req, res) => {
+    db.Usuarios.findAll({
+      include: [{ association: "categoriaUsuario" }],
+    })
+      .then(function (usuarios) {
+        return res.render("users/userList", { usuarios: usuarios });
+      })
+      .catch((e) => {
+        console.log(e);
+        return res.send(e);
+      });
+  },
+
+  //====  USER EDIT ======
+
+  editUsers: (req, res) => {
+
+    let pedidoUsuario = db.Usuarios.findByPk(req.params.id);
+
+    let pedidoCategoriaUsuario = db.CategoriaUsuarios.findAll();
+
+    Promise.all([pedidoUsuario, pedidoCategoriaUsuario])
+      .then(function ([usuario, categoriaUsuario]) {
+        res.render("users/editarUsuario", {
+          usuario: usuario,
+          categoriaUsuario: categoriaUsuario,
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+        return res.send(e);
+      });
+  },
+
+  updateUser: (req, res) => {
+    let image;
+
+    if (req.files[0] != undefined) {
+      image = req.files[0].filename;
+    } else {
+      image = "default-image.jpg";
+    }
+
+    db.Usuarios.update(
+      {
+        firstName: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        direction: req.body.direction,
+        dateBirth: req.body.dateBirth,
+        userImage: req.files[0].filename,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
 
     res.redirect("/");
   },
 
-  // ============================================================
+  //===== USER DELETE =========
+
+  deleteUser: (req, res) => {
+    db.Usuarios.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).catch((e) => {
+      console.log(e);
+      return res.send(e);
+    });
+
+    res.redirect("/");
+  },
+
   // ==================== LOGIN PROCESS ===========================
 
   login: (req, res) => {
+
     return res.render("users/login");
   },
 
   loginProcess: (req, res) => {
+    
     let errors = validationResult(req);
 
-    // return res.send(errores);
-    let userEmail = req.body.mail;
-    
     //find user
-    let userToLogin = users.find((oneUser) => oneUser.email === userEmail);
-    //if the user exist compare the password
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
+    db.Usuarios.findOne({
+      include: [{ association: "categoriaUsuario"}],
+      where: {
+        email: req.body.mail,
+      },
+    })
+      .then(function (usuario) {
+        //if the user exist
+        if (usuario != null) {
+          let isOkThePassword = bcryptjs.compareSync(
+            req.body.password,
+            usuario.password
+          );
 
-      //if the password is correct, delete and save the user in session
-      if (isOkThePassword) {
-        delete userToLogin.password;  // Se comenta por que se cree hay un error con las COOKIes 
-        req.session.userLogged = userToLogin;
+          //if the password is OK
+          if (isOkThePassword) {
 
-        // //if the user select the remember check, them set the cookie
-        if (req.body.rememberUser != undefined) {
-          
-          res.cookie("userEmail", userToLogin.email, { maxAge: 120000 });
-          return res.redirect("/user/profile");
+            // user information for session
+            let user = {
+              firstName: usuario.firstName,
+              lastName: usuario.lastName,
+              email: usuario.email,
+              userImage: usuario.userImage,
+              userType: usuario.categoriaUsuario.nombre
+            };
+
+            //save the user email in session
+            req.session.userLogged = user;
+
+            //check if remember check is selected
+            if (req.body.rememberUser) {
+
+              //set the cookie with the user email
+              res.cookie("userMail", req.body.mail, { maxAge: (1000 * 60) * 5 }); // 5 min
+              return res.redirect("/user/profile");
+            }
+
+            //if all data is OK
+            res.redirect("/user/profile");
+          }
+
+          //if the password is incorrect
+          return res.render("users/login", {
+            errors: {
+              msg: "Contraseña invalida, vuelve a intentarlo",
+              oldData: req.body.mail,
+            },
+          });
         }
 
-        //if the user don´t select the remember check, redirect
-      
-      }
-
-      //if the password is incorrect
-      return res.render("users/login", {
-        errors: {
-          msg: "Contraseña invalida, vuelve a intentarlo",
-          oldData: req.body.mail,
-        },
+        //if the user don´t exist
+        return res.render("users/login", {
+          errors: {
+            email: "No se encuentra un usuario con ese email",
+          },
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+        res.send(e);
       });
-    }
-
-  //if the user don´t exist
-    return res.render("users/login", {
-      errors: {
-        email: "No  se encuentra un usuario con ese correo o contraseña",
-      },
-    });
-  
   },
 
-  // ============================================================
-  // ==================== PROFILE ===============================
+  // ==================== USER PROFILE ===============================
 
   profile: (req, res) => {
-    // console.log(req.session)
-    res.render('users/profile', { user: req.session.userLogged });
 
+    // console.log(req.session.userLogged);
+    // res.render("users/profile", { user: req.session.userLogged });
+    db.Usuarios.findOne({
+      include: [{ association: "categoriaUsuario" }],
+      where: {
+        firstName: req.session.userLogged.firstName
+      }
+    })
+      .then(function (usuarios) {
+        return res.render("users/profile", { user: usuarios });
+      })
+      .catch((e) => {
+        console.log(e);
+        return res.send(e);
+      });
   },
 
-  // ============================================================
   // ==================== LOGOUT ===========================
 
   logout: (req, res) => {
-    res.clearCookie("userEmail")
+    res.clearCookie("userMail");
     req.session.destroy();
-    return res.redirect('/')
-
+    return res.redirect("/");
   },
 };
 

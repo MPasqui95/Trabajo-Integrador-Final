@@ -15,12 +15,18 @@
         class="rg-register-form"
         enctype="multipart/form-data"
       >
-        <input
-          type="text"
-          placeholder="Marca"
-          class="rg-form-input-text"
-          name="brand"
-        />
+
+      <h3 class="cp-tituloSeccion">Marca</h3>
+        <div class="cp-contenedorSelectorCategoria">
+          <label for="brand"></label>
+          <select name="brand" class="rg-form-input-text">
+          <% for( let i = 0; i < categories.length; i++ ) { %>
+            <option value="<%= categories[i].id %> ">
+              <%= categories[i].name %> 
+          </option>
+          <% } %>
+           </select>
+        </div>
 
         <input
           type="text"
@@ -51,35 +57,15 @@
         />
 
         <h3 class="cp-tituloSeccion">Colores</h3>
-        <div class="cp-chekboxColores">
+        <div class="cp-contenedorSelectorCategoria">
           <label for="colores">
-            <input type="checkbox" name="colores" value="rojo" id="rojo" />
-            Rojo</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="Azul" id="Azul" />
-            Azul</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="blanco" id="blanco" />
-            Blanco</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="negro" id="negro" />
-            Negro</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="rosa" id="rosa" />
-            Rosa</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="verde" id="verde" />
-            Verde</label
-          >
-          <label for="colores">
-            <input type="checkbox" name="colores" value="gris" id="gris" />
-            Gris</label
-          >
+           <select name="colores" class="rg-form-input-text">
+            <% for( let i = 0; i < colors.length; i++ ) { %>
+              <option value="<%= colors[i].id %> ">
+                  <%= colors[i].name %> 
+              </option>
+              <% } %>
+           </select>
         </div>
 
         <label for="imagenProducto" class="cp-tituloSeccion">
@@ -99,7 +85,7 @@
           >Especificaciones:</label
         >
         <textarea
-          name="especifications"
+          name="specifications"
           id="especificaciones"
           class="cp-textAreaInput"
         >
@@ -118,14 +104,12 @@
 
         <h3 class="cp-tituloSeccion">Categorias</h3>
         <div class="cp-contenedorSelectorCategoria">
-          <select name="category" id="" class="cp-selectorCategoria">
-            <option value="">Selecciona una categoria</option>
-            <option value="celulares">Celulares</option>
-            <option value="laptops">Laptops</option>
-            <option value="tablets">Tablets</option>
-            <option value="gamer">Gamer</option>
-            <option value="audio">Audio</option>
-            <option value="accesorios">Accesorios</option>
+          <select name="category" class="cp-selectorCategoria">
+            <% for( let i = 0; i < categoryProduct.length; i++ ) { %>
+              <option value="<%= categoryProduct[i].id %> ">
+                  <%= categoryProduct[i].name %> 
+              </option>
+              <% } %>
           </select>
         </div>
         <br />

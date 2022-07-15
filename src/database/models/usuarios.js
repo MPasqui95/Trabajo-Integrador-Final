@@ -1,5 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Usuarios";
+
     let cols = {
       id: {
         type: dataTypes.INTEGER(10),
@@ -26,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.DATE,
       },
       userImage: {
-          type: dataTypes.BLOB('medium'),
+          type: dataTypes.STRING(200),
           allowNull: true 
       },
       userscol: {
@@ -34,17 +35,25 @@ module.exports = (sequelize, dataTypes) => {
       },
       categoriesUsers_id: {
         type: dataTypes.INTEGER(11),
-      },
-      userImage_id: {
-        type: dataTypes.INTEGER(11),
-      },
+      }
     };
+
     let config = {
       tableName: "users",
       timestamps: false,
     };
   
-    const usuario = sequelize.define(alias, cols, config);
-    return usuario
+    const Usuario = sequelize.define(alias, cols, config);
+
+
+    //relations
+    Usuario.associate = function(models) {
+      Usuario.belongsTo(models.CategoriaUsuarios, {
+        as: 'categoriaUsuario',
+        foreignKey: 'categoriesUsers_id'
+      })
+    }
+
+    return Usuario
   };
   
