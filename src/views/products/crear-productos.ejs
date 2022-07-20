@@ -1,129 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- ======== HEAD =================== -->
-  <%- include('../partials/head.ejs') %>
+<!-- ======== HEAD =================== -->
+<%- include('../partials/head.ejs') %>
 
   <body>
     <!-- ===== HEADER  ================= -->
     <%- include('../partials/header.ejs') %>
 
-    <div class="rg-rg-register-form-container">
-      <h3 class="rg-register-label">Crear Productos</h3>
-      <form
-        action="/product/crear-productos"
-        method="POST"
-        class="rg-register-form"
-        enctype="multipart/form-data"
-      >
+      <div class="rg-rg-register-form-container">
+        <h3 class="rg-register-label">Crear Productos</h3>
 
-      <h3 class="cp-tituloSeccion">Marca</h3>
-        <div class="cp-contenedorSelectorCategoria">
-          <label for="brand"></label>
-          <select name="brand" class="rg-form-input-text">
-          <% for( let i = 0; i < categories.length; i++ ) { %>
-            <option value="<%= categories[i].id %> ">
-              <%= categories[i].name %> 
-          </option>
-          <% } %>
-           </select>
+        <form action="/product/crear-productos" method="POST" class="rg-register-form product-create-form"
+          enctype="multipart/form-data">
+
+          <h3 class="cp-tituloSeccion">Marca</h3>
+          <div class="cp-contenedorSelectorCategoria">
+            <label for="brand"></label>
+            <select name="brand" class="rg-form-input-text">
+              <% for( let i=0; i < categories.length; i++ ) { %>
+                <option value="<%= categories[i].id %> ">
+                  <%= categories[i].name %>
+                </option>
+                <% } %>
+            </select>
+          </div>
+
+          <input type="text" placeholder="Nombre del producto" name="name" class="rg-form-input-text product-name" />
+          <!--  name field error -->
+          <div class="div-errors">
+            <p class="input-product-name-error"></p>
+          </div>
+
+          <input type="number" placeholder="Precio Oferta" name="offerPrice" class="rg-form-input-text" />
+
+          <input type="number" placeholder="Precio Regular" name="regularPrice" class="rg-form-input-text" />
+
+          <input type="number" placeholder="Descuento" name="discount" class="rg-form-input-text" />
+
+          <h3 class="cp-tituloSeccion">Colores</h3>
+          <div class="cp-contenedorSelectorCategoria">
+            <label for="colores">
+              <select name="colores" class="rg-form-input-text">
+                <% for( let i=0; i < colors.length; i++ ) { %>
+                  <option value="<%= colors[i].id %> ">
+                    <%= colors[i].name %>
+                  </option>
+                  <% } %>
+              </select>
+          </div>
+
+          <label for="imagenProducto" class="cp-tituloSeccion">
+            Imagen del producto</label>
+
+          <input id="imagenProducto" type="file" name="image" accept="jpg, png, jpeg"
+            class="rg-form-input-text subirArchivo" multiple />
+
+          <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
+          <textarea name="specifications" id="especificaciones" class="cp-textAreaInput"></textarea>
+
+          <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
+          <textarea name="description" id="descripcion" class="cp-textAreaInput product-description"></textarea>
+        <div class="div-errors">
+          <p class="input-product-description-error"></p>
         </div>
 
-        <input
-          type="text"
-          placeholder="Nombre del producto"
-          name="name"
-          class="rg-form-input-text"
-        />
+          <input type="number" placeholder="Stock" name="stock" class="rg-form-input-text" />
 
-        <input
-          type="number"
-          placeholder="Precio Oferta"
-          name="offerPrice"
-          class="rg-form-input-text"
-        />
+          <h3 class="cp-tituloSeccion">Categorias</h3>
+          <div class="cp-contenedorSelectorCategoria">
+            <select name="category" class="cp-selectorCategoria">
+              <% for( let i=0; i < categoryProduct.length; i++ ) { %>
+                <option value="<%= categoryProduct[i].id %> ">
+                  <%= categoryProduct[i].name %>
+                </option>
+                <% } %>
+            </select>
+          </div>
+          <br />
+          <br />
 
-        <input
-          type="number"
-          placeholder="Precio Regular"
-          name="regularPrice"
-          class="rg-form-input-text"
-        />
+          <button type="submit" class="rg-register-form-button">Guardar</button>
+          <a href="/" class="rg-register-form-button">Cancelar</a>
+        </form>
+      </div>
 
-        <input
-          type="number"
-          placeholder="Descuento"
-          name="discount"
-          class="rg-form-input-text"
-        />
+      <!-- ======= FOOTER  ====== -->
+      <%- include('../partials/footer.ejs') %>
+        <!-- ======= START OF FOOTER  ====== -->
 
-        <h3 class="cp-tituloSeccion">Colores</h3>
-        <div class="cp-contenedorSelectorCategoria">
-          <label for="colores">
-           <select name="colores" class="rg-form-input-text">
-            <% for( let i = 0; i < colors.length; i++ ) { %>
-              <option value="<%= colors[i].id %> ">
-                  <%= colors[i].name %> 
-              </option>
-              <% } %>
-           </select>
-        </div>
-
-        <label for="imagenProducto" class="cp-tituloSeccion">
-          Imagen del producto</label
-        >
-
-        <input
-          id="imagenProducto"
-          type="file"
-          name="image"
-          accept="jpg, png, jpeg"
-          class="rg-form-input-text subirArchivo"
-          multiple
-        />
-
-        <label for="especificaciones" class="cp-tituloSeccion"
-          >Especificaciones:</label
-        >
-        <textarea
-          name="specifications"
-          id="especificaciones"
-          class="cp-textAreaInput"
-        >
-        </textarea>
-
-        <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
-        <textarea name="description" id="descripcion" class="cp-textAreaInput">
-        </textarea>
-
-        <input
-          type="number"
-          placeholder="Stock"
-          name="stock"
-          class="rg-form-input-text"
-        />
-
-        <h3 class="cp-tituloSeccion">Categorias</h3>
-        <div class="cp-contenedorSelectorCategoria">
-          <select name="category" class="cp-selectorCategoria">
-            <% for( let i = 0; i < categoryProduct.length; i++ ) { %>
-              <option value="<%= categoryProduct[i].id %> ">
-                  <%= categoryProduct[i].name %> 
-              </option>
-              <% } %>
-          </select>
-        </div>
-        <br />
-        <br />
-
-        <button type="submit" class="rg-register-form-button">Guardar</button>
-        <a href="/" class="rg-register-form-button">Cancelar</a>
-      </form>
-    </div>
-
-    <!-- ======= FOOTER  ====== -->
-    <%- include('../partials/footer.ejs') %>
-    <!-- ======= START OF FOOTER  ====== -->
-
-    <!-- ===== END OF FOOTER  ====== -->
+        <!-- ===== END OF FOOTER  ====== -->
   </body>
+
 </html>

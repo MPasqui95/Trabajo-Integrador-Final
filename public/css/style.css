@@ -1709,6 +1709,7 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 54px;
   padding: 6px;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .cp-subirImagen {
@@ -1834,4 +1835,26 @@ input[type="number"]::-webkit-inner-spin-button {
 .search-notFound h1{
   font-size: 50px;
 }
+}
+
+/* ====================  PRODUCT FORM ERRORS ======================= */
+.div-errors {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 70%;
+}
+
+.div-errors p{
+  color: red;
+  align-items: left;
+  font-size: 16px;
+}
+
+.div-errors i {
+  font-size: 20px;
+}
+
+.input-error{
+  border: solid 3px red
 }

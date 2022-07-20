@@ -9,29 +9,29 @@ function userLoggedMiddleware(req, res, next) {
   res.locals.isLogged = false;
   res.locals.userAdmin = false;
 
-  let emailCookie = req.cookies.userMail;
+  // let emailCookie = req.cookies.userMail;
 
-  if (emailCookie != undefined) {
-    //find user
-    db.Usuarios.findOne({
-      where: {
-        email: emailCookie,
-      },
-    })
-      .then(function (usuario) {
+  // if (emailCookie != undefined) {
+  //   //find user
+  //   db.Usuarios.findOne({
+  //     where: {
+  //       email: emailCookie,
+  //     },
+  //   })
+  //     .then(function (usuario) {
 
-        res.locals.isLogged = true;
+  //       res.locals.isLogged = true;
 
-      }
+  //     }
       
-      )
+  //     )
 
-      .catch(function (e) {
-        console.log(e);
-        return res.send(e);
-      });
+  //     .catch(function (e) {
+  //       console.log(e);
+  //       return res.send(e);
+  //     });
 
-  } 
+  // } 
 
     if (req.session.userLogged) {
       if (req.session.userLogged.userType == "Admin") {
