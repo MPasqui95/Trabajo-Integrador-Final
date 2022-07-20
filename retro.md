@@ -164,3 +164,42 @@ Las actividades que se pueden realizar con mayor frecuencia son:
 - Dividir tareas
 - Reuniones constantes y organizadas
 - Feedbacks y comunicacion continua
+
+# Retrospectiva Sprint 5
+
+En esta sesión se consideraron los mismos aspectos evaluados en la entrega pasada:
+
+1 Dejar de hacer
+2 Comenzar a hacer
+3 Hacer más
+4 Hacer menos
+5 Continuar haciendo
+
+## 1. Dejar de hacer
+
+Falta de comunicacion, este sprint tuvimos problemas personales que llevo a retrasos en el curso y por ende en el trabajo integrador por parte de todos los integrantes. Esto produjo que no pudieramos reunirnos para hacer las divisiones de trabajos adecuadamente y realizarlo de la forma adecuada.
+
+## 2. Comenzar a hacer
+
+Ponernos al dia y volver a las reuniones semanales
+
+## 3. Hacer más
+
+Las actividades que se pueden realizar con mayor frecuencia son:
+
+- Reuniones y comunicacion de todos los integrantes
+- Continua correccion y analisis de lo elaborado por los distintos integrantes
+- Mayor atencion a las necesidades de nuestros compañeros para la realizacion de tareas determinadas
+- Sesiones de interacción grupal y solucionar problemas en grupo
+
+## 4. Hacer menos
+
+- Menos avances individuales y mejor reparto de tareas
+- No repartir solo por quien cree hacerlo mejor, esto puede generar un reparto poco equitativo
+- Evitar reunirnos por falta de integrantes
+
+## 5. Continuar haciendo
+
+- Dividir tareas
+- Reuniones constantes y organizadas
+- Feedbacks y comunicacion continua

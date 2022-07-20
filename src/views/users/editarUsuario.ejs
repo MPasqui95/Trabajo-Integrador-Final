@@ -128,8 +128,9 @@
             </button>
 
             <a href="/" class="rg-register-form-button rg-cancelar-button">Cancelar</a>
-          </div>
         </form>
+        
+      <!-- ==== DELETE BUTTON ==== -->
 
         <form
           action="/user/borrar/<%= usuario.id %>"
@@ -137,12 +138,11 @@
           class="rg-register-form cp-editarProducto cp-delete-form"
           enctype="multipart/form-data"
         >
-          <button type="submit" class="rg-register-form-button cp-delete-button">Borrar</button>
+          <button type="submit" class="rg-register-form-button cp-cancelar-button">Borrar</button>
         </form>
       </div>
 
-      <!-- ==== DELETE BUTTON ==== -->
-    </div>
+    </form>
 
    <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>

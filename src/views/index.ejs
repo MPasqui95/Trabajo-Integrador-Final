@@ -2,12 +2,10 @@
 <html lang="en">
   <!-- ======== HEAD =================== -->
   <%- include('partials/head.ejs') %>
-
   <!-- ======== BODY ============= -->
   <body>
     <!-- ===== HEADER  ========= -->
     <%- include('partials/header.ejs') %>
-
     <!-- ===== MAIN ============ -->
     <main class="home-main">
       <div class="home-slider">
@@ -34,119 +32,70 @@
             />
           </div>
         </div>
-
         <div class="home-flechas-slider home-flechas-slider-derecha">
           <i class="fas fa-chevron-right"></i>
         </div>
-
         <div class="home-flechas-slider home-flechas-slider-izquierda">
           <i class="fas fa-chevron-left"></i>
         </div>
-
         <div class="home-bullets">
           <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
         </div>
       </div>
-
       <section class="home-destacados">
         <div class="home-titulo">
           <h4>Lo mejor del mundo Gamer</h4>
           <button><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="home-destacados-img">
-          <ul>
-            <li><img src="images/destacados/destacado1.jpg" class="home-image-destacados" /></li>
-            <li><img src="images/destacados/destacado1.jpg" class="home-image-destacados" /></li>
-            <li><img src="images/destacados/destacado1.jpg" class="home-image-destacados"/></li>
-            <li><img src="images/destacados/destacado1.jpg" class="home-image-destacados" /></li>
-          </ul>
+          <% for( let i=0; i < gamers.length; i++ ) { %>
+          <article class="home-producto-vitrinas lp-card-producto">
+            <a href="/product/detalle/<%= gamers[i].id %>">
+              <div class="home-descuento-vitrinas">
+                <h5><%= gamers[i].discount %> %</h5>
+              </div>
+              <img
+                src="/images/productos/<%= gamers[i].image %>"
+                class="home-imagenes-vitrinas lp-imagen-producto"
+              />
+              <div class="home-textos-vitrinas">
+                <h5><%= gamers[i].brand %></h5>
+                <p><%= gamers[i].name %></p>
+                <h6>S/<%= gamers[i].regularPrice %></h6>
+                <h3>S/<%= gamers[i].offerPrice %></h3>
+              </div>
+            </a>
+          </article>
+          <% } %>
         </div>
       </section>
-
       <section class="home-todo-vitrinas">
         <div class="home-titulo">
           <h4>Los mejores descuentos</h4>
           <button><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="home-vitrinas">
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto1.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
+          <% for( let i=0; i < discounts.length; i++ ) { %>
+          <article class="home-producto-vitrinas lp-card-producto">
+            <a href="/product/detalle/<%= discounts[i].id %>">
+              <div class="home-descuento-vitrinas">
+                <h5><%= discounts[i].discount %> %</h5>
+              </div>
+              <img
+                src="/images/productos/<%= discounts[i].image %>"
+                class="home-imagenes-vitrinas lp-imagen-producto"
+              />
+              <div class="home-textos-vitrinas">
+                <h5><%= discounts[i].brand %></h5>
+                <p><%= discounts[i].name %></p>
+                <h6>S/<%= discounts[i].regularPrice %></h6>
+                <h3>S/<%= discounts[i].offerPrice %></h3>
+              </div>
+            </a>
           </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto2.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto3.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto4.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto5.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-
+          <% } %>
           <div class="home-flechas-vitrinas home-flechas-vitrinas-derecha">
             <i class="fas fa-chevron-right"></i>
           </div>
@@ -154,96 +103,37 @@
             <i class="fas fa-chevron-left"></i>
           </div>
         </div>
-
         <div class="home-bullets">
           <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
         </div>
       </section>
-
       <section class="home-todo-vitrinas">
         <div class="home-titulo">
           <h4>Los más vendidos</h4>
           <button><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="home-vitrinas">
+          <% for( let i = 0; i < mostSold.length; i++ ) { %>
           <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto5.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
+            <a href="/product/detalle/<%= mostSold[i].id %>">
+              <div class="home-descuento-vitrinas">
+                <h5><%= mostSold[i].discount %> %</h5>
+              </div>
+              <img
+                src="/images/productos/<%= mostSold[i].image %>"
+                class="home-imagenes-vitrinas"
+              />
+              <div class="home-textos-vitrinas">
+                <h5><%= mostSold[i].brand %></h5>
+                <p><%= mostSold[i].name %></p>
+                <h6>S/<%= mostSold[i].regularPrice %></h6>
+                <h3>S/<%= mostSold[i].offerPrice %></h3>
+              </div>
+            </a>
           </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto4.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto3.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto2.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-          <article class="home-producto-vitrinas">
-            <div class="home-descuento-vitrinas">
-              <h5>-28%</h5>
-            </div>
-            <img
-              src="images/productos/producto1.jpg"
-              class="home-imagenes-vitrinas"
-            />
-            <div class="home-textos-vitrinas">
-              <h5>Samsung</h5>
-              <p>Galaxy Note 20 Ultra</p>
-              <h6>S/6,000.00</h6>
-              <h3>S/4,298.00</h3>
-            </div>
-          </article>
-
+          <% } %>
           <div class="home-flechas-vitrinas home-flechas-vitrinas-derecha">
             <i class="fas fa-chevron-right"></i>
           </div>
@@ -251,7 +141,6 @@
             <i class="fas fa-chevron-left"></i>
           </div>
         </div>
-
         <div class="home-bullets">
           <div class="home-bullets-1"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
@@ -259,7 +148,6 @@
         </div>
       </section>
     </main>
-
     <!-- ==== FOOTER  ========== -->
     <%- include('partials/footer.ejs') %>
   </body>

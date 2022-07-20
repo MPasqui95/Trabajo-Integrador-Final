@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- ======== HEAD =================== -->
-<%- include('../partials/head.ejs') %>
+  <!-- ======== HEAD =================== -->
+  <%- include('../partials/head.ejs') %>
 
   <body>
-<!-- ===== START OF HEADER  ====== -->
-<%- include('../partials/header.ejs') %>
-<!-- ===== END OF HEADER ====== -->
+    <!-- ===== START OF HEADER  ====== -->
+    <%- include('../partials/header.ejs') %>
+    <!-- ===== END OF HEADER ====== -->
 
-     <div class="user-profile">
-      <h2>Bienvenido a Electrodoggy</h2><br>
-      <h3><%= user.firstName %> <%= user.lastName %></h3>
-      <img src="/images/users/<%= user.userImage %>" class="user-profile-image" />
+    <div class="user-profile">
+      <br />
+      <h2>Bienvenido a Electrodoggy</h2>
+      <br />
+      <h3 id="user-name"><%= user.firstName %> <%= user.lastName %></h3>
+      <img
+        src="/images/users/<%= user.userImage %>"
+        class="user-profile-image"
+      />
       <h3><%= user.email %></h3>
-      <h3><%= user.categoriaUsuario.nombre %> </h3>
+      <h3><%= user.categoriaUsuario.nombre %></h3>
       <% if (user.categoriaUsuario.nombre == "Admin") { %>
-       <a href="/user/users"><button>Editar Usuarios</button></a>
+      <div class="user-listButton">
+        <a href="/user/users"
+          ><button id="userList">Listado Usuarios</button></a
+        >
+      </div>
+      <a href="/user/editar-usuario/<%= user.id %> "
+        ><button class="user-editButton">Editar Usuario</button></a
+      >
+      <% }else { %>
+      <a href="/user/editar-usuario/<%= user.id %> "
+        ><button class="user-editButton">Editar Usuario</button></a
+      >
       <% } %>
-      
-    
+    </div>
 
-    
+    <!-- ======= START OF FOOTER  ====== -->
 
-<!-- ======= START OF FOOTER  ====== -->
+    <%- include('../partials/footer.ejs') %>
 
-<%- include('../partials/footer.ejs') %>
-
-<!-- ===== END OF FOOTER  ====== -->
-</body>
+    <!-- ===== END OF FOOTER  ====== -->
+  </body>
 </html>

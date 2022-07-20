@@ -47,7 +47,15 @@ router.put('/editar-productos/:id', uploadFile.any('image'), productsController.
 //====== PRODUCT DELETE =============================
 router.delete('/editar-productos/:id', productsController.delete);
 
-//================ PRODUCT FIN  ====================
+//================ PRODUCT FIND  ====================
 router.post('/find', uploadFile.any('image'), productsController.find);
+
+//============= PRODUCTS CATEGORIES  =================
+router.get('/celulares', productsController.cels)
+router.get('/laptops', productsController.laptop)
+router.get('/tablets', productsController.tablet)
+router.get('/gamer', productsController.game)
+router.get('/audio', productsController.audio)
+router.get('/accesorios', productsController.props)
 
 module.exports = router;

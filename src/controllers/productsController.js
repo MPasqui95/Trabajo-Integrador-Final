@@ -159,9 +159,8 @@ const productsController = {
     })
     .then(function(products) {
 
-      if(products == undefined){
-
-        res.send('el producto no existe')
+      if(products == ""){
+         res.render('products/error.ejs')
 
       } else {
 
@@ -175,7 +174,93 @@ const productsController = {
       res.send(e)
 
     })
-  }
+  },
+
+    //============ PRODUCTS CATEGORIES ==================
+
+  cels: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 1
+      }
+    })
+    .then(products => {
+      res.render("products/listado-celulares.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
+
+  laptop: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 2
+      }
+    })
+    .then(products => {
+      res.render("products/listado-laptops.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
+
+  tablet: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 3
+      }
+    })
+    .then(products => {
+      res.render("products/listado-tablets.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
+
+  game: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 4
+      }
+    })
+    .then(products => {
+      res.render("products/listado-gamers.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
+
+  audio: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 5
+      }
+    })
+    .then(products => {
+      res.render("products/listado-audio.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
+
+  props: (req, res) =>{
+    db.Productos.findAll({
+      where:{
+        categoriesProductos_id: 6
+      }
+    })
+    .then(products => {
+      res.render("products/listado-accesorios.ejs", {products})
+    })
+    .catch((e)=> {
+      res.send(e)
+    })
+  },
 };
 
 module.exports = productsController;

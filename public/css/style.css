@@ -433,8 +433,13 @@ input[type="date"]::before {
 
 
 .user-profile h2 {
+  font-size: 30px;
   text-align: center;
   margin-top: 15px;
+}
+
+#user-name{
+  font-size: 28px;
 }
 
 .user-profile h3 {
@@ -454,10 +459,43 @@ input[type="date"]::before {
   align-items: center;
 }
 
-.user-profile button {
+.user-editButton {
   font-size: 20px;
   padding: 10px;
-  margin-left: 46%;
+  margin-left: 40%;
+  width:  20%;
+  border-radius: 15px;
+  background-color: #ff8000;
+}
+
+.user-editButton:hover{
+  background-color:#ff4f00;
+  animation: select 1.5s ;
+}
+
+.user-listButton button{
+  background-color: #05f2f2;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 40%;
+  width:  20%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.user-listButton button:hover{
+  background-color: #414af2; 
+  animation: list 1.5s;
+}
+
+@keyframes select {
+  0% {background-color:#ff8000;}
+  50%{transform: scale(1.075);}
+  100% {background-color: #ff4f00;}
+}
+@keyframes list {
+  0% {background-color:#05f2f2;}
+  50%{transform: scale(1.075);}
+  100% {background-color:#414af2;}
 }
 
 
@@ -893,7 +931,8 @@ div.home-titulo i {
 
 .home-imagenes-vitrinas {
   padding: 0;
-  height: 168px;
+  height: 100%;
+  width: 100%;
 }
 
 .home-textos-vitrinas {
@@ -1142,6 +1181,20 @@ input[type="number"]::-webkit-inner-spin-button {
 .carrito-main {
   margin-top: 50px;
 }
+
+.search-notFound{
+  text-align: center;
+
+}
+
+.search-notFound h1{
+  font-size: 20px;
+}
+
+.img-notFound img{
+  width: 30%;
+}
+
 
 /* =============================== END CARRITO DE COMPRAS ========================================== */
 
@@ -1457,6 +1510,9 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 2rem;
     width: 3rem;
   }
+  .search-notFound h1{
+    font-size: 30px;
+  }
 }
 
 /* ======================= DESKTOP VIEW ========================================== */
@@ -1689,7 +1745,6 @@ input[type="number"]::-webkit-inner-spin-button {
 /* ===============EDITAR PRODUCTO ======== */
 .cp-editarImagen {
   width: 90%;
-  margin-left: 13%;
   
 }
 
@@ -1711,6 +1766,11 @@ input[type="number"]::-webkit-inner-spin-button {
 .cp-detallesProducto .rg-cancelar-button{
   padding: 0.8rem;
 }
+
+.rg-register-form .cp-editarProducto .cp-delete-form{
+  flex-direction: column;
+}
+
 /* =====LISTADO PRODUCTOS====== */
 
 .lp-productos{
@@ -1741,13 +1801,10 @@ input[type="number"]::-webkit-inner-spin-button {
   .cp-editar-form-contenedor .rg-register-label {
     margin: auto;
   }
-  .cp-editarProducto {
-    flex-direction: row;
-  }
 
   .cp-editarProducto .cp-detallesProducto,
   .cp-editarProducto .cp-editarImagen {
-    align-self: start;
+    align-self: center;
     width: 50%;
     padding: 1rem 1rem 0 1rem;
   }
@@ -1766,12 +1823,15 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   .cp-delete-button{
-    margin-right: 58%;
+    margin-right: 33%;
     width: 33.8%;
   }
 
 .lp-card-producto{
   max-width: 230px;
   margin: 5px;
+}
+.search-notFound h1{
+  font-size: 50px;
 }
 }

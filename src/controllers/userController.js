@@ -73,7 +73,7 @@ const userController = {
             password: password,
             direction: req.body.direction,
             dateBirth: req.body.dateBirth,
-            userImage: req.files[0].filename,
+            userImage: image,
             categoriesUsers_id: req.body.tipoUsuario,
           });
           res.redirect("./login");
@@ -147,7 +147,7 @@ const userController = {
         password: req.body.password,
         direction: req.body.direction,
         dateBirth: req.body.dateBirth,
-        userImage: req.files[0].filename,
+        userImage: image,
       },
       {
         where: {

@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `electrodoggy_db` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `electrodoggy_db` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `electrodoggy_db`;
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: electrodoggy_db
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `categoriesbrands` (
 
 LOCK TABLES `categoriesbrands` WRITE;
 /*!40000 ALTER TABLE `categoriesbrands` DISABLE KEYS */;
-INSERT INTO `categoriesbrands` VALUES (1,'Samsung'),(2,'Apple'),(3,'LG'),(4,'Huawei'),(5,'Sony'),(6,'Acer'),(7,'Phillip'),(8,'Nintendo'),(9,'SkullCandy'),(10,'JBL'),(11,'Panasonic'),(12,'Lenovo'),(13,'Asus'),(14,'Xiaomi');
+INSERT INTO `categoriesbrands` VALUES (1,'Samsung'),(2,'Apple'),(3,'LG'),(4,'Huawei'),(5,'Sony'),(6,'Acer'),(7,'Phillip'),(8,'Nintendo'),(9,'SkullCandy'),(10,'Logitech'),(11,'HP'),(12,'Lenovo'),(13,'Asus'),(14,'Xiaomi');
 /*!40000 ALTER TABLE `categoriesbrands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +52,7 @@ CREATE TABLE `categoriescolors` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `categoriescolors` (
 
 LOCK TABLES `categoriescolors` WRITE;
 /*!40000 ALTER TABLE `categoriescolors` DISABLE KEYS */;
-INSERT INTO `categoriescolors` VALUES (1,'Red'),(2,'Blue'),(3,'White'),(4,'Black'),(5,'Green'),(6,'Pink'),(7,'Violet'),(8,'Yellow'),(9,'Grey');
+INSERT INTO `categoriescolors` VALUES (1,'Red'),(2,'Blue'),(3,'White'),(4,'Black'),(5,'Green'),(6,'Pink'),(7,'Violet'),(8,'Yellow'),(9,'Grey'),(10,'Sky blue');
 /*!40000 ALTER TABLE `categoriescolors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `products` (
   KEY `categoriesBrands_id_idx` (`categoriesBrands_id`),
   KEY `categoriesProducts_id_idx` (`categoriesProductos_id`),
   KEY `colors_id` (`categoriesColors_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,NULL,'iPhone 13 Pro',20,2,1,2),(2,'Laptop X211',3500,2975,15,NULL,'Laptop X211',30,12,2,9);
+INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,NULL,'iPhone 13 Pro 16GB RAM 256GB',20,2,1,2),(2,'Chromebook S330',3500,2975,15,NULL,'Chromebook Lenovo S330 14\" Mediatek MT8173C 64GB 4GB',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,NULL,'Consola Nintendo Switch Modelo Oled Neón',12,8,4,1),(4,'Matebook D14',3200,2432,24,NULL,'Laptop Huawei Matebook D14 i5 8GB RAM 512GB SSD + Regalos',4,4,2,9),(5,'Redmi Note 11',720,504,30,NULL,'Celular Xiaomi Redmi Note 11 EU 128GB, 4GB ram, cámara principal 50MP + 8MP + 2MP + 2MP, frontal 13MP, 6.43\"',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,NULL,'Tablet SAMSUNG Galaxy S6 Lite 10.4\" 4 GB RAM 64 GB',6,1,3,9),(7,'iPad Pro',6400,5632,12,NULL,'iPad Pro 12.9\" 512GB Wi-Fi Space Gray Chip M1 2021',5,2,3,9),(8,'PlayStation 5',2400,1632,32,NULL,'Consola PlayStation 5 con lector de discos',7,8,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,NULL,'Audífonos bluetooth True Wireless Skullcandy Sesh Evo resistente al agua IP55, duración máx. 5 horas, negro',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,NULL,'Parlante inalámbrico Sony SRS-XB13 con Extra Bass y Bluetooth',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,NULL,'Kit Teclado Mecanico y Mouse Logitech Pop Keys Blast',5,10,6,8),(12,'Docking Station',140,105,25,NULL,'Docking Station HP USB Type-C Universal RJ45 DisplayPorts- 1MK33AA',2,11,6,9);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +256,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `categoriesUsers_id_idx` (`categoriesUsers_id`),
   CONSTRAINT `categoriesUsers_id` FOREIGN KEY (`categoriesUsers_id`) REFERENCES `categoriesusers` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,6 +265,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Angie','Bolanos','angie@gmail.com','angie123','calle 11','1994-08-11',NULL,NULL,1),(2,'Ana','Uchuya','ana@gmail.com','ana123','calle 10','1995-07-06',NULL,NULL,1),(3,'Diego','Arbeláez','diego@gmail.com','diego123','calle 9','1990-02-14',NULL,NULL,1),(4,'Matias','Pasquini','mati@gmail.com','mati123','calle 8','1995-09-20',NULL,NULL,1),(5,'Carla','Diaz','carla@gmail.com','carla123','calle 7','1993-04-07',NULL,NULL,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-10 21:19:37
+-- Dump completed on 2022-07-10 20:52:25

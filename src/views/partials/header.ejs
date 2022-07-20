@@ -13,11 +13,18 @@
 
   <div class="header-find-bar-container">
     <form action="/product/find" method="POST" enctype="multipart/form-data">
-  
-      <input type="text" name="findProduct" placeholder="Buscar productos" class="header-find-products-input"/>
-  
-      <button type="submit" class="fas fa-search" id="header-movile-find-button"></button>
-  
+      <input
+        type="text"
+        name="findProduct"
+        placeholder="Buscar productos"
+        class="header-find-products-input"
+      />
+
+      <button
+        type="submit"
+        class="fas fa-search"
+        id="header-movile-find-button"
+      ></button>
     </form>
   </div>
 
@@ -30,23 +37,39 @@
     <!--<a href="/" style="text-decoration: none"><p>ElectroDoggy</p> </a>-->
 
     <div>
-      <form action="/product/find" method="POST" class="search-field-products" enctype="multipart/form-data">
-    
-        <input type="text" name="findProduct" placeholder="Buscar productos" class="header-find-products-input"/>
-    
-        <button type="submit" id="header-find-icon" class="fas fa-search"></button>
-    
+      <form
+        action="/product/find"
+        method="POST"
+        class="search-field-products"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="text"
+          name="findProduct"
+          placeholder="Buscar productos"
+          class="header-find-products-input"
+        />
+
+        <button
+          type="submit"
+          id="header-find-icon"
+          class="fas fa-search"
+        ></button>
       </form>
     </div>
 
-    <% if(locals.isLogged) {%> 
-    <div class="desktop-header-use-profile-container desktop-header-shopping-cart-button ">
+    <% if(locals.isLogged) {%>
+    <div
+      class="desktop-header-use-profile-container desktop-header-shopping-cart-button"
+    >
       <div class="desktop-header-use-img-container">
-
-        <a href="/user/profile"><img class="desktop-header-use-img" src="/images/users/<%= locals.userLogged.userImage%>"></a>
-        
+        <a href="/user/profile"
+          ><img
+            class="desktop-header-use-img"
+            src="/images/users/<%= locals.userLogged.userImage%>"
+        /></a>
       </div>
-      <p><%= locals.userLogged.firstName %> </p>
+      <p><%= locals.userLogged.firstName %></p>
     </div>
 
     <div class="desktop-header-shopping-cart-button">
@@ -56,26 +79,26 @@
       <p>Salir</p>
     </div>
 
-      <% if (locals.userAdmin) { %>
-       <div class="desktop-header-shopping-cart-button">
-          <a href="/product/crear-productos"><i class="fas fa-folder-plus" id="header-shopping-cart-button"></i></a>
-          <p>Crear Producto</p>
-        </div>
-      <% } %>
-
-        
+    <% if (locals.userAdmin) { %>
+    <div class="desktop-header-shopping-cart-button">
+      <a href="/product/crear-productos"
+        ><i class="fas fa-folder-plus" id="header-shopping-cart-button"></i
+      ></a>
+      <p>Crear Producto</p>
+    </div>
+    <% } %>
 
     <!-- IF LOCALS.ISLOGGED IS FALSE -->
 
-    <% }else  {%> 
-      <div class="desktop-header-user-button">
-        <a href="/user/login">
-          <i class="fas fa-user" id="header-user-button"></i>
-        </a>
-        <p>Iniciar Sesión</p>
-      </div>
+    <% }else {%>
+    <div class="desktop-header-user-button">
+      <a href="/user/login">
+        <i class="fas fa-user" id="header-user-button"></i>
+      </a>
+      <p>Iniciar Sesión</p>
+    </div>
 
-      <% } %> 
+    <% } %>
 
     <div class="desktop-header-shopping-cart-button">
       <a href="/product/carrito-compras"
@@ -90,7 +113,6 @@
       ></a>
       <p>Listado Productos</p>
     </div>
-
   </div>
 
   <div class="header-nav-bar-navigation">
@@ -98,12 +120,18 @@
       <div class="header-link-container">
         <ul>
           <li>
-            <a href="#Celulares"><i class="fas fa-mobile"></i> Celulares</a>
-            <a href="#Laptops"><i class="fas fa-laptop"></i> Laptops</a>
-            <a href="#Tablets"><i class="fas fa-tablet-alt"></i> Tablets</a>
-            <a href="#Gamer"><i class="fas fa-gamepad"></i> Gamer</a>
-            <a href="#Audio"><i class="fas fa-headphones"></i> Audio</a>
-            <a href="#Accesorios"><i class="fas fa-keyboard"></i> Accesorios</a>
+            <a href="/product/celulares"
+              ><i class="fas fa-mobile"></i> Celulares</a
+            >
+            <a href="/product/laptops"><i class="fas fa-laptop"></i> Laptops</a>
+            <a href="/product/tablets"
+              ><i class="fas fa-tablet-alt"></i> Tablets</a
+            >
+            <a href="/product/gamer"><i class="fas fa-gamepad"></i> Gamer</a>
+            <a href="/product/audio"><i class="fas fa-headphones"></i> Audio</a>
+            <a href="/product/accesorios"
+              ><i class="fas fa-keyboard"></i> Accesorios</a
+            >
           </li>
         </ul>
       </div>

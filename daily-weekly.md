@@ -95,3 +95,27 @@ Diego
 ● Qué hizo ayer: Encriptacion de contraseñas y funcionamiento de los campos del login; ademas de brindar asistencia a mis compañeros ajustando sus tareas.
 ● Si se encontró con algún impedimento: Ninguno en particular
 ● Qué va a hacer hoy: Finalizacion del formulario Login
+
+## Sprint 6 - Weekly
+
+## Domingo 10 de Julio
+
+Ana
+● Qué hizo ayer: Creacion de diagrama de base de datos del cuadro Products
+● Si se encontró con algún impedimento: Ningun inconveniente
+● Qué va a hacer hoy: Creacion de las tablas en Mysql de Products
+
+Mati
+● Qué hizo ayer: Creacion de diagrama de base de datos del cuadro Users
+● Si se encontró con algún impedimento: Problemas para exportar la base de datos
+● Qué va a hacer hoy: Creacion de las tablas de Users en Mysql
+
+Angie
+● Qué hizo ayer: Poblar Base de datos
+● Si se encontró con algún impedimento: Ninguna
+● Qué va a hacer hoy: Implementacion de Sequelize y creacion de Modelos
+
+Diego
+● Qué hizo ayer: CRUD
+● Si se encontró con algún impedimento: Inconvenientes para el funcionamiento de las cookies
+● Qué va a hacer hoy: Terminar el CRUD
