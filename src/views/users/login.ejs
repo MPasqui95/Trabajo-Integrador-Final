@@ -10,12 +10,19 @@
     <!-- ===== LOGIN FORM ====== -->
     <div class="lg-lg-login-form-container">
       <h3 class="lg-login-label">Iniciar sesión</h3>
-      <form action="/user/login" method="POST" name="lg-login-form" class="lg-login-form" enctype="multipart/form-data">
+      <form
+        action="/user/login"
+        method="POST"
+        name="lg-login-form"
+        class="lg-login-form"
+        enctype="multipart/form-data"
+      >
         <input
           type="mail"
           placeholder="Correo electrónico"
           name="mail"
           class="lg-login-input-text"
+          id="mail-login"
           value="<%= locals.errors && errors.msg ? errors.oldData : null %>"
           required
         />
@@ -29,16 +36,9 @@
         />
 
         <% if (locals.errors && errors.msg) { %>
-          <div style="color: red">
-            <%= errors.msg %>
-          </div>
-        <% } %>
-
-        
-        <% if (locals.errors && errors.email) { %>
-          <div style="color: red">
-            <%= errors.email %>
-          </div>
+        <div style="color: red"><%= errors.msg %></div>
+        <% } %> <% if (locals.errors && errors.email) { %>
+        <div style="color: red"><%= errors.email %></div>
         <% } %>
 
         <label for="terminos" class="login-boundarie-label">

@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `electrodoggy_db` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `electrodoggy_db` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `electrodoggy_db`;
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: localhost    Database: electrodoggy_db
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.29
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -155,7 +155,7 @@ CREATE TABLE `products` (
   `regularPrice` decimal(10,0) NOT NULL,
   `offerPrice` decimal(10,0) DEFAULT NULL,
   `discount` decimal(10,0) DEFAULT NULL,
-  `image` blob,
+  `image` varchar(100) DEFAULT NULL,
   `specification` text NOT NULL,
   `stock` tinyint NOT NULL,
   `categoriesBrands_id` int NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE `products` (
   KEY `categoriesBrands_id_idx` (`categoriesBrands_id`),
   KEY `categoriesProducts_id_idx` (`categoriesProductos_id`),
   KEY `colors_id` (`categoriesColors_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,NULL,'iPhone 13 Pro 16GB RAM 256GB',20,2,1,2),(2,'Chromebook S330',3500,2975,15,NULL,'Chromebook Lenovo S330 14\" Mediatek MT8173C 64GB 4GB',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,NULL,'Consola Nintendo Switch Modelo Oled Neón',12,8,4,1),(4,'Matebook D14',3200,2432,24,NULL,'Laptop Huawei Matebook D14 i5 8GB RAM 512GB SSD + Regalos',4,4,2,9),(5,'Redmi Note 11',720,504,30,NULL,'Celular Xiaomi Redmi Note 11 EU 128GB, 4GB ram, cámara principal 50MP + 8MP + 2MP + 2MP, frontal 13MP, 6.43\"',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,NULL,'Tablet SAMSUNG Galaxy S6 Lite 10.4\" 4 GB RAM 64 GB',6,1,3,9),(7,'iPad Pro',6400,5632,12,NULL,'iPad Pro 12.9\" 512GB Wi-Fi Space Gray Chip M1 2021',5,2,3,9),(8,'PlayStation 5',2400,1632,32,NULL,'Consola PlayStation 5 con lector de discos',7,8,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,NULL,'Audífonos bluetooth True Wireless Skullcandy Sesh Evo resistente al agua IP55, duración máx. 5 horas, negro',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,NULL,'Parlante inalámbrico Sony SRS-XB13 con Extra Bass y Bluetooth',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,NULL,'Kit Teclado Mecanico y Mouse Logitech Pop Keys Blast',5,10,6,8),(12,'Docking Station',140,105,25,NULL,'Docking Station HP USB Type-C Universal RJ45 DisplayPorts- 1MK33AA',2,11,6,9);
+INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,'product1658277985417.png','              ',20,2,1,2),(2,'Chromebook S330',3500,2975,15,'product1658278041473.jpg','              ',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,'product1658278057633.jpg','              ',12,8,4,1),(4,'Matebook D14',3200,2432,24,'product1658278094252.jpg','              ',4,4,2,9),(5,'Redmi Note 11',720,504,30,'product1658278134382.png','              ',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,'product1658278204708.png','              ',6,1,3,9),(7,'iPad Pro',6400,5632,12,'product1658278225289.png','              ',5,2,3,9),(8,'PlayStation 5',2400,1632,32,'product1658278335546.jpg','              ',7,5,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,'product1658278359310.jpg','              ',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,'product1658278378777.png','              ',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,'product1658278398246.jpg','              ',5,10,6,8),(12,'Docking Station',140,105,25,'product1658278431294.jpg','              ',2,11,6,9),(13,'Playstation 3',12000,10000,50,'product1658280862762.jpg','              ',10,5,4,4),(14,'Wii',51000,50000,25,'product1658280578277.jpg','        ',25,8,4,3);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,14 +249,14 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `direction` varchar(100) NOT NULL,
   `dateBirth` date DEFAULT NULL,
-  `userImage` blob,
+  `userImage` varchar(100) DEFAULT NULL,
   `userscol` varchar(45) DEFAULT NULL,
   `categoriesUsers_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `categoriesUsers_id_idx` (`categoriesUsers_id`),
   CONSTRAINT `categoriesUsers_id` FOREIGN KEY (`categoriesUsers_id`) REFERENCES `categoriesusers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,9 +265,13 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Angie','Bolanos','angie@gmail.com','angie123','calle 11','1994-08-11',NULL,NULL,1),(2,'Ana','Uchuya','ana@gmail.com','ana123','calle 10','1995-07-06',NULL,NULL,1),(3,'Diego','Arbeláez','diego@gmail.com','diego123','calle 9','1990-02-14',NULL,NULL,1),(4,'Matias','Pasquini','mati@gmail.com','mati123','calle 8','1995-09-20',NULL,NULL,1),(5,'Carla','Diaz','carla@gmail.com','carla123','calle 7','1993-04-07',NULL,NULL,2);
+INSERT INTO `users` VALUES (6,'Alexa','cc','alecc@gmail.com','$2a$10$SAkRlcH8OfUPVsmLeKikTOdfD7rTssS0Z50VoU2bypwERDV9yCmWm','ll','1986-05-21','user1658205189258.jpg',NULL,1),(8,'Prueba','Usuario','PUsu@gmail.com','$2a$10$tg/9KX4WhPRxrzYDxci85eolaXbbKx.9guzeDoD1jNvIeornFQCDa','usu','1990-12-06','user1658205788367.png',NULL,2),(9,'Loki','Lokillo','Lokilo@gmail.com','$2a$10$4lewheJzZmHtOyAgc7yQ8OwgtAt7YkvN6/stJmBA6EtD3jV/Nopbi','ll','1998-02-14','user1658209825994.jpg',NULL,1),(10,'Hernan','Gomez','HGomez@gmail.com','$2a$10$jW6tJXMpjuT1N4pXdKyE9.prXh5uFtZx6xxK0sAX3G7nVBv8k8gXS','calle falsa 123','2011-05-23','user1658279213037.png',NULL,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'electrodoggy_db'
+--
 
 --
 -- Dumping routines for database 'electrodoggy_db'
@@ -282,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-10 20:52:25
+-- Dump completed on 2022-07-19 23:21:15
