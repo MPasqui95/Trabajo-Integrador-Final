@@ -270,10 +270,6 @@ INSERT INTO `users` VALUES (6,'Alexa','cc','alecc@gmail.com','$2a$10$SAkRlcH8OfU
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'electrodoggy_db'
---
-
---
 -- Dumping routines for database 'electrodoggy_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -286,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-19 23:21:15
+-- Dump completed on 2022-07-19 23:42:22
