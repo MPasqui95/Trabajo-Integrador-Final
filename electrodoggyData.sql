@@ -174,7 +174,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,'product1658277985417.png','              ',20,2,1,2),(2,'Chromebook S330',3500,2975,15,'product1658278041473.jpg','              ',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,'product1658278057633.jpg','              ',12,8,4,1),(4,'Matebook D14',3200,2432,24,'product1658278094252.jpg','              ',4,4,2,9),(5,'Redmi Note 11',720,504,30,'product1658278134382.png','              ',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,'product1658278204708.png','              ',6,1,3,9),(7,'iPad Pro',6400,5632,12,'product1658278225289.png','              ',5,2,3,9),(8,'PlayStation 5',2400,1632,32,'product1658278335546.jpg','              ',7,5,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,'product1658278359310.jpg','              ',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,'product1658278378777.png','              ',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,'product1658278398246.jpg','              ',5,10,6,8),(12,'Docking Station',140,105,25,'product1658278431294.jpg','              ',2,11,6,9),(13,'Playstation 3',12000,10000,50,'product1658280862762.jpg','              ',10,5,4,4),(14,'Wii',51000,50000,25,'product1658280578277.jpg','        ',25,8,4,3);
+INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,'product1658286252137.png','              ',20,2,1,2),(2,'Chromebook S330',3500,2975,15,'product1658286297399.jpg','              ',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,'product1658286314818.jpg','              ',12,8,4,1),(4,'Matebook D14',3200,2432,24,'product1658286340167.png','              ',4,4,2,9),(5,'Redmi Note 11',720,504,30,'product1658286383547.jpg','              ',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,'product1658286401829.jpg','              ',6,1,3,9),(7,'iPad Pro',6400,5632,12,'product1658286415119.png','              ',5,2,3,9),(8,'PlayStation 5',2400,1632,32,'product1658286426689.jpg','              ',7,5,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,'product1658286455692.jpg','              ',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,'product1658286467527.png','              ',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,'product1658286480378.jpg','              ',5,10,6,8),(12,'Docking Station',140,105,25,'product1658286590172.webp','              ',2,11,6,9),(13,'Playstation 3',12000,10000,50,'product1658286630918.jpg','              ',10,5,4,4),(14,'Wii',51000,50000,25,'product1658286645361.jpg','              ',25,8,4,3);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +265,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (6,'Alexa','cc','alecc@gmail.com','$2a$10$SAkRlcH8OfUPVsmLeKikTOdfD7rTssS0Z50VoU2bypwERDV9yCmWm','ll','1986-05-21','user1658205189258.jpg',NULL,1),(8,'Prueba','Usuario','PUsu@gmail.com','$2a$10$tg/9KX4WhPRxrzYDxci85eolaXbbKx.9guzeDoD1jNvIeornFQCDa','usu','1990-12-06','user1658205788367.png',NULL,2),(9,'Loki','Lokillo','Lokilo@gmail.com','$2a$10$4lewheJzZmHtOyAgc7yQ8OwgtAt7YkvN6/stJmBA6EtD3jV/Nopbi','ll','1998-02-14','user1658209825994.jpg',NULL,1),(10,'Hernan','Gomez','HGomez@gmail.com','$2a$10$jW6tJXMpjuT1N4pXdKyE9.prXh5uFtZx6xxK0sAX3G7nVBv8k8gXS','calle falsa 123','2011-05-23','user1658279213037.png',NULL,2);
+INSERT INTO `users` VALUES (6,'Alexa','cc','alecc@gmail.com','$2a$10$SAkRlcH8OfUPVsmLeKikTOdfD7rTssS0Z50VoU2bypwERDV9yCmWm','ll','1986-05-21','default-image.jpg',NULL,1),(8,'Prueba','Usuario','PUsu@gmail.com','$2a$10$tg/9KX4WhPRxrzYDxci85eolaXbbKx.9guzeDoD1jNvIeornFQCDa','usu','1990-12-06','user1658286131280.png',NULL,2),(9,'Loki','Lokillo','Lokilo@gmail.com','$2a$10$4lewheJzZmHtOyAgc7yQ8OwgtAt7YkvN6/stJmBA6EtD3jV/Nopbi','ll','1998-02-14','user1658286148532.jpg',NULL,1),(10,'Hernan','Gomez','HGomez@gmail.com','$2a$10$jW6tJXMpjuT1N4pXdKyE9.prXh5uFtZx6xxK0sAX3G7nVBv8k8gXS','calle falsa 123','2011-05-23','user1658286184167.png',NULL,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-19 23:42:22
+-- Dump completed on 2022-07-20  0:12:28
