@@ -18,7 +18,7 @@
         enctype="multipart/form-data"
       >
         <input
-          type="mail"
+          type="email"
           placeholder="Correo electrónico"
           name="mail"
           class="lg-login-input-text"
@@ -37,7 +37,8 @@
 
         <% if (locals.errors && errors.msg) { %>
         <div style="color: red"><%= errors.msg %></div>
-        <% } %> <% if (locals.errors && errors.email) { %>
+        <% } %>
+         <% if (locals.errors && errors.email) { %>
         <div style="color: red"><%= errors.email %></div>
         <% } %>
 
