@@ -118,29 +118,25 @@
               class="cp-tituloSeccion"
               value="specifications"
             >
-              Especificaciones:</label
-            ><textarea
+              Especificaciones:</label><textarea
               name="specifications"
               id="especificaciones"
               class="cp-textAreaInput">
-              <%= producto.specifications %></textarea
-            >
+              <%= producto.specifications %></textarea>
 
             <label for="descripcion" class="cp-tituloSeccion">
-              Descripción:</label
-            ><textarea
+              Descripción:</label><textarea
               name="descripcion"
               id="descripcion"
               class="cp-textAreaInput">
-              <%= producto.specification %></textarea
-            >
+              <%= producto.specification %></textarea>
             <h3 class="cp-tituloSeccion">Stock</h3>
+
             <input
               type="number"
               value="<%= producto.stock %>"
               name="stock"
-              class="rg-form-input-text"
-            />
+              class="rg-form-input-text"/>
 
             <h3 class="cp-tituloSeccion">Categorias</h3>
             <div class="cp-contenedorSelectorCategoria">

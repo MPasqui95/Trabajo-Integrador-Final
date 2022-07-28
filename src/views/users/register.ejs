@@ -30,7 +30,7 @@
 
         </select>
 
-        <!-- ========================================== -->
+        <!-- ================ NOMBRES ========================== -->
 
         <label class="label-input-date">Nombres</label>
         <input
@@ -42,11 +42,11 @@
           <% if (locals.errors && errors.name) { %>
             <div class="register-errors">
               <%= errors.name.msg %> 
+              
             </div>
           <% } %>
     
-        <!-- ========================================== -->
-
+        <!-- ================= APELLIDOS ========================= -->
 
 
         <label class="label-input-date">Apellidos</label>
@@ -64,7 +64,7 @@
         <% } %>
 
 
-        <!-- ========================================== -->
+        <!-- =================== EMAIL ======================= -->
 
 
         <label class="label-input-date">Correo Electronico</label>
@@ -82,7 +82,8 @@
         <% } %>
 
 
-        <!-- ========================================== -->
+
+        <!-- ==================== CONTRASEÑA ====================== -->
 
 
 
@@ -100,7 +101,7 @@
           </div>
           <% } %>
 
-        <!-- ========================================== -->
+        <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
 
 
 
@@ -118,12 +119,9 @@
           </div>
         <% } %>
 
-          <div class="register-errors">
-            <%= errorPassword %>
-          </div>
 
           
-        <!-- ========================================== -->
+        <!-- ================== DIRECCION ======================== -->
 
         
 
@@ -136,7 +134,7 @@
         />
 
 
-        <!-- ========================================== -->
+        <!-- ================== FECHA DE NACIMIENTO ======================== -->
 
 
         <label class="label-input-date"
@@ -155,13 +153,22 @@
           </div>
         <% } %>
 
-        <!-- ========================================== -->
-
         
 
+        <!-- =================== IMAGEN ======================= -->
 
         <label class="label-input-date">Imagen</label>
-        <input type="file" name="user-image" class="rg-form-input-text" />
+        <input type="file" name="userImage" class="rg-form-input-text" />
+
+        <% if (locals.errors && errors.userImage) { %>
+          <div class="register-errors">
+            <%= errors.userImage.msg %> 
+          </div>
+        <% } %>
+
+
+        <!-- ================ BOUNDARIES ========================== -->
+
 
         <label for="terminos" class="rg-boundaries-label">
           <input type="checkbox" id="terminos" class="rg-boundaries" name="boundariesCheck" 
@@ -180,6 +187,10 @@
           <%= errors.boundariesCheck.msg %>
         </div>
         <% } %>
+
+
+        <!-- ========================================== -->
+
 
         <button type="submit" class="rg-register-form-button">Registro</button>
       </form>

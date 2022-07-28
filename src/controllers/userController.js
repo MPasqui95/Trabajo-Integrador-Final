@@ -11,9 +11,6 @@ const userController = {
   //================ USER REGISTER ========================
 
   register: (req, res) => {
-
-    let errorMatchPassword = " ";
-
     db.CategoriaUsuarios.findAll()
       .then(function (categoriaUsuario) {
         return res.render("users/register", {
@@ -21,7 +18,6 @@ const userController = {
           errors: {
             boundariesCheck: "Test boundaries",
           },
-          errorPassword: errorMatchPassword,
         });
       })
       .catch((e) => {
@@ -40,56 +36,44 @@ const userController = {
       image = "default-image.jpg";
     }
 
-    db.CategoriaUsuarios.findAll()
-      .then(function (categoriaUsuario) {
+    let consultaCategoriaUsuarios = db.CategoriaUsuarios.findAll();
+
+    let consultaUsuarios = db.Usuarios.findAll();
+
+    Promise.all([consultaCategoriaUsuarios, consultaUsuarios])
+      .then(function ([categoriaUsuario, usuarios]) {
         const resultValidation = validationResult(req);
 
-        //form validations
+        //FORM VALIDATIONS
 
-        // if there are errors in register form
+        //check if result validation isNotEmpty
         if (!resultValidation.isEmpty()) {
-
-          let errorMatchPassword = " ";
-
           return res.render("users/register", {
             categoriaUsuario: categoriaUsuario,
             errors: resultValidation.mapped(),
             oldData: req.body,
-            errorPassword: errorMatchPassword,
           });
         }
 
-        //password comparision
-        if (req.body.password === req.body.confirm_password) {
-          //if password match in text field - password encrypt
-          let password = bcryptjs.hashSync(req.body.password, 10);
+        //password encryptation
+        let password = bcryptjs.hashSync(req.body.password, 10);
 
-          //save data in DB
-          db.Usuarios.create({
-            firstName: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            //encrypted password
-            password: password,
-            direction: req.body.direction,
-            dateBirth: req.body.dateBirth,
-            userImage: image,
-            categoriesUsers_id: req.body.tipoUsuario,
-          });
-          res.redirect("./login");
-        } else {
-
-          let errorMatchPassword = "Las contraseñas no coincide!";
-
-          return res.render("users/register", {
-            categoriaUsuario: categoriaUsuario,
-            errorPassword: errorMatchPassword,
-            oldData: req.body,
-          });
-        }
+        //save user in DB
+        db.Usuarios.create({
+          firstName: req.body.name,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          //encrypted password
+          password: password,
+          direction: req.body.direction,
+          dateBirth: req.body.dateBirth,
+          userImage: image,
+          categoriesUsers_id: req.body.tipoUsuario,
+        });
+        res.redirect("./login");
       })
       .catch((e) => {
-        console.log(e);
+        console.e(e);
         return res.send(e);
       });
   },
@@ -112,7 +96,6 @@ const userController = {
   //====  USER EDIT ======
 
   editUsers: (req, res) => {
-
     let pedidoUsuario = db.Usuarios.findByPk(req.params.id);
 
     let pedidoCategoriaUsuario = db.CategoriaUsuarios.findAll();
@@ -139,12 +122,22 @@ const userController = {
       image = "default-image.jpg";
     }
 
+    let user = {
+      firstName: req.body.name,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      userImage: image,
+    };
+
+    if (req.session.userLogged.email == user.email) {
+      req.session.userLogged = user;
+    }
+
     db.Usuarios.update(
       {
         firstName: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password,
         direction: req.body.direction,
         dateBirth: req.body.dateBirth,
         userImage: image,
@@ -177,19 +170,25 @@ const userController = {
   // ==================== LOGIN PROCESS ===========================
 
   login: (req, res) => {
-
     return res.render("users/login");
   },
 
   loginProcess: (req, res) => {
-    
-    let errors = validationResult(req);
+    let resultValidation = validationResult(req);
+
+    //check if result validation is not empty
+    if (!resultValidation.isEmpty()) {
+      return res.render("users/login", {
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      });
+    }
 
     //find user
     db.Usuarios.findOne({
-      include: [{ association: "categoriaUsuario"}],
+      include: [{ association: "categoriaUsuario" }],
       where: {
-        email: req.body.mail,
+        email: req.body.email,
       },
     })
       .then(function (usuario) {
@@ -202,24 +201,22 @@ const userController = {
 
           //if the password is OK
           if (isOkThePassword) {
-
             // user information for session
             let user = {
               firstName: usuario.firstName,
               lastName: usuario.lastName,
               email: usuario.email,
               userImage: usuario.userImage,
-              userType: usuario.categoriaUsuario.nombre
+              userType: usuario.categoriaUsuario.nombre,
             };
 
-            //save the user email in session
+            //save the user in session
             req.session.userLogged = user;
 
             //check if remember check is selected
             if (req.body.rememberUser) {
-
               //set the cookie with the user email
-              res.cookie("userMail", req.body.mail, { maxAge: (1000 * 60) * 5 }); // 5 min
+              res.cookie("userMail", req.body.mail, { maxAge: 1000 * 60 * 5 }); // 5 min
               return res.redirect("/user/profile");
             }
 
@@ -230,18 +227,11 @@ const userController = {
           //if the password is incorrect
           return res.render("users/login", {
             errors: {
-              msg: "Contraseña invalida, vuelve a intentarlo",
-              oldData: req.body.mail,
+              invalidEmail: "Contraseña invalida, vuelve a intentarlo",
             },
+            oldData: req.body
           });
         }
-
-        //if the user don´t exist
-        return res.render("users/login", {
-          errors: {
-            email: "No se encuentra un usuario con ese email",
-          },
-        });
       })
       .catch((e) => {
         console.log(e);
@@ -253,13 +243,11 @@ const userController = {
 
   profile: (req, res) => {
 
-    // console.log(req.session.userLogged);
-    // res.render("users/profile", { user: req.session.userLogged });
     db.Usuarios.findOne({
       include: [{ association: "categoriaUsuario" }],
       where: {
-        firstName: req.session.userLogged.firstName
-      }
+        firstName: req.session.userLogged.firstName,
+      },
     })
       .then(function (usuarios) {
         return res.render("users/profile", { user: usuarios });

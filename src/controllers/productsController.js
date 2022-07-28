@@ -73,6 +73,9 @@ const productsController = {
       image = 'default-image.jpg'
     }
 
+    // console.log(req.files[0]);
+    // return res.send('testing')
+
     db.Productos.create({
       name: req.body.name,
       regularPrice: req.body.regularPrice,
