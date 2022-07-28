@@ -286,8 +286,13 @@ input[type="date"]::before {
   font-size: 14px;
 }
 
-.lg-password-reset:hover {
-  color: #343cca;
+.lg-password-reset,.lg-remember-login a{
+  text-decoration: none;
+  color:#343cca;
+}
+
+.lg-password-reset:hover,.lg-remember-login a:hover {
+  color:#ff4f00 ;
 }
 
 .rg-already-registered {
@@ -429,6 +434,7 @@ input[type="date"]::before {
   margin-right: 5px;
   font-size: 14px;
 }
+
 
 /* ====================  USER PROFILE ======================= */
 
@@ -943,27 +949,34 @@ div.home-titulo i {
 .home-textos-vitrinas {
   color: #040740;
   text-align: center;
+  text-decoration: none;
 }
 
 .home-textos-vitrinas h3 {
   color: #414af2;
+  text-decoration: none;
+
 }
 
 .home-textos-vitrinas h5 {
   margin: 12px 0 6px 0;
+  text-decoration: none;
+
 }
 
 .home-textos-vitrinas p {
   margin: 0;
+  text-decoration: none;
+
 }
 
 .home-textos-vitrinas h6 {
   margin: 0;
+  margin: 6px 0 18px 0;
+  text-decoration: none;
+
 }
 
-.home-textos-vitrinas h6 {
-  margin: 6px 0 18px 0;
-}
 
 /*Flechas */
 

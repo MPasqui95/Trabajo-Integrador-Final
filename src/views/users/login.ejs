@@ -45,10 +45,11 @@
           class="lg-login-input-text"
         />
 
-        <% if (locals.errors && errors.password) { %>
-          <div class="register-errors">
-            <%= errors.password.msg %> 
-          </div>
+        <% if (locals.errors && errors.msg) { %>
+        <div style="color: red"><%= errors.msg %></div>
+        <% } %>
+         <% if (locals.errors && errors.email) { %>
+        <div style="color: red"><%= errors.email %></div>
         <% } %>
 
         <% if (locals.errors && errors.invalidEmail) { %>

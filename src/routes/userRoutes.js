@@ -54,8 +54,8 @@ let validations = [
   body("password")
     .notEmpty()
     .withMessage("Debes ingresar una contraseña")
-    .isLength({ min: 2 })
-    .withMessage("El password debe ser mínimo de 3 caracteres"),
+    .isLength({ min: 8 })
+    .withMessage("El password debe ser mínimo de 8 caracteres"),
 
   //image extension validation
   body("userImage").custom((value, { req }) => {

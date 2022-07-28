@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`categoriesusers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) VISIBLE)
+  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) )
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb3;
@@ -82,9 +82,9 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`products` (
   `categoriesProductos_id` INT NOT NULL,
   `categoriesColors_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `categoriesBrands_id_idx` (`categoriesBrands_id` ASC) VISIBLE,
-  INDEX `categoriesProducts_id_idx` (`categoriesProductos_id` ASC) VISIBLE,
-  INDEX `colors_id` (`categoriesColors_id` ASC) VISIBLE)
+  INDEX `categoriesBrands_id_idx` (`categoriesBrands_id` ASC) ,
+  INDEX `categoriesProducts_id_idx` (`categoriesProductos_id` ASC) ,
+  INDEX `colors_id` (`categoriesColors_id` ASC) )
 ENGINE = InnoDB
 AUTO_INCREMENT = 15
 DEFAULT CHARACTER SET = utf8mb3;
@@ -99,8 +99,8 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`productimages` (
   `imageProduct` BLOB NULL DEFAULT NULL,
   `product_id` INT NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) VISIBLE,
-  INDEX `product_id_idx` (`product_id` ASC) VISIBLE,
+  UNIQUE INDEX `nombre_UNIQUE` (`nombre` ASC) ,
+  INDEX `product_id_idx` (`product_id` ASC) ,
   CONSTRAINT `product_id`
     FOREIGN KEY (`product_id`)
     REFERENCES `electrodoggy_db`.`products` (`id`))
@@ -116,8 +116,8 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`products_categoriescolors` (
   `productsCategories_id` INT NOT NULL,
   `categoriesColors_id` INT NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `products_id_idx` (`productsCategories_id` ASC) VISIBLE,
-  INDEX `categoriesColors_id_idx` (`categoriesColors_id` ASC) VISIBLE,
+  INDEX `products_id_idx` (`productsCategories_id` ASC) ,
+  INDEX `categoriesColors_id_idx` (`categoriesColors_id` ASC) ,
   CONSTRAINT `categoriesColors_id`
     FOREIGN KEY (`categoriesColors_id`)
     REFERENCES `electrodoggy_db`.`categoriescolors` (`id`),
@@ -143,8 +143,8 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`users` (
   `userscol` VARCHAR(45) NULL DEFAULT NULL,
   `categoriesUsers_id` INT NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  INDEX `categoriesUsers_id_idx` (`categoriesUsers_id` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
+  INDEX `categoriesUsers_id_idx` (`categoriesUsers_id` ASC) ,
   CONSTRAINT `categoriesUsers_id`
     FOREIGN KEY (`categoriesUsers_id`)
     REFERENCES `electrodoggy_db`.`categoriesusers` (`id`))
@@ -161,8 +161,8 @@ CREATE TABLE IF NOT EXISTS `electrodoggy_db`.`user_products` (
   `users_id` INT NOT NULL,
   `product_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `users_id_idx` (`users_id` ASC) VISIBLE,
-  INDEX `product_id_idx` (`product_id` ASC) VISIBLE,
+  INDEX `users_id_idx` (`users_id` ASC) ,
+  INDEX `product_id_idx` (`product_id` ASC) ,
   CONSTRAINT `productos_id`
     FOREIGN KEY (`product_id`)
     REFERENCES `electrodoggy_db`.`products` (`id`),
