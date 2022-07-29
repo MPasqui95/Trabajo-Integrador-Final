@@ -29,12 +29,17 @@ const userController = {
     } else {
       image = "default-image.jpg";
     }
+
     let consultaCategoriaUsuarios = db.CategoriaUsuarios.findAll();
+
     let consultaUsuarios = db.Usuarios.findAll();
+
     Promise.all([consultaCategoriaUsuarios, consultaUsuarios])
       .then(function ([categoriaUsuario, usuarios]) {
         const resultValidation = validationResult(req);
+
         //FORM VALIDATIONS
+
         //check if result validation isNotEmpty
         if (!resultValidation.isEmpty()) {
           return res.render("users/register", {
@@ -43,8 +48,10 @@ const userController = {
             oldData: req.body,
           });
         }
+
         //password encryptation
         let password = bcryptjs.hashSync(req.body.password, 10);
+
         //save user in DB
         db.Usuarios.create({
           firstName: req.body.name,
@@ -106,9 +113,11 @@ const userController = {
       email: req.body.email,
       userImage: image,
     };
+
     if (req.session.userLogged.email == user.email) {
       req.session.userLogged = user;
     }
+
     db.Usuarios.update(
       {
         firstName: req.body.name,

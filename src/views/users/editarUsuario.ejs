@@ -8,7 +8,7 @@
 
     <%- include('../partials/header.ejs') %>
 
-    <!-- ===== PRODUCTS EDIT  ================= -->
+    <!-- ===== USER EDIT  ================= -->
 
     <div class="rg-rg-register-form-container cp-editar-form-contenedor">
       <h3 class="rg-register-label">Editar Usuario</h3>
@@ -21,6 +21,9 @@
           enctype="multipart/form-data"
         >
 
+<!-- ==================== NOMBRE ====================== -->
+
+
           <div class="cp-detallesProducto">
 
             <h3 class="cp-tituloSeccion">Nombre</h3>
@@ -31,7 +34,7 @@
               class="rg-form-input-text"
             />
 
-
+<!-- ==================== APELLIDO ====================== -->
 
             <h3 class="cp-tituloSeccion">Apellido</h3>
             <input
@@ -42,6 +45,8 @@
             />
 
 
+<!-- ==================== EMAIL ====================== -->
+
             <h3 class="cp-tituloSeccion">Email</h3>
             <input
               type="email"
@@ -51,15 +56,28 @@
             />
 
 
+<!-- ==================== CONTRASEÑA ====================== -->
+
             <h3 class="cp-tituloSeccion">Password</h3>
             <input
               type="password"
-              value="<%= usuario.password %>"
+              value=""
               name="password"
               class="rg-form-input-text"
             />
 
 
+<!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
+
+            <h3 class="cp-tituloSeccion">Confirmar Password</h3>
+            <input 
+            type="password" 
+            name="confirm_password" 
+            class="rg-form-input-text" 
+            />
+
+
+<!-- ==================== DIRECCION ====================== -->
             <h3 class="cp-tituloSeccion">Direccion</h3>
             <input
               type="text"
@@ -69,6 +87,7 @@
             />
 
 
+<!-- ==================== FECHA NACIMIENTO ====================== -->
             <h3 class="cp-tituloSeccion">Fecha de Nacimiento</h3>
             <input
               type="date"
@@ -80,7 +99,7 @@
 
 
 
-
+<!-- ==================== CATEGORIA ====================== -->
             <label for="categoria">Categoria</label>
 
           <select name="categoria" class="rg-form-input-text">
@@ -100,6 +119,11 @@
 
            </select>
 
+
+
+
+
+<!-- ==================== IMAGEN ====================== -->
            <div class="cp-editarImagen">
             <label class="cp-tituloSeccion"
               >Imagen Usuario</label
@@ -121,7 +145,7 @@
             />
           </div>
 
-                        <br />
+            <br />
             <br />
             <button type="submit" class="rg-register-form-button ">
               Editar

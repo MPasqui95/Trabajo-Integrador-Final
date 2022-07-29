@@ -13,10 +13,13 @@
       <h2>Bienvenido a Electrodoggy</h2>
       <br />
       <h3 id="user-name"><%= user.firstName %> <%= user.lastName %></h3>
-      <img
+      <div class="div-user-profile-image">
+        <img
         src="/images/users/<%= user.userImage %>"
         class="user-profile-image"
       />
+      </div>
+      
       <h3><%= user.email %></h3>
       <h3><%= user.categoriaUsuario.nombre %></h3>
       <% if (user.categoriaUsuario.nombre == "Admin") { %>

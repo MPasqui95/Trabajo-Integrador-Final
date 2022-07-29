@@ -85,6 +85,10 @@
               </div>
             <% } %>
 
+            <div class="div-errors">
+              <p class="input-product-image-error"></p>
+            </div>
+
           <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
           <textarea name="specification"  id="especificaciones" class="cp-textAreaInput <%= locals.errors && errors.specification ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.specification : null %></textarea>
           <% if (locals.errors && errors.specification) { %>

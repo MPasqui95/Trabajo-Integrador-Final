@@ -334,7 +334,7 @@ input[type="date"]::before {
   width: 70%;
   color: red;
   font-size: 14px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .error-password-match {
@@ -388,11 +388,13 @@ input[type="date"]::before {
 .login-boundarie-label {
   padding-bottom: 14px;
   width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .lg-login-input-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 1px solid #040740;
   border-radius: 6px;
   width: 90%;
@@ -459,12 +461,15 @@ input[type="date"]::before {
   align-content: center;
 }
 
-
-.user-profile-image {
-  width: 20%;
-  margin-left: 40%;
+.div-user-profile-image{
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
+
+/* .user-profile-image {
+
+} */
 
 .user-editButton {
   font-size: 20px;
@@ -1868,7 +1873,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 }
 
-/* ====================  PRODUCT FORM ERRORS ======================= */
+/* ====================  ERRORS STYLES ======================= */
 .div-errors {
   display: flex;
   justify-content: flex-start;
