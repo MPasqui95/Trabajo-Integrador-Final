@@ -230,6 +230,7 @@ input::placeholder {
   padding: 0.5rem;
   background-color: rgba(4, 7, 64, 0);
   color: #040740;
+  
 }
 
 .label-input-date {
@@ -1721,8 +1722,12 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 90%;
   height: 54px;
   padding: 6px;
+  padding-right: 4px;
   text-align: left;
   margin-bottom: 10px;
+  resize: none;
+  background-color: transparent;
+
 }
 
 .cp-subirImagen {
@@ -1741,6 +1746,19 @@ input[type="number"]::-webkit-inner-spin-button {
   padding-left: 10px;
   border-radius: 6px;
   border: 1px solid #040740;
+  background-color: transparent;
+
+}
+
+.is-invalid {
+  background-color: #ffbaba;
+  border: 4px solid #d61515;
+
+}
+
+.is-valid{
+  background-color: #c4f0c4;
+  border: 4px solid #229422;
 }
 
 

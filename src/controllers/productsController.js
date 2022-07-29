@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require('fs');
 const path = require ('path');
+const { validationResult } = require('express-validator')
 
 
 let db = require("../database/models");
@@ -73,21 +74,48 @@ const productsController = {
       image = 'default-image.jpg'
     }
 
-    db.Productos.create({
-      name: req.body.name,
-      regularPrice: req.body.regularPrice,
-      offerPrice: req.body.offerPrice,
-      discount: req.body.discount,
-      image: req.files[0].filename,
-      specification: req.body.specifications,
-      stock: req.body.stock,
-      categoriesBrands_id: req.body.brand,
-      categoriesProductos_id: req.body.category,
-      categoriesColors_id: req.body.colores
-    });
+    let pedidoColores = db.CategorieColors.findAll();
 
-    res.redirect('/')
+    let pedidoCategorias = db.CategoryBrands.findAll();
 
+    let pedidoCategoriasProductos = db.CategorieProduct.findAll()
+
+    Promise.all([pedidoColores, pedidoCategorias, pedidoCategoriasProductos])
+      .then(function([colors, categories, categoryProduct]){
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+        return res.render("products/crear-productos", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          colors, 
+          categories, 
+          categoryProduct});
+      }
+      db.Productos.create({
+        name: req.body.name,
+        regularPrice: req.body.regularPrice,
+        offerPrice: req.body.offerPrice,
+        discount: req.body.discount,
+        image: image,
+        specification: req.body.specification,
+        description: req.body.description,
+        stock: req.body.stock,
+        categoriesBrands_id: req.body.brand,
+        categoriesProductos_id: req.body.category,
+        categoriesColors_id: req.body.colores
+      });
+      
+      res.redirect('/')
+  
+    })
+      .catch(function(e) {
+        console.log(e);
+      })
+  
+  
+    
+
+    
   },
 
   // ====== RENDER FOR EDIT PAGE   ======
@@ -116,16 +144,33 @@ const productsController = {
     if(req.files[0] != undefined) {
       image = req.files[0].filename
     } else {
-      image = productToEdit.image;
+      image = image;
     }
 
+    let pedidoProducto = db.Productos.findByPk(req.params.id);
+
+    let pedidoColores = db.CategorieColors.findAll();
+
+    let pedidoCategorias = db.CategoryBrands.findAll();
+
+    let pedidoCategoriasProductos = db.CategorieProduct.findAll();
+
+    Promise.all([pedidoProducto, pedidoColores, pedidoCategorias, pedidoCategoriasProductos])
+      .then(function([producto, colors, categories, categoryProduct]){
+        const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        return res.render("products/editar-productos", {errors: resultValidation.mapped(),
+          producto: req.body,
+          oldData: req.body,producto, colors, categories, categoryProduct});
+    }
     db.Productos.update({
       name: req.body.name,
       regularPrice: req.body.regularPrice,
       offerPrice: req.body.offerPrice,
       discount: req.body.discount,
-      image: req.files[0].filename,
-      specification: req.body.specifications,
+      image: image,
+      specification: req.body.specification,
+      description: req.body.description,
       stock: req.body.stock,
       categoriesBrands_id: req.body.brand,
       categoriesProductos_id: req.body.category,
@@ -134,9 +179,14 @@ const productsController = {
       where: {
         id: req.params.id
       }
-    });
+    })
 
     res.redirect('/')
+      })
+      .catch(function(e){
+        console.log(e)
+      })
+  
   },
 
   delete: (req, res) => {

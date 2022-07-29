@@ -2,11 +2,9 @@
 <html lang="en">
   <!-- ======== HEAD =================== -->
   <%- include('../partials/head.ejs') %>
-
   <body>
     <!-- ===== HEADER  ================= -->
     <%- include('../partials/header.ejs') %>
-
     <!-- ===== LOGIN FORM ====== -->
     <div class="lg-lg-login-form-container">
       <h3 class="lg-login-label">Iniciar sesión</h3>
@@ -16,32 +14,37 @@
         name="lg-login-form"
         class="lg-login-form"
         enctype="multipart/form-data"
+        id="login-form-validation"
       >
         <input
           type="email"
           placeholder="Correo electrónico"
-          name="mail"
+          name="email"
           class="lg-login-input-text"
-          id="mail-login"
-          value="<%= locals.errors && errors.msg ? errors.oldData : null %>"
-          required
+          id="input-mail-login"
+          value="<%= locals.oldData ? oldData.email : null %>"
         />
-
+        <div class="div-errors">
+          <p class="input-login-email-error"></p>
+        </div>
+        <% if (locals.errors && errors.email) { %>
+        <div class="register-errors"><%= errors.email.msg %></div>
+        <% } %>
         <input
+          id="input-login-password"
           type="password"
           placeholder="Contraseña"
           name="password"
           class="lg-login-input-text"
-          required
         />
-
+        <div class="div-errors">
+          <p class="input-login-password"></p>
+        </div>
         <% if (locals.errors && errors.msg) { %>
         <div style="color: red"><%= errors.msg %></div>
+        <% } %> <% if (locals.errors && errors.invalidEmail) { %>
+        <div class="register-errors"><%= errors.invalidEmail %></div>
         <% } %>
-         <% if (locals.errors && errors.email) { %>
-        <div style="color: red"><%= errors.email %></div>
-        <% } %>
-
         <label for="terminos" class="login-boundarie-label">
           <input
             type="checkbox"
@@ -51,22 +54,18 @@
           />
           Recuerdame</label
         >
-
         <button type="submit" class="lg-login-button">Iniciar sesión</button>
-
         <a href="#resetearContraseña" class="lg-password-reset"
           >Olvidaste tu contraseña</a
         >
       </form>
     </div>
-
     <div class="lg-remember-login">
       <label
         >¿No tienes cuenta?
         <a href="./register">Registrate</a>
       </label>
     </div>
-
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
   </body>

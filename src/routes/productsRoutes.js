@@ -2,8 +2,9 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const path = require ('path');
+
 // ==== EXPRESS VALIDATOR =====
-// const { body } = require ('express-validator');
+const { body } = require ('express-validator');
 
 const productsController = require("../controllers/productsController");
 
@@ -20,10 +21,42 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage});
 
-//=================== VALIDATIONS ==================================
-// const validateCreateProduct = [
-//     body('brand').notEmpty().withMessage('Debes completar este campo')
-// ]
+//=================== VALIDATIONS PRODUCTS ==================================
+const validationsProducts = [
+
+    body("brand")
+        .notEmpty().withMessage('Elige una marca'),
+    body("name")
+        .notEmpty().withMessage('Este campo es obligatorio').bail()
+        .isLength({ min: 5 }).withMessage("Debe contener al menos 5 caracteres"),
+    body("regularPrice")
+        .notEmpty().withMessage('Necesitas un precio para tu producto'),
+    body("colores")
+        .notEmpty().withMessage('Elige un color'),
+    body("specification")
+        .notEmpty().withMessage('Completa el campo'),
+    body("description")
+        .isLength({ min: 20 }).withMessage('Debe tener por lo menos 20 caracteres'),
+    body("stock")
+        .notEmpty().withMessage('¿Cuanto stock tenes?'),
+    body("category")
+        .notEmpty().withMessage('Elige una categoria'),
+    body("image").custom ((value, { req }) =>  {
+        let file = req.files[0];
+        let validExtensions = ['.jpg','.jpeg','.png','.gif'];
+        if (!file) {
+            throw new Error ('Tienes que subir una imagen');
+        }else{
+            let fileExtension = path.extname(file.originalname);
+            if (!validExtensions.includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivo permitidas son ${ validExtensions.join(',')}`);
+
+        }
+
+    }
+    return true;
+    })
+];
 
 //================= ROUTES ================================
 
@@ -38,11 +71,11 @@ router.get("/listado-productos", productsController.list);
 
 //============= PRODUCT CREATE ============================== OK
 router.get('/crear-productos', productsController.create);
-router.post('/crear-productos', uploadFile.any('image'), productsController.store)
+router.post('/crear-productos', uploadFile.any('image'), validationsProducts, productsController.store)
 
 //==================== PRODUCT EDIT ========================= OK
 router.get('/editar-productos/:id', productsController.edit);
-router.put('/editar-productos/:id', uploadFile.any('image'), productsController.update);
+router.put('/editar-productos/:id', uploadFile.any('image'), validationsProducts, productsController.update);
 
 //====== PRODUCT DELETE =============================
 router.delete('/editar-productos/:id', productsController.delete);
