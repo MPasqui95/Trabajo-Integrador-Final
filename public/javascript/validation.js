@@ -12,7 +12,6 @@ window.addEventListener("load", function () {
       // name fields
       let productName = document.querySelector("input.product-name");
       let textName = document.querySelector(".input-product-name-error");
-
       // description fields
       let productDescription = document.querySelector(
         "textarea.product-description"
@@ -20,7 +19,6 @@ window.addEventListener("load", function () {
       let textDescription = document.querySelector(
         ".input-product-description-error"
       );
-
 // ===========================NAME FIELD VALIDATION===================================
       // if product name is empty
       if (productName.value == "") {
@@ -30,7 +28,6 @@ window.addEventListener("load", function () {
           '<i class="fas fa-exclamation-circle"></i>' +
           " Este campo no puede estar vacío";
         productName.classList.add("input-error");
-
         // if product name is less than 5 characters
       } else if (productName.value.length < 5) {
         e.preventDefault();
@@ -43,7 +40,6 @@ window.addEventListener("load", function () {
         productName.classList.remove("input-error");
         textName.innerHTML = "";
       }
-
  // ==================PRODUCT DESCRIPTION VALIDATION============================
       // if product description is empty
       if (productDescription.value == "") {
@@ -52,7 +48,6 @@ window.addEventListener("load", function () {
           '<i class="fas fa-exclamation-circle"></i>' +
           " Este campo no puede estar vacío";
         productDescription.classList.add("input-error");
-
         // if product description is less than 20 characters
       } else if (productDescription.value.length < 20) {
         e.preventDefault();
@@ -86,7 +81,8 @@ window.addEventListener("load", function () {
         if (
           imageExtension == "png" ||
           imageExtension == "jpg" ||
-          imageExtension == "jpeg"
+          imageExtension == "jpeg"||
+          imageExtension == "gif"
         ) {
           productImage.classList.remove("input-error");
           textImage.innerHTML = "";
@@ -94,7 +90,7 @@ window.addEventListener("load", function () {
           e.preventDefault();
           textImage.innerHTML =
             '<i class="fas fa-exclamation-circle"></i>' +
-            " La imagen debe ser con extensión jpg, png o jpeg";
+            " La imagen debe ser con extensión jpg, png, jpeg o gif";
           productImage.classList.add("input-error");
         }
       } else {
@@ -106,26 +102,40 @@ window.addEventListener("load", function () {
         productImage.classList.add("input-error");
         console.log("no hay archivo");
       }
-
 // =============================================================
       return
     });
   }
-
   //LOGIN FORM VALIDACION
   if (loginForm != null) {
     let userEmail = document.querySelector("#input-mail-login");
     let textEmail = document.querySelector(".input-login-email-error");
-
     loginForm.addEventListener("submit", (e) => {
       if (userEmail.value == "") {
         e.preventDefault();
         console.log(textEmail);
-
         textEmail.innerHTML =
           '<i class="fas fa-exclamation-circle"></i>' +
           " Este campo no puede estar vacío";
         userEmail.classList.add("input-error");
+      }
+    });
+ // ======================= LOGIN PASSWORD ===========================
+    loginForm.addEventListener("submit", (e) => {
+      if (userPassword.value == "") {
+        e.preventDefault();
+        console.log(textPassword);
+        textPassword.innerHTML =
+          '<i class="fas fa-exclamation-circle"></i>' +
+          " El campo contraseña no puede estar vacio";
+        userPassword.classList.add("input-error");
+      }else if (userPassword.value.length < 4) {
+        e.preventDefault();
+        console.log(textPassword);
+        textPassword.innerHTML =
+          '<i class="fas fa-exclamation-circle"></i>' +
+          " El campo contraseña debe contener al menos 4 caracteres ";
+        userPassword.classList.add("input-error");
       }
     });
   }

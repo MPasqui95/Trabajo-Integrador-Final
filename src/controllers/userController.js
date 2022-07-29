@@ -2,14 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-
 let db = require("../database/models");
-
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
-
 const userController = {
   //================ USER REGISTER ========================
-
   register: (req, res) => {
     db.CategoriaUsuarios.findAll()
       .then(function (categoriaUsuario) {
@@ -25,11 +21,9 @@ const userController = {
         return res.send(e);
       });
   },
-
   //===================== USER STORE ========================
   storeUser: (req, res) => {
     let image;
-
     if (req.files[0] != undefined) {
       image = req.files[0].filename;
     } else {
@@ -77,9 +71,7 @@ const userController = {
         return res.send(e);
       });
   },
-
   //===== USERS LIST ========
-
   listUsers: (req, res) => {
     db.Usuarios.findAll({
       include: [{ association: "categoriaUsuario" }],
@@ -92,14 +84,10 @@ const userController = {
         return res.send(e);
       });
   },
-
   //====  USER EDIT ======
-
   editUsers: (req, res) => {
     let pedidoUsuario = db.Usuarios.findByPk(req.params.id);
-
     let pedidoCategoriaUsuario = db.CategoriaUsuarios.findAll();
-
     Promise.all([pedidoUsuario, pedidoCategoriaUsuario])
       .then(function ([usuario, categoriaUsuario]) {
         res.render("users/editarUsuario", {
@@ -112,16 +100,13 @@ const userController = {
         return res.send(e);
       });
   },
-
   updateUser: (req, res) => {
     let image;
-
     if (req.files[0] != undefined) {
       image = req.files[0].filename;
     } else {
       image = "default-image.jpg";
     }
-
     let user = {
       firstName: req.body.name,
       lastName: req.body.lastName,
@@ -148,12 +133,9 @@ const userController = {
         },
       }
     );
-
     res.redirect("/");
   },
-
   //===== USER DELETE =========
-
   deleteUser: (req, res) => {
     db.Usuarios.destroy({
       where: {
@@ -163,19 +145,14 @@ const userController = {
       console.log(e);
       return res.send(e);
     });
-
     res.redirect("/");
   },
-
   // ==================== LOGIN PROCESS ===========================
-
   login: (req, res) => {
     return res.render("users/login");
   },
-
   loginProcess: (req, res) => {
     let resultValidation = validationResult(req);
-
     //check if result validation is not empty
     if (!resultValidation.isEmpty()) {
       return res.render("users/login", {
@@ -183,7 +160,6 @@ const userController = {
         oldData: req.body
       });
     }
-
     //find user
     db.Usuarios.findOne({
       include: [{ association: "categoriaUsuario" }],
@@ -198,7 +174,6 @@ const userController = {
             req.body.password,
             usuario.password
           );
-
           //if the password is OK
           if (isOkThePassword) {
             // user information for session
@@ -209,21 +184,17 @@ const userController = {
               userImage: usuario.userImage,
               userType: usuario.categoriaUsuario.nombre,
             };
-
             //save the user in session
             req.session.userLogged = user;
-
             //check if remember check is selected
             if (req.body.rememberUser) {
               //set the cookie with the user email
               res.cookie("userMail", req.body.mail, { maxAge: 1000 * 60 * 5 }); // 5 min
               return res.redirect("/user/profile");
             }
-
             //if all data is OK
             res.redirect("/user/profile");
           }
-
           //if the password is incorrect
           return res.render("users/login", {
             errors: {
@@ -238,11 +209,8 @@ const userController = {
         res.send(e);
       });
   },
-
   // ==================== USER PROFILE ===============================
-
   profile: (req, res) => {
-
     db.Usuarios.findOne({
       include: [{ association: "categoriaUsuario" }],
       where: {
@@ -257,14 +225,11 @@ const userController = {
         return res.send(e);
       });
   },
-
   // ==================== LOGOUT ===========================
-
   logout: (req, res) => {
     res.clearCookie("userMail");
     req.session.destroy();
     return res.redirect("/");
   },
 };
-
 module.exports = userController;
