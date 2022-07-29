@@ -137,4 +137,172 @@ window.addEventListener("load", function () {
       }
     });
   }
+
+// =============================================================
+  //REGISTER FORM VALIDATION
+
+  //get register form
+  let registerForm = document.getElementById("register-form-validation");
+  
+  if (registerForm != null) {
+    
+  registerForm.addEventListener('submit', function(e) {
+
+  e.preventDefault();
+
+  //NAME
+
+  let nameRegisterValidation = document.getElementById("name-register-validation")
+ 
+  // let nameError = [];
+
+  let ulNameErrores = document.querySelector("div.div-name-errors");
+
+  if (nameRegisterValidation.value == ''){
+    // nameError.push('Campo Obligatorio')
+    ulNameErrores.innerHTML += '<i class="fas fa-exclamation-circle"></i> ' + ' Campo Obligatorio'
+
+  } else if(nameRegisterValidation.value.length < 2){
+    // nameError.push('Debe tener al menos 2 caracteres')
+    ulNameErrores.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debe tener al menos 2 caracteres'
+  }
+
+  /* if (nameError.length > 0){
+    e.preventDefault();
+    let ulNameErrores = document.querySelector("div.div-name-errors ul");
+    for (let i=0; i < nameError.length; i++){
+      ulNameErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  nameError[i] + "</li>"
+    }
+
+  }*/
+
+  //LAST NAME
+
+  let lastNameRegisterValidation = document.getElementById("lastname-register-validation")
+
+  // let lastNameError = [];
+
+  let ulLastNameErrores = document.querySelector("div.div-lastname-errors");
+
+  if (lastNameRegisterValidation.value == ''){
+    //lastNameError.push('Campo Obligatorio')
+    ulLastNameErrores.innerHTML += '<i class="fas fa-exclamation-circle"></i> ' + ' Campo Obligatorio'
+
+  } else if(lastNameRegisterValidation.value.length < 2){
+    //lastNameError.push('Debe tener al menos 2 caracteres');
+    ulLastNameErrores.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debe tener al menos 2 caracteres'
+    }
+  
+
+  /*if (lastNameError.length > 0){
+    e.preventDefault();
+    //let ulLastNameErrores = document.querySelector("div.div-lastname-errors ul");
+    for (let i=0; i < lastNameError.length; i++){
+      ulLastNameErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  lastNameError[i] + "</li>"
+    }
+    
+  } */
+
+  //EMAIL
+
+  let emailRegisterValidation = document.getElementById("email-register-validation")
+
+  let emailError = [];
+
+  if (emailRegisterValidation.value == ''){
+    emailError.push('Campo Obligatorio')
+  } 
+
+  if(!emailRegisterValidation.value.includes("@")){
+    console.log("no incluye")
+    emailError.push("La dirección de email incorrecta");
+  } else if(registerForm == null){
+    console.log("soy null")
+  }
+  else  {
+    //emailError.push("La dirección de incorrecta")
+    console.log("else")
+  }
+
+  if (emailError.length > 0){
+    e.preventDefault();
+    let ulEmailErrores = document.querySelector("div.div-email-errors ul");
+    for (let i=0; i < emailError.length; i++){
+      ulEmailErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  emailError[i] + "</li>"
+    }
+
+  }
+
+  //PASSWORD
+
+  let passwordRegisterValidation = document.getElementById("password-register-validation")
+
+  let passwordError = [];
+
+  if (passwordRegisterValidation.value == ''){
+    passwordError.push('Campo Obligatorio')
+
+  } else if(passwordRegisterValidation.value.length < 8){
+    passwordError.push('Debe tener al menos 8 caracteres')
+  }
+
+  if (passwordError.length > 0){
+    e.preventDefault();
+    let ulPasswordErrores = document.querySelector("div.div-password-errors ul");
+    for (let i=0; i < ulPasswordErrores.length; i++){
+      ulPasswordErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+ passwordError[i] + "</li>"
+    }
+
+  }
+
+  //IMAGE
+
+  let imageRegisterValidation = document.getElementById("image-register-validation")
+
+if(imageRegisterValidation.files[0] == undefined){
+ 
+}
+  if (imageRegisterValidation.files[0]) {
+   
+    let productImageValue = imageRegisterValidation.files[0].name.split(".");
+   
+    let imageExtension = productImageValue[1].toLowerCase();
+    let textImage = document.querySelector(".div-image-errors");
+    console.log(textImage);
+    if (
+      imageExtension == "png" ||
+      imageExtension == "jpg" ||
+      imageExtension == "jpeg"||
+      imageExtension == "gif"
+    ) {
+  
+      imageRegisterValidation.classList.remove("input-error");
+     textImage.innerHTML = "";
+    } else {
+      e.preventDefault();
+
+       textImage.innerHTML =
+        "<i class=fas fa-exclamation-circle></i>" +
+        " La imagen debe ser con extensión jpg, png, jpeg o gif";
+        imageRegisterValidation.classList.add("input-error");
+    }
+  } 
+  else {
+    e.preventDefault();
+
+    let textImage = document.querySelector(".div-image-errors");
+    
+    e.preventDefault();
+    textImage.innerHTML =
+      '<i class="fas fa-exclamation-circle"></i>' +
+      " Debes adjuntar una imagen";
+      imageRegisterValidation.classList.add("input-error");
+    
+  }
+
+
+})
+  }
 });
+
+
