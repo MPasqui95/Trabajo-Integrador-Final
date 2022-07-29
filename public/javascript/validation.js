@@ -76,6 +76,8 @@ window.addEventListener("load", function () {
       //image fields
       let productImage = document.getElementById("imagenProducto");
 
+      console.log(productImage);
+
       if (productImage.files[0]) {
         let productImageValue = productImage.files[0].name.split(".");
         let imageExtension = productImageValue[1].toLowerCase();
@@ -127,4 +129,58 @@ window.addEventListener("load", function () {
       }
     });
   }
+
+
+
+  // ================== REGISTER FORM ======================
+
+  let registerForm = document.getElementById("register-form-validation");
+  if (registerForm != null) {
+    registerForm.addEventListener("submit", function (e) {
+      
+  //IMAGE
+  let imageRegisterValidation = document.getElementById("image-register-validation");
+  //let imageError = [];
+
+  if (imageRegisterValidation.files[0]) {
+    let productImageValue = imageRegisterValidation.files[0].name.split(".");
+    let imageExtension = productImageValue[1].toLowerCase();
+    // let textImage = document.querySelector(".div-image-errors");
+    // console.log(textImage);
+    if (
+      imageExtension == "png" ||
+      imageExtension == "jpg" ||
+      imageExtension == "jpeg" ||
+      imageExtension == "gif"
+    ) {
+      console.log("entro al if");
+      // imageRegisterValidation.classList.remove("input-error");
+      // textImage.innerHTML = "";
+    } else {
+      e.preventDefault();
+      console.log("estoy en el else");
+      // textImage.innerHTML =
+      //   "<i class=fas fa-exclamation-circle></i>" +
+      //   " La imagen debe ser con extensión jpg, png, jpeg o gif";
+      // imageRegisterValidation.classList.add("input-error");
+    }
+  } else {
+    e.preventDefault()
+    console.log("no hay archivo");
+    /*let textImage = document.querySelector(".div-image-errors");
+    e.preventDefault();
+    textImage.innerHTML =
+      '<i class="fas fa-exclamation-circle"></i>' +
+      " Debes adjuntar una imagen";
+      imageRegisterValidation.classList.add("input-error");*/
+  }
+
+
+
+
+      });
+    }
+
+  
+
 });

@@ -15,6 +15,7 @@
         method="POST"
         class="rg-register-form"
         enctype="multipart/form-data"
+        id="register-form-validation"
       >
 
 
@@ -158,7 +159,7 @@
         <!-- =================== IMAGEN ======================= -->
 
         <label class="label-input-date">Imagen</label>
-        <input type="file" name="userImage" class="rg-form-input-text" />
+        <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation"/>
 
         <% if (locals.errors && errors.userImage) { %>
           <div class="register-errors">
