@@ -1874,10 +1874,15 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ====================  ERRORS STYLES ======================= */
-.div-errors {
-  display: flex;
+.div-errors , 
+.div-lastname-errors , 
+.div-name-errors ,
+.div-email-errors ,
+.div-password-errors ,
+.div-image-errors {
+  
   justify-content: flex-start;
-  padding: 10px;
+  padding: 0px 0 20px 0;
   width: 70%;
 }
 
@@ -1893,4 +1898,18 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .input-error{
   border: solid 3px red
+}
+
+/* ====================  ERRORS REGISTER STYLES ======================= */
+
+.div-errors ul li, 
+.div-lastname-errors , 
+.div-name-errors ul li,
+.div-email-errors ul li,
+.div-password-errors ul li,
+.div-image-errors {
+  color: red;
+  align-items: left;
+  font-size: 16px;
+  list-style: none;
 }
