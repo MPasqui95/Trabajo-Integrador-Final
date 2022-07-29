@@ -39,7 +39,13 @@
           class="rg-form-input-text"
           name="name"
           value="<%= locals.oldData ? oldData.name : null %>" 
+          id="name-register-validation"
         />
+
+        <div class="div-name-errors">
+          <ul></ul>
+        </div>
+
           <% if (locals.errors && errors.name) { %>
             <div class="register-errors">
               <%= errors.name.msg %> 
@@ -56,7 +62,12 @@
           name="lastName"
           class="rg-form-input-text"
           value="<%= locals.oldData ? oldData.lastName : null %>"
+          id="lastname-register-validation"
         />
+
+        <div class="div-lastname-errors">
+          <p> </p>
+        </div>
 
         <% if (locals.errors && errors.lastName) { %>
           <div class="register-errors">
@@ -70,11 +81,16 @@
 
         <label class="label-input-date">Correo Electronico</label>
         <input
-          type="email"
+       
           name="email"
           class="rg-form-input-text"
+          id="email-register-validation"
           value="<%= locals.oldData ? oldData.email : null %>"
         />
+
+        <div class="div-email-errors">
+          <ul></ul>
+        </div>
 
         <% if (locals.errors && errors.email) { %>
           <div class="register-errors">
@@ -94,7 +110,12 @@
           name="password"
           class="rg-form-input-text"
           name="name"
+          id="password-register-validation"
         />
+
+        <div class="div-password-errors">
+          <ul></ul>
+        </div>
 
         <% if (locals.errors && errors.password) { %>
           <div class="register-errors">
@@ -159,7 +180,16 @@
         <!-- =================== IMAGEN ======================= -->
 
         <label class="label-input-date">Imagen</label>
+<<<<<<< HEAD
         <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation"/>
+=======
+        <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation" accept="jpg, png, jpe,gif"/>
+
+        <div class="div-image-errors">
+          <p> </p>
+        </div>
+      
+>>>>>>> 306bc02133c1e3725af2667c896c4a2ba1aeb2a8
 
         <% if (locals.errors && errors.userImage) { %>
           <div class="register-errors">
