@@ -8,7 +8,7 @@ module.exports ={
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": '8127',
     "database": "electrodoggy_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

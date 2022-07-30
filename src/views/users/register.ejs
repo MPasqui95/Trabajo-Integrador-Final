@@ -42,8 +42,9 @@
           id="name-register-validation"
         />
 
-        <div class="div-name-errors">
-          <ul></ul>
+        <div class="div-errors">
+          <p class="div-name-errors"></p>
+          <p class="div-name-characteres-errors"></p>
         </div>
 
           <% if (locals.errors && errors.name) { %>
@@ -65,8 +66,9 @@
           id="lastname-register-validation"
         />
 
-        <div class="div-lastname-errors">
-          <p> </p>
+        <div class="div-errors">
+          <p class="div-lastName-errors"></p>
+          <p class="div-lastName-characteres-errors"></p>
         </div>
 
         <% if (locals.errors && errors.lastName) { %>
@@ -88,8 +90,9 @@
           value="<%= locals.oldData ? oldData.email : null %>"
         />
 
-        <div class="div-email-errors">
-          <ul></ul>
+        <div class="div-errors">
+          <p class="div-email-errors"></p>
+          <p class="div-email-character-errors"></p>
         </div>
 
         <% if (locals.errors && errors.email) { %>
@@ -113,8 +116,9 @@
           id="password-register-validation"
         />
 
-        <div class="div-password-errors">
-          <ul></ul>
+        <div class="div-errors">
+          <p class="div-password-errors"></p>
+          <p class="div-password-character-errors"></p>
         </div>
 
         <% if (locals.errors && errors.password) { %>
@@ -123,10 +127,8 @@
           </div>
           <% } %>
 
+
         <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
-
-
-
 
         <label class="label-input-date">Confirmar Contraseña</label>
         <input
@@ -145,9 +147,7 @@
           
         <!-- ================== DIRECCION ======================== -->
 
-        
-
-          <label class="label-input-date">Dirección</label>
+        <label class="label-input-date">Dirección</label>
         <input
           type="text"
           name="direction"
@@ -157,7 +157,6 @@
 
 
         <!-- ================== FECHA DE NACIMIENTO ======================== -->
-
 
         <label class="label-input-date"
           >Fecha de Nacimiento
@@ -174,22 +173,17 @@
             <%= errors.dateBirth.msg %> 
           </div>
         <% } %>
-
         
 
         <!-- =================== IMAGEN ======================= -->
 
         <label class="label-input-date">Imagen</label>
-<<<<<<< HEAD
-        <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation"/>
-=======
         <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation" accept="jpg, png, jpe,gif"/>
 
-        <div class="div-image-errors">
-          <p> </p>
+        <div class="div-errors">
+          <p class="div-image-errors"></p>
         </div>
       
->>>>>>> 306bc02133c1e3725af2667c896c4a2ba1aeb2a8
 
         <% if (locals.errors && errors.userImage) { %>
           <div class="register-errors">

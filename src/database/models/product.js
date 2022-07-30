@@ -32,10 +32,7 @@ module.exports =(sequelize, dataTypes) =>{
             type: dataTypes.STRING(100)
             
             },
-            description :{
-            type: dataTypes.STRING(100)
-            
-            },
+
             stock:{
             type: dataTypes.INTEGER(3)
             },

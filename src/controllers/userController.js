@@ -100,6 +100,8 @@ const userController = {
         return res.send(e);
       });
   },
+
+
   updateUser: (req, res) => {
     let image;
     if (req.files[0] != undefined) {
@@ -135,6 +137,8 @@ const userController = {
     );
     res.redirect("/");
   },
+
+
   //===== USER DELETE =========
   deleteUser: (req, res) => {
     db.Usuarios.destroy({
@@ -147,6 +151,8 @@ const userController = {
     });
     res.redirect("/");
   },
+
+
   // ==================== LOGIN PROCESS ===========================
   login: (req, res) => {
     return res.render("users/login");
@@ -155,6 +161,8 @@ const userController = {
     let resultValidation = validationResult(req);
     //check if result validation is not empty
     if (!resultValidation.isEmpty()) {
+      console.log('estoy en result validation');
+      console.log(resultValidation.mapped());
       return res.render("users/login", {
         errors: resultValidation.mapped(),
         oldData: req.body
@@ -196,9 +204,11 @@ const userController = {
             res.redirect("/user/profile");
           }
           //if the password is incorrect
+          // return res.send('password incorrecto')
+          console.log(resultValidation.mapped());
           return res.render("users/login", {
             errors: {
-              invalidEmail: "Contraseña invalida, vuelve a intentarlo",
+              invalidPassword: "Contraseña invalida, vuelve a intentarlo",
             },
             oldData: req.body
           });

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 window.addEventListener("load", function () {
   //get product form
   let productCreateForm = document.querySelector("form.product-create-form");
@@ -41,6 +40,8 @@ window.addEventListener("load", function () {
         productName.classList.remove("input-error");
         textName.innerHTML = "";
       }
+
+
  // ==================PRODUCT DESCRIPTION VALIDATION============================
       // if product description is empty
       if (productDescription.value == "") {
@@ -57,7 +58,6 @@ window.addEventListener("load", function () {
           " Este campo debe tener mínimo 20 caracteres";
         productDescription.classList.add("input-error");
 
-        //if file extension validation is different to jpg, png jpeg
       }
 
       //if all fields meet criteria
@@ -68,11 +68,9 @@ window.addEventListener("load", function () {
       }
 
 
-// ======================= PRODUCT IMAGE ===========================
+// ======================= PRODUCT IMAGE VALIDATION ===========================
       //image fields
       let productImage = document.getElementById("imagenProducto");
-
-      console.log(productImage);
 
       if (productImage.files[0]) {
         let productImageValue = productImage.files[0].name.split(".");
@@ -103,405 +101,235 @@ window.addEventListener("load", function () {
         productImage.classList.add("input-error");
         console.log("no hay archivo");
       }
-// =============================================================
       return
     });
   }
-  //LOGIN FORM VALIDACION
+  //=========================LOGIN FORM VALIDACION=============================
+
+  //===============================LOGIN EMAIL=================================
   if (loginForm != null) {
+
     let userEmail = document.querySelector("#input-mail-login");
     let textEmail = document.querySelector(".input-login-email-error");
+    let textTypeEmail = document.querySelector(".input-login-email-type-error");
+
+    let userPassword = document.getElementById('input-login-password')
+    let textPassword = document.querySelector(".input-login-password-error");
+    let textPasswordCharacter = document.querySelector(".input-login-password-character-error");
+
+
+
     loginForm.addEventListener("submit", (e) => {
+
+      //empty email validation
       if (userEmail.value == "") {
         e.preventDefault();
-        console.log(textEmail);
         textEmail.innerHTML =
           '<i class="fas fa-exclamation-circle"></i>' +
           " Este campo no puede estar vacío";
         userEmail.classList.add("input-error");
+
+      } 
+      else {
+        textEmail.innerHTML = ""
+        userEmail.classList.remove("input-error");
       }
-    });
- // ======================= LOGIN PASSWORD ===========================
-    loginForm.addEventListener("submit", (e) => {
-      if (userPassword.value == "") {
+
+      //valid email validation - must contain @
+      if (userEmail.value != "" && !userEmail.value.includes("@")) {
         e.preventDefault();
-        console.log(textPassword);
-        textPassword.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " El campo contraseña no puede estar vacio";
-        userPassword.classList.add("input-error");
-      }else if (userPassword.value.length < 4) {
-        e.preventDefault();
-        console.log(textPassword);
-        textPassword.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " El campo contraseña debe contener al menos 4 caracteres ";
-        userPassword.classList.add("input-error");
+        textTypeEmail.innerHTML = '<i class="fas fa-exclamation-circle"></i>' + " Debes ingresar un formato de mail valido";
+        userEmail.classList.add("input-error");
       }
-    });
-  }
 
-
-
-  // ================== REGISTER FORM ======================
-
-  let registerForm = document.getElementById("register-form-validation");
-  if (registerForm != null) {
-    registerForm.addEventListener("submit", function (e) {
-      
-  //IMAGE
-  let imageRegisterValidation = document.getElementById("image-register-validation");
-  //let imageError = [];
-
-  if (imageRegisterValidation.files[0]) {
-    let productImageValue = imageRegisterValidation.files[0].name.split(".");
-    let imageExtension = productImageValue[1].toLowerCase();
-    // let textImage = document.querySelector(".div-image-errors");
-    // console.log(textImage);
-    if (
-      imageExtension == "png" ||
-      imageExtension == "jpg" ||
-      imageExtension == "jpeg" ||
-      imageExtension == "gif"
-    ) {
-      console.log("entro al if");
-      // imageRegisterValidation.classList.remove("input-error");
-      // textImage.innerHTML = "";
-    } else {
-      e.preventDefault();
-      console.log("estoy en el else");
-      // textImage.innerHTML =
-      //   "<i class=fas fa-exclamation-circle></i>" +
-      //   " La imagen debe ser con extensión jpg, png, jpeg o gif";
-      // imageRegisterValidation.classList.add("input-error");
-    }
-  } else {
-    e.preventDefault()
-    console.log("no hay archivo");
-    /*let textImage = document.querySelector(".div-image-errors");
-    e.preventDefault();
-    textImage.innerHTML =
-      '<i class="fas fa-exclamation-circle"></i>' +
-      " Debes adjuntar una imagen";
-      imageRegisterValidation.classList.add("input-error");*/
-  }
-
-
-
-
-      });
-    }
-
+      else {
+        textTypeEmail.innerHTML = ""
+        userEmail.classList.remove("input-error");
+      }
   
-
-});
-=======
-window.addEventListener("load", function () {
-  //get product form
-  let productCreateForm = document.querySelector("form.product-create-form");
-
-  //get login form
-  let loginForm = document.getElementById("login-form-validation");
-
-  //product create validation
-
-  if (productCreateForm != null) {
-    productCreateForm.addEventListener("submit", (e) => {
-      // name fields
-      let productName = document.querySelector("input.product-name");
-      let textName = document.querySelector(".input-product-name-error");
-      // description fields
-      let productDescription = document.querySelector(
-        "textarea.product-description"
-      );
-      let textDescription = document.querySelector(
-        ".input-product-description-error"
-      );
-// ===========================NAME FIELD VALIDATION===================================
-      // if product name is empty
-      if (productName.value == "") {
-        e.preventDefault();
-        // product name
-        textName.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Este campo no puede estar vacío";
-        productName.classList.add("input-error");
-        // if product name is less than 5 characters
-      } else if (productName.value.length < 5) {
-        e.preventDefault();
-        textName.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Este campo debe tener mínimo 5 caracteres";
-        productName.classList.add("input-error");
-      } else {
-        //class remove for productName
-        productName.classList.remove("input-error");
-        textName.innerHTML = "";
-      }
- // ==================PRODUCT DESCRIPTION VALIDATION============================
-      // if product description is empty
-      if (productDescription.value == "") {
-        e.preventDefault();
-        textDescription.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Este campo no puede estar vacío";
-        productDescription.classList.add("input-error");
-        // if product description is less than 20 characters
-      } else if (productDescription.value.length < 20) {
-        e.preventDefault();
-        textDescription.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Este campo debe tener mínimo 20 caracteres";
-        productDescription.classList.add("input-error");
-
-        //if file extension validation is different to jpg, png jpeg
-      }
-
-      //if all fields meet criteria
-      else {
-        //class remove for productDescription
-        productDescription.classList.remove("input-error");
-        textDescription.innerHTML = "";
-      }
-
-
-// ======================= PRODUCT IMAGE ===========================
-      //image fields
-      let productImage = document.getElementById("imagenProducto");
-
-      if (productImage.files[0]) {
-        let productImageValue = productImage.files[0].name.split(".");
-        let imageExtension = productImageValue[1].toLowerCase();
-        let textImage = document.querySelector(".input-product-image-error");
-
-        if (
-          imageExtension == "png" ||
-          imageExtension == "jpg" ||
-          imageExtension == "jpeg"||
-          imageExtension == "gif"
-        ) {
-          productImage.classList.remove("input-error");
-          textImage.innerHTML = "";
-        } else {
-          e.preventDefault();
-          textImage.innerHTML =
-            '<i class="fas fa-exclamation-circle"></i>' +
-            " La imagen debe ser con extensión jpg, png, jpeg o gif";
-          productImage.classList.add("input-error");
-        }
-      } else {
-        let textImage = document.querySelector(".input-product-image-error");
-        e.preventDefault();
-        textImage.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Debes adjuntar una imagen";
-        productImage.classList.add("input-error");
-        console.log("no hay archivo");
-      }
-// =============================================================
-      return
-    });
-  }
-  //LOGIN FORM VALIDACION
-  if (loginForm != null) {
-    let userEmail = document.querySelector("#input-mail-login");
-    let textEmail = document.querySelector(".input-login-email-error");
-    loginForm.addEventListener("submit", (e) => {
-      if (userEmail.value == "") {
-        e.preventDefault();
-        console.log(textEmail);
-        textEmail.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " Este campo no puede estar vacío";
-        userEmail.classList.add("input-error");
-      }
-    });
- // ======================= LOGIN PASSWORD ===========================
-    loginForm.addEventListener("submit", (e) => {
+  
+      // ================ LOGIN PASSWORD VALIDATION=========================
+       
       if (userPassword.value == "") {
         e.preventDefault();
-        console.log(textPassword);
         textPassword.innerHTML =
           '<i class="fas fa-exclamation-circle"></i>' +
           " El campo contraseña no puede estar vacio";
         userPassword.classList.add("input-error");
-      }else if (userPassword.value.length < 4) {
-        e.preventDefault();
-        console.log(textPassword);
-        textPassword.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i>' +
-          " El campo contraseña debe contener al menos 4 caracteres ";
-        userPassword.classList.add("input-error");
+
+      } 
+      else {
+        textPassword.innerHTML = ""
+        userPassword.classList.remove("input-error");
       }
+
+      if (userPassword.value.length > 0 && userPassword.value.length < 4) {
+        e.preventDefault();
+        textPasswordCharacter.innerHTML =
+          '<i class="fas fa-exclamation-circle"></i>' +
+          " El campo debe tener mínimo 4 caracteres";
+        userPassword.classList.add("input-error");
+      } 
+      else {
+        textPasswordCharacter.innerHTML = ""
+        userPassword.classList.remove("input-error");
+      }
+
     });
   }
 
-// =============================================================
-  //REGISTER FORM VALIDATION
+
+  //============================REGISTER FORM VALIDATION=======================
 
   //get register form
-  let registerForm = document.getElementById("register-form-validation");
+  let userRegisterForm = document.getElementById("register-form-validation");
   
-  if (registerForm != null) {
+  if (userRegisterForm != null) {
     
-  registerForm.addEventListener('submit', function(e) {
+    userRegisterForm.addEventListener('submit', (e) => {
 
-  e.preventDefault();
+      // e.preventDefault()
+    //===============================REGISTER NAME====================================
 
-  //NAME
+      let userRegisterName = document.getElementById("name-register-validation")//input
+      let textUserRegisterName = document.querySelector('.div-name-errors')//error message
+      let textUserRegisterCharacteres = document.querySelector('.div-name-characteres-errors')//error message
 
-  let nameRegisterValidation = document.getElementById("name-register-validation")
- 
-  // let nameError = [];
 
-  let ulNameErrores = document.querySelector("div.div-name-errors");
+      if (userRegisterName.value == ''){
+        e.preventDefault()
+        textUserRegisterName.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar tu nombre'
+        userRegisterName.classList.add("input-error");
 
-  if (nameRegisterValidation.value == ''){
-    // nameError.push('Campo Obligatorio')
-    ulNameErrores.innerHTML += '<i class="fas fa-exclamation-circle"></i> ' + ' Campo Obligatorio'
+      } else {
+        textUserRegisterName.innerHTML = ""
+        userRegisterName.classList.remove("input-error");
+      }
 
-  } else if(nameRegisterValidation.value.length < 2){
-    // nameError.push('Debe tener al menos 2 caracteres')
-    ulNameErrores.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debe tener al menos 2 caracteres'
-  }
+      if (userRegisterName.value != "" && userRegisterName.value.length < 2) {
+        e.preventDefault()
+        textUserRegisterCharacteres.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' El nombre debe contener mínimo 4 letras'
+        userRegisterName.classList.add("input-error-2");
 
-  /* if (nameError.length > 0){
-    e.preventDefault();
-    let ulNameErrores = document.querySelector("div.div-name-errors ul");
-    for (let i=0; i < nameError.length; i++){
-      ulNameErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  nameError[i] + "</li>"
-    }
+      } else {
+        textUserRegisterCharacteres.innerHTML = ""
+        userRegisterName.classList.remove("input-error-2");
+      }
 
-  }*/
+  // ===================REGISTER LAST NAME======================================
 
-  //LAST NAME
+      let userRegisterLastName = document.getElementById("lastname-register-validation")//input
+      let textRegisterLastName = document.querySelector('.div-lastName-errors')//class
+      let textRegisterLastNameCharacters = document.querySelector('.div-lastName-characteres-errors')//class
 
-  let lastNameRegisterValidation = document.getElementById("lastname-register-validation")
+      if (userRegisterLastName.value == '') {
+        e.preventDefault()
+        textRegisterLastName.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar tu apellido'
+        userRegisterLastName.classList.add("input-error");
 
-  // let lastNameError = [];
+      } else {
+        textRegisterLastName.innerHTML = ''
+        userRegisterLastName.classList.remove("input-error");
+      }
 
-  let ulLastNameErrores = document.querySelector("div.div-lastname-errors");
+      if (userRegisterLastName.value.length > 0 && userRegisterLastName.value.length < 2) {
+        e.preventDefault()
+        textRegisterLastNameCharacters.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' El apellido debe contener mínimo 4 letras'
+        userRegisterLastName.classList.add("input-error-2");
 
-  if (lastNameRegisterValidation.value == ''){
-    //lastNameError.push('Campo Obligatorio')
-    ulLastNameErrores.innerHTML += '<i class="fas fa-exclamation-circle"></i> ' + ' Campo Obligatorio'
+      } else {
+        textRegisterLastNameCharacters.innerHTML = ''
+        userRegisterLastName.classList.remove("input-error-2");
+      }
 
-  } else if(lastNameRegisterValidation.value.length < 2){
-    //lastNameError.push('Debe tener al menos 2 caracteres');
-    ulLastNameErrores.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debe tener al menos 2 caracteres'
-    }
-  
+  //==============================REGISTER EMAIL==========================================
 
-  /*if (lastNameError.length > 0){
-    e.preventDefault();
-    //let ulLastNameErrores = document.querySelector("div.div-lastname-errors ul");
-    for (let i=0; i < lastNameError.length; i++){
-      ulLastNameErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  lastNameError[i] + "</li>"
-    }
-    
-  } */
+      let userRegisterEmail = document.getElementById("email-register-validation")//input
+      let textUserRegisterEmail = document.querySelector(".div-email-errors")//class
+      let textUserRegisterEmailCharacter = document.querySelector(".div-email-character-errors")//class
 
-  //EMAIL
+      if (userRegisterEmail.value == '') {
+        e.preventDefault()
+        textUserRegisterEmail.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar un correo electrónico'
+        userRegisterEmail.classList.add("input-error");
+        
+      } else {
+        textUserRegisterEmail.innerHTML = ""
+        userRegisterEmail.classList.remove("input-error");
+      }
 
-  let emailRegisterValidation = document.getElementById("email-register-validation")
+      if (userRegisterEmail.value != "" && !userRegisterEmail.value.includes("@")) {
+        e.preventDefault()
+        textUserRegisterEmailCharacter.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar un correo electrónico valido'
+        userRegisterEmail.classList.add("input-error-2");
 
-  let emailError = [];
+      } else {
+        textUserRegisterEmailCharacter.innerHTML = ""
+        userRegisterEmail.classList.remove("input-error-2");
+      }
 
-  if (emailRegisterValidation.value == ''){
-    emailError.push('Campo Obligatorio')
-  } 
 
-  if(!emailRegisterValidation.value.includes("@")){
-    console.log("no incluye")
-    emailError.push("La dirección de email incorrecta");
-  } else if(registerForm == null){
-    console.log("soy null")
-  }
-  else  {
-    //emailError.push("La dirección de incorrecta")
-    console.log("else")
-  }
 
-  if (emailError.length > 0){
-    e.preventDefault();
-    let ulEmailErrores = document.querySelector("div.div-email-errors ul");
-    for (let i=0; i < emailError.length; i++){
-      ulEmailErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+  emailError[i] + "</li>"
-    }
+  //================================REGISTER PASSWORD====================================
 
-  }
+      let userRegisterPassword = document.getElementById("password-register-validation")//input
+      let textUserRegisterPassword = document.querySelector('.div-password-errors')//class
+      let textUserRegisterPasswordCharacter = document.querySelector('.div-password-character-errors')//class
 
-  //PASSWORD
+      if (userRegisterPassword.value == "") {
+        e.preventDefault()
+        textUserRegisterPassword.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar una contraseña'
+        userRegisterPassword.classList.add("input-error");
 
-  let passwordRegisterValidation = document.getElementById("password-register-validation")
+      } else {
+        textUserRegisterPassword.innerHTML = ""
+        userRegisterPassword.classList.remove("input-error");
+      }
 
-  let passwordError = [];
+      if (userRegisterPassword.value != "" && userRegisterPassword.value.length < 8) {
+        e.preventDefault()
+        textUserRegisterPasswordCharacter.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' La contraseña debe tener mínimo 8 caracteres'
+        userRegisterPassword.classList.add("input-error-2");
 
-  if (passwordRegisterValidation.value == ''){
-    passwordError.push('Campo Obligatorio')
+      } else {
+        textUserRegisterPasswordCharacter.innerHTML = ""
+        userRegisterPassword.classList.remove("input-error-2");
+      }
 
-  } else if(passwordRegisterValidation.value.length < 8){
-    passwordError.push('Debe tener al menos 8 caracteres')
-  }
+  //==============================REGISTER IMAGE====================================
 
-  if (passwordError.length > 0){
-    e.preventDefault();
-    let ulPasswordErrores = document.querySelector("div.div-password-errors ul");
-    for (let i=0; i < ulPasswordErrores.length; i++){
-      ulPasswordErrores.innerHTML += "<li>" + '<i class="fas fa-exclamation-circle"></i> '+ passwordError[i] + "</li>"
-    }
+      let userRegisterImage = document.getElementById("image-register-validation")//input
+      let textUserRegisterImage = document.querySelector('.div-image-errors')
 
-  }
+      if(userRegisterImage.files[0]){
+        let userImageValue = userRegisterImage.files[0].name.split('.')
+        let userImageExtension = userImageValue[1].toLowerCase()
 
-  //IMAGE
+        if(
+          userImageExtension == "png" ||
+          userImageExtension == "jpg" ||
+          userImageExtension == "jpeg" ||
+          userImageExtension == "gif"
+        ) {
+          textUserRegisterImage.innerHTML = ""
+          userRegisterImage.classList.remove('input-error')
 
-  let imageRegisterValidation = document.getElementById("image-register-validation")
+        } else {
+          e.preventDefault()
+          textUserRegisterImage.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' La imagen debe ser con extensión jpg, png, jpeg o gif'
+          userRegisterImage.classList.add('input-error')
+        }
+        
+      } else {
+        e.preventDefault()
+        textUserRegisterImage.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes adjuntar una imagen'
+        userRegisterImage.classList.add('input-error')
+      }
 
-if(imageRegisterValidation.files[0] == undefined){
- 
-}
-  if (imageRegisterValidation.files[0]) {
-   
-    let productImageValue = imageRegisterValidation.files[0].name.split(".");
-   
-    let imageExtension = productImageValue[1].toLowerCase();
-    let textImage = document.querySelector(".div-image-errors");
-    console.log(textImage);
-    if (
-      imageExtension == "png" ||
-      imageExtension == "jpg" ||
-      imageExtension == "jpeg"||
-      imageExtension == "gif"
-    ) {
-  
-      imageRegisterValidation.classList.remove("input-error");
-     textImage.innerHTML = "";
-    } else {
-      e.preventDefault();
-
-       textImage.innerHTML =
-        "<i class=fas fa-exclamation-circle></i>" +
-        " La imagen debe ser con extensión jpg, png, jpeg o gif";
-        imageRegisterValidation.classList.add("input-error");
-    }
-  } 
-  else {
-    e.preventDefault();
-
-    let textImage = document.querySelector(".div-image-errors");
-    
-    e.preventDefault();
-    textImage.innerHTML =
-      '<i class="fas fa-exclamation-circle"></i>' +
-      " Debes adjuntar una imagen";
-      imageRegisterValidation.classList.add("input-error");
-    
-  }
-
+      return
 
 })
   }
 });
 
 
->>>>>>> 306bc02133c1e3725af2667c896c4a2ba1aeb2a8

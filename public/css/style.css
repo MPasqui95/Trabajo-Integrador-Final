@@ -220,8 +220,8 @@ input::placeholder {
 }
 
 .rg-form-input-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 1px solid #040740;
   border-radius: 6px;
   width: 90%;
@@ -1874,13 +1874,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* ====================  ERRORS STYLES ======================= */
-.div-errors , 
-.div-lastname-errors , 
-.div-name-errors ,
-.div-email-errors ,
-.div-password-errors ,
-.div-image-errors {
-  
+.div-errors {
   justify-content: flex-start;
   padding: 0px 0 20px 0;
   width: 70%;
@@ -1900,9 +1894,14 @@ input[type="number"]::-webkit-inner-spin-button {
   border: solid 3px red
 }
 
+.input-error-2 {
+  border: solid 3px red
+}
+
+
 /* ====================  ERRORS REGISTER STYLES ======================= */
 
-.div-errors ul li, 
+/* .div-errors ul li, 
 .div-lastname-errors , 
 .div-name-errors ul li,
 .div-email-errors ul li,
@@ -1912,4 +1911,4 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: left;
   font-size: 16px;
   list-style: none;
-}
+} */
