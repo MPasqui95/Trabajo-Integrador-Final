@@ -229,4 +229,19 @@ routerUser.get("/profile", authMiddleware, userLoggedMiddleware, userController.
 // ====== LOGOUT =======
 routerUser.get("/logout", userController.logout);
 
+
+
+// ================= API ROUTES =====================
+
+//======== USER ID FOR API ========= OK
+routerUser.get("/users/:id", userController.usersId);
+
+//======== USERS ARRAY ========= OK
+routerUser.get("/usersList", userController.usersArray);
+
+// ====== IMAGE =======
+// routerUser.get("/usersList/:id", userController.userImage);
+
+// ========== END API ROUTES ===========================
+
 module.exports = routerUser;
