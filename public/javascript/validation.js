@@ -1,4 +1,6 @@
 window.addEventListener("load", function () {
+
+
   //get product form
   let productCreateForm = document.querySelector("form.product-create-form");
 

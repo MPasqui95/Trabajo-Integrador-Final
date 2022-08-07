@@ -37,6 +37,10 @@ const routerProd = require("./src/routes/productsRoutes");
 //Ruta Login y Register
 const routerUser = require("./src/routes/userRoutes");
 
+
+//Ruta para lista de productos y detalle de producto por API
+const apiProduct = require("./src/routes/api/apiProductsRoutes")
+
 // instalado y configurado ejs
 app.set("view engine", "ejs");
 app.set ("views", "./src/views")
@@ -44,6 +48,9 @@ app.set ("views", "./src/views")
 
 //====== MIDDLEAWARES 
 
+
+//Ruta por  API
+app.use("/api/products",apiProduct)
 
 //Ruteo
 app.use("/", router);
