@@ -467,9 +467,10 @@ input[type="date"]::before {
   justify-content: center;
 }
 
-/* .user-profile-image {
-
-} */
+.user-profile-image {
+width: 20%;
+  align-items: center;
+} 
 
 .user-editButton {
   font-size: 20px;
