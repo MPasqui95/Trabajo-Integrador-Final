@@ -27,7 +27,7 @@ const uploadFile = multer({ storage });
 // ==== CREATE USERS WITH EXPRESS VALIDATOR ========
 routerUser.get("/register", isLoggedMiddleware, userController.register);
 
-//Register User validations
+//========VALIDATION USER REGISTRATION FORM=================
 let validations = [
   //name validation
   body("name")
@@ -122,6 +122,8 @@ let validations = [
     ),
 ];
 
+// =============END VALIDATION USER REGISTRATION FORM======================
+
 let userEditValidations = [
   
    //image extension validation
@@ -180,7 +182,6 @@ let userLoginValidations = [
   // validation if the email exist
   body("email")
     .exists()
-    .isEmail()
     .trim()
     .escape()
     .custom((userEmail) => {
@@ -227,5 +228,20 @@ routerUser.get("/profile", authMiddleware, userLoggedMiddleware, userController.
 
 // ====== LOGOUT =======
 routerUser.get("/logout", userController.logout);
+
+
+
+// ================= API ROUTES =====================
+
+//======== USER ID FOR API ========= OK
+routerUser.get("/users/:id", userController.usersId);
+
+//======== USERS ARRAY ========= OK
+routerUser.get("/usersList", userController.usersArray);
+
+// ====== IMAGE =======
+// routerUser.get("/usersList/:id", userController.userImage);
+
+// ========== END API ROUTES ===========================
 
 module.exports = routerUser;

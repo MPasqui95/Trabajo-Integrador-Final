@@ -15,6 +15,7 @@
         method="POST"
         class="rg-register-form"
         enctype="multipart/form-data"
+        id="register-form-validation"
       >
 
 
@@ -38,7 +39,14 @@
           class="rg-form-input-text"
           name="name"
           value="<%= locals.oldData ? oldData.name : null %>" 
+          id="name-register-validation"
         />
+
+        <div class="div-errors">
+          <p class="div-name-errors"></p>
+          <p class="div-name-characteres-errors"></p>
+        </div>
+
           <% if (locals.errors && errors.name) { %>
             <div class="register-errors">
               <%= errors.name.msg %> 
@@ -55,7 +63,13 @@
           name="lastName"
           class="rg-form-input-text"
           value="<%= locals.oldData ? oldData.lastName : null %>"
+          id="lastname-register-validation"
         />
+
+        <div class="div-errors">
+          <p class="div-lastName-errors"></p>
+          <p class="div-lastName-characteres-errors"></p>
+        </div>
 
         <% if (locals.errors && errors.lastName) { %>
           <div class="register-errors">
@@ -69,11 +83,17 @@
 
         <label class="label-input-date">Correo Electronico</label>
         <input
-          type="email"
+       
           name="email"
           class="rg-form-input-text"
+          id="email-register-validation"
           value="<%= locals.oldData ? oldData.email : null %>"
         />
+
+        <div class="div-errors">
+          <p class="div-email-errors"></p>
+          <p class="div-email-character-errors"></p>
+        </div>
 
         <% if (locals.errors && errors.email) { %>
           <div class="register-errors">
@@ -93,7 +113,13 @@
           name="password"
           class="rg-form-input-text"
           name="name"
+          id="password-register-validation"
         />
+
+        <div class="div-errors">
+          <p class="div-password-errors"></p>
+          <p class="div-password-character-errors"></p>
+        </div>
 
         <% if (locals.errors && errors.password) { %>
           <div class="register-errors">
@@ -101,10 +127,8 @@
           </div>
           <% } %>
 
+
         <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
-
-
-
 
         <label class="label-input-date">Confirmar Contraseña</label>
         <input
@@ -123,9 +147,7 @@
           
         <!-- ================== DIRECCION ======================== -->
 
-        
-
-          <label class="label-input-date">Dirección</label>
+        <label class="label-input-date">Dirección</label>
         <input
           type="text"
           name="direction"
@@ -135,7 +157,6 @@
 
 
         <!-- ================== FECHA DE NACIMIENTO ======================== -->
-
 
         <label class="label-input-date"
           >Fecha de Nacimiento
@@ -152,13 +173,17 @@
             <%= errors.dateBirth.msg %> 
           </div>
         <% } %>
-
         
 
         <!-- =================== IMAGEN ======================= -->
 
         <label class="label-input-date">Imagen</label>
-        <input type="file" name="userImage" class="rg-form-input-text" />
+        <input type="file" name="userImage" class="rg-form-input-text" id="image-register-validation" accept="jpg, png, jpe,gif"/>
+
+        <div class="div-errors">
+          <p class="div-image-errors"></p>
+        </div>
+      
 
         <% if (locals.errors && errors.userImage) { %>
           <div class="register-errors">

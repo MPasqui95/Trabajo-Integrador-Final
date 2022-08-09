@@ -36,7 +36,6 @@ function userLoggedMiddleware(req, res, next) {
     if (req.session.userLogged) {
       if (req.session.userLogged.userType == "Admin") {
         res.locals.userAdmin = true;
-        console.log(res.locals.userAdmin);
       }
 
       res.locals.isLogged = true;

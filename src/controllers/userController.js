@@ -3,8 +3,56 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 let db = require("../database/models");
-const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const userController = {
+
+// =================== API's =============================  
+
+// ENDPOINT FOR USERS ARRAY
+//   ROUTE ===>     /user/users  
+usersArray: (req, res) => {
+  db.Usuarios.findAll()
+    .then(users => {
+      let usersList = users.map((array) => {
+        return [
+          array.id,
+          array.firstName,
+          array.email,
+          'http//:localhost:3030/user/usersList/' + array.id
+        ]
+      })
+      return res.status(200).json({
+        total: users.length,
+        users: usersList,
+        status: 200
+      })
+    })
+    .catch((e) => {
+      console.log(e);
+      return res.send(e);
+    });
+},
+
+// ENDPOINT FOR USER ID
+//  ROUTE ===> /user/users
+
+usersId: (req, res) => {
+  db.Usuarios.findByPk(req.params.id)
+  .then(user=>{
+    console.log(user);
+    userToSend = user
+    return res.status(200).json({
+      name: userToSend.firstName,
+      lastName: userToSend.lastName,
+      email: userToSend.email,
+      imageUrl: "http://localhost:3030/user/users/" + user.id ,
+      status: 200
+    })
+  })
+  .catch(e=>{console.log(e);})
+},
+
+// =============== END OF API's ==============================
+
   //================ USER REGISTER ========================
   register: (req, res) => {
     db.CategoriaUsuarios.findAll()
@@ -21,6 +69,7 @@ const userController = {
         return res.send(e);
       });
   },
+
   //===================== USER STORE ========================
   storeUser: (req, res) => {
     let image;
@@ -71,6 +120,7 @@ const userController = {
         return res.send(e);
       });
   },
+
   //===== USERS LIST ========
   listUsers: (req, res) => {
     db.Usuarios.findAll({
@@ -84,6 +134,7 @@ const userController = {
         return res.send(e);
       });
   },
+
   //====  USER EDIT ======
   editUsers: (req, res) => {
     let pedidoUsuario = db.Usuarios.findByPk(req.params.id);
@@ -100,6 +151,8 @@ const userController = {
         return res.send(e);
       });
   },
+
+
   updateUser: (req, res) => {
     let image;
     if (req.files[0] != undefined) {
@@ -135,6 +188,8 @@ const userController = {
     );
     res.redirect("/");
   },
+
+
   //===== USER DELETE =========
   deleteUser: (req, res) => {
     db.Usuarios.destroy({
@@ -147,10 +202,13 @@ const userController = {
     });
     res.redirect("/");
   },
+
+
   // ==================== LOGIN PROCESS ===========================
   login: (req, res) => {
     return res.render("users/login");
   },
+
   loginProcess: (req, res) => {
     let resultValidation = validationResult(req);
     //check if result validation is not empty
@@ -196,9 +254,11 @@ const userController = {
             res.redirect("/user/profile");
           }
           //if the password is incorrect
+          // return res.send('password incorrecto')
+          console.log(resultValidation.mapped());
           return res.render("users/login", {
             errors: {
-              invalidEmail: "Contraseña invalida, vuelve a intentarlo",
+              invalidPassword: "Contraseña invalida, vuelve a intentarlo",
             },
             oldData: req.body
           });
