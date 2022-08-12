@@ -157,6 +157,7 @@ CREATE TABLE `products` (
   `discount` decimal(10,0) DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL,
   `specification` text NOT NULL,
+  `description` varchar(100) NOT NULL,
   `stock` tinyint NOT NULL,
   `categoriesBrands_id` int NOT NULL,
   `categoriesProductos_id` int NOT NULL,
@@ -165,7 +166,7 @@ CREATE TABLE `products` (
   KEY `categoriesBrands_id_idx` (`categoriesBrands_id`),
   KEY `categoriesProducts_id_idx` (`categoriesProductos_id`),
   KEY `colors_id` (`categoriesColors_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +175,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,'product1658286252137.png','              ',20,2,1,2),(2,'Chromebook S330',3500,2975,15,'product1658286297399.jpg','              ',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,'product1658286314818.jpg','              ',12,8,4,1),(4,'Matebook D14',3200,2432,24,'product1658286340167.png','              ',4,4,2,9),(5,'Redmi Note 11',720,504,30,'product1658286383547.jpg','              ',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,'product1658286401829.jpg','              ',6,1,3,9),(7,'iPad Pro',6400,5632,12,'product1658286415119.png','              ',5,2,3,9),(8,'PlayStation 5',2400,1632,32,'product1658286426689.jpg','              ',7,5,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,'product1658286455692.jpg','              ',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,'product1658286467527.png','              ',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,'product1658286480378.jpg','              ',5,10,6,8),(12,'Docking Station',140,105,25,'product1658286590172.webp','              ',2,11,6,9),(13,'Playstation 3',12000,10000,50,'product1658286630918.jpg','              ',10,5,4,4),(14,'Wii',51000,50000,25,'product1658286645361.jpg','              ',25,8,4,3);
+INSERT INTO `products` VALUES (1,'iPhone 13 Pro',1500,1200,20,'product1658286252137.png','              ','',20,2,1,2),(2,'Chromebook S330',3500,2975,15,'product1658286297399.jpg','              ','',30,12,2,9),(3,'Nintendo Switch',1800,1620,10,'product1658286314818.jpg','              ','',12,8,4,1),(5,'Redmi Note 11',720,504,30,'product1658286383547.jpg','              ','',20,14,1,4),(6,'Tablet Galaxy S6 Lite',120,1032,14,'product1658286401829.jpg','              ','',6,1,3,9),(7,'iPad Pro',6400,5632,12,'product1658286415119.png','              ','',5,2,3,9),(8,'PlayStation 5',2400,1632,32,'product1658286426689.jpg','              ','',7,5,4,3),(9,'Audífonos Sesh Evo',1990,1672,12,'product1658286455692.jpg','              ','',2,9,5,4),(10,'Parlante inalámbrico SRS-XB13',200,140,30,'product1658286467527.png','              ','',24,5,5,2),(11,'Kit Teclado Mecanico y Mouse',520,208,60,'product1658286480378.jpg','              ','',5,10,6,8),(12,'Docking Station',140,105,25,'product1658286590172.webp','              ','',2,11,6,9),(13,'Playstation 3',12000,10000,50,'product1658286630918.jpg','              ','',10,5,4,4),(14,'Wii',51000,50000,25,'product1658286645361.jpg','              ','',25,8,4,3),(42,'lkhdfaklj',155,15,10,'product1659069304648.png','ñldkjasñfldk','aljdfñjahdflkjhadflkjhadlkfjhadlkjhalsdkdjfh',21,4,1,2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,6 +271,10 @@ INSERT INTO `users` VALUES (6,'Alexa','cc','alecc@gmail.com','$2a$10$SAkRlcH8OfU
 UNLOCK TABLES;
 
 --
+-- Dumping events for database 'electrodoggy_db'
+--
+
+--
 -- Dumping routines for database 'electrodoggy_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -282,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-20  0:12:28
+-- Dump completed on 2022-08-09  1:57:34

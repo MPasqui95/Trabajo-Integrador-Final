@@ -29,6 +29,10 @@ routerUser.get("/register", isLoggedMiddleware, userController.register);
 
 //========VALIDATION USER REGISTRATION FORM=================
 let validations = [
+  //user type validation
+  body("tipoUsuario")
+    .notEmpty()
+    .withMessage("Debes seleccionar un tipo de usuario"),
   //name validation
   body("name")
     .notEmpty()
@@ -210,14 +214,14 @@ let userLoginValidations = [
 routerUser.post("/register", uploadFile.any("userImage"), validations, userController.storeUser);
 
 //======== USER EDIT ========= OK
-routerUser.get("/editar-usuario/:id", userController.editUsers);
+routerUser.get("/editar-usuario/:id",authMiddleware, userLoggedMiddleware, userController.editUsers);
 routerUser.put("/editar-usuario/:id", uploadFile.any("userImage"),userController.updateUser);
 
 //======== USER LIST ========= OK
-routerUser.get("/users", userController.listUsers);
+routerUser.get("/users",authMiddleware, userLoggedMiddleware, userController.listUsers);
 
 //====== USER DELETE ============
-routerUser.post("/borrar/:id", userController.deleteUser);
+routerUser.post("/borrar/:id", authMiddleware, userLoggedMiddleware, userController.deleteUser);
 
 // ===== LOGIN =============
 routerUser.get("/login", isLoggedMiddleware, userController.login);

@@ -13,7 +13,7 @@
         <form action="/product/crear-productos" method="POST" class="rg-register-form product-create-form"
           enctype="multipart/form-data">
 
-          <h3 class="cp-tituloSeccion">Marca</h3>
+          <!-- <h3 class="cp-tituloSeccion">Marca</h3> -->
           <div class="cp-contenedorSelectorCategoria">
             <label for="brand"></label>
             <select name="brand"  class="rg-form-input-text <%= locals.errors && errors.brand ? 'is-invalid' : null %> ">
@@ -43,17 +43,18 @@
           </div>
 
           <input type="number" placeholder="Precio Oferta" value="<%= locals.oldData ? oldData.offerPrice : null %>" name="offerPrice" class="rg-form-input-text" />
-
+          <br>
           <input type="number" placeholder="Precio Regular" name="regularPrice"value="<%= locals.oldData ? oldData.regularPrice : null %>" class="rg-form-input-text <%= locals.errors && errors.regularPrice ? 'is-invalid' : null %> " />
           <% if (locals.errors && errors.regularPrice) { %>
             <div class="register-errors">
               <%= errors.regularPrice.msg %> 
             </div>
           <% } %>
+          <br>
 
           <input type="number" placeholder="Descuento" value="<%= locals.oldData ? oldData.discount : null %>" name="discount" class="rg-form-input-text" />
-
-          <h3 class="cp-tituloSeccion">Colores</h3>
+            <br>
+          <!-- <h3 class="cp-tituloSeccion">Colores</h3> -->
           <div class="cp-contenedorSelectorCategoria">
             <label for="colores">
               <select name="colores" class="rg-form-input-text <%= locals.errors && errors.colores ? 'is-invalid' : null %> ">
@@ -73,7 +74,6 @@
 
           <label for="imagenProducto" class="cp-tituloSeccion">
             Imagen del producto</label>
-
           <input id="imagenProducto" type="file" name="image" accept="jpg, png, jpeg, gif"
             class="rg-form-input-text subirArchivo <%= locals.errors && errors.image ? 'is-invalid' : null %> " multiple />
             <div class="div-errors">
@@ -84,13 +84,12 @@
                 <%= errors.image.msg %> 
               </div>
             <% } %>
-
             <div class="div-errors">
               <p class="input-product-image-error"></p>
             </div>
 
           <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
-          <textarea name="specification"  id="especificaciones" class="cp-textAreaInput <%= locals.errors && errors.specification ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.specification : null %></textarea>
+          <textarea placeholder="Especificaciones" name="specification"  id="especificaciones" class="cp-textAreaInput <%= locals.errors && errors.specification ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.specification : null %></textarea>
           <% if (locals.errors && errors.specification) { %>
             <div class="register-errors">
               <%= errors.specification.msg %> 
@@ -98,7 +97,7 @@
           <% } %>
 
           <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
-          <textarea name="description" id="descripcion"  class="cp-textAreaInput product-description <%= locals.errors && errors.description ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.description : null %></textarea>
+          <textarea placeholder="Descripcion"  name="description" id="descripcion"  class="cp-textAreaInput product-description <%= locals.errors && errors.description ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.description : null %></textarea>
           <div class="div-errors">
             <p class="input-product-description-error"></p>
           </div>

@@ -2,6 +2,8 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const path = require ('path');
+const authMiddleware = require('../middleware/authMiddleware');
+const userLoggedMiddleware = require('../middleware/userLoggedMiddleware')
 
 // ==== EXPRESS VALIDATOR =====
 const { body } = require ('express-validator');
@@ -70,11 +72,11 @@ router.get("/detalle/:id", productsController.detail);
 router.get("/listado-productos", productsController.list);
 
 //============= PRODUCT CREATE ============================== OK
-router.get('/crear-productos', productsController.create);
+router.get('/crear-productos', authMiddleware, userLoggedMiddleware, productsController.create);
 router.post('/crear-productos', uploadFile.any('image'), validationsProducts, productsController.store)
 
 //==================== PRODUCT EDIT ========================= OK
-router.get('/editar-productos/:id', productsController.edit);
+router.get('/editar-productos/:id', authMiddleware, userLoggedMiddleware, productsController.edit);
 router.put('/editar-productos/:id', uploadFile.any('image'), validationsProducts, productsController.update);
 
 //====== PRODUCT DELETE =============================
