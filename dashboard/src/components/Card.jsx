@@ -26,12 +26,10 @@ Card.defaultProps = {
 Card.propTypes = {
     atritutes: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        color: PropTypes.string.isRequired,
         cuantity: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.number
         ]).isRequired,
-        icon: PropTypes.string.isRequired
     })
 }
 
