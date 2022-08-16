@@ -416,6 +416,7 @@ input[type="date"]::before {
   margin-bottom: 5px;
 }
 
+
 .error-password-match {
   font-weight: bold;
   width: 70%;
@@ -487,8 +488,28 @@ input[type="date"]::before {
   font-size: 1rem;
   padding: 0.5rem;
   background-color: rgba(4, 7, 64, 0);
+}
+
+.eye-icon{
+  position: absolute;
+  right: 5rem;
+  margin-bottom: 6.5rem ;
+  cursor: pointer;
   color: #040740;
 }
+.container-eye-register{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+#register-eye{
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  cursor: pointer;
+  color: #040740;
+}
+
 
 .lg-login-button {
   color: white;
@@ -989,6 +1010,7 @@ div.home-titulo i {
   display: flex;
   padding: 20px 0 10px 0;
   overflow: scroll;
+  
 }
 
 .home-vitrinas::-webkit-scrollbar {
@@ -1036,32 +1058,31 @@ div.home-titulo i {
 .home-textos-vitrinas {
   color: #040740;
   text-align: center;
-  text-decoration: none;
 }
 
 .home-textos-vitrinas h3 {
   color: #414af2;
-  text-decoration: none;
 
 }
 
 .home-textos-vitrinas h5 {
   margin: 12px 0 6px 0;
-  text-decoration: none;
 
 }
 
 .home-textos-vitrinas p {
   margin: 0;
-  text-decoration: none;
 
 }
 
 .home-textos-vitrinas h6 {
   margin: 0;
   margin: 6px 0 18px 0;
-  text-decoration: none;
 
+}
+
+.home-producto-vitrinas a{
+  text-decoration: none;
 }
 
 
@@ -1527,6 +1548,10 @@ input[type="number"]::-webkit-inner-spin-button {
   .rg-register-form-button {
     width: 70%;
   }
+  #register-eye{
+    right: 7rem;
+  }
+  
   /* ===================   LOGIN  =============== */
   .lg-lg-login-form-container {
     margin: 25px auto;
@@ -1549,6 +1574,10 @@ input[type="number"]::-webkit-inner-spin-button {
     max-width: 800px;
 
   }
+  .eye-icon{
+    right: 32%;
+  }
+  
 
   /* =================== ANGIE =============== */
 
@@ -1599,6 +1628,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .home-flechas-vitrinas {
     display: flex;
+  }
+  .home-textos-vitrinas p{
+    margin-top: 1rem;
   }
 
   /* =============== CARRITO DE COMPRAS =============== */
@@ -1779,11 +1811,18 @@ input[type="number"]::-webkit-inner-spin-button {
   .rg-rg-register-form-container {
     width: 50%;
   }
+  #register-eye{
+    right: 8rem;
+  }
+  
 
   /* ============ LOGIN ======================= */
 
   .lg-lg-login-form-container {
     width: 50%;
+  }
+  .eye-icon{
+    right: 35%;
   }
 }
 
@@ -1931,6 +1970,12 @@ select .rg-form-input-text{
   width: 100%;
 }
 
+@media (min-width: 769px){
+  .precio-sin-descuento{
+    padding: 0.45rem 0;
+  }
+}
+
 /* ===============EDITAR PRODUCTO END ======== */
 @media (min-width: 769px) {
   .cp-editar-form-contenedor {
@@ -1987,7 +2032,9 @@ select .rg-form-input-text{
   color: red;
   align-items: left;
   font-size: 16px;
+  padding-left: 1rem;
 }
+
 
 .div-errors i {
   font-size: 20px;
@@ -2002,6 +2049,11 @@ select .rg-form-input-text{
 }
 
 
+/* @media (min-width: 769px) {
+.error-msg{
+  padding-right: 30%;
+}
+} */
 /* ====================  ERRORS REGISTER STYLES ======================= */
 
 /* .div-errors ul li, 

@@ -47,6 +47,12 @@ let validations = [
     .isLength({ min: 2 })
     .withMessage("El nombre debe ser al menos de dos caracteres"),
 
+  //Date validation
+  body("dateBirth")
+    .notEmpty()
+    .withMessage("Debes ingresar una fecha valida"),
+    
+
   //email validation
   body("email")
     .notEmpty()
@@ -215,7 +221,7 @@ routerUser.post("/register", uploadFile.any("userImage"), validations, userContr
 
 //======== USER EDIT ========= OK
 routerUser.get("/editar-usuario/:id",authMiddleware, userLoggedMiddleware, userController.editUsers);
-routerUser.put("/editar-usuario/:id", uploadFile.any("userImage"),userController.updateUser);
+routerUser.put("/editar-usuario/:id", uploadFile.any("userImage"), validations, userController.updateUser);
 
 //======== USER LIST ========= OK
 routerUser.get("/users",authMiddleware, userLoggedMiddleware, userController.listUsers);

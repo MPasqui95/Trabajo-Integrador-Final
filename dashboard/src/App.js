@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route, Switch} from 'react-router-dom'
 
+
 import Menu from "./components/Menu"
 import Content from "./components/Content"
 import Categories from "./components/Categories"

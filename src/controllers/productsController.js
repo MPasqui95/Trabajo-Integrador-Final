@@ -36,7 +36,9 @@ const productsController = {
     // se agrega la consulta para todos los productos
     // con sequalize a la base de datos
 
-    db.Productos.findAll()
+    db.Productos.findAll(
+      {include: [{association: "categorias"}]}
+    )
     .then(function(products){
       res.render("products/listado-productos",{products:products})
     })

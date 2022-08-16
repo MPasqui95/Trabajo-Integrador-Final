@@ -96,12 +96,17 @@
         <!-- ==================== CONTRASEÑA ====================== -->
 
         <label class="label-input-date">Contraseña</label>
-        <input
-          type="password"
-          name="password"
-          class="rg-form-input-text"
-          id="password-register-validation"
-        />
+        <div class="container-eye-register">
+          <input
+            type="password"
+            name="password"
+            class="rg-form-input-text"
+            id="password-register-validation"
+          />
+          <span class="eye-icon" id="register-eye"
+            ><i class="fa-solid fa-eye-slash" id="close-eye-register"></i
+          ></span>
+        </div>
 
         <div class="div-errors">
           <p class="div-password-errors"></p>
@@ -121,6 +126,7 @@
           class="rg-form-input-text"
           id="confirm-password-register-validation"
         />
+
         <div class="div-errors">
           <p class="div-confirm-password-errors"></p>
           <p class="div-confirm-password-character-errors"></p>
@@ -149,12 +155,17 @@
             name="dateBirth"
             class="rg-form-input-text"
             value="<%= locals.oldData ? oldData.dateBirth : null %>"
+            id="dateBirth"
           />
         </label>
 
         <% if (locals.errors && errors.dateBirth) { %>
         <div class="register-errors"><%= errors.dateBirth.msg %></div>
         <% } %>
+
+        <div class="div-errors">
+          <p class="div-date-errors"></p>
+        </div>
 
         <!-- =================== IMAGEN ======================= -->
 
@@ -324,5 +335,6 @@
 
     <!-- ======= FOOTER  ====== -->
     <%- include('../partials/footer.ejs') %>
+    <script src="/javascript/eye.js"></script>
   </body>
 </html>

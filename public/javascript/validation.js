@@ -43,6 +43,44 @@
           textName.innerHTML = "";
         }
 
+  // ===========================BRAND FIELD VALIDATION===================================  
+  let brandName = document.getElementById("brands");
+  let textBrand = document.querySelector(".input-product-brand-error");
+
+        // if product brand is empty
+        if (brandName.value == "") {
+          e.preventDefault();
+          // brand name
+          textBrand.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " El campo marca no puede estar vacío ";
+          brandName.classList.add("input-error","is-invalid");
+          
+        } else {
+          //class remove for brandName
+          brandName.classList.remove("input-error", "is-invalid");
+          textBrand.innerHTML = "";
+        }
+
+  // ===========================REGULAR PRICE FIELD VALIDATION===================================  
+  let regularPrice = document.getElementById("regular-price");
+  let textRegularPrice = document.querySelector(".input-product-regular-price-error");
+
+        // if product regular price is empty
+        if (regularPrice.value == "") {
+          e.preventDefault();
+          // regular price name
+          textRegularPrice.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " Este campo debe contener un valor";
+          regularPrice.classList.add("input-error","is-invalid");
+          
+        } else {
+          //class remove for regularPrice
+          regularPrice.classList.remove("input-error", "is-invalid");
+          textRegularPrice.innerHTML = "";
+        }
+
 
   // ==================PRODUCT DESCRIPTION VALIDATION============================
         // if product description is empty
@@ -67,6 +105,68 @@
           //class remove for productDescription
           productDescription.classList.remove("input-error", "is-invalid");
           textDescription.innerHTML = "";
+        }
+
+  // ==================PRODUCT COLOR VALIDATION============================
+  let productColor = document.getElementById("colors");
+  let textProductColor = document.querySelector(".input-product-color-error");
+        // if product color is empty
+        if (productColor.value == "") {
+          e.preventDefault();
+          textProductColor.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " El campo color no puede estar vacío ";
+          productColor.classList.add("input-error", "is-invalid");
+        }else {
+          //class remove for productDescription
+          productColor.classList.remove("input-error", "is-invalid");
+          textProductColor.innerHTML = "";
+        }
+
+  // ==================PRODUCT STOCK VALIDATION============================
+  let productStock = document.getElementById("stock");
+  let textProductStock = document.querySelector(".input-product-stock-error");
+        // if product stock is empty
+        if (productStock.value == "") {
+          e.preventDefault();
+          textProductStock.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " Este campo no puede estar vacío";
+          productStock.classList.add("input-error", "is-invalid");
+          // if product stock is less than 1 product
+        } else if (productStock.value < 1) {
+          e.preventDefault();
+          textProductStock.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " Este campo debe tener mínimo 1 producto en stock";
+          productStock.classList.add("input-error", "is-invalid");
+
+        }
+
+        //if all fields meet criteria
+        else {
+          //class remove for productDescription
+          productStock.classList.remove("input-error", "is-invalid");
+          textProductStock.innerHTML = "";
+        }
+
+  // ===========================CATEGORY FIELD VALIDATION===================================  
+  let productCategory = document.getElementById("categories");
+  let textProductCategory = document.querySelector(".input-product-categories-error");
+
+        // if product brand is empty
+        if (productCategory.value == "") {
+          e.preventDefault();
+          // brand name
+          textProductCategory.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i>' +
+            " Este campo no puede estar vacío";
+          productCategory.classList.add("input-error","is-invalid");
+          
+        } else {
+          //class remove for brandName
+          productCategory.classList.remove("input-error", "is-invalid");
+          textProductCategory.innerHTML = "";
         }
 
 
@@ -137,7 +237,7 @@
           userEmail.classList.remove("input-error", "is-invalid");
         }
 
-        //valid email validation - must contain @
+        //valid email validation - must contain @ and .com
         if (userEmail.value != "" && !userEmail.value.includes("@" && ".com")) {
           e.preventDefault();
           textTypeEmail.innerHTML = '<i class="fas fa-exclamation-circle"></i>' + " Debes ingresar un formato de mail valido";
@@ -147,6 +247,7 @@
         else {
           textTypeEmail.innerHTML = ""
           userEmail.classList.remove("input-error");
+          userPassword.focus();
         }
     
     
@@ -234,6 +335,23 @@
           textUserRegisterCharacteres.innerHTML = ""
           userRegisterName.classList.remove("input-error-2");
         }
+      //===============================DATE REGISTER====================================
+
+        let dateBirth = document.getElementById("dateBirth")//input
+        let textDateBirth = document.querySelector('.div-date-errors')//error message
+        
+
+
+        if (dateBirth.value == ''){
+          e.preventDefault()
+          textDateBirth.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + ' Debes ingresar una fecha valida'
+          dateBirth.classList.add("input-error", "is-invalid");
+
+        } else {
+          textDateBirth.innerHTML = ""
+          dateBirth.classList.remove("input-error", "is-invalid");
+        }
+
 
     // ===================REGISTER LAST NAME======================================
 

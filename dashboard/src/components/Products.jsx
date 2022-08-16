@@ -3,9 +3,16 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import '../assets/css/table.css'
+import Pagination from './Pagination';
 
 function Products(){
-    const [products, setProducts] = useState([0])
+    const [products, setProducts] = useState([0]);
+    const [pagina, setPagina] = useState(1);
+    const [porPagina, setPorPagina] = useState(5);
+
+/* Calculating the maximum number of pages. */
+    const maximo = products.length / porPagina
+    // console.log(maximo);
 
     useEffect(()=>{
         console.log('se montó al componente');
@@ -36,7 +43,12 @@ function Products(){
                 <th>Marca</th>
             </tr>
             </thead>
-            {products.map((us , i)=>{
+            {products
+            .slice(
+                (pagina-1) * porPagina, 
+                (pagina-1) * porPagina + porPagina
+            )
+            .map((us , i)=>{
                 return(
                     <tr key={i}>
                   <td >
@@ -47,7 +59,7 @@ function Products(){
                   </td>
                   </tr>)
                 })}  
-            
+            <Pagination pagina={pagina} setPagina={setPagina} maximo={maximo}/>
         </table>
         </div>
     )

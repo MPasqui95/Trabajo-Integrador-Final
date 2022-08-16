@@ -16,22 +16,27 @@
           <!-- <h3 class="cp-tituloSeccion">Marca</h3> -->
           <div class="cp-contenedorSelectorCategoria">
             <label for="brand"></label>
-            <select name="brand"  class="rg-form-input-text <%= locals.errors && errors.brand ? 'is-invalid' : null %> ">
+            <select name="brand"  class="rg-form-input-text" id="brands">
               <option value="">Selecione una Marca</option>
               <% for( let i=0; i < categories.length; i++ ) { %>
-                <option value="<%= categories[i].id %> ">
+                <option value="<%= categories[i].id %>">
                   <%= categories[i].name %>
                 </option>
                 <% } %>
             </select>
             <% if (locals.errors && errors.brand) { %>
+              <div class="error-msg">
               <div class="register-errors">
                 <%= errors.brand.msg %> 
               </div>
+            </div>
             <% } %>
+            <div class="div-errors">
+              <p class="input-product-brand-error"></p>
+            </div>
           </div>
 
-          <input type="text" placeholder="Nombre del producto" value="<%= locals.oldData ? oldData.name : null %>" name="name" class="rg-form-input-text product-name <%= locals.errors && errors.name ? 'is-invalid' : null %> " />
+          <input type="text" placeholder="Nombre del producto" value="<%= locals.oldData ? oldData.name : null %>" name="name" class="rg-form-input-text product-name " />
           <!--  name field error -->
           <% if (locals.errors && errors.name) { %>
             <div class="register-errors">
@@ -42,22 +47,27 @@
             <p class="input-product-name-error"></p>
           </div>
 
-          <input type="number" placeholder="Precio Oferta" value="<%= locals.oldData ? oldData.offerPrice : null %>" name="offerPrice" class="rg-form-input-text" />
-          <br>
-          <input type="number" placeholder="Precio Regular" name="regularPrice"value="<%= locals.oldData ? oldData.regularPrice : null %>" class="rg-form-input-text <%= locals.errors && errors.regularPrice ? 'is-invalid' : null %> " />
+          <input type="number" placeholder="Precio Regular" name="regularPrice" value="<%= locals.oldData ? oldData.regularPrice : null %>" class="rg-form-input-text" id="regular-price" />
           <% if (locals.errors && errors.regularPrice) { %>
             <div class="register-errors">
               <%= errors.regularPrice.msg %> 
             </div>
           <% } %>
+          <div class="div-errors">
+            <p class="input-product-regular-price-error"></p>
+          </div>
           <br>
 
           <input type="number" placeholder="Descuento" value="<%= locals.oldData ? oldData.discount : null %>" name="discount" class="rg-form-input-text" />
             <br>
+            
+            <input type="number" placeholder="Precio Oferta" value="<%= locals.oldData ? oldData.offerPrice : null %>" name="offerPrice" class="rg-form-input-text" />
+            <br>
+  
           <!-- <h3 class="cp-tituloSeccion">Colores</h3> -->
           <div class="cp-contenedorSelectorCategoria">
             <label for="colores">
-              <select name="colores" class="rg-form-input-text <%= locals.errors && errors.colores ? 'is-invalid' : null %> ">
+              <select name="colores" class="rg-form-input-text" id="colors">
                 <option value="">Seleccione un Color</option>
                 <% for( let i=0; i < colors.length; i++ ) { %>
                   <option value="<%= colors[i].id %> " >
@@ -66,16 +76,22 @@
                   <% } %>
               </select>
               <% if (locals.errors && errors.colores) { %>
+                <div class="error-msg">
                 <div class="register-errors">
                   <%= errors.colores.msg %> 
                 </div>
+              </div>
               <% } %>
+              <div class="div-errors">
+                <p class="input-product-color-error"></p>
+              </div>
           </div>
+          
 
           <label for="imagenProducto" class="cp-tituloSeccion">
             Imagen del producto</label>
           <input id="imagenProducto" type="file" name="image" accept="jpg, png, jpeg, gif"
-            class="rg-form-input-text subirArchivo <%= locals.errors && errors.image ? 'is-invalid' : null %> " multiple />
+            class="rg-form-input-text subirArchivo " multiple />
             <div class="div-errors">
           <p class="input-product-image-error"></p>
         </div>
@@ -89,7 +105,7 @@
             </div>
 
           <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
-          <textarea placeholder="Especificaciones" name="specification"  id="especificaciones" class="cp-textAreaInput <%= locals.errors && errors.specification ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.specification : null %></textarea>
+          <textarea placeholder="Especificaciones" name="specification"  id="especificaciones" class="cp-textAreaInput"><%= locals.oldData ? oldData.specification : null %></textarea>
           <% if (locals.errors && errors.specification) { %>
             <div class="register-errors">
               <%= errors.specification.msg %> 
@@ -97,7 +113,7 @@
           <% } %>
 
           <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
-          <textarea placeholder="Descripcion"  name="description" id="descripcion"  class="cp-textAreaInput product-description <%= locals.errors && errors.description ? 'is-invalid' : null %> "><%= locals.oldData ? oldData.description : null %></textarea>
+          <textarea placeholder="Descripcion"  name="description" id="descripcion"  class="cp-textAreaInput product-description"><%= locals.oldData ? oldData.description : null %></textarea>
           <div class="div-errors">
             <p class="input-product-description-error"></p>
           </div>
@@ -107,27 +123,35 @@
           </div>
         <% } %>
 
-          <input type="number" placeholder="Stock" name="stock" value="<%= locals.oldData ? oldData.stock : null %>" class="rg-form-input-text <%= locals.errors && errors.stock ? 'is-invalid' : null %> " />
+          <input type="number" placeholder="Stock" name="stock" value="<%= locals.oldData ? oldData.stock : null %>" class="rg-form-input-text" id="stock" />
           <% if (locals.errors && errors.stock) { %>
             <div class="register-errors">
               <%= errors.stock.msg %> 
             </div>
           <% } %>
+          <div class="div-errors">
+            <p class="input-product-stock-error"></p>
+          </div>
           <h3 class="cp-tituloSeccion">Categorias</h3>
           <div class="cp-contenedorSelectorCategoria">
-            <select name="category"  class="cp-selectorCategoria <%= locals.errors && errors.category ? 'is-invalid' : null %> ">
+            <select name="category"  class="cp-selectorCategoria" id="categories">
               <option value="">Seleccione una Categoria</option>
               <% for( let i=0; i < categoryProduct.length; i++ ) { %>
-                <option value="<%= categoryProduct[i].id %> ">
+                <option value="<%= categoryProduct[i].id %>">
                   <%= categoryProduct[i].name %>
                 </option>
                 <% } %>
             </select>
             <% if (locals.errors && errors.category) { %>
+              <div class="error-msg">
               <div class="register-errors">
                 <%= errors.category.msg %> 
               </div>
+            </div>
             <% } %>
+          </div>
+            <div class="div-errors">
+              <p class="input-product-categories-error"></p>
           </div>
           <br />
           <br />

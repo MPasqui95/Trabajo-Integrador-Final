@@ -100,24 +100,28 @@
 
 
 <!-- ==================== CATEGORIA ====================== -->
-            <label for="categoria">Categoria</label>
 
-          <select name="categoria" class="rg-form-input-text">
+<% if (userAdmin == true) { %>
+  <label for="categoria">Categoria</label>
 
-            <% for( let i = 0; i < categoriaUsuario.length; i++ ) { %>
-              <% if (categoriaUsuario[i].id == usuario.categoriesUsers_id) { %>
-               <option value="<%= categoriaUsuario[i].id %> " selected>
-                <%= categoriaUsuario[i].nombre %> 
-              <% } else { %>
-                <option value="<%= categoriaUsuario[i].id %>">
-                  <%= categoriaUsuario[i].nombre %> 
-            </option>
+  <select name="categoria" class="rg-form-input-text">
+
+    <% for( let i = 0; i < categoriaUsuario.length; i++ ) { %>
+      <% if (categoriaUsuario[i].id == usuario.categoriesUsers_id) { %>
+       <option value="<%= categoriaUsuario[i].id %> " selected>
+        <%= categoriaUsuario[i].nombre %> 
+      <% } else { %>
+        <option value="<%= categoriaUsuario[i].id %>">
+          <%= categoriaUsuario[i].nombre %> 
+    </option>
+    
+    <% } %>
+
+    <% } %>
+
+   </select>
+<% } %>
             
-            <% } %>
-
-            <% } %>
-
-           </select>
 
 
 

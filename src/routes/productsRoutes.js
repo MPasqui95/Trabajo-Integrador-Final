@@ -34,9 +34,7 @@ const validationsProducts = [
     body("regularPrice")
         .notEmpty().withMessage('Necesitas un precio para tu producto'),
     body("colores")
-        .notEmpty().withMessage('Elige un color'),
-    body("specification")
-        .notEmpty().withMessage('Completa el campo'),
+        .notEmpty().withMessage('Debe elegir un color'),
     body("description")
         .isLength({ min: 20 }).withMessage('Debe tener por lo menos 20 caracteres'),
     body("stock")
