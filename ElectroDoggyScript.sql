@@ -107,7 +107,7 @@ CREATE TABLE `products` (
   `offerPrice` decimal(10,0) DEFAULT NULL,
   `discount` decimal(10,0) DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL,
-  `specification` text NOT NULL,
+  `specification` text,
   `description` varchar(100) NOT NULL,
   `stock` tinyint NOT NULL,
   `categoriesBrands_id` int NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE `products` (
   KEY `categoriesBrands_id_idx` (`categoriesBrands_id`),
   KEY `categoriesProducts_id_idx` (`categoriesProductos_id`),
   KEY `colors_id` (`categoriesColors_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +171,7 @@ CREATE TABLE `users` (
   `lastName` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `direction` varchar(100) NOT NULL,
+  `direction` varchar(100) DEFAULT NULL,
   `dateBirth` date DEFAULT NULL,
   `userImage` varchar(100) DEFAULT NULL,
   `userscol` varchar(45) DEFAULT NULL,
@@ -180,7 +180,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `categoriesUsers_id_idx` (`categoriesUsers_id`),
   CONSTRAINT `categoriesUsers_id` FOREIGN KEY (`categoriesUsers_id`) REFERENCES `categoriesusers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,4 +196,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-11 23:36:11
+-- Dump completed on 2022-08-16  4:37:09
