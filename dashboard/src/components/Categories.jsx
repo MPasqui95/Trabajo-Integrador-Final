@@ -51,7 +51,7 @@ function Categories(){
                         {cat}
                   </td> 
                   <td >
-                        {cat}
+                        {cant[i]}
                   </td> 
                   </tr>)
                 })}   
