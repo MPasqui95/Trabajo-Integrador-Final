@@ -6,15 +6,6 @@ let db = require("../../database/models");
 
 
 
-// Objeto para contar el numero de elementos por categoria 
-let categoriesInDb = {
-  celulares: 0,
-  laptops: 0,
-  tablets: 0,
-  gamer: 0,
-  audio: 0,
-  accesorios: 0,
-};
 
 //Array de categorias asignadas en base de datos para devolver nombres y no ids
 const categoriesDb = [
@@ -62,6 +53,16 @@ const brandsDb=[
 
 const apiProductsController = {
   listProducts: (req, res) => {
+  // Objeto para contar el numero de elementos por categoria 
+    let categoriesInDb = {
+      celulares: 0,
+      laptops: 0,
+      tablets: 0,
+      gamer: 0,
+      audio: 0,
+      accesorios: 0,
+    };
+    
     db.Productos.findAll()
       .then((products) => {  
         let productsList = products.map((array) => {
