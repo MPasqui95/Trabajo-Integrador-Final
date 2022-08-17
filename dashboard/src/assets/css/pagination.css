@@ -21,7 +21,7 @@
 
 }
 .iconArrow{
-    color: #ff4f00;
+    color: white;
     position:absolute;
     font-size: 20px;
     top: 25%;
@@ -34,11 +34,10 @@
     width: 25px;
     font-size: 14px;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #040740;
     border-radius: 3px;
 }
 
 button[disabled]{
-    background-color: black;
     cursor: no-drop;
 }
