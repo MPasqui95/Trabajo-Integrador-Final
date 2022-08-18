@@ -22,20 +22,22 @@
 
       <h3><%= user.email %></h3>
       <h3><%= user.categoriaUsuario.nombre %></h3>
-      <% if (user.categoriaUsuario.nombre == "Admin") { %>
-      <div class="user-listButton">
-        <a href="/user/users"
-          ><button id="userList">Listado Usuarios</button></a
+      <div class="container-profile-buttons">
+        <% if (user.categoriaUsuario.nombre == "Admin") { %>
+        <div class="user-listButton">
+          <a href="/user/users"
+            ><button id="userList">Listado Usuarios</button></a
+          >
+        </div>
+        <a href="/user/editar-usuario/<%= user.id %> "
+          ><button class="user-editButton">Editar Usuario</button></a
         >
+        <% }else { %>
+        <a href="/user/editar-usuario/<%= user.id %> "
+          ><button class="user-editButton">Editar Usuario</button></a
+        >
+        <% } %>
       </div>
-      <a href="/user/editar-usuario/<%= user.id %> "
-        ><button class="user-editButton">Editar Usuario</button></a
-      >
-      <% }else { %>
-      <a href="/user/editar-usuario/<%= user.id %> "
-        ><button class="user-editButton">Editar Usuario</button></a
-      >
-      <% } %>
     </div>
 
     <!-- ======= START OF FOOTER  ====== -->

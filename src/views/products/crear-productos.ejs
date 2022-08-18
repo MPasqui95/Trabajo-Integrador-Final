@@ -56,7 +56,7 @@
           <div class="div-errors">
             <p class="input-product-regular-price-error"></p>
           </div>
-          <br>
+          
 
           <input type="number" placeholder="Descuento" value="<%= locals.oldData ? oldData.discount : null %>" name="discount" class="rg-form-input-text" />
             <br>
@@ -105,7 +105,7 @@
             </div>
 
           <label for="especificaciones" class="cp-tituloSeccion">Especificaciones:</label>
-          <textarea placeholder="Especificaciones" name="specification"  id="especificaciones" class="cp-textAreaInput"><%= locals.oldData ? oldData.specification : null %></textarea>
+          <textarea  name="specification"  id="especificaciones" class="cp-textAreaInput"><%= locals.oldData ? oldData.specification : null %></textarea>
           <% if (locals.errors && errors.specification) { %>
             <div class="register-errors">
               <%= errors.specification.msg %> 
@@ -113,7 +113,7 @@
           <% } %>
 
           <label for="descripcion" class="cp-tituloSeccion"> Descripción:</label>
-          <textarea placeholder="Descripcion"  name="description" id="descripcion"  class="cp-textAreaInput product-description"><%= locals.oldData ? oldData.description : null %></textarea>
+          <textarea   name="description" id="descripcion"  class="cp-textAreaInput product-description"><%= locals.oldData ? oldData.description : null %></textarea>
           <div class="div-errors">
             <p class="input-product-description-error"></p>
           </div>
@@ -122,6 +122,8 @@
             <%= errors.description.msg %> 
           </div>
         <% } %>
+
+        <br>
 
           <input type="number" placeholder="Stock" name="stock" value="<%= locals.oldData ? oldData.stock : null %>" class="rg-form-input-text" id="stock" />
           <% if (locals.errors && errors.stock) { %>

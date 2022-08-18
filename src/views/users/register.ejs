@@ -120,12 +120,17 @@
         <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
 
         <label class="label-input-date">Confirmar Contraseña</label>
-        <input
-          type="password"
-          name="confirm_password"
-          class="rg-form-input-text"
-          id="confirm-password-register-validation"
-        />
+        <div class="container-eye-register">
+          <input
+            type="password"
+            name="confirm_password"
+            class="rg-form-input-text"
+            id="confirm-password-register-validation"
+          />
+          <span class="eye-icon-confirm" id="register-eye"
+            ><i class="fa-solid fa-eye-slash" id="close-eye-register"></i
+          ></span>
+        </div>
 
         <div class="div-errors">
           <p class="div-confirm-password-errors"></p>

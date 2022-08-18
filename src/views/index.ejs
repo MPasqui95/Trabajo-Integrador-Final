@@ -9,14 +9,15 @@
     <!-- ===== MAIN ============ -->
     <main class="home-main">
       <div class="home-slider">
-      
-      <div class="home-slider-img" id="slider">
+        <div class="home-slider-img" id="slider">
           <div class="home-slider-section">
             <img
-             src="images/slider/slider_mobile1.png"
-            srcset="images/slider/slider_mobile1.png 984w,
-                    images/slider/slider_desktop1.png 1600w"
-            sizes="(min-width: 769px) 1600px,
+              src="images/slider/slider_mobile1.png"
+              srcset="
+                images/slider/slider_mobile1.png   984w,
+                images/slider/slider_desktop1.png 1600w
+              "
+              sizes="(min-width: 769px) 1600px,
             769px"
               alt=""
               class="home-banner-img"
@@ -24,24 +25,26 @@
           </div>
           <div class="home-slider-section">
             <img
-            src="images/slider/slider_mobile2.png"
-            srcset="images/slider/slider_mobile2.png 984w,
-                    images/slider/slider_desktop2.png 1600w"
-            sizes="(min-width: 769px) 1600px,
+              src="images/slider/slider_mobile2.png"
+              srcset="
+                images/slider/slider_mobile2.png   984w,
+                images/slider/slider_desktop2.png 1600w
+              "
+              sizes="(min-width: 769px) 1600px,
             769px"
-              
               alt=""
               class="home-banner-img"
             />
           </div>
           <div class="home-slider-section">
             <img
-            src="images/slider/slider_mobile3.png"
-            srcset="images/slider/slider_mobile3.png 984w,
-                    images/slider/slider_desktop3.png 1600w"
-            sizes="(min-width: 769px) 1600px,
+              src="images/slider/slider_mobile3.png"
+              srcset="
+                images/slider/slider_mobile3.png   984w,
+                images/slider/slider_desktop3.png 1600w
+              "
+              sizes="(min-width: 769px) 1600px,
                    769px"
-              
               alt=""
               class="home-banner-img"
             />
@@ -49,8 +52,8 @@
           <div class="slider-btn slider-btn-right" id="btn-right">&#62;</div>
           <div class="slider-btn slider-btn-left" id="btn-left">&#60;</div>
         </div>
-      
-       <!-- <div class="home-flechas-slider home-flechas-slider-derecha">
+
+        <!-- <div class="home-flechas-slider home-flechas-slider-derecha">
           <i class="fas fa-chevron-right"></i>
         </div>
         <div class="home-flechas-slider home-flechas-slider-izquierda">
@@ -61,7 +64,6 @@
           <div class="home-bullets-2"><i class="fas fa-circle"></i></div>
           <div class="home-bullets-3"><i class="fas fa-circle"></i></div>
         </div> -->
-        
       </div>
       <section class="home-destacados">
         <div class="home-titulo">
@@ -81,7 +83,9 @@
               <div class="home-textos-vitrinas">
                 <h5><%= gamers[i].brand %></h5>
                 <p><%= gamers[i].name %></p>
-                <h6>S/<%= gamers[i].regularPrice %></h6>
+                <h6 style="text-decoration: line-through">
+                  S/<%= gamers[i].regularPrice %>
+                </h6>
                 <h3>S/<%= gamers[i].offerPrice %></h3>
               </div>
             </a>
@@ -107,7 +111,9 @@
               <div class="home-textos-vitrinas">
                 <h5><%= discounts[i].brand %></h5>
                 <p><%= discounts[i].name %></p>
-                <h6>S/<%= discounts[i].regularPrice %></h6>
+                <h6 style="text-decoration: line-through">
+                  S/<%= discounts[i].regularPrice %>
+                </h6>
                 <h3>S/<%= discounts[i].offerPrice %></h3>
               </div>
             </a>
@@ -133,7 +139,9 @@
               <div class="home-textos-vitrinas">
                 <h5><%= mostSold[i].brand %></h5>
                 <p><%= mostSold[i].name %></p>
-                <h6>S/<%= mostSold[i].regularPrice %></h6>
+                <h6 style="text-decoration: line-through">
+                  S/<%= mostSold[i].regularPrice %>
+                </h6>
                 <h3>S/<%= mostSold[i].offerPrice %></h3>
               </div>
             </a>
@@ -144,7 +152,7 @@
     </main>
     <!-- ==== FOOTER  ========== -->
     <%- include('partials/footer.ejs') %>
-    
+
     <script src="/javascript/slider.js"></script>
   </body>
 </html>

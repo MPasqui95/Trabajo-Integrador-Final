@@ -87,13 +87,6 @@
                 <%= errors.name.msg %> 
               </div>
             <% } %>
-            <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
-            <input
-              type="number"
-              value="<%= producto.offerPrice %>"
-              name="offerPrice"
-              class="rg-form-input-text"
-            />
             <h3 class="cp-tituloSeccion">Precio Regular</h3>
             <input
               type="number"
@@ -110,6 +103,13 @@
               type="number"
               value="<%= producto.discount %>"
               name="discount"
+              class="rg-form-input-text"
+            />
+            <h3 class="cp-tituloSeccion">Precio de Oferta</h3>
+            <input
+              type="number"
+              value="<%= producto.offerPrice %>"
+              name="offerPrice"
               class="rg-form-input-text"
             />
 

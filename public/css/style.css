@@ -68,8 +68,9 @@ header {
   border-radius: 50%;
 }
 
+
 .desktop-header-use-img-container{
-  max-width:32px;
+  max-width: 50px;
 
 }
 
@@ -489,15 +490,20 @@ input[type="date"]::before {
   padding: 0.5rem;
   background-color: rgba(4, 7, 64, 0);
 }
-
+/*=============== EYE ICON =================== */
 .eye-icon{
   position: absolute;
-  right: 5rem;
-  margin-bottom: 6.5rem ;
+  right: 2.7rem;
+  bottom: 1.6rem;
   cursor: pointer;
   color: #040740;
 }
 .container-eye-register{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.container-eye-login{
   width: 100%;
   text-align: center;
   position: relative;
@@ -510,6 +516,7 @@ input[type="date"]::before {
   color: #040740;
 }
 
+/*=============== END EYE ICON =================== */
 
 .lg-login-button {
   color: white;
@@ -565,6 +572,8 @@ input[type="date"]::before {
 
 .user-profile img {
   align-content: center;
+  width: 50%;
+  height: 50%;
 }
 
 .div-user-profile-image{
@@ -578,11 +587,14 @@ width: 20%;
   align-items: center;
 } 
 
+.container-profile-buttons{
+  text-align: center;
+}
+
 .user-editButton {
   font-size: 20px;
   padding: 10px;
-  margin-left: 40%;
-  width:  20%;
+  width:  80%;
   border-radius: 15px;
   background-color: #ff8000;
 }
@@ -596,8 +608,7 @@ width: 20%;
   background-color: #05f2f2;
   font-size: 20px;
   padding: 10px;
-  margin-left: 40%;
-  width:  20%;
+  width:  80%;
   border-radius: 15px;
   margin-bottom: 10px;
 }
@@ -1095,7 +1106,7 @@ div.home-titulo i {
   margin-right: 10px;
   position: relative;
   cursor: pointer;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
 }
 
 .home-producto-vitrinas:hover {
@@ -1104,7 +1115,7 @@ div.home-titulo i {
 
 .home-imagenes-vitrinas {
   padding: 0;
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 
@@ -1424,7 +1435,9 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 5px 16px;
     height: 50px;
   }
-
+.search-field-products{
+  width: 14rem;
+}
 
   #header-find-icon {
     padding: 10px;
@@ -1622,13 +1635,19 @@ input[type="number"]::-webkit-inner-spin-button {
   .lg-login-button {
     width: 70%;
   }
+  .user-editButton{
+    width: 30%;
+  }
+  .user-listButton button{
+    width: 30%;
+  }
   .content-modal{
     width: 90%;
     max-width: 800px;
 
   }
   .eye-icon{
-    right: 32%;
+    right: 6.7rem;
   }
   
 
@@ -1669,6 +1688,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .home-producto-vitrinas {
     width: 223px;
+    padding-bottom: 20px;
+
   }
 
   .home-imagenes-vitrinas {
@@ -1754,6 +1775,9 @@ input[type="number"]::-webkit-inner-spin-button {
     color: white;
     align-content: center;
     align-items: center;
+  }
+  .search-field-products{
+    width: 30rem;
   }
 
   /* ============ CARRITO DE COMPRAS ======================= */
@@ -1875,20 +1899,25 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 50%;
   }
   .eye-icon{
-    right: 35%;
+    right: 8rem;
+  }
+  .user-profile img{
+    width: 30%;
+    height: 30%;
   }
 }
 
 /* ================ CREAR PRODUCTO =====================*/
 
 .cp-chekboxColores {
-  border: 1px solid #040740;
+  /* border: 1px solid #040740; */
   border-radius: 6px;
-  padding: 1rem;
+  /* padding: 1rem; */
   display: flex;
   flex-flow: column wrap;
-  height: 7rem;
-  width: 90%;
+  /* height: 7rem; */
+  width: 100%;
+  text-align: center;
 }
 
 .cp-tituloSeccion {
@@ -1908,7 +1937,7 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 1px solid #040740;
   border-radius: 6px;
   width: 90%;
-  height: 54px;
+  height: 70px;
   padding: 6px;
   padding-right: 4px;
   text-align: left;
@@ -1965,12 +1994,15 @@ select .rg-form-input-text{
 /* TABLET Y DESKTOP CREAR  */
 
 @media (min-width: 769px) {
-  .cp-chekboxColores,
+  
   .cp-tituloSeccion,
   .cp-textAreaInput,
   .cp-contenedorSelectorCategoria
   .cp-selectorCategoria {
     width: 70%;
+  }
+  .cp-chekboxColores{
+    width: 100%;
   }
 }
 
@@ -2071,6 +2103,9 @@ select .rg-form-input-text{
 }
 .search-notFound h1{
   font-size: 50px;
+}
+.desktop-header-use-img img{
+  width: 3rem;
 }
 }
 
