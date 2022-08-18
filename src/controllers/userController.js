@@ -174,12 +174,10 @@ usersId: (req, res) => {
       userType: req.body.categoria
     };    
 
+     
+    if (req.session.userLogged.email == user.email) {
       req.session.userLogged = user;
-      console.log(req.session.userLogged);
-
-    // if (req.session.userLogged.email == user.email) {
-    //   req.session.userLogged = user;
-    // }
+    }
 
     // return res.send(req.session.userLogged)
 
