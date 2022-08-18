@@ -169,7 +169,7 @@ usersId: (req, res) => {
       firstName: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: password,
+      // password: password,
       userImage: image,
     };
 
@@ -185,6 +185,7 @@ usersId: (req, res) => {
         direction: req.body.direction,
         dateBirth: req.body.dateBirth,
         userImage: image,
+        
       },
       {
         where: {
@@ -192,6 +193,7 @@ usersId: (req, res) => {
         },
       }
     );
+    
     res.redirect("/");
   },
 
