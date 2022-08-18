@@ -24,9 +24,9 @@
           </div>
         </section>
         <section class="dp-product-description">
-          <h2 class="dp-modelo"><%= product.name %></h2>
+          <h2 class="dp-modelo" id="product-name"><%= product.name %></h2>
           <p class="dp-precio-antes"><%= product.offerPrice %></p>
-          <h2 class="dp-precio"><%= product.regularPrice %></h2>
+          <h2 class="dp-precio" id="product-price"><%= product.regularPrice %></h2>
           <h5 class="dp-colores">Colores disponibles:</h5>
           <div class="dp-contenedor-colores">
             <div class="dp-selector-colores"></div>
@@ -41,11 +41,12 @@
               class="dp-selectorCantidades-numero"
               value="1"
               step="1"
+              id="quantity-shopping-cart"
             />
             <button class="dp-selectorCantidades-suma">+</button>
           </div>
 
-          <button class="dp-añadir-a-carrito">Añadir al carrito</button>
+          <button class="dp-añadir-a-carrito" id="add-to-shopping-cart">Añadir al carrito</button>
           <br />
           <% if (locals.userAdmin) { %>
           <a

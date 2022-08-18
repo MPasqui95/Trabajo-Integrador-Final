@@ -91,4 +91,6 @@ router.get('/gamer', productsController.game)
 router.get('/audio', productsController.audio)
 router.get('/accesorios', productsController.props)
 
+
+
 module.exports = router;

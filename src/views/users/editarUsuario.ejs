@@ -19,6 +19,7 @@
           name="rg-register-form"
           class="rg-register-form cp-editarProducto"
           enctype="multipart/form-data"
+          id="edit-user-form"
         >
 
 <!-- ==================== NOMBRE ====================== -->
@@ -32,7 +33,12 @@
               value="<%= usuario.firstName %>"
               name="name"
               class="rg-form-input-text"
+              id="edit-userName"
             />
+
+            <div class="div-errors">
+              <p class="input-editUser-name-error"></p>
+            </div>
 
 <!-- ==================== APELLIDO ====================== -->
 
@@ -42,18 +48,29 @@
               value="<%= usuario.lastName %>"
               name="lastName"
               class="rg-form-input-text"
+              id="edit-userLastName"
             />
+
+            <div class="div-errors">
+              <p class="input-editUser-lastName-error"></p>
+            </div>
 
 
 <!-- ==================== EMAIL ====================== -->
 
             <h3 class="cp-tituloSeccion">Email</h3>
             <input
-              type="email"
+              type="text"
               value="<%= usuario.email %>"
               name="email"
               class="rg-form-input-text"
+              id="edit-userEmail"
             />
+
+            <div class="div-errors">
+              <p class="input-editUser-email-error"></p>
+              <p class="div-email-character-errors"></p>
+            </div>
 
 
 <!-- ==================== CONTRASEÑA ====================== -->
@@ -64,7 +81,14 @@
               value=""
               name="password"
               class="rg-form-input-text"
+              id="edit-userPassword"
             />
+
+            <div class="div-errors">
+              <p class="input-editUser-password-error"></p>
+              <p class="div-password-character-errors"></p>
+              <p class="div-password-matchPassword-errors"></p>
+            </div>
 
 
 <!-- ==================== CONFIRMAR CONTRASEÑA ====================== -->
@@ -74,7 +98,14 @@
             type="password" 
             name="confirm_password" 
             class="rg-form-input-text" 
+            id="edit-userConfirmPassword"
             />
+
+            <div class="div-errors">
+              <p class="input-editUser-confirmPassword-error"></p>
+              <p class="div-confirmPassword-character-errors"></p>
+
+            </div>
 
 
 <!-- ==================== DIRECCION ====================== -->
@@ -95,8 +126,6 @@
               name="dateBirth"
               class="rg-form-input-text"
             />
-
-
 
 
 <!-- ==================== CATEGORIA ====================== -->
@@ -121,11 +150,7 @@
 
    </select>
 <% } %>
-            
-
-
-
-
+        
 
 <!-- ==================== IMAGEN ====================== -->
            <div class="cp-editarImagen">
@@ -135,6 +160,7 @@
             <img
               class="cp-subirImagen"
               src="/images/users/<%= usuario.userImage %>"
+              name="userImage"
               alt=""
             />
             
@@ -147,6 +173,10 @@
               value="<%= usuario.userImage %>"
               multiple
             />
+          </div>
+
+          <div class="div-errors">
+            <p class="input-editUser-image-error"></p>
           </div>
 
             <br />

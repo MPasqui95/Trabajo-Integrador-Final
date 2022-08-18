@@ -745,6 +745,7 @@ h2 {
   height: 3rem;
   border-radius: 6px;
   border: #414af2;
+  margin-bottom: 10px;
 }
 
 .dp-añadir-a-carrito:hover {
@@ -1327,7 +1328,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .carrito-seguirComprando {
   border: none;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 16px;
   width: 80%;
   height: 24px;
