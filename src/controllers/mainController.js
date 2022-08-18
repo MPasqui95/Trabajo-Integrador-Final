@@ -9,7 +9,7 @@ const mainController = {
         where: {
             categoriesProductos_id: 4
         },
-        limit: 5
+        limit: 4
     })
     //best discount products
     let bestDiscountProducts = db.Productos.findAll({
@@ -17,7 +17,7 @@ const mainController = {
             discount: {[Op.gt] : 20}
         },
         order: [['discount', 'DESC']],
-        limit: 5
+        limit: 4
     })
     //the most sold
     let mostSold = db.Productos.findAll({
@@ -25,7 +25,7 @@ const mainController = {
             regularPrice: {[Op.lt] : 2000}
         },
         order: [['regularPrice', 'ASC']],
-        limit: 5
+        limit: 4
     })
      Promise.all([allProducts, gamerProducts, bestDiscountProducts, mostSold])
         .then(function([products, gamers, discounts, mostSold]){

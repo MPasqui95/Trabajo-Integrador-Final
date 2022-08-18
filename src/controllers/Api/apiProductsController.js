@@ -122,6 +122,7 @@ const apiProductsController = {
         //Consulta a la base de datos por id de producto
         db.Productos.findByPk(req.params.id)
         .then(function(product){
+          if (product) {
           let response ={
             meta: {
                 status: 200,
@@ -144,6 +145,10 @@ const apiProductsController = {
           }  
          
           res.json(response)
+        }else{
+          res.render("../views/errorApi.ejs");
+
+        }
         })
         .catch ((error) => {
           console.log (error)

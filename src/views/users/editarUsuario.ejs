@@ -78,7 +78,7 @@
             <h3 class="cp-tituloSeccion">Password</h3>
             <input
               type="password"
-              value=""
+              value="<%= usuario.password %>"
               name="password"
               class="rg-form-input-text"
               id="edit-userPassword"
@@ -96,7 +96,8 @@
             <h3 class="cp-tituloSeccion">Confirmar Password</h3>
             <input 
             type="password" 
-            name="confirm_password" 
+            name="confirm_password"
+            value="<%= usuario.password %>"
             class="rg-form-input-text" 
             id="edit-userConfirmPassword"
             />
@@ -168,7 +169,6 @@
               id="imagenProducto"
               type="file"
               name="images"
-              accept="jpg, png, jpeg"
               class="rg-form-input-text subirArchivo"
               value="<%= usuario.userImage %>"
               multiple

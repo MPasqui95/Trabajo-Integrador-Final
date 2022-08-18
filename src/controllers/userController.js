@@ -40,13 +40,18 @@ usersId: (req, res) => {
   .then(user=>{
     console.log(user);
     userToSend = user
-    return res.status(200).json({
-      name: userToSend.firstName,
-      lastName: userToSend.lastName,
-      email: userToSend.email,
-      imageUrl: "http://localhost:3030/user/users/" + user.id ,
-      status: 200
-    })
+    if (user) {
+      return res.status(200).json({
+        name: userToSend.firstName,
+        lastName: userToSend.lastName,
+        email: userToSend.email,
+        imageUrl: "http://localhost:3030/user/users/" + user.id ,
+        status: 200
+      })
+    }else{
+      res.render("../views/errorApi.ejs");
+
+    }
   })
   .catch(e=>{console.log(e);})
 },
@@ -164,6 +169,7 @@ usersId: (req, res) => {
       firstName: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
+      password: password,
       userImage: image,
     };
 
