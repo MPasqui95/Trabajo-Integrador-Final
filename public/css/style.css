@@ -566,8 +566,11 @@ input[type="date"]::before {
 
 .user-profile h3 {
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+}
+
+.profile-titles {
+  color: #414af2;
 }
 
 .user-profile img {
@@ -580,10 +583,11 @@ input[type="date"]::before {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 20%;
 }
 
 .user-profile-image {
-width: 20%;
+  width: 18%;
   align-items: center;
 } 
 
@@ -610,7 +614,7 @@ width: 20%;
   padding: 10px;
   width:  80%;
   border-radius: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .user-listButton button:hover{
   background-color: #414af2; 
@@ -1434,7 +1438,8 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 1rem;
     width: 70%;
     padding: 5px 16px;
-    height: 50px;
+    height: 45px;
+    margin-left: 0;
   }
 .search-field-products{
   width: 14rem;
@@ -1637,10 +1642,10 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 70%;
   }
   .user-editButton{
-    width: 30%;
+    width: 15%;
   }
   .user-listButton button{
-    width: 30%;
+    width: 15%;
   }
   .content-modal{
     width: 90%;
@@ -1769,7 +1774,7 @@ input[type="number"]::-webkit-inner-spin-button {
    #header-find-icon {
     padding: 10px;
     margin: 0;
-    width: 20%;
+    width: 10%;
     background-color: #414af2;
     border-radius: 6px;
     font-size: 22px;
@@ -1903,8 +1908,8 @@ input[type="number"]::-webkit-inner-spin-button {
     right: 8rem;
   }
   .user-profile img{
-    width: 30%;
-    height: 30%;
+    width: 10%;
+    height: 100%;
   }
 }
 
@@ -2026,6 +2031,7 @@ select .rg-form-input-text{
   flex-direction: column;
   width: 100%;
   align-items: center;
+  background-color: rgba(4, 7, 64, 0.02);
 }
 
 .cp-detallesProducto .rg-cancelar-button{

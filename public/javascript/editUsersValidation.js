@@ -68,66 +68,66 @@ window.addEventListener("load", () => {
 
       //passwords field
 
-      let userPassword = document.getElementById("edit-userPassword"); //input
-      let textUserPassword = document.querySelector(
-        ".input-editUser-password-error"
-      ); //class
-      let textUserPasswordCharacter = document.querySelector(
-        ".div-password-character-errors"
-      ); //class
-      let textMatchPassword = document.querySelector(
-        ".div-password-matchPassword-errors"
-      );
+      // let userPassword = document.getElementById("edit-userPassword"); //input
+      // let textUserPassword = document.querySelector(
+      //   ".input-editUser-password-error"
+      // ); //class
+      // let textUserPasswordCharacter = document.querySelector(
+      //   ".div-password-character-errors"
+      // ); //class
+      // let textMatchPassword = document.querySelector(
+      //   ".div-password-matchPassword-errors"
+      // );
 
-      let userConfirmPassword = document.getElementById(
-        "edit-userConfirmPassword"
-      );
-      let textUserConfirmPassword = document.querySelector(
-        ".div-confirmPassword-character-errors"
-      ); //class
+      // let userConfirmPassword = document.getElementById(
+      //   "edit-userConfirmPassword"
+      // );
+      // let textUserConfirmPassword = document.querySelector(
+      //   ".div-confirmPassword-character-errors"
+      // ); //class
 
-      if (userConfirmPassword.value != userPassword.value) {
-        e.preventDefault();
-        textUserPassword.innerHTML = "";
-        textMatchPassword.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i> ' +
-          " No coinciden las contraseñas";
-        userConfirmPassword.classList.add("input-error", "is-invalid");
-        userPassword.value = "";
-        userConfirmPassword.value = "";
-      } else {
-        textMatchPassword.innerHTML = "";
-        userPassword.classList.remove("input-error", "is-invalid");
-        userConfirmPassword.classList.remove("input-error", "is-invalid");
-      }
+      // if (userConfirmPassword.value != userPassword.value) {
+      //   e.preventDefault();
+      //   textUserPassword.innerHTML = "";
+      //   textMatchPassword.innerHTML =
+      //     '<i class="fas fa-exclamation-circle"></i> ' +
+      //     " No coinciden las contraseñas";
+      //   userConfirmPassword.classList.add("input-error", "is-invalid");
+      //   userPassword.value = "";
+      //   userConfirmPassword.value = "";
+      // } else {
+      //   textMatchPassword.innerHTML = "";
+      //   userPassword.classList.remove("input-error", "is-invalid");
+      //   userConfirmPassword.classList.remove("input-error", "is-invalid");
+      // }
 
-      if (userPassword.value == "") {
-        e.preventDefault();
-        textUserPassword.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i> ' +
-          " Debes ingresar una contraseña valida";
-        userPassword.classList.add("input-error", "is-invalid");
-        userConfirmPassword.classList.add("input-error", "is-invalid");
-      } else {
-        textUserPassword.innerHTML = "";
-        userPassword.classList.remove("input-error", "is-invalid");
-        userConfirmPassword.classList.remove("input-error", "is-invalid");
-      }
+      // if (userPassword.value == "") {
+      //   e.preventDefault();
+      //   textUserPassword.innerHTML =
+      //     '<i class="fas fa-exclamation-circle"></i> ' +
+      //     " Debes ingresar una contraseña valida";
+      //   userPassword.classList.add("input-error", "is-invalid");
+      //   userConfirmPassword.classList.add("input-error", "is-invalid");
+      // } else {
+      //   textUserPassword.innerHTML = "";
+      //   userPassword.classList.remove("input-error", "is-invalid");
+      //   userConfirmPassword.classList.remove("input-error", "is-invalid");
+      // }
 
-      if (userPassword.value != "" && userPassword.value.length < 8) {
-        e.preventDefault();
-        textUserPasswordCharacter.innerHTML =
-          '<i class="fas fa-exclamation-circle"></i> ' +
-          " La contraseña debe tener mínimo 8 caracteres";
-        userPassword.classList.add("input-error-2", "is-invalid");
-        userConfirmPassword.classList.add("input-error-2", "is-invalid");
-        userPassword.value = "";
-        userConfirmPassword.value = "";
-      } else {
-        textUserPasswordCharacter.innerHTML = "";
-        userPassword.classList.remove("input-error-2");
-        userConfirmPassword.classList.remove("input-error-2");
-      }
+      // if (userPassword.value != "" && userPassword.value.length < 8) {
+      //   e.preventDefault();
+      //   textUserPasswordCharacter.innerHTML =
+      //     '<i class="fas fa-exclamation-circle"></i> ' +
+      //     " La contraseña debe tener mínimo 8 caracteres";
+      //   userPassword.classList.add("input-error-2", "is-invalid");
+      //   userConfirmPassword.classList.add("input-error-2", "is-invalid");
+      //   userPassword.value = "";
+      //   userConfirmPassword.value = "";
+      // } else {
+      //   textUserPasswordCharacter.innerHTML = "";
+      //   userPassword.classList.remove("input-error-2");
+      //   userConfirmPassword.classList.remove("input-error-2");
+      // }
 
       //image fields
 

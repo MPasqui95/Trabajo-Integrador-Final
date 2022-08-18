@@ -20,8 +20,10 @@
         />
       </div>
 
-      <h3><%= user.email %></h3>
-      <h3><%= user.categoriaUsuario.nombre %></h3>
+      <h3 >Email</h3>
+      <h3 class="profile-titles"><%= user.email %></h3>
+      <h3 >Tipo de Usuario</h3>
+      <h3 class="profile-titles"><%= user.categoriaUsuario.nombre %></h3>
       <div class="container-profile-buttons">
         <% if (user.categoriaUsuario.nombre == "Admin") { %>
         <div class="user-listButton">

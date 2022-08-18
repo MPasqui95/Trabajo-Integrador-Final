@@ -170,8 +170,10 @@ usersId: (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       // password: password,
-      userImage: image,
+      userImage: image
     };
+
+    // return res.send(user)
 
     if (req.session.userLogged.email == user.email) {
       req.session.userLogged = user;
@@ -185,7 +187,7 @@ usersId: (req, res) => {
         direction: req.body.direction,
         dateBirth: req.body.dateBirth,
         userImage: image,
-        
+        categoriesUsers_id: req.body.categoria
       },
       {
         where: {
