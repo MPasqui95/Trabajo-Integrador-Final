@@ -170,14 +170,18 @@ usersId: (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       // password: password,
-      userImage: image
-    };
+      userImage: image,
+      userType: req.body.categoria
+    };    
 
-    // return res.send(user)
-
-    if (req.session.userLogged.email == user.email) {
       req.session.userLogged = user;
-    }
+      console.log(req.session.userLogged);
+
+    // if (req.session.userLogged.email == user.email) {
+    //   req.session.userLogged = user;
+    // }
+
+    // return res.send(req.session.userLogged)
 
     db.Usuarios.update(
       {
