@@ -1,8 +1,7 @@
 const express = require("express");
-const fs = require('fs');
-const path = require ('path');
-const { validationResult } = require('express-validator')
-
+const fs = require("fs");
+const path = require("path");
+const { validationResult } = require("express-validator");
 
 let db = require("../database/models");
 
@@ -14,7 +13,7 @@ const Op = db.Sequelize.Op;
 const productsController = {
  // ====== RENDER FOR SHOPPING CART   ======
  shoppingCart: (req, res) => {
-    res.render("products/carrito-compras");
+  res.render("products/carrito-compras");
  },
 
  // ====== RENDER FOR SIMPLE PRODUCT DETAIL   ======

@@ -2,6 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const routerUser = express.Router();
 const path = require("path");
+/* Destructuring the body property from the express-validator module. */
 const { body } = require("express-validator");
 
 const userController = require("../controllers/userController");
