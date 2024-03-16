@@ -71,9 +71,6 @@ app.use("/user", routerUser);
 app.listen(3030, () => console.log("Server Run in Port 3030"));
 
 
-
-
-
 //=== INFORMATION CAPTURE =====
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
