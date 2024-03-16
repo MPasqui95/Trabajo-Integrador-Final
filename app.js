@@ -5,6 +5,8 @@ const cookies = require("cookie-parser");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
 const session = require('cookie-session');
 
+require('dotenv').config()
+
 const app = express();
 
 const userLoggedMiddleware = require("./src/middleware/userLoggedMiddleware");
@@ -68,7 +70,7 @@ app.use("/product", routerProd);
 app.use("/user", routerUser);
 
 
-app.listen(3000, () => console.log("Server Run in Port 3000"));
+app.listen(process.env.PORT, () => console.log("Server Run in Port 3000"));
 
 
 //=== INFORMATION CAPTURE =====
