@@ -3,7 +3,7 @@ const path = require("path");
 const logger = require("morgan");
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
-const session = require('express-session');
+const session = require('cookie-session');
 
 const app = express();
 
