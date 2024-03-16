@@ -9,7 +9,7 @@ function LastProduct(){
 
     useEffect(()=>{
         console.log('se montó al componente');
-        fetch('http://localhost:3030/api/products/')
+        fetch('http://localhost3000/api/products/')
         .then(response => response.json())
         .then(data => {
             setProducts(data.data.products)

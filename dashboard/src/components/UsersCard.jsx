@@ -8,7 +8,7 @@ function UsersCard(){
 
     useEffect(()=>{
         console.log('se montó al componente');
-        fetch('http://localhost:3030/user/usersList')
+        fetch('http://localhost3000/user/usersList')
         .then(response => response.json())
         .then(data => {
             setUsers(data.total)

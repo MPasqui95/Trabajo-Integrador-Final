@@ -9,7 +9,7 @@ function Categories() {
 
   useEffect(() => {
     console.log("se montó al componente");
-    fetch("http://localhost:3030/api/products/")
+    fetch("http://localhost:3000/api/products/")
       .then((response) => response.json())
       .then((data) => {
         setCategories(data.data.countByCategory);

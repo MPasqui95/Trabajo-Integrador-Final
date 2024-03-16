@@ -17,7 +17,7 @@ usersArray: (req, res) => {
           array.id,
           array.firstName,
           array.email,
-          'http//:localhost:3030/user/usersList/' + array.id
+          'http//:localhost:3000user/usersList/' + array.id
         ]
       })
       return res.status(200).json({
@@ -45,7 +45,7 @@ usersId: (req, res) => {
         name: userToSend.firstName,
         lastName: userToSend.lastName,
         email: userToSend.email,
-        imageUrl: "http://localhost:3030/user/users/" + user.id ,
+        imageUrl: "http://localhost:3000/user/users/" + user.id ,
         status: 200
       })
     }else{
