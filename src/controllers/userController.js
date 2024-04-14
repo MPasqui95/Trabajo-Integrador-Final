@@ -174,6 +174,7 @@ usersId: (req, res) => {
       userType: req.body.categoria
     };    
 
+
     if (req.session.userLogged.email == user.email) {
       req.session.userLogged = user;
     }
